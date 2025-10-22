@@ -99,6 +99,9 @@ const serverHandler = (request, info) => {
 		Object.assign(
 			{
 				'TITLE': translation.title ? `${translation.title} - Flashpoint Archive` : 'Flashpoint Archive',
+				'STYLES': page.styles.map(style => `<link rel="stylesheet" href="/styles/${style}">`).join('\n'),
+				'SCRIPTS': page.scripts.map(script => `<script src="/scripts/${script}" type="text/javascript"></script>`).join('\n'),
+				'LANGLIST': Object.entries(locales).map(([lang, locale]) => `<a class="fp-button fp-sidebar-button" href="?lang=${lang}">${locale.name}</a>`).join('\n'),
 				'LANGUAGE': locale.name,
 				'CONTENT': buildHtml(templates[namespace], translation),
 			},

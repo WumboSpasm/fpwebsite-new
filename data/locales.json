@@ -1,8 +1,8 @@
 {
-    "en-US": {
-        "name": "English"
-    },
-    "en-PI": {
-        "name": "Pig Latin"
-    }
+	"en-US": {
+		"name": "English"
+	},
+	"en-PI": {
+		"name": "Pig Latin"
+	}
 }

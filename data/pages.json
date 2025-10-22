@@ -1,7 +1,7 @@
 {
-    "/": {
-        "namespace": "home",
-        "styles": [],
-        "scripts": []
-    }
+	"/": {
+		"namespace": "home",
+		"styles": [],
+		"scripts": []
+	}
 }
