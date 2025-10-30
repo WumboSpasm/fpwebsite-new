@@ -30,7 +30,7 @@
 	--fp-dark-logo-bevel-color-2: #bb0000;
 }
 
-:root:not([data-theme="dark"]) {
+:root:not([data-theme='dark']) {
 	--fp-header-color: var(--fp-light-header-color);
 	--fp-text-color: var(--fp-light-text-color);
 	--fp-background-color: var(--fp-light-background-color);
@@ -45,7 +45,7 @@
 	--fp-logo-bevel-color-1: var(--fp-light-logo-bevel-color-1);
 	--fp-logo-bevel-color-2: var(--fp-light-logo-bevel-color-2);
 }
-:root[data-theme="dark"] {
+:root[data-theme='dark'] {
 	--fp-header-color: var(--fp-dark-header-color);
 	--fp-text-color: var(--fp-dark-text-color);
 	--fp-background-color: var(--fp-dark-background-color);
@@ -77,17 +77,17 @@
 		padding: 1rem;
 	}
 
-	:root:not([data-mobile-sidebar="true"]) .fp-sidebar {
+	:root:not([data-mobile-sidebar='true']) .fp-sidebar {
 		display: none;
 	}
 
-	:root[data-mobile-sidebar="true"] .fp-navbar {
+	:root[data-mobile-sidebar='true'] .fp-navbar {
 		box-shadow: none !important;
 	}
-	:root[data-mobile-sidebar="true"] .fp-sidebar {
+	:root[data-mobile-sidebar='true'] .fp-sidebar {
 		display: flex;
 	}
-	:root[data-mobile-sidebar="true"] .fp-content {
+	:root[data-mobile-sidebar='true'] .fp-content {
 		display: none;
 	}
 }
@@ -121,8 +121,13 @@ body {
 	color: var(--fp-sidebar-text-color);
 	font-family: Verdana, Tahoma, sans-serif;
 	font-weight: bold;
+	background-color: #000000;
 	background-image: radial-gradient(ellipse at top left, var(--fp-sidebar-background-color-1), var(--fp-sidebar-background-color-2));
 	background-attachment: fixed;
+
+	/* Needed by Safari iOS */
+	height: 100svh;
+	-webkit-text-size-adjust: none;
 }
 
 /* Navbar */
@@ -210,7 +215,7 @@ body {
 
 	background-position: center;
 	background-repeat: no-repeat;
-	content: "";
+	content: '';
 }
 .fp-sidebar-button::after {
 	width: 1rem;
@@ -260,7 +265,7 @@ body {
 	flex-direction: column;
 
 	background-color: var(--fp-sidebar-neutral-background-color);
-	box-shadow: 0 0.1rem 0.5rem -0.1rem #000;
+	box-shadow: 0 0.1rem 0.5rem -0.1rem #000000;
 }
 .fp-language-button {
 	padding: 0.5rem;
@@ -330,16 +335,33 @@ body {
 	font-size: 2rem;
 	border-bottom: 0.15rem solid var(--fp-header-color);
 }
+.fp-content-spacer {
+	height: 1rem;
+}
 
 /* Helper classes */
 
+.fp-button,
+.fp-toggle,
+.fp-icon {
+	--fp-active-background-color: #ffffff44;
+	cursor: pointer;
+	touch-action: manipulation;
+}
 .fp-toggle,
 .fp-icon {
 	user-select: none;
 }
 .fp-button:hover,
-.fp-toggle:hover,
-.fp-toggle[data-toggled="true"] {
-	background-color: #ffffff44;
-	cursor: pointer;
+.fp-toggle:hover {
+	background-color: var(--fp-active-background-color);
+}
+@media (hover: none) {
+	.fp-button:hover,
+	.fp-toggle:hover {
+		background-color: unset;
+	}
+}
+.fp-toggle[data-toggled='true'] {
+	background-color: var(--fp-active-background-color);
 }

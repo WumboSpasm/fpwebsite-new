@@ -122,7 +122,7 @@ const serverError = (error) => {
 	if (badRequest || notFound)
 		errorPage = buildHtml(errorPage, {
 			'error': `${error.status} ${error.statusText}`,
-			'description': badRequest ? 'The requested URL is invalid.' : 'The requested URL does not exist.'
+			'description': badRequest ? 'The requested URL is invalid.' : 'The requested URL does not exist.',
 		});
 	else {
 		logMessage(error.stack);
@@ -209,7 +209,7 @@ function buildHtml(template, defs) {
 		varData.push({
 			value: formattedValue,
 			start: match.index,
-			end: match.index + match[0].length
+			end: match.index + match[0].length,
 		});
 	}
 
@@ -294,7 +294,7 @@ function buildStringFromParams(paramsStr, defs = {}) {
 
 	// Now we are ready to apply the parameters to the string
 	if (params[0].type == 'definition' && params.length > 1) {
-		const tagExp = /^([^\s]+)(.*)$/;
+		const tagPartsExp = /^([^\s]+)(.*)$/;
 
 		// Handle regular variables before function variables, in case any of the former exist inside the latter
 		targetStr = targetStr.replace(/\$([1-9])(?!\{)/g, (_, i) => {
@@ -303,9 +303,9 @@ function buildStringFromParams(paramsStr, defs = {}) {
 				if (param.type == 'string') return param.value;
 				if (param.type == 'function') return templateFunctions[param.value]();
 				if (param.type == 'element') {
-					const tag = param.value.match(tagExp);
-					if (tag) {
-						const [_, name, attrs] = tag;
+					const tagParts = param.value.match(tagPartsExp);
+					if (tagParts) {
+						const [_, name, attrs] = tagParts;
 						return `<${name}${attrs}>`;
 					}
 				}
@@ -320,11 +320,15 @@ function buildStringFromParams(paramsStr, defs = {}) {
 				if (param.type == 'string') return param.value;
 				if (param.type == 'function') return templateFunctions[param.value](input);
 				if (param.type == 'element') {
-					const tag = param.value.match(tagExp);
-					if (tag) {
-						const [_, name, attrs] = tag;
-						return `<${name}${attrs}>${input}</${name}>`;
+					let newStr = input;
+					for (const tag of param.value.split('><').reverse()) {
+						const tagParts = tag.match(tagPartsExp);
+						if (tagParts) {
+							const [_, name, attrs] = tagParts;
+							newStr = `<${name}${attrs}>${newStr}</${name}>`;
+						}
 					}
+					if (newStr != input) return newStr;
 				}
 			}
 			return fallbackStr;

@@ -1,4 +1,39 @@
 <div class="fp-content-header">{header}</div>
 <div class="fp-content-body">
-	{content,(random)}
+	<div class="fp-home-trailer-container">
+		<iframe class="fp-home-trailer" width="576" height="324" src="https://www.youtube.com/embed/0nIbn3vvvMc" title="Flashpoint Archive 2024 Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		<img class="fp-home-trailer-sizer" src="/images/sizer.png">
+	</div>
+	{about1}
+	<div class="fp-content-spacer"></div>
+	{about2,<b><a href="/search/stats">}
+	<div class="fp-content-spacer"></div>
+	{about3,<a href="https://github.com/FlashpointProject/launcher">,<a href="https://github.com/FlashpointProject/FlashpointProxy">,<a href="https://github.com/FlashpointProject/FlashpointSecureTools">,<a href="/downloads#source">}
+	<div class="fp-content-spacer"></div>
+	{about4,<a href="https://opencollective.com/flashpointarchive">}
+	<div class="fp-home-buttons">
+		<a class="fp-home-button fp-home-download-button" href="/downloads">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 40" width="100%" fill="#fff">
+				<image class="fp-home-button-icon" href="/images/icons/download.svg" width="40" height="40" x="2" y="1"/>
+				<text class="fp-home-button-text" x="42.5" y="18">{download1}</text>
+				<text class="fp-home-button-text" x="42" y="31">{download2}</text>
+			</svg>
+		</a>
+		<div class="fp-home-buttons-lower">
+			<a class="fp-home-button fp-home-search-button" href="/search">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 40" width="100%" fill="#fff">
+					<image class="fp-home-button-icon" href="/images/icons/search.svg" width="36" height="36" x="4" y="3"/>
+					<text class="fp-home-button-text" x="42.5" y="18">{search1}</text>
+					<text class="fp-home-button-text" x="42" y="30">{search2}</text>
+				</svg>
+			</a>
+			<a class="fp-home-button fp-home-community-button" href="https://discord.gg/qhvAkhWXU5">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 40" width="100%" fill="#fff">
+					<image class="fp-home-button-icon" href="/images/icons/socials/discord.svg" width="28" height="28" x="8" y="7"/>
+					<text class="fp-home-button-text" x="42.5" y="18">{community1}</text>
+					<text class="fp-home-button-text" x="42" y="30">{community2}</text>
+				</svg>
+			</a>
+		</div>
+	</div>
 </div>
