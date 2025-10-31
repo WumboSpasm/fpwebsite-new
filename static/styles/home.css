@@ -42,6 +42,9 @@
 	display: flex;
 	gap: 0.5rem;
 }
+:root[data-theme='light'] .fp-home-buttons {
+	filter: brightness(1.25);
+}
 .fp-home-buttons-lower {
 	display: flex;
 	gap: 0.5rem;
@@ -65,7 +68,7 @@
 	filter: hue-rotate(90deg) brightness(2);
 }
 .fp-home-community-button {
-	filter: hue-rotate(270deg) brightness(1.5);
+	filter: hue-rotate(270deg) brightness(1.25);
 }
 .fp-home-button-text {
 	color: var(--fp-sidebar-text-color);

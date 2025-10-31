@@ -3,5 +3,10 @@
 		"namespace": "home",
 		"styles": ["home.css"],
 		"scripts": []
+	},
+	"/downloads": {
+		"namespace": "downloads",
+		"styles": ["downloads.css"],
+		"scripts": []
 	}
 }
