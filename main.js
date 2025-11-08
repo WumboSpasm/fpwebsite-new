@@ -63,14 +63,13 @@ const serverHandler = (request, info) => {
 	if (config.accessHosts.length > 0 && !config.accessHosts.some(host => host == requestUrl.hostname))
 		throw new BadRequestError();
 
-	const requestPath = requestUrl.pathname.replace(/^[/]+/, '');
+	const requestPath = requestUrl.pathname.replace(/^[/]+(.*?)[/]*$/, '$1');
 	const page = pages[`/${requestPath}`];
 
 	// If request does not point to a page, serve from static directory
 	if (page === undefined) {
 		const filePath = `static/${requestPath}`;
 		if (!getPathInfo(filePath)?.isFile) throw new NotFoundError();
-		console.log(filePath);
 		const responseType = contentType(filePath.substring(filePath.lastIndexOf('.'))) ?? 'application/octet-stream';
 		return new Response(Deno.openSync(filePath).readable, { headers: { 'Content-Type': responseType }});
 	}
@@ -98,11 +97,11 @@ const serverHandler = (request, info) => {
 		templates.navigation,
 		Object.assign(
 			{
-				'TITLE': translation.title ? `${translation.title} - Flashpoint Archive` : 'Flashpoint Archive',
+				'TITLE': translation['Title'] ? `${translation['Title']} - Flashpoint Archive` : 'Flashpoint Archive',
 				'STYLES': page.styles.map(style => `<link rel="stylesheet" href="/styles/${style}">`).join('\n'),
 				'SCRIPTS': page.scripts.map(script => `<script src="/scripts/${script}" type="text/javascript"></script>`).join('\n'),
-				'LANGLIST': Object.entries(locales).map(([lang, locale]) => `<a class="fp-button fp-sidebar-button" href="?lang=${lang}">${locale.name}</a>`).join('\n'),
-				'LANGUAGE': locale.name,
+				'LANGUAGE_SELECT': Object.entries(locales).map(([lang, locale]) => `<a class="fp-button fp-sidebar-button" href="?lang=${lang}">${locale.name}</a>`).join('\n'),
+				'CURRENT_LANGUAGE': locale.name,
 				'CONTENT': buildHtml(templates[namespace], translation),
 			},
 			Object.assign({}, defaultLocale.translations.navigation, locale.translations.navigation),
@@ -297,7 +296,8 @@ function buildStringFromParams(paramsStr, defs = {}) {
 		const tagPartsExp = /^([^\s]+)(.*)$/;
 
 		// Handle regular variables before function variables, in case any of the former exist inside the latter
-		targetStr = targetStr.replace(/\$([1-9])(?!\{)/g, (_, i) => {
+		targetStr = targetStr.replace(/\$(\d+)(?!\{)/g, (_, i) => {
+			i = parseInt(i, 10);
 			if (i < params.length) {
 				const param = params[i];
 				if (param.type == 'string') return param.value;
@@ -314,7 +314,8 @@ function buildStringFromParams(paramsStr, defs = {}) {
 		});
 
 		// Now for the function variables
-		targetStr = targetStr.replace(/\$([1-9])\{(.*?)\}/g, (_, i, input) => {
+		targetStr = targetStr.replace(/\$(\d+)\{(.*?)\}/g, (_, i, input) => {
+			i = parseInt(i, 10);
 			if (i < params.length) {
 				const param = params[i];
 				if (param.type == 'string') return param.value;

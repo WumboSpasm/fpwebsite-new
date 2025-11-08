@@ -27,7 +27,7 @@ function toggleTheme() {
 function updateThemeIcon() {
 	if (!rootData.theme) initTheme();
 	const themeIcon = document.querySelector('.fp-theme-button-icon');
-	themeIcon.src = `images/icons/${rootData.theme == 'light' ? 'dark' : 'light'}.svg`;
+	themeIcon.src = `/images/icons/${rootData.theme == 'light' ? 'dark' : 'light'}.svg`;
 }
 
 function initTheme() {

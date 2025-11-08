@@ -1,20 +1,16 @@
-@media (max-width: 1023px) {
+@media (max-width: 63.99rem) {
 	.fp-home-buttons {
 		max-width: 32rem;
 		flex-direction: column;
 	}
-	.fp-home-buttons-lower {
-		flex-direction: row;
-	}
 }
-@media (min-width: 1024px) {
+@media (min-width: 64rem) {
 	.fp-home-buttons {
 		max-width: 44rem;
-		flex-direction: row;
 	}
 	.fp-home-buttons-lower {
-		flex-basis: calc(100% / 3);
 		flex-shrink: 0;
+		flex-basis: calc(100% / 3);
 		flex-direction: column;
 	}
 }

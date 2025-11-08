@@ -1,1 +1,136 @@
-<div class="fp-content-header">{header}</div>
+<div class="fp-content-header">{Header}</div>
+{Description,<b><a href="/source">,<a href="/faq">,<a href="/discord">}
+<div class="fp-content-large-spacer"></div>
+<div class="fp-downloads-tab-container">
+	<div class="fp-downloads-tab-selectors">
+		<div class="fp-downloads-tab-selector" onclick="selectPlatform('Windows')" data-platform="Windows">
+			<img class="fp-downloads-tab-selector-icon" src="/images/windows.svg">
+			<div class="fp-downloads-tab-selector-text">Windows</div>
+		</div>
+		<div class="fp-downloads-tab-selector" onclick="selectPlatform('MacOS')" data-platform="MacOS">
+			<img class="fp-downloads-tab-selector-icon" src="/images/macos.svg">
+			<div class="fp-downloads-tab-selector-text">macOS</div>
+		</div>
+		<div class="fp-downloads-tab-selector" onclick="selectPlatform('Linux')" data-platform="Linux">
+			<img class="fp-downloads-tab-selector-icon" src="/images/linux.svg">
+			<div class="fp-downloads-tab-selector-text">Linux</div>
+		</div>
+	</div>
+	<div class="fp-downloads-tabs">
+		<div class="fp-downloads-tab" data-platform="Windows">
+			<div class="fp-downloads-tab-warning">{Windows_Avast_Warning,<b>,<a href="/datahub/Troubleshooting_Antivirus_Interference">}</div>
+			<div class="fp-downloads-tab-content">
+				<div class="fp-downloads-tab-section">
+					<div class="fp-downloads-tab-section-header">
+						Flashpoint Infinity 14
+					</div>
+					<i>{Windows_Infinity_Tagline}</i>
+					<div class="fp-content-spacer"></div>
+					<div>{Windows_Infinity_Para1}</div>
+					<div class="fp-content-spacer"></div>
+					<div>{Windows_Infinity_Para2}</div>
+					<div class="fp-content-spacer"></div>
+					<div class="fp-downloads-tab-sizes">
+						<div><b>{Download_Size}:</b> 1.9MB</div>
+						<div><b>{Install_Size}:</b> ~1-4GB</div>
+					</div>
+					<div class="fp-downloads-tab-button-container">
+						<a class="fp-downloads-tab-button" href="https://github.com/FlashpointProject/FlashpointComponentTools/releases/latest/download/FlashpointInstaller.exe">
+							<img class="fp-downloads-tab-button-icon" src="/images/icons/download.svg">
+							<div class="fp-downloads-tab-button-text">{Windows_Infinity_Main_Download}</div>
+						</a>
+						<div class="fp-downloads-tab-button-hash" title="{Copy_MD5}" onclick="copyHash(this)" data-hash="TODO" data-copied="{MD5_Copied}">MD5</div>
+					</div>
+					<a class="fp-downloads-tab-button-alt" href="https://download.flashpointarchive.org/upload/fp14static.7z">{Windows_Infinity_Alt_Download}</a>
+				</div>
+				<div class="fp-downloads-tab-divider"></div>
+				<div class="fp-downloads-tab-section">
+					<div class="fp-downloads-tab-section-header">
+						Flashpoint Ultimate 14
+					</div>
+					<i>{Windows_Ultimate_Tagline}</i>
+					<div class="fp-content-spacer"></div>
+					<div>{Windows_Ultimate_Para1}</div>
+					<div class="fp-content-spacer"></div>
+					<div>{Windows_Ultimate_Para2,<a href="/datahub/Ultimate_Support">}</div>
+					<div class="fp-content-spacer"></div>
+					<div class="fp-downloads-tab-sizes">
+						<div><b>{Download_Size}:</b> 2.28TB</div>
+						<div><b>{Install_Size}:</b> TODO</div>
+					</div>
+					<div class="fp-downloads-tab-button-container">
+						<a class="fp-downloads-tab-button" href="https://download.unstable.life/FlashpointUltimate14.torrent">
+							<img class="fp-downloads-tab-button-icon" src="/images/icons/download.svg">
+							<div class="fp-downloads-tab-button-text">{Windows_Ultimate_Main_Download}</div>
+						</a>
+						<div class="fp-downloads-tab-button-hash" title="{Copy_MD5}" onclick="copyHash(this)" data-hash="TODO" data-copied="{MD5_Copied}">MD5</div>
+					</div>
+					<a class="fp-downloads-tab-button-alt" href="https://download.unstable.life/ultimate-direct/">{Windows_Ultimate_Alt_Download}</a>
+				</div>
+			</div>
+			<div class="fp-downloads-tab-divider"></div>
+			<div class="fp-downloads-tab-requirements">
+				<div><b>{System_Requirements}:</b> {Windows_System_Requirements,"Windows 8.1"}</div>
+				<div><b>{Prerequisites}:</b> {Windows_Prerequisites,<a href="https://www.microsoft.com/en-us/download/details.aspx?id=48145">,"Visual C++ 2015 Redistributable (x86)",<a href="https://dotnet.microsoft.com/download/dotnet-framework/net47">,"Microsoft .NET Framework 4.7"}</div>
+			</div>
+		</div>
+		<div class="fp-downloads-tab" data-platform="MacOS">
+			<div class="fp-downloads-tab-content">
+				<div class="fp-downloads-tab-section">
+					<div class="fp-downloads-tab-section-header">
+						Flashpoint Infinity for Mac (2025/09/23)
+					</div>
+					<div class="fp-content-spacer"></div>
+					<div>{MacOS_Infinity_Para1,<a href="/datahub/Mac_Support">}</div>
+					<div class="fp-content-spacer"></div>
+					<div>{MacOS_Infinity_Para2}</div>
+					<div class="fp-content-spacer"></div>
+					<div class="fp-downloads-tab-sizes">
+						<div><b>{Download_Size}:</b> 836MB</div>
+						<div><b>{Install_Size}:</b> 2.8GB</div>
+					</div>
+					<div class="fp-downloads-tab-button-container">
+						<a class="fp-downloads-tab-button" href="/datahub/Mac_Support#Installing_Flashpoint">
+							<div class="fp-downloads-tab-button-text">{MacOS_Infinity_Main_Download}</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="fp-downloads-tab-divider"></div>
+			<div class="fp-downloads-tab-requirements">
+				<div><b>{System_Requirements}:</b> {MacOS_System_Requirements,"macOS Sierra"}</div>
+				<div><b>{Prerequisites}:</b> {MacOS_Prerequisites}</div>
+			</div>
+		</div>
+		<div class="fp-downloads-tab" data-platform="Linux">
+			<div class="fp-downloads-tab-content">
+				<div class="fp-downloads-tab-section">
+					<div class="fp-downloads-tab-section-header">
+						Flashpoint Infinity for Linux (2025/11/03)
+					</div>
+					<div class="fp-content-spacer"></div>
+					<div>{Linux_Infinity_Para1,<a href="/datahub/Linux_Support">}</div>
+					<div class="fp-content-spacer"></div>
+					<div>{Linux_Infinity_Para2,<a href="/datahub/Linux_Support#Dependencies">}</div>
+					<div class="fp-content-spacer"></div>
+					<div class="fp-downloads-tab-sizes">
+						<div><b>{Download_Size}:</b> 513MB</div>
+						<div><b>{Install_Size}:</b> 2.6GB</div>
+					</div>
+					<div class="fp-downloads-tab-button-container">
+						<a class="fp-downloads-tab-button" href="https://download.flashpointarchive.org/upload/fp14.0.3_lin_20251103.7z">
+							<img class="fp-downloads-tab-button-icon" src="/images/icons/download.svg">
+							<div class="fp-downloads-tab-button-text">{Linux_Infinity_Main_Download}</div>
+						</a>
+						<div class="fp-downloads-tab-button-hash" title="{Copy_MD5}" onclick="copyHash(this)" data-hash="TODO" data-copied="{MD5_Copied}">MD5</div>
+					</div>
+				</div>
+			</div>
+			<div class="fp-downloads-tab-divider"></div>
+			<div class="fp-downloads-tab-requirements">
+				<div><b>{System_Requirements}:</b> {Linux_System_Requirements}</div>
+				<div><b>{Prerequisites}:</b> {Linux_Prerequisites}</div>
+			</div>
+		</div>
+	</div>
+</div>

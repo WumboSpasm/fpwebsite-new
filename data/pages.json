@@ -4,9 +4,39 @@
 		"styles": ["home.css"],
 		"scripts": []
 	},
+	"/news": {
+		"namespace": "news",
+		"styles": [],
+		"scripts": []
+	},
+	"/faq": {
+		"namespace": "faq",
+		"styles": [],
+		"scripts": []
+	},
 	"/downloads": {
 		"namespace": "downloads",
 		"styles": ["downloads.css"],
+		"scripts": ["downloads.js"]
+	},
+	"/source": {
+		"namespace": "source",
+		"styles": [],
+		"scripts": []
+	},
+	"/branding": {
+		"namespace": "branding",
+		"styles": [],
+		"scripts": []
+	},
+	"/contact": {
+		"namespace": "contact",
+		"styles": [],
+		"scripts": []
+	},
+	"/discord": {
+		"namespace": "discord",
+		"styles": [],
 		"scripts": []
 	}
 }

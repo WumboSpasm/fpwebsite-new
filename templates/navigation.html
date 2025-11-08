@@ -11,32 +11,34 @@
 	</head>
 	<body>
 		<div class="fp-navbar">
-			<a class="fp-toggle fp-sidebar-toggle" onclick="toggleSidebar()" title="{toggle_sidebar}">
-				<img class="fp-icon fp-sidebar-toggle-icon" src="/images/icons/sidebar.svg" alt="{toggle_sidebar}">
+			<a class="fp-toggle fp-sidebar-toggle" onclick="toggleSidebar()" title="{Toggle_Sidebar}">
+				<img class="fp-icon fp-sidebar-toggle-icon" src="/images/icons/sidebar.svg" alt="{Toggle_Sidebar}">
 			</a>
-			<a class="fp-navbar-logo" href="/" title="{home}">
-				<img class="fp-logo-icon" src="/images/fplogo.svg" alt="{flashpoint_logo}">
-				<img class="fp-logo-text" src="/images/fptext.svg" alt="{flashpoint_text}">
+			<a class="fp-navbar-logo" href="/" title="{Home}">
+				<img class="fp-logo-icon" src="/images/fplogo.svg" alt="{Flashpoint_Logo}">
+				<img class="fp-logo-text" src="/images/fptext.svg" alt="{Flashpoint_Text}">
 			</a>
 		</div>
 		<div class="fp-main-area">
 			<div class="fp-sidebar">
-				<a class="fp-sidebar-logo" href="/" title="{home}">
-					<img class="fp-logo-icon" src="/images/fplogo.svg" alt="{flashpoint_logo}">
-					<img class="fp-logo-text" src="/images/fptext.svg" alt="{flashpoint_text}">
+				<a class="fp-sidebar-logo" href="/" title="{Home}">
+					<img class="fp-logo-icon" src="/images/fplogo.svg" alt="{Flashpoint_Logo}">
+					<img class="fp-logo-text" src="/images/fptext.svg" alt="{Flashpoint_Text}">
 				</a>
-				<a class="fp-button fp-sidebar-button" href="/">{home}</a>
-				<a class="fp-button fp-sidebar-button" href="/news">{news}</a>
-				<a class="fp-button fp-sidebar-button" href="/faq">{faq}</a>
-				<a class="fp-button fp-sidebar-button" href="/downloads">{downloads}</a>
-				<a class="fp-button fp-sidebar-button" href="/contact">{contact}</a>
+				<a class="fp-button fp-sidebar-button" href="/">{Home}</a>
+				<a class="fp-button fp-sidebar-button" href="/news">{News}</a>
+				<a class="fp-button fp-sidebar-button" href="/faq">{FAQ}</a>
+				<a class="fp-button fp-sidebar-button" href="/downloads">{Downloads}</a>
+				<a class="fp-button fp-sidebar-button" href="/source">{Source_Code}</a>
+				<a class="fp-button fp-sidebar-button" href="/branding">{Branding}</a>
+				<a class="fp-button fp-sidebar-button" href="/contact">{Contact}</a>
 				<div class="fp-sidebar-spacer"></div>
-				<a class="fp-button fp-sidebar-button" href="/datahub/Main_Page">{wiki}</a>
-				<a class="fp-button fp-sidebar-button" href="/search">{search}</a>
-				<a class="fp-button fp-sidebar-button" href="https://opencollective.com/flashpointarchive">{donate}</a>
+				<a class="fp-button fp-sidebar-button" href="/datahub/Main_Page">{Wiki}</a>
+				<a class="fp-button fp-sidebar-button" href="/search">{Search}</a>
+				<a class="fp-button fp-sidebar-button" href="https://opencollective.com/flashpointarchive">{Donate}</a>
 				<div class="fp-sidebar-max-spacer"></div>
 				<div class="fp-socials">
-					<a class="fp-social-logo" href="https://discord.gg/qhvAkhWXU5" title="Discord">
+					<a class="fp-social-logo" href="/discord" title="Discord">
 						<img class="fp-social-logo-icon" src="/images/icons/socials/discord.svg" alt="Discord">
 					</a>
 					<a class="fp-social-logo" href="https://twitter.com/fp_archive" title="Twitter">
@@ -60,13 +62,13 @@
 				</div>
 				<div class="fp-language-container">
 					<div class="fp-language">
-						{LANGLIST}
+						{LANGUAGE_SELECT}
 					</div>
 				</div>
 				<div class="fp-controls">
-					<div class="fp-toggle fp-language-toggle" onclick="toggleLanguageSelect()" title="{select_language}">{LANGUAGE}</div>
-					<div class="fp-button fp-theme-button" onclick="toggleTheme()" title="{change_theme}">
-						<img class="fp-icon fp-theme-button-icon" src="/images/icons/dark.svg" alt="{change_theme}">
+					<div class="fp-toggle fp-language-toggle" onclick="toggleLanguageSelect()" title="{Select_Language}">{CURRENT_LANGUAGE}</div>
+					<div class="fp-button fp-theme-button" onclick="toggleTheme()" title="{Change_Theme}">
+						<img class="fp-icon fp-theme-button-icon" src="/images/icons/dark.svg" alt="{Change_Theme}">
 					</div>
 				</div>
 			</div>
