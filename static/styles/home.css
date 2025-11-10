@@ -52,7 +52,7 @@
 	align-items: center;
 	justify-content: center;
 
-	background-image: radial-gradient(ellipse at top left, var(--fp-light-sidebar-background-color-1), var(--fp-light-sidebar-background-color-2));
+	background-image: radial-gradient(ellipse at top left, var(--fp-light-navigation-background-color-1), var(--fp-light-navigation-background-color-2));
 	border-radius: 0.75rem;
 	box-shadow: 0 0.1rem 0.4rem -0.05rem #000000;
 	line-height: 0;
@@ -67,7 +67,7 @@
 	filter: hue-rotate(270deg) brightness(1.25);
 }
 .fp-home-button-text {
-	color: var(--fp-sidebar-text-color);
+	color: var(--fp-navigation-text-color);
 }
 :not(.fp-home-download-button) .fp-home-button-text {
 	font-size: 12px;

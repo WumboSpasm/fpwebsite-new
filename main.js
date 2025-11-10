@@ -65,16 +65,17 @@ const serverHandler = (request, info) => {
 
 	const requestPath = requestUrl.pathname.replace(/^[/]+(.*?)[/]*$/, '$1');
 	const page = pages[`/${requestPath}`];
+	const responseHeaders = new Headers();
 
 	// If request does not point to a page, serve from static directory
 	if (page === undefined) {
 		const filePath = `static/${requestPath}`;
 		if (!getPathInfo(filePath)?.isFile) throw new NotFoundError();
-		const responseType = contentType(filePath.substring(filePath.lastIndexOf('.'))) ?? 'application/octet-stream';
-		return new Response(Deno.openSync(filePath).readable, { headers: { 'Content-Type': responseType }});
+		responseHeaders.set('Content-Type', contentType(filePath.substring(filePath.lastIndexOf('.'))) ?? 'application/octet-stream');
+		responseHeaders.set('Cache-Control', 'max-age=14400');
+		return new Response(Deno.openSync(filePath).readable, { headers: responseHeaders });
 	}
 
-	const responseHeaders = new Headers();
 	responseHeaders.set('Content-Type', 'text/html; charset=UTF-8');
 
 	// Get the desired language and set cookie if needed
@@ -92,9 +93,9 @@ const serverHandler = (request, info) => {
 	const defaultLocale = locales[config.defaultLang];
 	const translation = Object.assign({}, defaultLocale.translations[namespace], locale.translations[namespace]);
 
-	// Build the page content and navigation shell, injecting the former inside the latter
+	// Build the page content and shell, injecting the former inside the latter
 	const html = buildHtml(
-		templates.navigation,
+		templates.shell,
 		Object.assign(
 			{
 				'TITLE': translation['Title'] ? `${translation['Title']} - Flashpoint Archive` : 'Flashpoint Archive',
@@ -104,7 +105,7 @@ const serverHandler = (request, info) => {
 				'CURRENT_LANGUAGE': locale.name,
 				'CONTENT': buildHtml(templates[namespace], translation),
 			},
-			Object.assign({}, defaultLocale.translations.navigation, locale.translations.navigation),
+			Object.assign({}, defaultLocale.translations.shell, locale.translations.shell),
 		),
 	);
 
@@ -167,7 +168,7 @@ function getLocales(namespaces) {
 	const locales = JSON.parse(Deno.readTextFileSync('data/locales.json'));
 	for (const lang in locales) {
 		const translations = {};
-		for (const namespace of namespaces.concat(['navigation'])) {
+		for (const namespace of namespaces.concat(['shell'])) {
 			const translationPath = `locales/${lang}/${namespace}.json`;
 			if (getPathInfo(translationPath)?.isFile) {
 				translations[namespace] = JSON.parse(Deno.readTextFileSync(translationPath));
@@ -190,7 +191,7 @@ function getLocales(namespaces) {
 // Return template data
 function getTemplates(namespaces) {
 	const templates = {};
-	for (const namespace of namespaces.concat(['navigation', 'error']))
+	for (const namespace of namespaces.concat(['shell', 'error']))
 		templates[namespace] = Deno.readTextFileSync(`templates/${namespace}.html`);
 
 	return templates;

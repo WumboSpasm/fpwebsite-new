@@ -1,15 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-	let platform = localStorage.getItem('fp-platform');
-	if (!platform) {
+	let initialPlatform = localStorage.getItem('fp-platform');
+	if (!initialPlatform) {
 		const uaPlatform = navigator.platform.toLowerCase();
 		if (uaPlatform.startsWith('mac'))
-			platform = 'MacOS';
+			initialPlatform = 'MacOS';
 		else if (uaPlatform.startsWith('linux'))
-			platform = 'Linux';
+			initialPlatform = 'Linux';
 		else
-			platform = 'Windows';
+			initialPlatform = 'Windows';
 	}
-	selectPlatform(platform);
+	selectPlatform(initialPlatform);
+
+	for (const platform of ['Windows', 'MacOS', 'Linux']) {
+		const elem = document.querySelector(`.fp-downloads-tab-selector[data-platform='${platform}']`);
+		elem.addEventListener('click', () => { selectPlatform(platform); });
+	}
+	for (const elem of document.querySelectorAll('.fp-downloads-tab-button-hash'))
+		elem.addEventListener('click', copyHash);
 });
 
 function selectPlatform(platform) {
@@ -20,7 +27,8 @@ function selectPlatform(platform) {
 	localStorage.setItem('fp-platform', platform);
 }
 
-function copyHash(elem) {
+function copyHash(e) {
+	const elem = e.target;
 	if (elem.textContent == elem.dataset.copied)
 		return;
 	const hash = elem.dataset.hash;

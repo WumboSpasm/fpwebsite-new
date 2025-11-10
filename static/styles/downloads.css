@@ -122,7 +122,7 @@
 	gap: 0.75rem;
 
 	text-decoration: none !important;
-	background-image: radial-gradient(ellipse at top left, var(--fp-light-sidebar-background-color-1), var(--fp-light-sidebar-background-color-2));
+	background-image: radial-gradient(ellipse at top left, var(--fp-light-navigation-background-color-1), var(--fp-light-navigation-background-color-2));
 	border-radius: 0.5rem;
 	box-shadow: 0 0.1rem 0.4rem -0.05rem #000000;
 }
@@ -134,7 +134,7 @@
 	padding-top: 0.2rem;
 }
 .fp-downloads-tab-button-text {
-	color: var(--fp-sidebar-text-color);
+	color: var(--fp-navigation-text-color);
 	font-size: 1.25rem;
 	font-weight: bold;
 	text-align: center;
@@ -145,10 +145,10 @@
 	top: 0;
 	right: 0;
 
-	color: var(--fp-sidebar-text-color);
+	color: var(--fp-navigation-text-color);
 	font-size: 0.7rem;
 	text-decoration: none !important;
-	text-shadow: 0 0 0.05rem var(--fp-sidebar-text-color);
+	text-shadow: 0 0 0.05rem var(--fp-navigation-text-color);
 	background-color: #00000066;
 	border-radius: 0.5rem;
 	cursor: pointer;
