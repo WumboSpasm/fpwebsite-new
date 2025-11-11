@@ -2,7 +2,7 @@
 	"/": {
 		"namespace": "home",
 		"styles": ["home.css"],
-		"scripts": []
+		"scripts": ["home.js"]
 	},
 	"/news": {
 		"namespace": "news",
