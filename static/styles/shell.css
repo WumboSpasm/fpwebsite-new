@@ -97,8 +97,7 @@
 		display: none;
 	}
 	.fp-content {
-		top: var(--fp-navbar-height);
-		left: 0;
+		margin-top: var(--fp-navbar-height);
 		padding: 1rem;
 	}
 
@@ -129,8 +128,7 @@
 		display: flex;
 	}
 	.fp-content {
-		top: 0;
-		left: var(--fp-sidebar-width);
+		margin-left: var(--fp-sidebar-width);
 		padding: 1rem 2rem;
 	}
 }
@@ -143,8 +141,7 @@ body {
 
 	color: var(--fp-navigation-text-color);
 	font-family: Verdana, Tahoma, sans-serif;
-	font-weight: bold;
-	background-color: #000000;
+	background-color: var(--fp-background-color);
 
 	/* Needed by Safari iOS */
 	-webkit-text-size-adjust: none;
@@ -154,6 +151,7 @@ body {
 
 .fp-navbar,
 .fp-sidebar {
+	font-weight: bold;
 	background: var(--fp-gradient);
 	box-shadow: 0 0 0.5rem #000000;
 }
@@ -166,8 +164,9 @@ body {
 .fp-navbar {
 	width: 100%;
 	height: var(--fp-navbar-height);
-	z-index: 1;
+	z-index: 2;
 	position: fixed;
+	top: 0;
 }
 .fp-sidebar-toggle {
 	width: 3.5rem;
@@ -199,7 +198,7 @@ body {
 .fp-sidebar {
 	box-sizing: border-box;
 	overflow: hidden auto;
-	z-index: 1;
+	z-index: 2;
 	position: fixed;
 	bottom: 0;
 	flex-direction: column;
@@ -324,13 +323,8 @@ body {
 .fp-content {
 	box-sizing: border-box;
 	overflow: auto;
-	position: absolute;
-	right: 0;
-	bottom: 0;
 
 	color: var(--fp-text-color);
-	font-weight: normal;
-	background-color: var(--fp-background-color);
 }
 .fp-content a:link {
 	color: var(--fp-link-color);
