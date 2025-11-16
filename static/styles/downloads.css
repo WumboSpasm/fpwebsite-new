@@ -140,22 +140,31 @@
 	text-align: center;
 }
 .fp-downloads-tab-button-hash {
-	padding: 0.2rem 0.4rem;
+	padding: 0.15rem 0.4rem;
+
+	font-size: 0.7rem;
+	text-decoration: none !important;
+	text-shadow: 0 0;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	user-select: none;
+}
+.fp-downloads-tab-button-container > .fp-downloads-tab-button-hash {
 	position: absolute;
 	top: 0;
 	right: 0;
 
 	color: var(--fp-navigation-text-color);
-	font-size: 0.7rem;
-	text-decoration: none !important;
-	text-shadow: 0 0 0.05rem var(--fp-navigation-text-color);
 	background-color: #00000066;
-	border-radius: 0.5rem;
-	cursor: pointer;
-	user-select: none;
 }
-.fp-downloads-tab-button-alt {
-	margin: 0 auto;
+.fp-downloads-tab-alt-link-container > .fp-downloads-tab-button-hash {
+	background-color: var(--fp-border-color);
+}
+.fp-downloads-tab-alt-link-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
 }
 .fp-downloads-tab-divider {
 	flex-basis: 0.15rem;
