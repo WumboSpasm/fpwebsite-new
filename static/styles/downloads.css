@@ -46,7 +46,7 @@
 }
 .fp-downloads-tab-selector:hover,
 .fp-downloads-tab-selector[data-selected='true'] {
-	background-color: var(--fp-background-alt-color);
+	background-color: var(--fp-alt-background-color);
 }
 .fp-downloads-tab-selector:not([data-selected='true']) {
 	border-color: transparent;
@@ -65,7 +65,7 @@
 .fp-downloads-tabs {
 	padding: 1.5rem;
 
-	background-color: var(--fp-background-alt-color);
+	background-color: var(--fp-alt-background-color);
 	outline: 0.15rem solid var(--fp-border-color);
 	outline-offset: -0.15rem;
 }
@@ -147,7 +147,6 @@
 	text-shadow: 0 0;
 	border-radius: 0.5rem;
 	cursor: pointer;
-	user-select: none;
 }
 .fp-downloads-tab-button-container > .fp-downloads-tab-button-hash {
 	position: absolute;
