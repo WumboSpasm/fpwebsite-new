@@ -101,7 +101,7 @@ const serverHandler = (request, info) => {
 				'TITLE': translation['Title'] ? `${translation['Title']} - Flashpoint Archive` : 'Flashpoint Archive',
 				'STYLES': page.styles.map(style => `<link rel="stylesheet" href="/styles/${style}">`).join('\n'),
 				'SCRIPTS': page.scripts.map(script => `<script src="/scripts/${script}" type="text/javascript"></script>`).join('\n'),
-				'LANGUAGE_SELECT': Object.entries(locales).map(([lang, locale]) => `<a class="fp-button fp-sidebar-button" href="?lang=${lang}">${locale.name}</a>`).join('\n'),
+				'LANGUAGE_SELECT': Object.entries(locales).map(([lang, locale]) => `<a class="fp-sidebar-button fp-button fp-alternating" href="?lang=${lang}">${locale.name}</a>`).join('\n'),
 				'CURRENT_LANGUAGE': locale.name,
 				'CONTENT': buildHtml(templates[namespace], translation),
 			},

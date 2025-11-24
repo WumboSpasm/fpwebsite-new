@@ -6,6 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	document.querySelector('.fp-sidebar-toggle').addEventListener('click', toggleSidebar);
 	document.querySelector('.fp-languages-toggle').addEventListener('click', toggleLanguageSelect);
 	document.querySelector('.fp-theme-button').addEventListener('click', toggleTheme);
+
+	for (const hiddenContentContainer of document.querySelectorAll('.fp-hidden-content-container')) {
+		const hiddenContentHeader = hiddenContentContainer.querySelector('.fp-hidden-content-header');
+		const hiddenContent = hiddenContentContainer.querySelector('.fp-hidden-content');
+		hiddenContentHeader.addEventListener('click', () => {
+			hiddenContent.hidden = !hiddenContent.hidden;
+			hiddenContentContainer.style.setProperty('--fp-hidden-content-arrow-icon', `var(--fp-${hiddenContent.hidden ? 'open' : 'close'}-hidden-content-arrow-icon)`);
+		});
+	}
 });
 
 function toggleSidebar() {
