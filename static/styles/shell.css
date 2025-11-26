@@ -161,6 +161,8 @@ body {
 
 .fp-navbar,
 .fp-sidebar {
+	/* Work around Windows' wacky font rendering */
+	font-size: 1.031rem;
 	font-weight: bold;
 	background: var(--fp-gradient);
 	box-shadow: 0 0 0.5rem #000000;
