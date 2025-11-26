@@ -9,11 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	for (const hiddenContentContainer of document.querySelectorAll('.fp-hidden-content-container')) {
 		const hiddenContentHeader = hiddenContentContainer.querySelector('.fp-hidden-content-header');
+		hiddenContentHeader.addEventListener('click', () => { toggleHiddenContent(hiddenContentContainer); });
+		// Make sure it's hidden
 		const hiddenContent = hiddenContentContainer.querySelector('.fp-hidden-content');
-		hiddenContentHeader.addEventListener('click', () => {
-			hiddenContent.hidden = !hiddenContent.hidden;
-			hiddenContentContainer.style.setProperty('--fp-hidden-content-arrow-icon', `var(--fp-${hiddenContent.hidden ? 'open' : 'close'}-hidden-content-arrow-icon)`);
-		});
+		if (!hiddenContent.hidden) toggleHiddenContent(hiddenContentContainer);
 	}
 });
 
@@ -41,4 +40,10 @@ function updateThemeIcon() {
 	if (!rootData.theme) initTheme();
 	const themeButton = document.querySelector('.fp-theme-button');
 	themeButton.style.backgroundImage = `var(--fp-sidebar-${rootData.theme == 'light' ? 'dark' : 'light'}-theme-toggle-icon)`;
+}
+
+function toggleHiddenContent(hiddenContentContainer) {
+	const hiddenContent = hiddenContentContainer.querySelector('.fp-hidden-content');
+	hiddenContent.hidden = !hiddenContent.hidden;
+	hiddenContentContainer.style.setProperty('--fp-hidden-content-arrow-icon', `var(--fp-${hiddenContent.hidden ? 'open' : 'close'}-hidden-content-arrow-icon)`);
 }
