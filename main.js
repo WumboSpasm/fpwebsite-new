@@ -1,3 +1,4 @@
+import { FlashpointArchive } from 'npm:@fparchive/flashpoint-archive';
 import { parseArgs } from 'jsr:@std/cli@1.0.23/parse-args';
 import { contentType } from 'jsr:@std/media-types@1.1.0';
 import { setCookie, getCookies } from 'jsr:@std/http@1.0.21/cookie';
@@ -6,8 +7,9 @@ import { templateFunctions } from './tempfuncs.js';
 
 // Command-line flags
 const flags = parseArgs(Deno.args, {
+	boolean: ['build'],
 	string: ['config'],
-	default: { 'config': 'config.json' },
+	default: { 'build': false, 'config': 'config.json' },
 });
 
 // Default config
@@ -22,6 +24,8 @@ const config = {
 	logFile: 'server.log',
 	logToConsole: true,
 	logBlockedRequests: true,
+	databaseFile: 'data/flashpoint.sqlite',
+	fpfssUrl: 'https://fpfss.unstable.life',
 	defaultLang: 'en-US',
 };
 
@@ -32,6 +36,66 @@ if (getPathInfo(flags['config'])?.isFile) {
 }
 else
 	logMessage('no config file found, using default config');
+
+// Build a fresh database if --build flag is passed
+// Adapted from https://github.com/FlashpointProject/FPA-Rust/blob/master/crates/flashpoint-database-builder/src/main.rs
+if (flags['build']) {
+	const fetchFromFpfss = async endpoint => (await fetch(`${config.fpfssUrl}/api/${endpoint}`)).json();
+	const updateProps = obj => {
+	const newObj = {};
+		for (const prop of Object.keys(obj)) {
+			const propParts = prop.split('_');
+			propParts[0] = propParts[0].toLowerCase();
+			for (let i = 1; i < propParts.length; i++)
+				propParts[i] = propParts[i][0].toUpperCase() + propParts[i].substring(1).toLowerCase();
+			const newProp = propParts.join('');
+			newObj[newProp] = newProp == 'aliases'
+				? obj[prop].split(';').map(alias => alias.trim())
+				: obj[prop];
+		}
+		return newObj;
+	}
+
+	try { Deno.removeSync(config.databaseFile); } catch {}
+
+	const fp = new FlashpointArchive();
+	fp.loadDatabase(config.databaseFile);
+
+	const platsRes = await fetchFromFpfss('platforms');
+	logMessage(`applying ${platsRes.length} platforms...`);
+	await fp.updateApplyPlatforms(platsRes.map(plat => updateProps(plat)));
+
+	const tagsRes = await fetchFromFpfss('tags');
+	logMessage(`applying ${tagsRes.categories.length} categories...`);
+	await fp.updateApplyCategories(tagsRes.categories);
+	logMessage(`applying ${tagsRes.tags.length} tags...`);
+	await fp.updateApplyTags(tagsRes.tags.map(tag => updateProps(tag)));
+
+	let totalAppliedGames = 0;
+	let pageNum = 1;
+	let afterId;
+	while (true) {
+		logMessage(`fetching page ${pageNum}...`);
+		const gamesRes = await fetchFromFpfss('games?broad=true&after=1970-01-01' + (afterId ? `&afterId=${afterId}` : ''));
+		pageNum++;
+		if (gamesRes.games.length > 0) {
+			totalAppliedGames += gamesRes.games.length;
+			afterId = gamesRes.games[gamesRes.games.length - 1].id;
+			await fp.updateApplyGames({
+				games: gamesRes.games.map(game => updateProps(game)),
+				addApps: gamesRes.add_apps.map(addApp => updateProps(addApp)),
+				gameData: gamesRes.game_data.map(gameData => updateProps(gameData)),
+				tagRelations: gamesRes.tag_relations,
+				platformRelations: gamesRes.platform_relations
+			}, 'flashpoint-archive');
+		}
+		else
+			break;
+	}
+
+	logMessage(`applied ${totalAppliedGames} games`);
+	Deno.exit(0);
+}
 
 const pages = getPages();
 const namespaces = getNamespaces(pages);
