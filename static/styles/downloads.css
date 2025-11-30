@@ -2,6 +2,14 @@
 	.fp-downloads-tab-content {
 		flex-direction: column;
 	}
+	.fp-downloads-tab-content > :not(:last-child) {
+		margin-bottom: 1rem;
+	}
+}
+@media (min-width: 64rem) {
+	.fp-downloads-tab-content > :not(:last-child) {
+		margin-right: 1.5rem;
+	}
 }
 
 :root {
@@ -46,7 +54,6 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 0.5rem;
 
 	border-width: 0.15rem 0.15rem 0;
 	border-style: solid;
@@ -66,6 +73,7 @@
 }
 .fp-downloads-tab-selector-icon {
 	height: 1.3rem;
+	margin-right: 0.5rem;
 }
 .fp-downloads-tabs {
 	padding: 1.5rem;
@@ -77,7 +85,9 @@
 .fp-downloads-tab {
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
+}
+.fp-downloads-tab > :not(:last-child) {
+	margin-bottom: 1rem;
 }
 .fp-downloads-tab:not([data-selected='true']) {
 	display: none;
@@ -85,7 +95,6 @@
 .fp-downloads-tab-content {
 	display: flex;
 	align-items: stretch;
-	gap: 1rem 1.5rem;
 }
 .fp-downloads-tab-section {
 	flex-grow: 1;
@@ -104,9 +113,11 @@
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
-	gap: 1.5rem;
 
 	text-align: center;
+}
+.fp-downloads-tab-sizes > :not(:last-child) {
+	margin-right: 1.5rem;
 }
 .fp-downloads-tab-button-container {
 	margin: 0.5rem 0;
@@ -117,7 +128,6 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 0.75rem;
 
 	text-decoration: none !important;
 	background-image: radial-gradient(ellipse at top left, var(--fp-light-navigation-background-color-1), var(--fp-light-navigation-background-color-2));
@@ -129,6 +139,7 @@
 }
 .fp-downloads-tab-button-icon {
 	height: 1.2rem;
+	margin-right: 0.75rem;
 	padding-top: 0.2rem;
 }
 .fp-downloads-tab-button-text {
@@ -156,12 +167,12 @@
 }
 .fp-downloads-tab-alt-link-container > .fp-downloads-tab-button-hash {
 	background-color: var(--fp-border-color);
+	margin-left: 0.5rem;
 }
 .fp-downloads-tab-alt-link-container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 0.5rem;
 }
 .fp-downloads-tab-divider {
 	flex-basis: 0.15rem;

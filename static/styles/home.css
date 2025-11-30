@@ -3,15 +3,27 @@
 		max-width: 32rem;
 		flex-direction: column;
 	}
+	.fp-home-buttons > :not(:last-child) {
+		margin-bottom: 0.5rem;
+	}
+	.fp-home-buttons-lower > :not(:last-child) {
+		margin-right: 0.5rem;
+	}
 }
 @media (min-width: 64rem) {
 	.fp-home-buttons {
 		max-width: 44rem;
 	}
+	.fp-home-buttons > :not(:last-child) {
+		margin-right: 0.5rem;
+	}
 	.fp-home-buttons-lower {
 		flex-shrink: 0;
 		flex-basis: calc(100% / 3);
 		flex-direction: column;
+	}
+	.fp-home-buttons-lower > :not(:last-child) {
+		margin-bottom: 0.5rem;
 	}
 }
 
@@ -36,14 +48,12 @@
 .fp-home-buttons {
 	margin: 1.5rem auto 0;
 	display: flex;
-	gap: 0.5rem;
 }
 :root[data-theme='light'] .fp-home-buttons {
 	filter: brightness(1.25);
 }
 .fp-home-buttons-lower {
 	display: flex;
-	gap: 0.5rem;
 }
 .fp-home-button {
 	width: 100%;

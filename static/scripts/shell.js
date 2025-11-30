@@ -1,5 +1,5 @@
 const rootData = document.documentElement.dataset;
-rootData.theme = localStorage.getItem('fp-theme') ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+rootData.theme = localStorage.getItem('fp-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
 document.addEventListener('DOMContentLoaded', () => {
 	updateThemeIcon();
