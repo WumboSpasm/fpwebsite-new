@@ -3,7 +3,7 @@ import { parseArgs } from 'jsr:@std/cli@1.0.23/parse-args';
 import { contentType } from 'jsr:@std/media-types@1.1.0';
 import { setCookie, getCookies } from 'jsr:@std/http@1.0.21/cookie';
 
-import { templateFunctions } from './tempfuncs.js';
+import { namespaceFunctions } from './namespaceFunctions.js';
 
 // Command-line flags
 const flags = parseArgs(Deno.args, {
@@ -37,73 +37,30 @@ if (getPathInfo(flags['config'])?.isFile) {
 else
 	logMessage('no config file found, using default config');
 
-// Build a fresh database if --build flag is passed
-// Adapted from https://github.com/FlashpointProject/FPA-Rust/blob/master/crates/flashpoint-database-builder/src/main.rs
+// If --build flag is passed, build a fresh database and exit
 if (flags['build']) {
-	const fetchFromFpfss = async endpoint => (await fetch(`${config.fpfssUrl}/api/${endpoint}`)).json();
-	const updateProps = obj => {
-	const newObj = {};
-		for (const prop of Object.keys(obj)) {
-			const propParts = prop.split('_');
-			propParts[0] = propParts[0].toLowerCase();
-			for (let i = 1; i < propParts.length; i++)
-				propParts[i] = propParts[i][0].toUpperCase() + propParts[i].substring(1).toLowerCase();
-			const newProp = propParts.join('');
-			newObj[newProp] = newProp == 'aliases'
-				? obj[prop].split(';').map(alias => alias.trim())
-				: obj[prop];
-		}
-		return newObj;
-	}
-
-	try { Deno.removeSync(config.databaseFile); } catch {}
-
-	const fp = new FlashpointArchive();
-	fp.loadDatabase(config.databaseFile);
-
-	const platsRes = await fetchFromFpfss('platforms');
-	logMessage(`applying ${platsRes.length} platforms...`);
-	await fp.updateApplyPlatforms(platsRes.map(plat => updateProps(plat)));
-
-	const tagsRes = await fetchFromFpfss('tags');
-	logMessage(`applying ${tagsRes.categories.length} categories...`);
-	await fp.updateApplyCategories(tagsRes.categories);
-	logMessage(`applying ${tagsRes.tags.length} tags...`);
-	await fp.updateApplyTags(tagsRes.tags.map(tag => updateProps(tag)));
-
-	let totalAppliedGames = 0;
-	let pageNum = 1;
-	let afterId;
-	while (true) {
-		logMessage(`fetching page ${pageNum}...`);
-		const gamesRes = await fetchFromFpfss('games?broad=true&after=1970-01-01' + (afterId ? `&afterId=${afterId}` : ''));
-		pageNum++;
-		if (gamesRes.games.length > 0) {
-			totalAppliedGames += gamesRes.games.length;
-			afterId = gamesRes.games[gamesRes.games.length - 1].id;
-			await fp.updateApplyGames({
-				games: gamesRes.games.map(game => updateProps(game)),
-				addApps: gamesRes.add_apps.map(addApp => updateProps(addApp)),
-				gameData: gamesRes.game_data.map(gameData => updateProps(gameData)),
-				tagRelations: gamesRes.tag_relations,
-				platformRelations: gamesRes.platform_relations
-			}, 'flashpoint-archive');
-		}
-		else
-			break;
-	}
-
-	logMessage(`applied ${totalAppliedGames} games`);
+	await buildDatabase();
 	Deno.exit(0);
 }
+
+// Otherwise, build a fresh database only if one doesn't exist yet
+if (!getPathInfo(config.databaseFile)?.isFile) {
+	logMessage('no database found, starting database build');
+	buildDatabase();
+}
+
+const fp = new FlashpointArchive();
+fp.loadDatabase(config.databaseFile);
 
 const pages = getPages();
 const namespaces = getNamespaces(pages);
 const locales = getLocales(namespaces);
 const templates = getTemplates(namespaces);
 
+const defaultLocale = locales[config.defaultLang];
+
 // Handle requests
-const serverHandler = (request, info) => {
+const serverHandler = async (request, info) => {
 	const ipAddress = info.remoteAddr.hostname;
 	const userAgent = request.headers.get('User-Agent') ?? '';
 
@@ -154,43 +111,43 @@ const serverHandler = (request, info) => {
 
 	const namespace = page.namespace;
 	const locale = locales[lang];
-	const defaultLocale = locales[config.defaultLang];
-	const translation = Object.assign({}, defaultLocale.translations[namespace], locale.translations[namespace]);
 
-	// Build the page content and shell, injecting the former inside the latter
-	const html = buildHtml(
-		templates.shell,
-		Object.assign(
-			{
-				'TITLE': translation['Title'] ? `${translation['Title']} - Flashpoint Archive` : 'Flashpoint Archive',
-				'STYLES': page.styles.map(style => `<link rel="stylesheet" href="/styles/${style}">`).join('\n'),
-				'SCRIPTS': page.scripts.map(script => `<script src="/scripts/${script}" type="text/javascript"></script>`).join('\n'),
-				'LANGUAGE_SELECT': Object.entries(locales).map(([lang, locale]) => `<a class="fp-sidebar-button fp-button fp-alternating" href="?lang=${lang}">${locale.name}</a>`).join('\n'),
-				'CURRENT_LANGUAGE': locale.name,
-				'CONTENT': buildHtml(templates[namespace], translation),
-			},
-			Object.assign({}, defaultLocale.translations.shell, locale.translations.shell),
-		),
+	// Build content
+	const contentDefs = await buildDefs(namespace, lang, requestUrl);
+	const contentHtml = await buildHtml(templates[namespace], contentDefs, requestUrl);
+
+	// Build shell
+	const shellDefs = Object.assign(
+		{
+			'TITLE': contentDefs['Title'] ? `${contentDefs['Title']} - Flashpoint Archive` : 'Flashpoint Archive',
+			'STYLES': page.styles.map(style => `<link rel="stylesheet" href="/styles/${style}">`).join('\n'),
+			'SCRIPTS': page.scripts.map(script => `<script src="/scripts/${script}" type="text/javascript"></script>`).join('\n'),
+			'LANGUAGE_SELECT': Object.entries(locales).map(([lang, locale]) => `<a class="fp-sidebar-button fp-button fp-alternating" href="?lang=${lang}">${locale.name}</a>`).join('\n'),
+			'CURRENT_LANGUAGE': locale.name,
+			'CONTENT': contentHtml,
+		},
+		await buildDefs('shell', lang, requestUrl),
 	);
+	const shellHtml = await buildHtml(templates.shell, shellDefs);
 
 	// Serve it
-	return new Response(html, { headers: responseHeaders });
+	return new Response(shellHtml, { headers: responseHeaders });
 };
 
 // Display error page
-const serverError = (error) => {
+const serverError = async (error) => {
 	const [badRequest, notFound] = [error instanceof BadRequestError, error instanceof NotFoundError];
 
 	// We don't need to translate this
 	let errorPage = templates.error;
 	if (badRequest || notFound)
-		errorPage = buildHtml(errorPage, {
+		errorPage = await buildHtml(errorPage, {
 			'error': `${error.status} ${error.statusText}`,
 			'description': badRequest ? 'The requested URL is invalid.' : 'The requested URL does not exist.',
 		});
 	else {
 		logMessage(error.stack);
-		errorPage = buildHtml(errorPage, {
+		errorPage = await buildHtml(errorPage, {
 			'error': '500 Internal Server Error',
 			'description': 'The server encountered an error while handling the request.',
 		});
@@ -217,6 +174,228 @@ if (config.httpsPort && config.httpsCert && config.httpsKey)
 		onError: serverError,
 	}, serverHandler);
 
+// Build a list of text definitions to supply to the HTML template
+async function buildDefs(namespace, lang, url = null) {
+	const defs = lang == config.defaultLang
+		? defaultLocale.translations[namespace]
+		: Object.assign({}, defaultLocale.translations[namespace], locales[lang].translations[namespace]);
+	if (Object.hasOwn(namespaceFunctions, namespace))
+		Object.assign(defs, await namespaceFunctions[namespace](defs, fp, url));
+
+	return defs;
+}
+
+// Safely fill HTML template with text definitions
+function buildHtml(template, defs) {
+	const varSlices = [];
+	const varExp = /(?:(^|\n)(\t*))?\{(.*?)\}/gs;
+	for (let match; (match = varExp.exec(template)) !== null;) {
+		const value = buildStringFromParams(match[3], defs);
+		const newLine = match[1] ?? '';
+		const tabs = match[2] ?? '';
+		const formattedValue = value ? newLine + value.replaceAll(/^/gm, tabs) : '';
+		varSlices.push({
+			start: match.index,
+			end: match.index + match[0].length,
+			value: formattedValue,
+		});
+	}
+
+	return replaceSlices(template, varSlices);
+}
+
+// Interpret a sequence of parameters and construct a string
+function buildStringFromParams(paramsStr, defs = {}) {
+	const paramBounds = {
+		string:     ['"', '"'],
+		element:    ['<', '>'],
+		definition: ['', ''],
+	};
+	const delim = ',';
+	const fallbackStr = 'null';
+	const invalidParam = { type: 'invalid', value: '' };
+
+	// Don't waste any time if the first parameter is obviously invalid
+	if (paramsStr.length == 0 || /^\s*,/.test(paramsStr) || Object.keys(defs).length == 0)
+		return fallbackStr;
+
+	const params = [];
+
+	// Split the parameters and check validity
+	let activeParamType = '';
+	let activeParamValue = '';
+	let activeParamMode = 1; // 0 = Building param, 1 = seeking start of param, 2 = seeking delimiter
+	for (let i = 0; i < paramsStr.length; i++) {
+		const char = paramsStr[i];
+		const activeParamBounds = paramBounds[activeParamType];
+		let doBreak = false;
+
+		if (activeParamMode == 0) {
+			// Ignore presence of delimiter if the active parameter is a string
+			if (activeParamType != 'string' && char == delim)
+				doBreak = true;
+			else {
+				activeParamValue += char;
+				if (activeParamType == 'string' && char == activeParamBounds[1])
+					activeParamMode = 2;
+			}
+		}
+		else {
+			if (/\s/.test(char)) continue; // Ignore whitespace when seeking
+			if (activeParamMode == 1) {
+				if (char == delim)
+					params.push(invalidParam); // We're trying to find a parameter, not a delimiter
+				else {
+					// The start of a new parameter has been found; identify its type
+					for (const type in paramBounds) {
+						const typeStart = paramBounds[type][0];
+						if (char.includes(typeStart)) {
+							activeParamType = type;
+							activeParamValue = char;
+							activeParamMode = 0;
+							break;
+						}
+					}
+				}
+				continue;
+			}
+			else if (activeParamMode == 2) {
+				if (char != delim)
+					params.push(invalidParam); // We're trying to find a delimiter, not a parameter
+				else
+					doBreak = true;
+			}
+		}
+
+		if (doBreak || i == paramsStr.length - 1) {
+			// If this is the first parameter, is it a definition?
+			const condition1 = params.length > 0 || activeParamType == 'definition';
+			// Is the param value not empty?
+			const condition2 = condition1 && activeParamValue.length > 0;
+			// Does the param value start with the correct left bound?
+			const condition3 = condition2 && activeParamValue.startsWith(activeParamBounds[0]);
+			// Does the param value end with the correct right bound?
+			const condition4 = condition3 && activeParamValue.endsWith(activeParamBounds[1]);
+			// Is the param value valid?
+			const condition5 = condition4 && (activeParamType == 'string'
+				|| (activeParamType == 'element' && !/<[\s\/]/.test(activeParamValue))
+				|| (activeParamType == 'definition' && Object.hasOwn(defs, activeParamValue)));
+
+			if (condition5) {
+				// Remove boundary characters from param types that have them
+				if (activeParamType != 'definition')
+					activeParamValue = activeParamValue.substring(1, activeParamValue.length - 1);
+				params.push({ type: activeParamType, value: activeParamValue });
+			}
+			else {
+				if (params.length == 0)
+					return fallbackStr; // There's no reason to keep going if the first parameter is invalid
+				else
+					params.push(invalidParam);
+			}
+
+			activeParamType = '';
+			activeParamValue = '';
+			activeParamMode = 1;
+		}
+	}
+
+	// Initialize the output string using the first parameter
+	let targetStr = defs[params[0].value];
+	// Dynamic definitions might be numbers, so make sure this isn't one
+	if (typeof targetStr == 'number') targetStr = targetStr.toString();
+
+	// Apply any other parameters to the string
+	if (params.length > 1) {
+		const tagPartsExp = /^([^\s]+)(.*)$/;
+		const targetStrReplacer = (_, i, input) => {
+			i = parseInt(i, 10);
+			if (i < params.length) {
+				const param = params[i];
+				if (param.type == 'definition') return defs[param.value];
+				if (param.type == 'string') return param.value;
+				if (param.type == 'element') {
+					if (input !== undefined) {
+						let newStr = input;
+						for (const tag of param.value.split('><').reverse()) {
+							const tagParts = tag.match(tagPartsExp);
+							if (tagParts) {
+								const [_, name, attrs] = tagParts;
+								newStr = `<${name}${attrs}>${newStr}</${name}>`;
+							}
+						}
+						if (newStr != input) return newStr;
+					}
+					else {
+						const tagParts = param.value.match(tagPartsExp);
+						if (tagParts) {
+							const [_, name, attrs] = tagParts;
+							return `<${name}${attrs}>`;
+						}
+					}
+				}
+			}
+			return fallbackStr;
+		};
+
+		// Handle regular variables before function variables, in case any of the former exist inside the latter
+		targetStr = targetStr.replace(/\$(\d+)(?!\{)/g, targetStrReplacer);
+
+		// Now handle the function variables
+		targetStr = targetStr.replace(/\$(\d+)\{(.*?)\}/g, targetStrReplacer);
+	}
+
+	return targetStr;
+}
+
+// Create a fresh database file
+// Adapted from https://github.com/FlashpointProject/FPA-Rust/blob/master/crates/flashpoint-database-builder/src/main.rs
+async function buildDatabase() {
+	// Remove old database file
+	try { Deno.removeSync(config.databaseFile); } catch {}
+
+	// Initialize new database
+	const fp = new FlashpointArchive();
+	fp.loadDatabase(config.databaseFile);
+
+	// Fetch and apply platforms
+	const platsRes = await fetchFromFpfss('platforms');
+	logMessage(`applying ${platsRes.length} platforms...`);
+	await fp.updateApplyPlatforms(platsRes.map(plat => updateProps(plat)));
+
+	// Fetch and apply tags and tag categories
+	const tagsRes = await fetchFromFpfss('tags');
+	logMessage(`applying ${tagsRes.categories.length} categories...`);
+	await fp.updateApplyCategories(tagsRes.categories);
+	logMessage(`applying ${tagsRes.tags.length} tags...`);
+	await fp.updateApplyTags(tagsRes.tags.map(tag => updateProps(tag)));
+
+	// Fetch and apply pages of games until there are none left
+	let totalAppliedGames = 0;
+	let pageNum = 1;
+	let afterId;
+	while (true) {
+		logMessage(`fetching page ${pageNum}...`);
+		const gamesRes = await fetchFromFpfss('games?broad=true&after=1970-01-01' + (afterId ? `&afterId=${afterId}` : ''));
+		pageNum++;
+		if (gamesRes.games.length > 0) {
+			totalAppliedGames += gamesRes.games.length;
+			afterId = gamesRes.games[gamesRes.games.length - 1].id;
+			await fp.updateApplyGames({
+				games: gamesRes.games.map(game => updateProps(game)),
+				addApps: gamesRes.add_apps.map(addApp => updateProps(addApp)),
+				gameData: gamesRes.game_data.map(gameData => updateProps(gameData)),
+				tagRelations: gamesRes.tag_relations,
+				platformRelations: gamesRes.platform_relations
+			}, 'flashpoint-archive');
+		}
+		else
+			break;
+	}
+
+	logMessage(`applied ${totalAppliedGames} games`);
+}
+
 // Return parsed contents of pages.json
 function getPages() {
 	return JSON.parse(Deno.readTextFileSync('data/pages.json'));
@@ -236,7 +415,6 @@ function getLocales(namespaces) {
 			const translationPath = `locales/${lang}/${namespace}.json`;
 			if (getPathInfo(translationPath)?.isFile) {
 				translations[namespace] = JSON.parse(Deno.readTextFileSync(translationPath));
-				// Let's just get this over with
 				for (const def in translations[namespace])
 					translations[namespace][def] = sanitizeInject(translations[namespace][def]);
 			}
@@ -261,150 +439,37 @@ function getTemplates(namespaces) {
 	return templates;
 }
 
-// Safely fill HTML template with text definitions
-function buildHtml(template, defs) {
-	const varData = [];
-	const varExp = /(?:(^|\n)(\t*))?\{(.*?)\}/gs;
-	for (let match; (match = varExp.exec(template)) !== null;) {
-		const value = buildStringFromParams(match[3], defs);
-		const newLine = match[1] ?? '';
-		const tabs = match[2] ?? '';
-		const formattedValue = value ? newLine + value.replaceAll(/^/gm, tabs) : '';
-		varData.push({
-			value: formattedValue,
-			start: match.index,
-			end: match.index + match[0].length,
-		});
-	}
-
-	let offset = 0;
-	let html = '';
-	for (const entry of varData.toSorted((a, b) => a.start - b.start)) {
-		html += template.substring(0, entry.start - offset) + entry.value;
-		template = template.substring(entry.end - offset);
-		offset = entry.end;
-	}
-	return html + template;
+// Fetch data from an FPFSS endpoint
+async function fetchFromFpfss(endpoint) {
+	return (await fetch(`${config.fpfssUrl}/api/${endpoint}`)).json();
 }
 
-// Interpret a sequence of parameters and construct a string
-function buildStringFromParams(paramsStr, defs = {}) {
-	const paramBounds = {
-		string:   ['"', '"'],
-		function: ['(', ')'],
-		element:  ['<', '>'],
-	};
-	const delim = ',';
-	const fallbackStr = 'null';
-
-	// Don't waste any time if the first parameter is obviously invalid
-	if (paramsStr == '' || paramsStr.startsWith(delim))
-		return fallbackStr;
-
-	// First, do a simple split
-	const rawParams = paramsStr.split(delim);
-
-	// Then put back together any parameters containing the delimiter character inline
-	const paramsToCombine = [];
-	for (let i = 0; i < rawParams.length - 1; i++) {
-		const rawParam = rawParams[i];
-		const nextRawParam = rawParams[i + 1];
-		for (const type in paramBounds) {
-			const typeStart = paramBounds[type][0];
-			const typeEnd = paramBounds[type][1];
-			if (rawParam.startsWith(typeStart) && !rawParam.endsWith(typeEnd)
-			 && !nextRawParam.startsWith(typeStart) && nextRawParam.endsWith(typeEnd))
-				paramsToCombine.push(i);
-		}
+// Change FPFSS properties to camel case to work with FPA library
+function updateProps(obj) {
+	const newObj = {};
+	for (const prop of Object.keys(obj)) {
+		const propParts = prop.split('_');
+		propParts[0] = propParts[0].toLowerCase();
+		for (let i = 1; i < propParts.length; i++)
+			propParts[i] = propParts[i][0].toUpperCase() + propParts[i].substring(1).toLowerCase();
+		const newProp = propParts.join('');
+		newObj[newProp] = newProp == 'aliases'
+			? obj[prop].split(';').map(alias => alias.trim())
+			: obj[prop];
 	}
-	for (let j = 0; j < paramsToCombine.length; j++) {
-		const i = paramsToCombine[j];
-		rawParams.splice(i, 2, rawParams[i] + delim + rawParams[i + 1]);
+	return newObj;
+}
+
+// Replace slices of a string with different values
+function replaceSlices(str, slices) {
+	let offset = 0;
+	let newStr = '';
+	for (const slice of slices.toSorted((a, b) => a.start - b.start)) {
+		newStr += str.substring(0, slice.start - offset) + slice.value;
+		str = str.substring(slice.end - offset);
+		offset = slice.end;
 	}
-
-	// Now that the parameters are properly split, identify their types and check if they're valid
-	// Also identify the string that the parameters will be applied to (if necessary)
-	const params = [];
-	let targetStr = '';
-	for (let i = 0; i < rawParams.length; i++) {
-		const rawParam = rawParams[i];
-		let param = { type: 'invalid', value: '' };
-
-		for (const type in paramBounds) {
-			const typeStart = paramBounds[type][0];
-			const typeEnd = paramBounds[type][1];
-			if (rawParam.startsWith(typeStart) && rawParam.endsWith(typeEnd) && (i > 0 || type == 'function')) {
-				const value = rawParam.substring(typeStart.length, rawParam.length - typeEnd.length);
-				if (type == 'function' && !Object.hasOwn(templateFunctions, value)) continue;
-				if (type == 'element' && !/^[^\s]+/.test(value)) continue;
-				param = {
-					type: type,
-					value: rawParam.substring(typeStart.length, rawParam.length - typeEnd.length),
-				};
-			}
-		}
-
-		if (i == 0 && param.type == 'invalid') {
-			if (Object.hasOwn(defs, rawParam)) {
-				param = { type: 'definition', value: rawParam };
-				targetStr = defs[rawParam];
-			}
-			else
-				return fallbackStr;
-		}
-
-		params.push(param);
-	}
-
-	// Now we are ready to apply the parameters to the string
-	if (params[0].type == 'definition' && params.length > 1) {
-		const tagPartsExp = /^([^\s]+)(.*)$/;
-
-		// Handle regular variables before function variables, in case any of the former exist inside the latter
-		targetStr = targetStr.replace(/\$(\d+)(?!\{)/g, (_, i) => {
-			i = parseInt(i, 10);
-			if (i < params.length) {
-				const param = params[i];
-				if (param.type == 'string') return param.value;
-				if (param.type == 'function') return templateFunctions[param.value]();
-				if (param.type == 'element') {
-					const tagParts = param.value.match(tagPartsExp);
-					if (tagParts) {
-						const [_, name, attrs] = tagParts;
-						return `<${name}${attrs}>`;
-					}
-				}
-			}
-			return fallbackStr;
-		});
-
-		// Now for the function variables
-		targetStr = targetStr.replace(/\$(\d+)\{(.*?)\}/g, (_, i, input) => {
-			i = parseInt(i, 10);
-			if (i < params.length) {
-				const param = params[i];
-				if (param.type == 'string') return param.value;
-				if (param.type == 'function') return templateFunctions[param.value](input);
-				if (param.type == 'element') {
-					let newStr = input;
-					for (const tag of param.value.split('><').reverse()) {
-						const tagParts = tag.match(tagPartsExp);
-						if (tagParts) {
-							const [_, name, attrs] = tagParts;
-							newStr = `<${name}${attrs}>${newStr}</${name}>`;
-						}
-					}
-					if (newStr != input) return newStr;
-				}
-			}
-			return fallbackStr;
-		});
-	}
-	// If the first parameter is a function, execute that and be done
-	else if (params[0].type == 'function')
-		targetStr = templateFunctions[params[0].value]();
-
-	return targetStr;
+	return newStr + str;
 }
 
 // Sanitize string to ensure it can't inject tags or escape attributes

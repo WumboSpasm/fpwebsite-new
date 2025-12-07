@@ -34,6 +34,11 @@
 		"styles": [],
 		"scripts": []
 	},
+	"/search": {
+		"namespace": "search",
+		"styles": ["search.css"],
+		"scripts": []
+	},
 	"/discord": {
 		"namespace": "discord",
 		"styles": [],
