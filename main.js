@@ -3,7 +3,7 @@ import { parseArgs } from 'jsr:@std/cli@1.0.23/parse-args';
 import { contentType } from 'jsr:@std/media-types@1.1.0';
 import { setCookie, getCookies } from 'jsr:@std/http@1.0.21/cookie';
 
-import { namespaceFunctions } from './namespaceFunctions.js';
+import { namespaceFunctions } from './nsfuncs.js';
 
 // Command-line flags
 const flags = parseArgs(Deno.args, {
@@ -29,38 +29,49 @@ const config = {
 	defaultLang: 'en-US',
 };
 
-// Attempt to load config from file
-if (getPathInfo(flags['config'])?.isFile) {
-	Object.assign(config, JSON.parse(Deno.readTextFileSync(flags['config'])));
-	logMessage(`loaded config file: ${Deno.realPathSync(flags['config'])}`);
-}
-else
-	logMessage('no config file found, using default config');
+// Try to load config file on top of default config
+loadConfig(flags['config']);
 
-// If --build flag is passed, build a fresh database and exit
-if (flags['build']) {
-	await buildDatabase();
-	Deno.exit(0);
-}
-
-// Otherwise, build a fresh database only if one doesn't exist yet
-if (!getPathInfo(config.databaseFile)?.isFile) {
-	logMessage('no database found, starting database build');
-	buildDatabase();
-}
-
-const fp = new FlashpointArchive();
-fp.loadDatabase(config.databaseFile);
-
+// Global variables
 const pages = getPages();
 const namespaces = getNamespaces(pages);
 const locales = getLocales(namespaces);
 const templates = getTemplates(namespaces);
 
-const defaultLocale = locales[config.defaultLang];
+// Build a fresh database if one doesn't exist yet, or if --build flag is passed
+if (flags['build']) {
+	await buildDatabase();
+	Deno.exit(0);
+}
+else if (!getPathInfo(config.databaseFile)?.isFile) {
+	logMessage('no database found, starting database build');
+	buildDatabase();
+}
+
+// Load Flashpoint database
+const fp = new FlashpointArchive();
+fp.loadDatabase(config.databaseFile);
+
+// Start server on HTTP
+if (config.httpPort)
+	Deno.serve({
+		port: config.httpPort,
+		hostname: config.hostName,
+		onError: serverError,
+	}, serverHandler);
+
+// Start server on HTTPS
+if (config.httpsPort && config.httpsCert && config.httpsKey)
+	Deno.serve({
+		port: config.httpsPort,
+		cert: Deno.readTextFileSync(config.httpsCert),
+		key: Deno.readTextFileSync(config.httpsKey),
+		hostName: config.hostName,
+		onError: serverError,
+	}, serverHandler);
 
 // Handle requests
-const serverHandler = async (request, info) => {
+async function serverHandler(request, info) {
 	const ipAddress = info.remoteAddr.hostname;
 	const userAgent = request.headers.get('User-Agent') ?? '';
 
@@ -135,7 +146,7 @@ const serverHandler = async (request, info) => {
 };
 
 // Display error page
-const serverError = async (error) => {
+async function serverError(error) {
 	const [badRequest, notFound] = [error instanceof BadRequestError, error instanceof NotFoundError];
 
 	// We don't need to translate this
@@ -156,29 +167,11 @@ const serverError = async (error) => {
 	return new Response(errorPage, { status: error.status ?? 500, headers: { 'Content-Type': 'text/html; charset=UTF-8' } });
 };
 
-// Start server on HTTP
-if (config.httpPort)
-	Deno.serve({
-		port: config.httpPort,
-		hostname: config.hostName,
-		onError: serverError,
-	}, serverHandler);
-
-// Start server on HTTPS
-if (config.httpsPort && config.httpsCert && config.httpsKey)
-	Deno.serve({
-		port: config.httpsPort,
-		cert: Deno.readTextFileSync(config.httpsCert),
-		key: Deno.readTextFileSync(config.httpsKey),
-		hostName: config.hostName,
-		onError: serverError,
-	}, serverHandler);
-
 // Build a list of text definitions to supply to the HTML template
 async function buildDefs(namespace, lang, url = null) {
 	const defs = lang == config.defaultLang
-		? defaultLocale.translations[namespace]
-		: Object.assign({}, defaultLocale.translations[namespace], locales[lang].translations[namespace]);
+		? locales[config.defaultLang].translations[namespace]
+		: Object.assign({}, locales[config.defaultLang].translations[namespace], locales[lang].translations[namespace]);
 	if (Object.hasOwn(namespaceFunctions, namespace))
 		Object.assign(defs, await namespaceFunctions[namespace](defs, fp, url));
 
@@ -394,6 +387,16 @@ async function buildDatabase() {
 	}
 
 	logMessage(`applied ${totalAppliedGames} games`);
+}
+
+// Attempt to load config file
+function loadConfig(path) {
+	if (getPathInfo(path)?.isFile) {
+		Object.assign(config, JSON.parse(Deno.readTextFileSync(path)));
+		logMessage(`loaded config file: ${Deno.realPathSync(path)}`);
+	}
+	else
+		logMessage('no config file found, using default config');
 }
 
 // Return parsed contents of pages.json
