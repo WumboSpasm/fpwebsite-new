@@ -26,6 +26,7 @@ globalThis.config = {
 	logBlockedRequests: true,
 	databaseFile: 'data/flashpoint.sqlite',
 	fpfssUrl: 'https://fpfss.unstable.life',
+	imageUrl: 'https://infinity.unstable.life/images',
 	defaultLang: 'en-US',
 };
 
@@ -33,10 +34,9 @@ globalThis.config = {
 loadConfig(flags['config']);
 
 // Global variables
-globalThis.pages = getPages();
-globalThis.namespaces = getNamespaces(pages);
-globalThis.locales = getLocales(namespaces);
-globalThis.templates = getTemplates(namespaces);
+globalThis.pages = JSON.parse(Deno.readTextFileSync('data/pages.json'));
+globalThis.locales = getLocales();
+globalThis.templates = getTemplates();
 
 // Build a fresh database if one doesn't exist yet, or if --build flag is passed
 if (flags['build']) {
@@ -125,7 +125,7 @@ async function serverHandler(request, info) {
 
 	// Build content
 	const contentDefs = await utils.buildDefs(namespace, lang, requestUrl);
-	const contentHtml = await utils.buildHtml(templates[namespace], contentDefs, requestUrl);
+	const contentHtml = await utils.buildHtml(templates[namespace].main, contentDefs, requestUrl);
 
 	// Build shell
 	const shellDefs = Object.assign(
@@ -139,7 +139,7 @@ async function serverHandler(request, info) {
 		},
 		await utils.buildDefs('shell', lang, requestUrl),
 	);
-	const shellHtml = await utils.buildHtml(templates.shell, shellDefs);
+	const shellHtml = await utils.buildHtml(templates.shell.main, shellDefs);
 
 	// Serve it
 	return new Response(shellHtml, { headers: responseHeaders });
@@ -150,7 +150,7 @@ async function serverError(error) {
 	const [badRequest, notFound] = [error instanceof BadRequestError, error instanceof NotFoundError];
 
 	// We don't need to translate this
-	let errorPage = templates.error;
+	let errorPage = templates.error.main;
 	if (badRequest || notFound)
 		errorPage = await utils.buildHtml(errorPage, {
 			'error': `${error.status} ${error.statusText}`,
@@ -177,18 +177,9 @@ function loadConfig(path) {
 		utils.logMessage('no config file found, using default config');
 }
 
-// Return parsed contents of pages.json
-function getPages() {
-	return JSON.parse(Deno.readTextFileSync('data/pages.json'));
-}
-
-// Return list of namespaces
-function getNamespaces(pages) {
-	return Object.values(pages).map(page => page.namespace);
-}
-
 // Return all available locales and their text definitions
-function getLocales(namespaces) {
+function getLocales() {
+	const namespaces = Object.values(pages).map(page => page.namespace);
 	const locales = JSON.parse(Deno.readTextFileSync('data/locales.json'));
 	for (const lang in locales) {
 		const translations = {};
@@ -212,10 +203,18 @@ function getLocales(namespaces) {
 }
 
 // Return template data
-function getTemplates(namespaces) {
+function getTemplates() {
 	const templates = {};
-	for (const namespace of namespaces.concat(['shell', 'error']))
-		templates[namespace] = Deno.readTextFileSync(`templates/${namespace}.html`);
+	for (const path in pages) {
+		const namespace = pages[path].namespace;
+		const template = { main: Deno.readTextFileSync(`templates/${namespace}.html`) };
+		for (const fragment of pages[path].fragments)
+			template[fragment] = Deno.readTextFileSync(`templates/${namespace}_${fragment}.html`);
+
+		templates[namespace] = template;
+	}
+	for (const fakeNamespace of ['shell', 'error'])
+		templates[fakeNamespace] = { main: Deno.readTextFileSync(`templates/${fakeNamespace}.html`) };
 
 	return templates;
 }

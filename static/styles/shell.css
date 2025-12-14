@@ -343,8 +343,6 @@ body {
 /* Content */
 
 .fp-content {
-	overflow: auto;
-
 	color: var(--fp-text-color);
 }
 .fp-content a:link {

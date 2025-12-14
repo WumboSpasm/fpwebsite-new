@@ -1,0 +1,28 @@
+<form action="/search" method="get">
+	<div class="fp-search-simple-container">
+		<input class="fp-search-text-box" type="text" name="query" value="{searchQuery}" placeholder="Enter search query..." autofocus>
+	</div>
+	<div class="fp-search-options">
+		<label for="sort">Sort by:</label>
+		<select class="fp-search-dropdown fp-search-thin" name="sort" id="sort">
+			<option value="title">Title</option>
+			<option value="developer">Developer</option>
+			<option value="publisher">Publisher</option>
+			<option value="series">Series</option>
+			<option value="platform">Platform</option>
+			<option value="dateAdded">Date Added</option>
+			<option value="dateModified">Date Modified</option>
+			<option value="releaseDate">Release Date</option>
+			<option value="random">Random</option>
+		</select>
+		<select class="fp-search-dropdown fp-search-thin" name="dir">
+			<option value="asc">Ascending</option>
+			<option value="desc">Descending</option>
+		</select>
+		<input class="fp-search-checkbox" type="checkbox" name="nsfw" value="true" id="nsfw"{nsfwChecked}>
+		<label class="fp-search-checkbox-label" for="nsfw">Show NSFW Entries</label>
+		<div class="fp-search-options-spacer"></div>
+		<a class="fp-search-button" href="/search?advanced=true">Switch to Advanced Mode</a>
+		<button class="fp-search-button" type="submit">Search</button>
+	</div>
+</form>

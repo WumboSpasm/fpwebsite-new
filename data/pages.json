@@ -2,46 +2,60 @@
 	"/": {
 		"namespace": "home",
 		"styles": ["home.css"],
-		"scripts": ["home.js"]
+		"scripts": ["home.js"],
+		"fragments": []
 	},
 	"/news": {
 		"namespace": "news",
 		"styles": [],
-		"scripts": []
+		"scripts": [],
+		"fragments": []
 	},
 	"/faq": {
 		"namespace": "faq",
 		"styles": [],
-		"scripts": []
+		"scripts": [],
+		"fragments": []
 	},
 	"/downloads": {
 		"namespace": "downloads",
 		"styles": ["downloads.css"],
-		"scripts": ["downloads.js"]
+		"scripts": ["downloads.js"],
+		"fragments": []
 	},
 	"/source": {
 		"namespace": "source",
 		"styles": [],
-		"scripts": []
+		"scripts": [],
+		"fragments": []
 	},
 	"/branding": {
 		"namespace": "branding",
 		"styles": [],
-		"scripts": []
+		"scripts": [],
+		"fragments": []
 	},
 	"/contact": {
 		"namespace": "contact",
 		"styles": [],
-		"scripts": []
+		"scripts": [],
+		"fragments": []
 	},
 	"/search": {
 		"namespace": "search",
 		"styles": ["search.css"],
-		"scripts": []
+		"scripts": [],
+		"fragments": [
+			"simple",
+			"advanced",
+			"navigation",
+			"result"
+		]
 	},
 	"/discord": {
 		"namespace": "discord",
 		"styles": [],
-		"scripts": []
+		"scripts": [],
+		"fragments": []
 	}
 }
