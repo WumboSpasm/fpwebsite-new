@@ -44,12 +44,20 @@
 	"/search": {
 		"namespace": "search",
 		"styles": ["search.css"],
-		"scripts": [],
+		"scripts": ["search.js"],
 		"fragments": [
 			"simple",
 			"advanced",
 			"navigation",
 			"result"
+		]
+	},
+	"/view": {
+		"namespace": "view",
+		"styles": ["view.css"],
+		"scripts": [],
+		"fragments": [
+			"addapp"
 		]
 	},
 	"/discord": {

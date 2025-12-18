@@ -1,0 +1,116 @@
+{
+	"string": {
+		"generic": {
+			"name": "Catch-All"
+		},
+		"id": {
+			"name": "ID"
+		},
+		"library": {
+			"name": "Library",
+			"values": {
+				"arcade": {
+					"name": "Games"
+				},
+				"theatre": {
+					"name": "Animations"
+				}
+			}
+		},
+		"title": {
+			"name": "Title"
+		},
+		"developer": {
+			"name": "Developer"
+		},
+		"publisher": {
+			"name": "Publisher"
+		},
+		"series": {
+			"name": "Series"
+		},
+		"tags": {
+			"name": "Tag"
+		},
+		"platforms": {
+			"name": "Platform"
+		},
+		"playMode": {
+			"name": "Play Mode",
+			"values": {
+				"Single Player": {
+					"name": "Single Player"
+				},
+				"Multiplayer": {
+					"name": "Multiplayer"
+				},
+				"Cooperative": {
+					"name": "Cooperative"
+				}
+			}
+		},
+		"status": {
+			"name": "Status",
+			"values": {
+				"Playable": {
+					"name": "Playable"
+				},
+				"Hacked": {
+					"name": "Hacked"
+				},
+				"Partial": {
+					"name": "Partial"
+				},
+				"Not Working": {
+					"name": "Not Working"
+				}
+			}
+		},
+		"notes": {
+			"name": "Notes"
+		},
+		"source": {
+			"name": "Source"
+		},
+		"releaseDate": {
+			"name": "Release Date"
+		},
+		"originalDescription": {
+			"name": "Original Description"
+		},
+		"language": {
+			"name": "Language"
+		},
+		"applicationPath": {
+			"name": "Application Path"
+		},
+		"launchCommand": {
+			"name": "Launch Command"
+		}
+	},
+	"date": {
+		"dateAdded": {
+			"name": "Date Added"
+		},
+		"dateModified": {
+			"name": "Date Modified"
+		},
+		"releaseDate": {
+			"name": "Release Date"
+		}
+	},
+	"number": {
+		"tags": {
+			"name": "# Tags"
+		},
+		"platforms": {
+			"name": "# Platforms"
+		},
+		"addApps": {
+			"name": "# Additional Apps"
+		},
+		"gameData": {
+			"name": "# Game Data"
+		}
+	}
+}

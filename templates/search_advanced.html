@@ -2,6 +2,7 @@
 	<input type="checkbox" name="advanced" value="true" checked hidden>
 	<div class="fp-search-advanced-container">
 		<div class="fp-search-advanced-parameter">
+			<div class="fp-search-delete-button"></div>
 			<select class="fp-search-dropdown fp-search-thin" name="field">
 				<option value="generic">Catch-All</option>
 				<option value="id">ID</option>
@@ -12,27 +13,29 @@
 				<option value="series">Series</option>
 				<option value="tags">Tag</option>
 				<option value="platforms">Platform</option>
-				<option value="dateAdded">Date Added</option>
-				<option value="dateModified">Date Added</option>
 				<option value="playMode">Play Mode</option>
 				<option value="status">Status</option>
 				<option value="notes">Notes</option>
 				<option value="source">Source</option>
-				<option value="releaseDate">Release Date</option>
 				<option value="originalDescription">Original Description</option>
 				<option value="language">Language</option>
 				<option value="applicationPath">Application Path</option>
 				<option value="launchCommand">Launch Command</option>
-				<option value="format">Format</option>
+				<option value="dateAdded">Date Added</option>
+				<option value="dateModified">Date Modified</option>
+				<option value="releaseDate">Release Date</option>
+				<option value="tags"># Tags</option>
+				<option value="platforms"># Platforms</option>
+				<option value="addApps"># Additional Apps</option>
+				<option value="gameData"># Game Data</option>
 			</select>
-			<select class="fp-search-dropdown fp-search-thin" name="compare">
-				<option value="contains">contains</option>
-				<option value="notContains">does not contain</option>
-				<option value="exactly">is exactly</option>
-				<option value="notExactly">is not exactly</option>
+			<select class="fp-search-dropdown fp-search-thin" name="filter">
+				<option value="whitelist">contains</option>
+				<option value="blacklist">does not contain</option>
+				<option value="exactWhitelist">is exactly</option>
+				<option value="exactBlacklist">is not exactly</option>
 			</select>
-			<input class="fp-search-text-box fp-search-thin" type="text" name="string">
-			<div class="fp-search-delete-button"></div>
+			<input class="fp-search-text-box fp-search-thin" type="text" name="value">
 		</div>
 	</div>
 	<div class="fp-search-options">

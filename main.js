@@ -4,6 +4,7 @@ import { contentType } from 'jsr:@std/media-types@1.1.0';
 import { setCookie, getCookies } from 'jsr:@std/http@1.0.21/cookie';
 
 import * as utils from './utils.js';
+import { namespaceFunctions } from './nsfuncs.js';
 
 // Command-line flags
 const flags = parseArgs(Deno.args, {
@@ -33,8 +34,9 @@ globalThis.config = {
 // Try to load config file on top of default config
 loadConfig(flags['config']);
 
-// Global variables
+// Page-related global variables
 globalThis.pages = JSON.parse(Deno.readTextFileSync('data/pages.json'));
+globalThis.endpoints = JSON.parse(Deno.readTextFileSync('data/endpoints.json'));
 globalThis.locales = getLocales();
 globalThis.templates = getTemplates();
 
@@ -51,6 +53,16 @@ else if (!utils.getPathInfo(config.databaseFile)?.isFile) {
 // Load Flashpoint database
 globalThis.fp = new FlashpointArchive();
 fp.loadDatabase(config.databaseFile);
+
+// Search-related global variables
+globalThis.filteredTags = JSON.parse(Deno.readTextFileSync('data/filter.json'));
+globalThis.searchFields = JSON.parse(Deno.readTextFileSync('data/fields.json'));
+globalThis.searchFieldsStr = JSON.stringify(searchFields);
+
+// Load values into platforms search field
+searchFields.string.platforms.values = {};
+for (const platform of await fp.findAllPlatforms())
+	searchFields.string.platforms.values[platform.name] = platform.name;
 
 // Start server on HTTP
 if (config.httpPort)
@@ -96,15 +108,22 @@ async function serverHandler(request, info) {
 		throw new BadRequestError();
 
 	const requestPath = requestUrl.pathname.replace(/^[/]+(.*?)[/]*$/, '$1');
-	const page = pages[`/${requestPath}`];
-	const responseHeaders = new Headers();
+	const responseHeaders = new Headers({ 'Cache-Control': 'max-age=14400' });
 
-	// If request does not point to a page, serve from static directory
+	// First check if the request points to an endpoint
+	const endpoint = endpoints[`/${requestPath}`];
+	if (endpoint !== undefined) {
+		responseHeaders.set('Content-Type', endpoint.type);
+		return new Response(await namespaceFunctions[endpoint.namespace](requestUrl), { headers: responseHeaders });
+	}
+
+	// Then check if the request points to a page; if not, serve from static directory
+	const page = pages[`/${requestPath}`];
 	if (page === undefined) {
 		const filePath = `static/${requestPath}`;
 		if (!utils.getPathInfo(filePath)?.isFile) throw new NotFoundError();
 		responseHeaders.set('Content-Type', contentType(filePath.substring(filePath.lastIndexOf('.'))) ?? 'application/octet-stream');
-		responseHeaders.set('Cache-Control', 'max-age=14400');
+
 		return new Response(Deno.openSync(filePath).readable, { headers: responseHeaders });
 	}
 
