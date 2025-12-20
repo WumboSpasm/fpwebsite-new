@@ -12,9 +12,18 @@ export const namespaceFunctions = {
 	'search': async (url, defs) => {
 		const params = url.searchParams;
 		const newDefs = Object.assign({}, defs, {
+			ascSelected: params.get('dir') == 'asc' ? ' selected' : '',
+			descSelected: params.get('dir') == 'desc' ? ' selected' : '',
 			nsfwChecked: params.get('nsfw') == 'true' ? ' checked' : '',
 			anyChecked: params.get('any') == 'true' ? ' checked' : '',
 		});
+
+		const sortFields = [];
+		for (const field in searchSort) {
+			const selected = params.get('sort') == field ? ' selected' : '';
+			sortFields.push(`<option value="${field}"${selected}>${searchSort[field].name}</option>`);
+		}
+		newDefs.sortFields = sortFields.join('\n');
 
 		let searchInterface, searchFilter, invalid = false;
 		if (params.get('advanced') == 'true') {
@@ -45,7 +54,7 @@ export const namespaceFunctions = {
 							else if (type == 'date')
 								searchFilter[filter][field] = value;
 							else if (type == 'number') {
-								const parsedValue = parseInt(value);
+								const parsedValue = parseInt(value, 10);
 								if (!isNaN(parsedValue) && parsedValue >= 0)
 									searchFilter[filter][field] = parsedValue;
 								else {
@@ -64,17 +73,12 @@ export const namespaceFunctions = {
 						break;
 					}
 				}
+
+				if (params.get('any') == 'true')
+					searchFilter.matchAny = true;
 			}
 			else if (fieldList.length > 0 || filterList.length > 0 || valueList.length > 0)
 				invalid = true;
-
-			if (params.get('any') == 'true') {
-				if (searchFilter !== undefined)
-					searchFilter.matchAny = true;
-				newDefs.anyChecked = ' checked';
-			}
-			else
-				newDefs.anyChecked = '';
 
 			searchInterface = utils.buildHtml(templates['search'].advanced, newDefs);
 		}
@@ -90,8 +94,10 @@ export const namespaceFunctions = {
 		let searchNavigation = '';
 		if (invalid)
 			searchNavigation = utils.buildHtml(templates['search'].navigation, {
-				searchTotal: 0,
+				searchTotal: 'Got $1{0} results',
 				searchResults: '',
+				searchPageButtonsTop: '',
+				searchPageButtonsBottom: '',
 			});
 		else if (searchFilter !== undefined) {
 			const search = fp.parseUserSearchInput('').search;
@@ -104,44 +110,76 @@ export const namespaceFunctions = {
 				search.filter.subfilters.push(tagsSubfilter);
 			}
 
-			if (params.has('sort')) {
-				const searchSort = GameSearchSortable[params.get('sort').toUpperCase()];
-				if (searchSort !== undefined) {
-					search.order.column = searchSort;
-					search.order.direction = GameSearchDirection[params.get('dir') == 'desc' ? 'DESC' : 'ASC'];
-				}
+			const sortField = params.get('sort');
+			if (Object.hasOwn(searchSort, sortField)) {
+				search.order.column = GameSearchSortable[sortField.toUpperCase()];
+				search.order.direction = GameSearchDirection[params.get('dir') == 'desc' ? 'DESC' : 'ASC'];
 			}
 
-			search.limit = 100;
 			search.filter.subfilters.push(searchFilter);
+			search.limit = config.pageSize;
 
-			const [searchResultsObj, searchTotal] = await Promise.all([fp.searchGames(search), fp.searchGamesTotal(search)]);
-			const searchResultsArr = [];
-			if (searchResultsObj.length > 0) {
-				for (const searchResult of searchResultsObj) {
-					let resultCreator = searchResult.developer || searchResult.publisher;
-					if (resultCreator != '')
-						resultCreator = `by ${resultCreator}`;
-
-					searchResultsArr.push(utils.buildHtml(templates['search'].result, {
-						resultId: searchResult.id,
-						resultLogo: `${config.imageUrl}/Logos/${searchResult.id.substring(0, 2)}/${searchResult.id.substring(2, 4)}/${searchResult.id}.png?type=jpg`,
-						resultTitle: utils.sanitizeInject(searchResult.title),
-						resultCreator: utils.sanitizeInject(resultCreator),
-						resultPlatform: searchResult.platforms.join('/'),
-						resultLibrary: searchResult.library == 'arcade' ? 'game' : 'animation',
-						resultTags: searchResult.tags.join(' - '),
-					}));
+			const [searchTotal, searchIndex] = await Promise.all([fp.searchGamesTotal(search), fp.searchGamesIndex(search)]);
+			const totalPages = searchIndex.length > 0 ? searchIndex.length + 1 : 1;
+			const currentPage = Math.max(1, Math.min(totalPages, parseInt(params.get('page'), 10) || 1));
+			const currentPageIndex = currentPage - 2;
+			let searchPageButtons = '';
+			if (totalPages > 1) {
+				if (currentPage > 1) {
+					const offset = searchIndex[currentPageIndex];
+					search.offset = {
+						value: offset.orderVal,
+						title: offset.title,
+						gameId: offset.id,
+					};
 				}
+
+				const nthPageUrl = new URL(url);
+				nthPageUrl.searchParams.set('page', 1);
+				const firstPageUrl = nthPageUrl.href;
+				nthPageUrl.searchParams.set('page', Math.max(currentPage - 1, 1));
+				const prevPageUrl = nthPageUrl.href;
+				nthPageUrl.searchParams.set('page', Math.min(currentPage + 1, totalPages));
+				const nextPageUrl = nthPageUrl.href;
+				nthPageUrl.searchParams.set('page', totalPages);
+				const lastPageUrl = nthPageUrl.href;
+				searchPageButtons = utils.buildHtml(templates['search'].pagebuttons, {
+					currentPage: currentPage,
+					totalPages: totalPages,
+					firstPageUrl: firstPageUrl,
+					prevPageUrl: prevPageUrl,
+					nextPageUrl: nextPageUrl,
+					lastPageUrl: lastPageUrl,
+				});
+			}
+
+			const searchResults = await fp.searchGames(search);
+			const searchResultsArr = [];
+			for (const searchResult of searchResults) {
+				let resultCreator = searchResult.developer || searchResult.publisher;
+				if (resultCreator != '')
+					resultCreator = `by ${resultCreator}`;
+
+				searchResultsArr.push(utils.buildHtml(templates['search'].result, {
+					resultId: searchResult.id,
+					resultLogo: `${config.imageUrl}/Logos/${searchResult.id.substring(0, 2)}/${searchResult.id.substring(2, 4)}/${searchResult.id}.png?type=jpg`,
+					resultTitle: utils.sanitizeInject(searchResult.title),
+					resultCreator: utils.sanitizeInject(resultCreator),
+					resultPlatform: searchResult.platforms.join('/'),
+					resultLibrary: searchResult.library == 'arcade' ? 'game' : 'animation',
+					resultTags: searchResult.tags.join(' - '),
+				}));
 			}
 
 			let searchTotalStr = `Got $1{${searchTotal.toLocaleString()}} result${(searchTotal == 1 ? '' : 's')}`;
-			if (searchResultsArr.length != searchTotal)
-				searchTotalStr += ` $2{(displaying ${searchResultsArr.length})}`;
+			if (searchResults.length != searchTotal)
+				searchTotalStr += ` $2{(displaying ${searchResults.length})}`;
 
 			searchNavigation = utils.buildHtml(templates['search'].navigation, {
 				searchTotal: searchTotalStr,
 				searchResults: searchResultsArr.join('\n'),
+				searchPageButtonsTop: searchPageButtons,
+				searchPageButtonsBottom: searchResults.length > 20 ? searchPageButtons : '',
 			});
 		}
 

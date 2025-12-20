@@ -1,0 +1,26 @@
+{
+	"title": {
+		"name": "Title"
+	},
+	"developer": {
+		"name": "Developer"
+	},
+	"publisher": {
+		"name": "Publisher"
+	},
+	"series": {
+		"name": "Series"
+	},
+	"platform": {
+		"name": "Platform"
+	},
+	"dateAdded": {
+		"name": "Date Added"
+	},
+	"dateModified": {
+		"name": "Date Modified"
+	},
+	"releaseDate": {
+		"name": "Release Date"
+	}
+}

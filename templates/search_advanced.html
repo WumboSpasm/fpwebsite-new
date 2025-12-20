@@ -41,25 +41,17 @@
 	<div class="fp-search-options">
 		<label for="sort">Sort by:</label>
 		<select class="fp-search-dropdown fp-search-thin" name="sort" id="sort">
-			<option value="title">Title</option>
-			<option value="developer">Developer</option>
-			<option value="publisher">Publisher</option>
-			<option value="series">Series</option>
-			<option value="platform">Platform</option>
-			<option value="dateAdded">Date Added</option>
-			<option value="dateModified">Date Modified</option>
-			<option value="releaseDate">Release Date</option>
-			<option value="random">Random</option>
+			{sortFields}
 		</select>
 		<select class="fp-search-dropdown fp-search-thin" name="dir">
-			<option value="asc">Ascending</option>
-			<option value="desc">Descending</option>
+			<option value="asc"{ascSelected}>Ascending</option>
+			<option value="desc"{descSelected}>Descending</option>
 		</select>
 		<input class="fp-search-checkbox" type="checkbox" name="nsfw" value="true" id="nsfw"{nsfwChecked}>
 		<label class="fp-search-checkbox-label" for="nsfw">Show NSFW Entries</label>
 		<input class="fp-search-checkbox" type="checkbox" name="any" value="true" id="any"{anyChecked}>
 		<label class="fp-search-checkbox-label" for="any">Match Any</label>
-		<div class="fp-search-options-spacer"></div>
+		<div class="fp-search-spacer"></div>
 		<div class="fp-search-button">Add Field</div>
 		<a class="fp-search-button" href="/search">Switch to Simple Mode</a>
 		<button class="fp-search-button" type="submit">Search</button>

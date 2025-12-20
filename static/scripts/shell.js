@@ -45,5 +45,5 @@ function updateThemeIcon() {
 function toggleHiddenContent(hiddenContentContainer) {
 	const hiddenContent = hiddenContentContainer.querySelector('.fp-hidden-content');
 	hiddenContent.hidden = !hiddenContent.hidden;
-	hiddenContentContainer.style.setProperty('--fp-hidden-content-arrow-icon', `var(--fp-${hiddenContent.hidden ? 'open' : 'close'}-hidden-content-arrow-icon)`);
+	hiddenContentContainer.style.setProperty('--fp-hidden-content-arrow-icon', `var(--fp-${hiddenContent.hidden ? 'down' : 'up'}-arrow-icon)`);
 }

@@ -28,6 +28,7 @@ globalThis.config = {
 	databaseFile: 'data/flashpoint.sqlite',
 	fpfssUrl: 'https://fpfss.unstable.life',
 	imageUrl: 'https://infinity.unstable.life/images',
+	pageSize: 100,
 	defaultLang: 'en-US',
 };
 
@@ -57,6 +58,7 @@ fp.loadDatabase(config.databaseFile);
 // Search-related global variables
 globalThis.filteredTags = JSON.parse(Deno.readTextFileSync('data/filter.json'));
 globalThis.searchFields = JSON.parse(Deno.readTextFileSync('data/fields.json'));
+globalThis.searchSort = JSON.parse(Deno.readTextFileSync('data/sort.json'));
 globalThis.searchFieldsStr = JSON.stringify(searchFields);
 
 // Load values into platforms search field
