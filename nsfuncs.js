@@ -2,12 +2,6 @@ import { GameSearchSortable, GameSearchDirection, newSubfilter } from 'npm:@fpar
 
 import * as utils from './utils.js';
 
-const filterMap = {
-	string: ['whitelist', 'blacklist', 'exactWhitelist', 'exactBlacklist'],
-	date: ['higherThan', 'lowerThan', 'equalTo'],
-	number: ['higherThan', 'lowerThan', 'equalTo'],
-};
-
 export const namespaceFunctions = {
 	'search': async (url, defs) => {
 		const params = url.searchParams;
@@ -19,34 +13,33 @@ export const namespaceFunctions = {
 		});
 
 		const sortFields = [];
-		for (const field in searchSort) {
+		for (const field in searchInfo.sort) {
 			const selected = params.get('sort') == field ? ' selected' : '';
-			sortFields.push(`<option value="${field}"${selected}>${searchSort[field].name}</option>`);
+			sortFields.push(`<option value="${field}"${selected}>${searchInfo.sort[field]}</option>`);
 		}
 		newDefs.sortFields = sortFields.join('\n');
 
 		let searchInterface, searchFilter, invalid = false;
 		if (params.get('advanced') == 'true') {
-			const fieldList = params.getAll('field');
-			const filterList = params.getAll('filter');
-			const valueList = params.getAll('value');
-			if (fieldList.length > 0 && fieldList.length == filterList.length && filterList.length == valueList.length) {
+			const fields = params.getAll('field');
+			const filters = params.getAll('filter');
+			const values = params.getAll('value');
+			if (fields.length > 0 && fields.length == filters.length && filters.length == values.length) {
 				searchFilter = newSubfilter();
-				for (let i = 0; i < fieldList.length; i++) {
-					const field = fieldList[i];
-					const filter = filterList[i];
-					const value = valueList[i];
+				for (let i = 0; i < fields.length; i++) {
+					const field = fields[i];
+					const filter = filters[i];
+					const value = values[i];
 					if (field == '' || filter == '' || value == '') {
 						invalid = true;
 						break;
 					}
 
 					let success = false;
-					for (const type in filterMap) {
-						if (filterMap[type].some(compareFilter => filter == compareFilter)) {
-							if (!Object.hasOwn(searchFields[type], field)
-							 || (Object.hasOwn(searchFields[type][field], 'values')
-							 && !Object.hasOwn(searchFields[type][field].values, value)))
+					for (const type in searchInfo.filter) {
+						if (Object.hasOwn(searchInfo.filter[type], filter)) {
+							if (!Object.hasOwn(searchInfo.field[type], field) || (type == 'string'
+							 && Object.hasOwn(searchInfo.value, field) && !Object.hasOwn(searchInfo.value[field], value)))
 								continue;
 
 							if (type == 'string')
@@ -77,7 +70,7 @@ export const namespaceFunctions = {
 				if (params.get('any') == 'true')
 					searchFilter.matchAny = true;
 			}
-			else if (fieldList.length > 0 || filterList.length > 0 || valueList.length > 0)
+			else if (fields.length > 0 || filters.length > 0 || values.length > 0)
 				invalid = true;
 
 			searchInterface = utils.buildHtml(templates['search'].advanced, newDefs);
@@ -111,7 +104,7 @@ export const namespaceFunctions = {
 			}
 
 			const sortField = params.get('sort');
-			if (Object.hasOwn(searchSort, sortField)) {
+			if (Object.hasOwn(searchInfo.sort, sortField)) {
 				search.order.column = GameSearchSortable[sortField.toUpperCase()];
 				search.order.direction = GameSearchDirection[params.get('dir') == 'desc' ? 'DESC' : 'ASC'];
 			}
@@ -123,6 +116,7 @@ export const namespaceFunctions = {
 			const totalPages = searchIndex.length > 0 ? searchIndex.length + 1 : 1;
 			const currentPage = Math.max(1, Math.min(totalPages, parseInt(params.get('page'), 10) || 1));
 			const currentPageIndex = currentPage - 2;
+			let searchTotalStr = `Got $1{${searchTotal.toLocaleString()}} result${(searchTotal == 1 ? '' : 's')}`;
 			let searchPageButtons = '';
 			if (totalPages > 1) {
 				if (currentPage > 1) {
@@ -143,6 +137,8 @@ export const namespaceFunctions = {
 				const nextPageUrl = nthPageUrl.href;
 				nthPageUrl.searchParams.set('page', totalPages);
 				const lastPageUrl = nthPageUrl.href;
+
+				searchTotalStr += ` $2{(${config.pageSize} per page)}`;
 				searchPageButtons = utils.buildHtml(templates['search'].pagebuttons, {
 					currentPage: currentPage,
 					totalPages: totalPages,
@@ -171,10 +167,6 @@ export const namespaceFunctions = {
 				}));
 			}
 
-			let searchTotalStr = `Got $1{${searchTotal.toLocaleString()}} result${(searchTotal == 1 ? '' : 's')}`;
-			if (searchResults.length != searchTotal)
-				searchTotalStr += ` $2{(displaying ${searchResults.length})}`;
-
 			searchNavigation = utils.buildHtml(templates['search'].navigation, {
 				searchTotal: searchTotalStr,
 				searchResults: searchResultsArr.join('\n'),
@@ -188,5 +180,5 @@ export const namespaceFunctions = {
 			searchNavigation: searchNavigation,
 		};
 	},
-	'fields': () => searchFieldsStr,
+	'search-info': () => searchInfoStr,
 };

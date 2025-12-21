@@ -57,14 +57,14 @@ fp.loadDatabase(config.databaseFile);
 
 // Search-related global variables
 globalThis.filteredTags = JSON.parse(Deno.readTextFileSync('data/filter.json'));
-globalThis.searchFields = JSON.parse(Deno.readTextFileSync('data/fields.json'));
-globalThis.searchSort = JSON.parse(Deno.readTextFileSync('data/sort.json'));
-globalThis.searchFieldsStr = JSON.stringify(searchFields);
+globalThis.searchInfo = JSON.parse(Deno.readTextFileSync('data/search.json'));
 
 // Load values into platforms search field
-searchFields.string.platforms.values = {};
+searchInfo.value.platforms = {};
 for (const platform of await fp.findAllPlatforms())
-	searchFields.string.platforms.values[platform.name] = platform.name;
+	searchInfo.value.platforms[platform.name] = platform.name;
+
+globalThis.searchInfoStr = JSON.stringify(searchInfo);
 
 // Start server on HTTP
 if (config.httpPort)

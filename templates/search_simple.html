@@ -1,6 +1,6 @@
 <form action="/search" method="get">
 	<div class="fp-search-simple-container">
-		<input class="fp-search-text-box" type="text" name="query" value="{searchQuery}" placeholder="Enter search query..." autofocus>
+		<input class="fp-search-text-box fp-search-expand" type="text" name="query" value="{searchQuery}" placeholder="Enter search query..." autofocus>
 	</div>
 	<div class="fp-search-options">
 		<label for="sort">Sort by:</label>
@@ -13,7 +13,7 @@
 		</select>
 		<input class="fp-search-checkbox" type="checkbox" name="nsfw" value="true" id="nsfw"{nsfwChecked}>
 		<label class="fp-search-checkbox-label" for="nsfw">Show NSFW Entries</label>
-		<div class="fp-search-spacer"></div>
+		<div class="fp-search-expand"></div>
 		<a class="fp-search-button" href="/search?advanced=true">Switch to Advanced Mode</a>
 		<button class="fp-search-button" type="submit">Search</button>
 	</div>

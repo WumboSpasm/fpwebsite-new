@@ -1,0 +1,80 @@
+{
+	"field": {
+		"string": {
+			"generic": "Catch-All",
+			"id": "ID",
+			"library": "Library",
+			"title": "Title",
+			"developer": "Developer",
+			"publisher": "Publisher",
+			"series": "Series",
+			"tags": "Tag",
+			"platforms": "Platform",
+			"playMode": "Play Mode",
+			"status": "Status",
+			"notes": "Notes",
+			"source": "Source",
+			"releaseDate": "Release Date",
+			"originalDescription": "Original Description",
+			"language": "Language",
+			"applicationPath": "Application Path",
+			"launchCommand": "Launch Command"
+		},
+		"date": {
+			"dateAdded": "Date Added",
+			"dateModified": "Date Modified",
+			"releaseDate": "Release Date"
+		},
+		"number": {
+			"tags": "# Tags",
+			"platforms": "# Platforms",
+			"addApps": "# Additional Apps",
+			"gameData": "# Game Data"
+		}
+	},
+	"filter": {
+		"string": {
+			"whitelist": "contains",
+			"blacklist": "does not contain",
+			"exactWhitelist": "is exactly",
+			"exactBlacklist": "is not exactly"
+		},
+		"date": {
+			"equalTo": "is equal to",
+			"higherThan": "is newer than",
+			"lowerThan": "is older than"
+		},
+		"number": {
+			"equalTo": "is equal to",
+			"higherThan": "is higher than",
+			"lowerThan": "is lower than"
+		}
+	},
+	"value": {
+		"library": {
+			"arcade": "Games",
+			"theatre": "Animations"
+		},
+		"playMode": {
+			"Single Player": "Single Player",
+			"Multiplayer": "Multiplayer",
+			"Cooperative": "Cooperative"
+		},
+		"status": {
+			"Playable": "Playable",
+			"Hacked": "Hacked",
+			"Partial": "Partial",
+			"Not Working": "Not Working"
+		}
+	},
+	"sort": {
+		"title": "Title",
+		"developer": "Developer",
+		"publisher": "Publisher",
+		"series": "Series",
+		"platform": "Platform",
+		"dateAdded": "Date Added",
+		"dateModified": "Date Modified",
+		"releaseDate": "Release Date"
+	}
+}

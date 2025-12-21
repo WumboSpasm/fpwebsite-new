@@ -79,8 +79,8 @@
 	--fp-navigation-alt-background-color: #00000022;
 	--fp-navigation-active-background-color: #ffffff44;
 
-	--fp-left-arrow-icon: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="%23fff" xmlns="http://www.w3.org/2000/svg"><path d="m4 8 8-6v12Z"/></svg>');
-	--fp-right-arrow-icon: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="%23fff" xmlns="http://www.w3.org/2000/svg"><path d="m12 8-8-6v12Z"/></svg>');
+	--fp-left-arrow-icon: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="%23fff" xmlns="http://www.w3.org/2000/svg"><path d="m3 8 8-6v12Z"/></svg>');
+	--fp-right-arrow-icon: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="%23fff" xmlns="http://www.w3.org/2000/svg"><path d="m13 8-8-6v12Z"/></svg>');
 	--fp-up-arrow-icon: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="%23888" xmlns="http://www.w3.org/2000/svg"><path d="m8 3-6 8h12Z"/></svg>');
 	--fp-down-arrow-icon: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="%23888" xmlns="http://www.w3.org/2000/svg"><path d="m8 13-6-8h12Z"/></svg>');
 	--fp-navbar-sidebar-toggle-icon: url('data:image/svg+xml;utf8,<svg viewBox="0 0 8 7" fill="%23fff" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h8v1H0zm0 3h8v1H0zm0 3h8v1H0z"/></svg>');
@@ -235,7 +235,7 @@ body {
 }
 .fp-sidebar-button {
 	height: 2rem;
-	padding: 0 0.5rem;
+	padding: 0 0.45rem 0 0.5rem;
 	flex-shrink: 0;
 	display: flex;
 	align-items: center;
