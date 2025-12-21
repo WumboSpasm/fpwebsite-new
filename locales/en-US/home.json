@@ -3,7 +3,7 @@
 	"About_Para1": "Flashpoint Archive is the world's largest effort to preserve web-based games, animations, and interactive experiences.",
 	"About_Para2": "The internet and the ways we interact with it are constantly evolving; the web of today might look nothing like it does tomorrow. The death of Adobe Flash put large swathes of internet history and culture at risk of disappearing forever. Since its inception in December 2017, Flashpoint has saved $1{over 200,000 of these experiences} across more than a hundred modern and legacy web technologies including Flash, Shockwave, and HTML5, thanks to the work of community contributors from around the world.",
 	"About_Para3": "We provide a highly flexible software package for interacting with the archive, including $1{a fully-featured launcher}, $2{a proxy} that tricks games into thinking they're running on the live internet, and $3{a sandbox} that enables secure playback of plugin-enabled content - $4{all of which are open-source software}.",
-	"About_Para4": "Flashpoint operates as a non-profit through Open Collective Europe, with 100% of proceeds being used to cover our infrastructure costs. If you would like to support us or find out more about who funds us and how exactly these funds are spent, then please visit our $1{our Open Collective page}.",
+	"About_Para4": "Flashpoint operates as a non-profit through Open Collective Europe, with 100% of proceeds being used to cover our infrastructure costs. If you would like to support us or find out more about who funds us and how exactly these funds are spent, then please visit $1{our Open Collective page}.",
 	"Search_Line1": "Search the",
 	"Search_Line2": "Database",
 	"Download_Line1": "Download",
