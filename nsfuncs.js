@@ -3,13 +3,14 @@ import { GameSearchSortable, GameSearchDirection, newSubfilter } from 'npm:@fpar
 import * as utils from './utils.js';
 
 export const namespaceFunctions = {
-	'search': async (url, defs) => {
+	'search': async (url, lang, defs) => {
 		const params = url.searchParams;
 		const newDefs = Object.assign({}, defs, {
 			ascSelected: params.get('dir') == 'asc' ? ' selected' : '',
 			descSelected: params.get('dir') == 'desc' ? ' selected' : '',
 			nsfwChecked: params.get('nsfw') == 'true' ? ' checked' : '',
 			anyChecked: params.get('any') == 'true' ? ' checked' : '',
+			resultsPerPage: config.pageSize.toLocaleString(lang),
 		});
 
 		const sortFields = [];
@@ -85,13 +86,15 @@ export const namespaceFunctions = {
 		}
 
 		let searchNavigation = '';
-		if (invalid)
-			searchNavigation = utils.buildHtml(templates['search'].navigation, {
-				searchTotal: 'Got $1{0} results',
+		if (invalid) {
+			searchNavigation = utils.buildHtml(templates['search'].navigation, Object.assign(newDefs, {
+				totalResults: '0',
+				resultsPerPageHidden: ' hidden',
 				searchResults: '',
-				searchPageButtonsTop: '',
-				searchPageButtonsBottom: '',
-			});
+				topPageButtons: '',
+				bottomPageButtons: '',
+			}));
+		}
 		else if (searchFilter !== undefined) {
 			const search = fp.parseUserSearchInput('').search;
 
@@ -112,12 +115,11 @@ export const namespaceFunctions = {
 			search.filter.subfilters.push(searchFilter);
 			search.limit = config.pageSize;
 
-			const [searchTotal, searchIndex] = await Promise.all([fp.searchGamesTotal(search), fp.searchGamesIndex(search)]);
+			const [totalResults, searchIndex] = await Promise.all([fp.searchGamesTotal(search), fp.searchGamesIndex(search)]);
 			const totalPages = searchIndex.length > 0 ? searchIndex.length + 1 : 1;
 			const currentPage = Math.max(1, Math.min(totalPages, parseInt(params.get('page'), 10) || 1));
 			const currentPageIndex = currentPage - 2;
-			let searchTotalStr = `Got $1{${searchTotal.toLocaleString()}} result${(searchTotal == 1 ? '' : 's')}`;
-			let searchPageButtons = '';
+			let pageButtons = '';
 			if (totalPages > 1) {
 				if (currentPage > 1) {
 					const offset = searchIndex[currentPageIndex];
@@ -138,15 +140,14 @@ export const namespaceFunctions = {
 				nthPageUrl.searchParams.set('page', totalPages);
 				const lastPageUrl = nthPageUrl.href;
 
-				searchTotalStr += ` $2{(${config.pageSize} per page)}`;
-				searchPageButtons = utils.buildHtml(templates['search'].pagebuttons, {
-					currentPage: currentPage,
-					totalPages: totalPages,
+				pageButtons = utils.buildHtml(templates['search'].pagebuttons, Object.assign(newDefs, {
+					currentPage: currentPage.toLocaleString(lang),
+					totalPages: totalPages.toLocaleString(lang),
 					firstPageUrl: firstPageUrl,
 					prevPageUrl: prevPageUrl,
 					nextPageUrl: nextPageUrl,
 					lastPageUrl: lastPageUrl,
-				});
+				}));
 			}
 
 			const searchResults = await fp.searchGames(search);
@@ -167,12 +168,13 @@ export const namespaceFunctions = {
 				}));
 			}
 
-			searchNavigation = utils.buildHtml(templates['search'].navigation, {
-				searchTotal: searchTotalStr,
+			searchNavigation = utils.buildHtml(templates['search'].navigation, Object.assign(newDefs, {
+				totalResults: totalResults.toLocaleString(lang),
+				resultsPerPageHidden: totalPages == 1 ? ' hidden' : '',
 				searchResults: searchResultsArr.join('\n'),
-				searchPageButtonsTop: searchPageButtons,
-				searchPageButtonsBottom: searchResults.length > 20 ? searchPageButtons : '',
-			});
+				topPageButtons: pageButtons,
+				bottomPageButtons: searchResults.length > 20 ? pageButtons : '',
+			}));
 		}
 
 		return {
@@ -180,5 +182,20 @@ export const namespaceFunctions = {
 			searchNavigation: searchNavigation,
 		};
 	},
-	'search-info': () => searchInfoStr,
+	'search-info': (_, lang) => {
+		const translation = Object.assign({},
+			locales[config.defaultLang].translations['search'],
+			locales[lang]?.translations['search'],
+		);
+
+		const realSearchInfo = structuredClone(searchInfo);
+		for (const type in realSearchInfo.filter) {
+			for (const filter in realSearchInfo.filter[type]) {
+				const def = realSearchInfo.filter[type][filter];
+				realSearchInfo.filter[type][filter] = translation[def];
+			}
+		}
+
+		return JSON.stringify(realSearchInfo);
+	},
 };

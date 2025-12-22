@@ -1,4 +1,26 @@
 {
 	"Title": "Search",
-	"Header": "Search"
+	"Header": "Search",
+	"Enter_Query": "Enter search query...",
+	"Filter_Contains": "contains",
+	"Filter_Not_Contains": "does not contain",
+	"Filter_Exactly": "is exactly",
+	"Filter_Not_Exactly": "is not exactly",
+	"Filter_Equal": "is equal to",
+	"Filter_Newer": "is newer than",
+	"Filter_Older": "is older than",
+	"Filter_Higher": "is higher than",
+	"Filter_Lower": "is lower than",
+	"Sort_By": "Sort by:",
+	"Sort_Ascending": "Ascending",
+	"Sort_Descending": "Descending",
+	"Toggle_NSFW": "Show NSFW Entries",
+	"Toggle_Any": "Match Any",
+	"Toggle_Advanced": "Switch to Advanced Mode",
+	"Toggle_Simple": "Switch to Simple Mode",
+	"Add_Field": "Add Field",
+	"Search": "Search",
+	"Results_Count": "Got $1{$2} results",
+	"Results_Per_Page": "($1 per page)",
+	"Pages_Count": "Page $1 of $2"
 }

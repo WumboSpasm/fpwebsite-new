@@ -2,21 +2,21 @@
 	<input type="checkbox" name="advanced" value="true" checked hidden>
 	<div class="fp-search-advanced-container"></div>
 	<div class="fp-search-options">
-		<label for="sort">Sort by:</label>
+		<label for="sort">{Sort_By}</label>
 		<select class="fp-search-dropdown fp-search-thin" name="sort" id="sort">
 			{sortFields}
 		</select>
 		<select class="fp-search-dropdown fp-search-thin" name="dir">
-			<option value="asc"{ascSelected}>Ascending</option>
-			<option value="desc"{descSelected}>Descending</option>
+			<option value="asc"{ascSelected}>{Sort_Ascending}</option>
+			<option value="desc"{descSelected}>{Sort_Descending}</option>
 		</select>
 		<input class="fp-search-checkbox" type="checkbox" name="nsfw" value="true" id="nsfwCheckbox"{nsfwChecked}>
-		<label class="fp-search-checkbox-label" for="nsfwCheckbox">Show NSFW Entries</label>
+		<label class="fp-search-checkbox-label" for="nsfwCheckbox">{Toggle_NSFW}</label>
 		<input class="fp-search-checkbox" type="checkbox" name="any" value="true" id="anyCheckbox"{anyChecked}>
-		<label class="fp-search-checkbox-label" for="anyCheckbox">Match Any</label>
+		<label class="fp-search-checkbox-label" for="anyCheckbox">{Toggle_Any}</label>
 		<div class="fp-search-expand"></div>
-		<div class="fp-search-button" id="addFieldButton">Add Field</div>
-		<a class="fp-search-button" href="/search">Switch to Simple Mode</a>
-		<button class="fp-search-button" type="submit">Search</button>
+		<div class="fp-search-button" id="addFieldButton">{Add_Field}</div>
+		<a class="fp-search-button" href="/search">{Toggle_Simple}</a>
+		<button class="fp-search-button" type="submit">{Search}</button>
 	</div>
 </form>

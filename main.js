@@ -64,8 +64,6 @@ searchInfo.value.platforms = {};
 for (const platform of await fp.findAllPlatforms())
 	searchInfo.value.platforms[platform.name] = platform.name;
 
-globalThis.searchInfoStr = JSON.stringify(searchInfo);
-
 // Start server on HTTP
 if (config.httpPort)
 	Deno.serve({
@@ -112,14 +110,24 @@ async function serverHandler(request, info) {
 	const requestPath = requestUrl.pathname.replace(/^[/]+(.*?)[/]*$/, '$1');
 	const responseHeaders = new Headers({ 'Cache-Control': 'max-age=14400' });
 
-	// First check if the request points to an endpoint
+	// Get the desired language and set cookie if needed
+	let lang = requestUrl.searchParams.get('lang');
+	if (lang !== null && Object.hasOwn(locales, lang))
+		setCookie(responseHeaders, { name: 'lang', value: lang });
+	else {
+		lang = getCookies(request.headers).lang;
+		if (lang === undefined || !Object.hasOwn(locales, lang))
+			lang = config.defaultLang;
+	}
+
+	// Check if the request points to an endpoint
 	const endpoint = endpoints[`/${requestPath}`];
 	if (endpoint !== undefined) {
 		responseHeaders.set('Content-Type', endpoint.type);
-		return new Response(await namespaceFunctions[endpoint.namespace](requestUrl), { headers: responseHeaders });
+		return new Response(await namespaceFunctions[endpoint.namespace](requestUrl, lang), { headers: responseHeaders });
 	}
 
-	// Then check if the request points to a page; if not, serve from static directory
+	// Otherwise, check if the request points to a page; if not, serve from static directory
 	const page = pages[`/${requestPath}`];
 	if (page === undefined) {
 		const filePath = `static/${requestPath}`;
@@ -130,16 +138,6 @@ async function serverHandler(request, info) {
 	}
 
 	responseHeaders.set('Content-Type', 'text/html; charset=UTF-8');
-
-	// Get the desired language and set cookie if needed
-	let lang = requestUrl.searchParams.get('lang');
-	if (lang !== null && Object.hasOwn(locales, lang))
-		setCookie(responseHeaders, { name: 'lang', value: lang });
-	else {
-		lang = getCookies(request.headers).lang;
-		if (lang === undefined || !Object.hasOwn(locales, lang))
-			lang = config.defaultLang;
-	}
 
 	const namespace = page.namespace;
 	const locale = locales[lang];

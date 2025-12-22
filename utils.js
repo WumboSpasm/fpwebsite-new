@@ -6,7 +6,7 @@ export async function buildDefs(namespace, lang, url = null) {
 		? locales[config.defaultLang].translations[namespace]
 		: Object.assign({}, locales[config.defaultLang].translations[namespace], locales[lang].translations[namespace]);
 	if (Object.hasOwn(namespaceFunctions, namespace))
-		Object.assign(defs, await namespaceFunctions[namespace](url, defs));
+		Object.assign(defs, await namespaceFunctions[namespace](url, lang, defs));
 
 	return defs;
 }

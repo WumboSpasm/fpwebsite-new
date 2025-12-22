@@ -34,20 +34,20 @@
 	},
 	"filter": {
 		"string": {
-			"whitelist": "contains",
-			"blacklist": "does not contain",
-			"exactWhitelist": "is exactly",
-			"exactBlacklist": "is not exactly"
+			"whitelist": "Filter_Contains",
+			"blacklist": "Filter_Not_Contains",
+			"exactWhitelist": "Filter_Exactly",
+			"exactBlacklist": "Filter_Not_Exactly"
 		},
 		"date": {
-			"equalTo": "is equal to",
-			"higherThan": "is newer than",
-			"lowerThan": "is older than"
+			"equalTo": "Filter_Equal",
+			"higherThan": "Filter_Newer",
+			"lowerThan": "Filter_Older"
 		},
 		"number": {
-			"equalTo": "is equal to",
-			"higherThan": "is higher than",
-			"lowerThan": "is lower than"
+			"equalTo": "Filter_Equal",
+			"higherThan": "Filter_Higher",
+			"lowerThan": "Filter_Lower"
 		}
 	},
 	"value": {

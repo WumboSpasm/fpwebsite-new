@@ -28,11 +28,23 @@ function initAdvancedMode(searchInfo) {
 	const filters = params.getAll('filter');
 	const values = params.getAll('value');
 	if (fields.length > 0 && fields.length == filters.length && filters.length == values.length) {
-		const container = document.querySelector('.fp-search-advanced-container');
+		const fragment = document.createDocumentFragment();
+		let invalid = false;
 		for (let i = 0; i < fields.length; i++) {
 			const parameter = createParameter(searchInfo, fields[i], filters[i], values[i]);
-			if (parameter)
-				container.appendChild(parameter);
+			if (!parameter) {
+				invalid = true;
+				break;
+			}
+
+			fragment.appendChild(parameter);
+		}
+
+		if (invalid)
+			addDefaultParameter(searchInfo);
+		else {
+			const container = document.querySelector('.fp-search-advanced-container');
+			container.appendChild(fragment);
 		}
 	}
 	else
