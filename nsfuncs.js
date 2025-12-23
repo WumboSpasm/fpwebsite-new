@@ -3,6 +3,16 @@ import { GameSearchSortable, GameSearchDirection, newSubfilter } from 'npm:@fpar
 import * as utils from './utils.js';
 
 export const namespaceFunctions = {
+	'shell': (url) => {
+		const langButtons = [];
+		for (const lang in locales) {
+			const langUrl = new URL(url);
+			langUrl.searchParams.set('lang', lang);
+			langButtons.push(`<a class="fp-sidebar-button fp-button fp-alternating" href="${langUrl.search}">${locales[lang].name}</a>`);
+		}
+
+		return { 'LANGUAGE_SELECT': langButtons.join('\n'), };
+	},
 	'search': async (url, lang, defs) => {
 		const params = url.searchParams;
 		const newDefs = Object.assign({}, defs, {
@@ -132,13 +142,13 @@ export const namespaceFunctions = {
 
 				const nthPageUrl = new URL(url);
 				nthPageUrl.searchParams.set('page', 1);
-				const firstPageUrl = nthPageUrl.href;
+				const firstPageUrl = nthPageUrl.search;
 				nthPageUrl.searchParams.set('page', Math.max(currentPage - 1, 1));
-				const prevPageUrl = nthPageUrl.href;
+				const prevPageUrl = nthPageUrl.search;
 				nthPageUrl.searchParams.set('page', Math.min(currentPage + 1, totalPages));
-				const nextPageUrl = nthPageUrl.href;
+				const nextPageUrl = nthPageUrl.search;
 				nthPageUrl.searchParams.set('page', totalPages);
-				const lastPageUrl = nthPageUrl.href;
+				const lastPageUrl = nthPageUrl.search;
 
 				pageButtons = utils.buildHtml(templates['search'].pagebuttons, Object.assign(newDefs, {
 					currentPage: currentPage.toLocaleString(lang),

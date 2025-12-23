@@ -108,7 +108,10 @@ async function serverHandler(request, info) {
 		throw new BadRequestError();
 
 	const requestPath = requestUrl.pathname.replace(/^[/]+(.*?)[/]*$/, '$1');
-	const responseHeaders = new Headers({ 'Cache-Control': 'max-age=14400' });
+	const responseHeaders = new Headers({
+		'Cache-Control': 'max-age=14400',
+		'Vary': 'Cookie',
+	});
 
 	// Get the desired language and set cookie if needed
 	let lang = requestUrl.searchParams.get('lang');
@@ -152,7 +155,6 @@ async function serverHandler(request, info) {
 			'TITLE': contentDefs['Title'] ? `${contentDefs['Title']} - Flashpoint Archive` : 'Flashpoint Archive',
 			'STYLES': page.styles.map(style => `<link rel="stylesheet" href="/styles/${style}">`).join('\n'),
 			'SCRIPTS': page.scripts.map(script => `<script src="/scripts/${script}" type="text/javascript"></script>`).join('\n'),
-			'LANGUAGE_SELECT': Object.entries(locales).map(([lang, locale]) => `<a class="fp-sidebar-button fp-button fp-alternating" href="?lang=${lang}">${locale.name}</a>`).join('\n'),
 			'CURRENT_LANGUAGE': locale.name,
 			'CONTENT': contentHtml,
 		},
