@@ -8,13 +8,13 @@ import { namespaceFunctions } from './nsfuncs.js';
 
 // Command-line flags
 const flags = parseArgs(Deno.args, {
-	boolean: ['build'],
+	boolean: ['update'],
 	string: ['config'],
-	default: { 'build': false, 'config': 'config.json' },
+	default: { 'update': false, 'config': 'config.json' },
 });
 
 // Default config
-globalThis.config = {
+const defaultConfig = {
 	httpPort: 80,
 	httpsPort: 443,
 	httpsCert: null,
@@ -29,58 +29,14 @@ globalThis.config = {
 	fpfssUrl: 'https://fpfss.unstable.life',
 	imageUrl: 'https://infinity.unstable.life/images',
 	pageSize: 100,
+	updateFrequency: 60,
 	defaultLang: 'en-US',
 };
 
-// Try to load config file on top of default config
-loadConfig(flags['config']);
-
-// Page-related global variables
-globalThis.pages = JSON.parse(Deno.readTextFileSync('data/pages.json'));
-globalThis.endpoints = JSON.parse(Deno.readTextFileSync('data/endpoints.json'));
-globalThis.locales = getLocales();
-globalThis.templates = getTemplates();
-
-// Build a fresh database if one doesn't exist yet, or if --build flag is passed
-if (flags['build']) {
-	await utils.buildDatabase();
-	Deno.exit(0);
-}
-else if (!utils.getPathInfo(config.databaseFile)?.isFile) {
-	utils.logMessage('no database found, starting database build');
-	utils.buildDatabase();
-}
-
-// Load Flashpoint database
-globalThis.fp = new FlashpointArchive();
-fp.loadDatabase(config.databaseFile);
-
-// Search-related global variables
-globalThis.filteredTags = JSON.parse(Deno.readTextFileSync('data/filter.json'));
-globalThis.searchInfo = JSON.parse(Deno.readTextFileSync('data/search.json'));
-
-// Load values into platforms search field
-searchInfo.value.platforms = {};
-for (const platform of await fp.findAllPlatforms())
-	searchInfo.value.platforms[platform.name] = platform.name;
-
-// Start server on HTTP
-if (config.httpPort)
-	Deno.serve({
-		port: config.httpPort,
-		hostname: config.hostName,
-		onError: serverError,
-	}, serverHandler);
-
-// Start server on HTTPS
-if (config.httpsPort && config.httpsCert && config.httpsKey)
-	Deno.serve({
-		port: config.httpsPort,
-		cert: Deno.readTextFileSync(config.httpsCert),
-		key: Deno.readTextFileSync(config.httpsKey),
-		hostName: config.hostName,
-		onError: serverError,
-	}, serverHandler);
+// Initialize stuff
+initGlobals();
+await initDatabase();
+initServer();
 
 // Handle requests
 async function serverHandler(request, info) {
@@ -188,14 +144,98 @@ async function serverError(error) {
 	return new Response(errorPage, { status: error.status ?? 500, headers: { 'Content-Type': 'text/html; charset=UTF-8' } });
 };
 
-// Attempt to load config file
-function loadConfig(path) {
-	if (utils.getPathInfo(path)?.isFile) {
-		Object.assign(config, JSON.parse(Deno.readTextFileSync(path)));
-		utils.logMessage(`loaded config file: ${Deno.realPathSync(path)}`);
+// (Re)define global variables
+function initGlobals() {
+	// Try to load config file
+	globalThis.config = Object.assign({}, defaultConfig);
+	const configPath = flags['config'];
+	if (utils.getPathInfo(configPath)?.isFile) {
+		Object.assign(config, JSON.parse(Deno.readTextFileSync(configPath)));
+		utils.logMessage(`loaded config file: ${Deno.realPathSync(configPath)}`);
 	}
 	else
 		utils.logMessage('no config file found, using default config');
+
+	// Page-related global variables
+	globalThis.pages = JSON.parse(Deno.readTextFileSync('data/pages.json'));
+	globalThis.endpoints = JSON.parse(Deno.readTextFileSync('data/endpoints.json'));
+	globalThis.locales = getLocales();
+	globalThis.templates = getTemplates();
+	globalThis.filteredTags = JSON.parse(Deno.readTextFileSync('data/filter.json'));
+	globalThis.searchInfo = JSON.parse(Deno.readTextFileSync('data/search.json'));
+}
+
+// Load/update/build Flashpoint database
+async function initDatabase() {
+	if (globalThis.fp === undefined) {
+		if (flags['update']) {
+			// Update and exit if --update flag is passed
+			await utils.updateDatabase();
+			Deno.exit(0);
+		}
+		else if (!utils.getPathInfo(config.databaseFile)?.isFile) {
+			// If database doesn't exist, initiate database build alongside server
+			utils.logMessage('no database found, starting database build');
+			utils.updateDatabase();
+		}
+
+		// Load the database
+		globalThis.fp = new FlashpointArchive();
+		fp.loadDatabase(config.databaseFile);
+	}
+	else if (globalThis.updateInterval !== undefined)
+		clearInterval(updateInterval);
+
+	await initSearchInfo();
+	globalThis.updateInProgress = false;
+
+	// Update the database on a set interval
+	if (config.updateFrequency > 0)
+		globalThis.updateInterval = setInterval(async () => {
+			updateInProgress = true;
+			await utils.updateDatabase();
+			await initSearchInfo();
+			updateInProgress = false;
+		}, config.updateFrequency * 60 * 1000);
+}
+
+// Insert dynamic data into search info
+async function initSearchInfo() {
+	/*
+	searchInfo.value.tags = {};
+	for (const tag of await fp.findAllTags())
+		searchInfo.value.tags[tag.name] = tag.name;
+	*/
+	searchInfo.value.platforms = {};
+	for (const platform of await fp.findAllPlatforms())
+		searchInfo.value.platforms[platform.name] = platform.name;
+}
+
+// (Re)start the web server
+async function initServer() {
+	// Shut down servers if running
+	if (globalThis.httpServer !== undefined)
+		await httpServer.shutdown();
+	if (globalThis.httpsServer !== undefined)
+		await httpsServer.shutdown();
+
+	// Start server on HTTP
+	if (config.httpPort)
+		globalThis.httpServer = Deno.serve({
+			port: config.httpPort,
+			hostname: config.hostName,
+			onError: serverError,
+		}, serverHandler);
+
+	// Start server on HTTPS
+	if (config.httpsPort && config.httpsCert && config.httpsKey)
+		globalThis.httpsServer = Deno.serve({
+			port: config.httpsPort,
+			cert: Deno.readTextFileSync(config.httpsCert),
+			key: Deno.readTextFileSync(config.httpsKey),
+			hostName: config.hostName,
+			onError: serverError,
+		}, serverHandler);
 }
 
 // Return all available locales and their text definitions

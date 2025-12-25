@@ -1,3 +1,5 @@
+import { FlashpointArchive } from 'npm:@fparchive/flashpoint-archive';
+
 import { namespaceFunctions } from './nsfuncs.js';
 
 // Build a list of text definitions to supply to the HTML template
@@ -174,43 +176,52 @@ export function buildStringFromParams(paramsStr, defs = {}) {
 	return targetStr;
 }
 
-// Create a fresh database file
+// Create or update a database file
 // Adapted from https://github.com/FlashpointProject/FPA-Rust/blob/master/crates/flashpoint-database-builder/src/main.rs
-export async function buildDatabase() {
-	// Remove old database file
-	try { Deno.removeSync(config.databaseFile); } catch {}
+export async function updateDatabase() {
+	const lastUpdated = new Date().toISOString();
+	const lastUpdatedPath = 'data/lastUpdated.txt';
+	const createNew = !getPathInfo(config.databaseFile)?.isFile;
+	let afterDate = '1970-01-01';
+	if (createNew)
+		logMessage('building new database...');
+	else {
+		logMessage('updating database...');
+		if (getPathInfo(lastUpdatedPath)?.isFile)
+			afterDate = Deno.readTextFileSync(lastUpdatedPath);
+	}
 
 	// Initialize new database
 	const fp = new FlashpointArchive();
 	fp.loadDatabase(config.databaseFile);
 
 	// Fetch and apply platforms
-	const platsRes = await fetchFromFpfss('platforms');
+	const platsRes = await fetchFromFpfss(`platforms?after=${afterDate}`);
 	logMessage(`applying ${platsRes.length} platforms...`);
-	await fp.updateApplyPlatforms(platsRes.map(plat => updateProps(plat)));
+	await fp.updateApplyPlatforms(platsRes.map(plat => propsToCamel(plat)));
 
 	// Fetch and apply tags and tag categories
-	const tagsRes = await fetchFromFpfss('tags');
+	const tagsRes = await fetchFromFpfss(`tags?after=${afterDate}`);
 	logMessage(`applying ${tagsRes.categories.length} categories...`);
 	await fp.updateApplyCategories(tagsRes.categories);
 	logMessage(`applying ${tagsRes.tags.length} tags...`);
-	await fp.updateApplyTags(tagsRes.tags.map(tag => updateProps(tag)));
+	await fp.updateApplyTags(tagsRes.tags.map(tag => propsToCamel(tag)));
 
 	// Fetch and apply pages of games until there are none left
 	let totalAppliedGames = 0;
 	let pageNum = 1;
 	let afterId;
 	while (true) {
-		logMessage(`fetching page ${pageNum}...`);
-		const gamesRes = await fetchFromFpfss('games?broad=true&after=1970-01-01' + (afterId ? `&afterId=${afterId}` : ''));
+		const gamesRes = await fetchFromFpfss(`games?broad=true&after=${afterDate}` + (afterId ? `&afterId=${afterId}` : ''));
+		logMessage(`applying page ${pageNum} of games... (total: ${totalAppliedGames + gamesRes.games.length})`);
 		pageNum++;
 		if (gamesRes.games.length > 0) {
 			totalAppliedGames += gamesRes.games.length;
 			afterId = gamesRes.games[gamesRes.games.length - 1].id;
 			await fp.updateApplyGames({
-				games: gamesRes.games.map(game => updateProps(game)),
-				addApps: gamesRes.add_apps.map(addApp => updateProps(addApp)),
-				gameData: gamesRes.game_data.map(gameData => updateProps(gameData)),
+				games: gamesRes.games.map(game => propsToCamel(game)),
+				addApps: gamesRes.add_apps.map(addApp => propsToCamel(addApp)),
+				gameData: gamesRes.game_data.map(gameData => propsToCamel(gameData)),
 				tagRelations: gamesRes.tag_relations,
 				platformRelations: gamesRes.platform_relations
 			}, 'flashpoint-archive');
@@ -219,7 +230,30 @@ export async function buildDatabase() {
 			break;
 	}
 
-	logMessage(`applied ${totalAppliedGames} games`);
+	if (!createNew) {
+		// Fetch and apply deleted games
+		const deletionsRes = await fetchFromFpfss(`games/deleted?after=${afterDate}`);
+		deletionsRes.games = deletionsRes.games.map(deletion => propsToCamel(deletion));
+		logMessage(`applying ${deletionsRes.games.length} game deletions...`);
+		await fp.updateDeleteGames(deletionsRes);
+
+		// Fetch and apply game redirects
+		const redirectsRes = await fetchFromFpfss(`game-redirects`);
+		logMessage(`applying ${redirectsRes.length} game redirects...`);
+		await fp.updateApplyRedirects(redirectsRes.map(redirect => ({
+			sourceId: redirect.source_id,
+			destId: redirect.id,
+		})));
+	}
+
+	// Optimize the database
+	logMessage('optimizing database...');
+	await fp.optimizeDatabase();
+
+	// Write update time to file
+	Deno.writeTextFileSync(lastUpdatedPath, lastUpdated);
+
+	logMessage(`database ${createNew ? 'created' : 'updated'} successfully!`);
 }
 
 // Fetch data from an FPFSS endpoint
@@ -228,7 +262,7 @@ export async function fetchFromFpfss(endpoint) {
 }
 
 // Change FPFSS properties to camel case to work with FPA library
-export function updateProps(obj) {
+export function propsToCamel(obj) {
 	const newObj = {};
 	for (const prop of Object.keys(obj)) {
 		const propParts = prop.split('_');
