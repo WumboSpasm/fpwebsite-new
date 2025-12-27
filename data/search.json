@@ -65,7 +65,8 @@
 			"Hacked": "Hacked",
 			"Partial": "Partial",
 			"Not Working": "Not Working"
-		}
+		},
+		"platforms": {}
 	},
 	"sort": {
 		"title": "Title",

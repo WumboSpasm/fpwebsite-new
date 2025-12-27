@@ -3,18 +3,24 @@
 		<input class="fp-search-text-box fp-search-expand" type="text" name="query" value="{searchQuery}" placeholder="{Enter_Query}" autofocus>
 	</div>
 	<div class="fp-search-options">
-		<label for="sort">{Sort_By}</label>
-		<select class="fp-search-dropdown fp-search-thin" name="sort" id="sort">
-			{sortFields}
-		</select>
-		<select class="fp-search-dropdown fp-search-thin" name="dir">
-			<option value="asc"{ascSelected}>{Sort_Ascending}</option>
-			<option value="desc"{descSelected}>{Sort_Descending}</option>
-		</select>
-		<input class="fp-search-checkbox" type="checkbox" name="nsfw" value="true" id="nsfw"{nsfwChecked}>
-		<label class="fp-search-checkbox-label" for="nsfw">{Toggle_NSFW}</label>
-		<div class="fp-search-expand"></div>
-		<a class="fp-search-button" href="/search?advanced=true">{Toggle_Advanced}</a>
-		<button class="fp-search-button" type="submit">{Search}</button>
+		<div class="fp-search-options-group">
+			<label for="sort">{Sort_By}</label>
+			<select class="fp-search-dropdown fp-search-thin" name="sort" id="sort">
+				{sortFields}
+			</select>
+			<select class="fp-search-dropdown fp-search-thin" name="dir">
+				<option value="asc"{ascSelected}>{Sort_Ascending}</option>
+				<option value="desc"{descSelected}>{Sort_Descending}</option>
+			</select>
+		</div>
+		<div class="fp-search-options-group">
+			<input class="fp-search-checkbox" type="checkbox" name="nsfw" value="true" id="nsfw"{nsfwChecked}>
+			<label class="fp-search-checkbox-label" for="nsfw">{Toggle_NSFW}</label>
+		</div>
+		<div class="fp-search-options-group fp-search-expand">
+			<div class="fp-search-expand"></div>
+			<a class="fp-search-button" href="/search?advanced=true">{Toggle_Advanced}</a>
+			<button class="fp-search-button" type="submit">{Search}</button>
+		</div>
 	</div>
 </form>

@@ -1,0 +1,45 @@
+
+<div class="fp-search-stats">
+	<div class="fp-search-stats-column">
+		<div class="fp-content-subheader">{Library_Totals}</div>
+		<div class="fp-search-stats-row">
+			<div class="fp-search-stat">
+				<div class="fp-search-stat-title">Games</div>
+				<div class="fp-search-stat-count">{totalGames}</div>
+			</div>
+			<div class="fp-search-stat">
+				<div class="fp-search-stat-title">Animations</div>
+				<div class="fp-search-stat-count">{totalAnimations}</div>
+			</div>
+		</div>
+		<div class="fp-content-subheader">{Format_Totals}</div>
+		<div class="fp-search-stats-row">
+			<div class="fp-search-stat">
+				<div class="fp-search-stat-title">GameZIP</div>
+				<div class="fp-search-stat-count">{totalGameZip}</div>
+			</div>
+			<div class="fp-search-stat">
+				<div class="fp-search-stat-title">Legacy</div>
+				<div class="fp-search-stat-count">{totalLegacy}</div>
+			</div>
+		</div>
+		<div class="fp-content-subheader">{Platform_Totals}</div>
+		<table class="fp-search-table">
+			<tr>
+				<th>{Platform}</th>
+				<th>{Total}</th>
+			</tr>
+			{platformTotals}
+		</table>
+	</div>
+	<div class="fp-search-stats-column">
+		<div class="fp-content-subheader">{Tag_Totals,totalTags}</div>
+		<table class="fp-search-table">
+			<tr>
+				<th>{Tag}</th>
+				<th>{Total}</th>
+			</tr>
+			{tagTotals}
+		</table>
+	</div>
+</div>

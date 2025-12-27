@@ -1,4 +1,4 @@
-import { FlashpointArchive } from 'npm:@fparchive/flashpoint-archive';
+import { FlashpointArchive, newSubfilter } from 'npm:@fparchive/flashpoint-archive';
 import { parseArgs } from 'jsr:@std/cli@1.0.23/parse-args';
 import { contentType } from 'jsr:@std/media-types@1.1.0';
 import { setCookie, getCookies } from 'jsr:@std/http@1.0.21/cookie';
@@ -29,7 +29,7 @@ const defaultConfig = {
 	fpfssUrl: 'https://fpfss.unstable.life',
 	imageUrl: 'https://infinity.unstable.life/images',
 	pageSize: 100,
-	updateFrequency: 60,
+	updateFrequency: 1440, // 24 hours
 	defaultLang: 'en-US',
 };
 
@@ -156,13 +156,18 @@ function initGlobals() {
 	else
 		utils.logMessage('no config file found, using default config');
 
-	// Page-related global variables
+	// Data structures
 	globalThis.pages = JSON.parse(Deno.readTextFileSync('data/pages.json'));
 	globalThis.endpoints = JSON.parse(Deno.readTextFileSync('data/endpoints.json'));
 	globalThis.locales = getLocales();
 	globalThis.templates = getTemplates();
 	globalThis.filteredTags = JSON.parse(Deno.readTextFileSync('data/filter.json'));
 	globalThis.searchInfo = JSON.parse(Deno.readTextFileSync('data/search.json'));
+	globalThis.searchStats = JSON.parse(Deno.readTextFileSync('data/stats.json'));
+
+	// Other helpful stuff
+	globalThis.lastUpdatedPath = 'data/lastUpdated.txt';
+	globalThis.tagStatsLimit = 100;
 }
 
 // Load/update/build Flashpoint database
@@ -187,14 +192,17 @@ async function initDatabase() {
 		clearInterval(updateInterval);
 
 	await initSearchInfo();
+	await initSearchStats();
 	globalThis.updateInProgress = false;
 
 	// Update the database on a set interval
 	if (config.updateFrequency > 0)
 		globalThis.updateInterval = setInterval(async () => {
+			if (updateInProgress) return;
 			updateInProgress = true;
 			await utils.updateDatabase();
 			await initSearchInfo();
+			await initSearchStats();
 			updateInProgress = false;
 		}, config.updateFrequency * 60 * 1000);
 }
@@ -209,6 +217,57 @@ async function initSearchInfo() {
 	searchInfo.value.platforms = {};
 	for (const platform of await fp.findAllPlatforms())
 		searchInfo.value.platforms[platform.name] = platform.name;
+}
+
+// Gather database statistics for search homepage
+async function initSearchStats() {
+	const search = fp.parseUserSearchInput('').search;
+	const searchFilter = newSubfilter();
+	search.filter.subfilters.push(searchFilter);
+
+	// Total games
+	searchFilter.exactWhitelist.library = ['arcade'];
+	searchStats.games = await fp.searchGamesTotal(search);
+
+	// Total animations
+	searchFilter.exactWhitelist.library = ['theatre'];
+	searchStats.animations = await fp.searchGamesTotal(search);
+
+	// Total GameZIP entries
+	searchFilter.exactWhitelist.library = undefined;
+	searchFilter.higherThan.gameData = 0;
+	searchStats.gameZip = await fp.searchGamesTotal(search);
+
+	// Total Legacy entries
+	searchFilter.higherThan.gameData = undefined;
+	searchFilter.equalTo.gameData = 0;
+	searchStats.legacy = await fp.searchGamesTotal(search);
+
+	// Totals for each platform
+	searchFilter.equalTo.gameData = undefined;
+	const platformTotals = [];
+	for (const platform of await fp.findAllPlatforms()) {
+		searchFilter.exactWhitelist.platforms = [platform.name];
+		platformTotals.push([platform.name, await fp.searchGamesTotal(search)]);
+	}
+	searchStats.platforms = platformTotals.toSorted((a, b) => b[1] - a[1]);
+
+	// Totals for each tag (capped at tagStatsLimit)
+	searchFilter.exactWhitelist.platforms = undefined;
+	const tagTotals = [];
+	for (const tag of await fp.findAllTags()) {
+		if (filteredTags.extreme.includes(tag.name) || filteredTags.stats.includes(tag.name)) continue;
+		searchFilter.exactWhitelist.tags = [tag.name];
+		tagTotals.push([tag.name, await fp.searchGamesTotal(search)]);
+	}
+	searchStats.tags = tagTotals.toSorted((a, b) => b[1] - a[1]).slice(0, tagStatsLimit);
+
+	// Last updated
+	if (utils.getPathInfo(lastUpdatedPath)?.isFile) {
+		const lastUpdated = Deno.readTextFileSync(lastUpdatedPath);
+		if (!isNaN(Date.parse(lastUpdated)))
+			searchStats.lastUpdated = lastUpdated;
+	}
 }
 
 // (Re)start the web server

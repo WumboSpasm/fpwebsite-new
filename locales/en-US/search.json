@@ -1,6 +1,7 @@
 {
 	"Title": "Search",
 	"Header": "Search",
+	"Last_Updated": "Last updated $1",
 	"Enter_Query": "Enter search query...",
 	"Filter_Contains": "contains",
 	"Filter_Not_Contains": "does not contain",
@@ -22,5 +23,12 @@
 	"Search": "Search",
 	"Results_Count": "Got $1{$2} results",
 	"Results_Per_Page": "($1 per page)",
-	"Pages_Count": "Page $1 of $2"
+	"Pages_Count": "Page $1 of $2",
+	"Library_Totals": "Total Entries by Library",
+	"Format_Totals": "Total Entries by Format",
+	"Platform_Totals": "Total Entries by Platform",
+	"Tag_Totals": "Top $1 Tags by Entry Count",
+	"Platform": "Platform",
+	"Tag": "Tag",
+	"Total": "Total"
 }

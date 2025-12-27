@@ -50,7 +50,8 @@
 			"advanced",
 			"navigation",
 			"pagebuttons",
-			"result"
+			"result",
+			"stats"
 		]
 	},
 	"/view": {
@@ -58,6 +59,7 @@
 		"styles": ["view.css"],
 		"scripts": [],
 		"fragments": [
+			"row",
 			"addapp"
 		]
 	},

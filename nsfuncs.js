@@ -95,9 +95,9 @@ export const namespaceFunctions = {
 			searchInterface = utils.buildHtml(templates['search'].simple, newDefs);
 		}
 
-		let searchNavigation = '';
+		let searchContent = '';
 		if (invalid) {
-			searchNavigation = utils.buildHtml(templates['search'].navigation, Object.assign(newDefs, {
+			searchContent = utils.buildHtml(templates['search'].navigation, Object.assign(newDefs, {
 				totalResults: '0',
 				resultsPerPageHidden: ' hidden',
 				searchResults: '',
@@ -110,7 +110,7 @@ export const namespaceFunctions = {
 
 			if (params.get('nsfw') != 'true') {
 				const tagsSubfilter = newSubfilter();
-				tagsSubfilter.exactBlacklist.tags = filteredTags;
+				tagsSubfilter.exactBlacklist.tags = filteredTags.extreme;
 				tagsSubfilter.matchAny = true;
 
 				search.filter.subfilters.push(tagsSubfilter);
@@ -178,7 +178,7 @@ export const namespaceFunctions = {
 				}));
 			}
 
-			searchNavigation = utils.buildHtml(templates['search'].navigation, Object.assign(newDefs, {
+			searchContent = utils.buildHtml(templates['search'].navigation, Object.assign(newDefs, {
 				totalResults: totalResults.toLocaleString(lang),
 				resultsPerPageHidden: totalPages == 1 ? ' hidden' : '',
 				searchResults: searchResultsArr.join('\n'),
@@ -186,10 +186,35 @@ export const namespaceFunctions = {
 				bottomPageButtons: searchResults.length > 20 ? pageButtons : '',
 			}));
 		}
+		else {
+			searchContent = utils.buildHtml(templates['search'].stats, Object.assign(newDefs,  {
+				totalGames: searchStats.games.toLocaleString(lang),
+				totalAnimations: searchStats.animations.toLocaleString(lang),
+				totalGameZip: searchStats.gameZip.toLocaleString(lang),
+				totalLegacy: searchStats.legacy.toLocaleString(lang),
+				platformTotals: searchStats.platforms.map(([platform, total]) => utils.buildHtml(templates['view'].row, {
+					field: platform,
+					value: total.toLocaleString(lang),
+				})).join('\n'),
+				tagTotals: searchStats.tags.map(([tag, total]) => utils.buildHtml(templates['view'].row, {
+					field: tag,
+					value: total.toLocaleString(lang),
+				})).join('\n'),
+				totalTags: tagStatsLimit.toLocaleString(lang),
+			}));
+		}
+
+		const lastUpdate = new Intl.DateTimeFormat(lang, {
+			dateStyle: "long",
+			timeStyle: "long",
+			timeZone: "UTC",
+			hour12: false,
+		}).format(new Date(searchStats.lastUpdated));
 
 		return {
+			lastUpdate: lastUpdate,
 			searchInterface: searchInterface,
-			searchNavigation: searchNavigation,
+			searchContent: searchContent,
 		};
 	},
 	'search-info': (_, lang) => {

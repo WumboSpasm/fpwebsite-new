@@ -72,6 +72,8 @@
 /* Global constants */
 
 :root {
+	--fp-header-font: Tahoma, Verdana, sans-serif;
+	--fp-content-font: Verdana, Tahoma, sans-serif;
 	--fp-gradient: fixed radial-gradient(ellipse at top left, var(--fp-navigation-background-color-1), var(--fp-navigation-background-color-2));
 	--fp-sidebar-width: 15rem;
 	--fp-navbar-height: 3.5rem;
@@ -152,7 +154,7 @@ body {
 	padding: 0;
 
 	color: var(--fp-navigation-text-color);
-	font-family: Verdana, Tahoma, sans-serif;
+	font-family: var(--fp-content-font);
 	background-color: var(--fp-background-color);
 
 	/* Needed by Safari iOS */
@@ -365,8 +367,10 @@ body {
 .fp-content-header,
 .fp-content-subheader {
 	margin-bottom: 1rem;
+	display: flex;
+	align-items: flex-end;
 
-	font-family: Tahoma, Verdana, sans-serif;
+	font-family: var(--fp-header-font);
 	border-bottom: 0.15rem solid var(--fp-border-color);
 }
 .fp-content-header {

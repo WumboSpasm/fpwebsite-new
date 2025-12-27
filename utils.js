@@ -180,15 +180,13 @@ export function buildStringFromParams(paramsStr, defs = {}) {
 // Adapted from https://github.com/FlashpointProject/FPA-Rust/blob/master/crates/flashpoint-database-builder/src/main.rs
 export async function updateDatabase() {
 	const lastUpdated = new Date().toISOString();
-	const lastUpdatedPath = 'data/lastUpdated.txt';
 	const createNew = !getPathInfo(config.databaseFile)?.isFile;
 	let afterDate = '1970-01-01';
 	if (createNew)
 		logMessage('building new database...');
 	else {
 		logMessage('updating database...');
-		if (getPathInfo(lastUpdatedPath)?.isFile)
-			afterDate = Deno.readTextFileSync(lastUpdatedPath);
+		afterDate = searchStats.lastUpdated;
 	}
 
 	// Initialize new database
