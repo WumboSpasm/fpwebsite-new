@@ -3,5 +3,6 @@ server.log
 data/flashpoint.sqlite
 data/flashpoint.sqlite-shm
 data/flashpoint.sqlite-wal
-data/lastUpdated.txt
+data/search.json
+data/stats.json
 .vscode/

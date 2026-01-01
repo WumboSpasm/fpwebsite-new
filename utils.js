@@ -1,4 +1,4 @@
-import { FlashpointArchive } from 'npm:@fparchive/flashpoint-archive';
+import { FlashpointArchive, newSubfilter } from 'npm:@fparchive/flashpoint-archive';
 
 import { namespaceFunctions } from './nsfuncs.js';
 
@@ -179,15 +179,13 @@ export function buildStringFromParams(paramsStr, defs = {}) {
 // Create or update a database file
 // Adapted from https://github.com/FlashpointProject/FPA-Rust/blob/master/crates/flashpoint-database-builder/src/main.rs
 export async function updateDatabase() {
+	if (updateInProgress) return;
+	updateInProgress = true;
+
 	const lastUpdated = new Date().toISOString();
 	const createNew = !getPathInfo(config.databaseFile)?.isFile;
-	let afterDate = '1970-01-01';
-	if (createNew)
-		logMessage('building new database...');
-	else {
-		logMessage('updating database...');
-		afterDate = searchStats.lastUpdated;
-	}
+	const afterDate = searchStats.lastUpdated;
+	logMessage(`${createNew ? 'building new' : 'updating'} database...`);
 
 	// Initialize new database
 	const fp = new FlashpointArchive();
@@ -248,9 +246,65 @@ export async function updateDatabase() {
 	logMessage('optimizing database...');
 	await fp.optimizeDatabase();
 
-	// Write update time to file
-	Deno.writeTextFileSync(lastUpdatedPath, lastUpdated);
+	// Build search info
+	logMessage('building search info...');
+	searchInfo.value.platforms = {};
+	for (const platform of await fp.findAllPlatforms())
+		searchInfo.value.platforms[platform.name] = platform.name;
 
+	// Build search stats
+	logMessage('building search stats...');
+	const search = fp.parseUserSearchInput('').search;
+	const searchFilter = newSubfilter();
+	search.filter.subfilters.push(searchFilter);
+
+	// Get total games
+	searchFilter.exactWhitelist.library = ['arcade'];
+	searchStats.games = await fp.searchGamesTotal(search);
+
+	// Get total animations
+	searchFilter.exactWhitelist.library = ['theatre'];
+	searchStats.animations = await fp.searchGamesTotal(search);
+
+	// Get total GameZIP entries
+	searchFilter.exactWhitelist.library = undefined;
+	searchFilter.higherThan.gameData = 0;
+	searchStats.gameZip = await fp.searchGamesTotal(search);
+
+	// Get total Legacy entries
+	searchFilter.higherThan.gameData = undefined;
+	searchFilter.equalTo.gameData = 0;
+	searchStats.legacy = await fp.searchGamesTotal(search);
+
+	// Get totals for each platform
+	searchFilter.equalTo.gameData = undefined;
+	const platformTotals = [];
+	for (const platform of await fp.findAllPlatforms()) {
+		searchFilter.exactWhitelist.platforms = [platform.name];
+		platformTotals.push([platform.name, await fp.searchGamesTotal(search)]);
+	}
+	searchStats.platforms = platformTotals.toSorted((a, b) => b[1] - a[1]);
+
+	// Get totals for each tag (capped by tagStatsLimit)
+	searchFilter.exactWhitelist.platforms = undefined;
+	const tagTotals = [];
+	for (const tag of await fp.findAllTags()) {
+		if (filteredTags.extreme.includes(tag.name) || filteredTags.stats.includes(tag.name)) continue;
+		searchFilter.exactWhitelist.tags = [tag.name];
+		tagTotals.push([tag.name, await fp.searchGamesTotal(search)]);
+	}
+	searchStats.tags = tagTotals.toSorted((a, b) => b[1] - a[1]).slice(0, tagStatsLimit);
+
+	// Commit time of last update
+	searchStats.lastUpdated = lastUpdated;
+
+	// Export search data
+	logMessage('exporting search data...');
+	Deno.writeTextFileSync('data/search.json', JSON.stringify(searchInfo, null, '\t'));
+	Deno.writeTextFileSync('data/stats.json', JSON.stringify(searchStats, null, '\t'));
+
+	// We're done
+	updateInProgress = false;
 	logMessage(`database ${createNew ? 'created' : 'updated'} successfully!`);
 }
 
