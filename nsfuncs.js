@@ -1,3 +1,4 @@
+import { format } from 'jsr:@std/fmt@1.0.8/bytes';
 import { GameSearchSortable, GameSearchDirection, newSubfilter } from 'npm:@fparchive/flashpoint-archive';
 
 import * as utils from './utils.js';
@@ -41,7 +42,7 @@ export const namespaceFunctions = {
 					const field = fields[i];
 					const filter = filters[i];
 					const value = values[i];
-					if (field == '' || filter == '' || value == '') {
+					if (field == '' || filter == '') {
 						invalid = true;
 						break;
 					}
@@ -169,12 +170,12 @@ export const namespaceFunctions = {
 
 				searchResultsArr.push(utils.buildHtml(templates['search'].result, {
 					resultId: searchResult.id,
-					resultLogo: `${config.imageUrl}/Logos/${searchResult.id.substring(0, 2)}/${searchResult.id.substring(2, 4)}/${searchResult.id}.png?type=jpg`,
+					resultLogo: `${config.imageUrl}/${searchResult.logoPath}?type=jpg`,
 					resultTitle: utils.sanitizeInject(searchResult.title),
 					resultCreator: utils.sanitizeInject(resultCreator),
 					resultPlatform: searchResult.platforms.join('/'),
 					resultLibrary: searchResult.library == 'arcade' ? 'game' : 'animation',
-					resultTags: searchResult.tags.join(' - '),
+					resultTags: utils.sanitizeInject(searchResult.tags.join(' - ')),
 				}));
 			}
 
@@ -197,7 +198,7 @@ export const namespaceFunctions = {
 					value: total.toLocaleString(lang),
 				})).join('\n'),
 				tagTotals: searchStats.tags.map(([tag, total]) => utils.buildHtml(templates['view'].row, {
-					field: tag,
+					field: utils.sanitizeInject(tag),
 					value: total.toLocaleString(lang),
 				})).join('\n'),
 				totalTags: tagStatsLimit.toLocaleString(lang),
@@ -205,9 +206,9 @@ export const namespaceFunctions = {
 		}
 
 		const lastUpdate = new Intl.DateTimeFormat(lang, {
-			dateStyle: "long",
-			timeStyle: "long",
-			timeZone: "UTC",
+			dateStyle: 'long',
+			timeStyle: 'long',
+			timeZone: 'UTC',
 			hour12: false,
 		}).format(new Date(searchStats.lastUpdated));
 
@@ -215,6 +216,106 @@ export const namespaceFunctions = {
 			lastUpdate: lastUpdate,
 			searchInterface: searchInterface,
 			searchContent: searchContent,
+		};
+	},
+	'view': async (url, _, defs) => {
+		const idExp = /^[a-z\d]{8}-[a-z\d]{4}-[a-z\d]{4}-[a-z\d]{4}-[a-z\d]{12}$/;
+		const id = url.searchParams.get('id');
+		if (id === null || !idExp.test(id))
+			throw new utils.BadRequestError();
+
+		const entry = await fp.findGame(id);
+		if (entry === null)
+			throw new utils.NotFoundError();
+
+		const buildTable = (source, fields) => {
+			const tableRowsArr = [];
+			for (const field in fields) {
+				const rawValue = source[field];
+				if (rawValue === undefined || rawValue.length === 0)
+					continue;
+
+				const fieldInfo = fields[field];
+				let value;
+				switch (fieldInfo.type) {
+					case 'string': {
+						if (Object.hasOwn(fieldInfo, 'values') && Object.hasOwn(fieldInfo.values, rawValue))
+							value = fieldInfo.values[rawValue].name;
+						else
+							value = utils.sanitizeInject(rawValue);
+						break;
+					}
+					case 'list': {
+						let valueList = rawValue instanceof Array
+							? rawValue.map(listValue => utils.sanitizeInject(listValue))
+							: rawValue.split(';').map(listValue => utils.sanitizeInject(listValue.trim()));
+						if (field == 'platforms')
+							valueList = valueList.filter(listValue => listValue != entry.primaryPlatform);
+						else if (field == 'language') {
+							const displayNames = new Intl.DisplayNames([config.defaultLang], { type: 'language' });
+							valueList = valueList.map(listValue => {
+								try { return displayNames.of(listValue); }
+								catch { return listValue; }
+							});
+						}
+
+						if (valueList.length > 0)
+							value = valueList.length == 1
+								? valueList[0]
+								: `<ul>${valueList.map(listValue => `<li>${listValue}</li>`).join('')}</ul>`;
+						break;
+					}
+					case 'date': {
+						const parsedValue = new Date(rawValue);
+						if (!isNaN(parsedValue)) {
+							if (rawValue.length == 10)
+								value = parsedValue.toLocaleDateString(config.defaultLang, { timeZone: 'UTC' });
+							else
+								value = parsedValue.toLocaleString(config.defaultLang, { timeZone: 'UTC' });
+						}
+						break;
+					}
+					case 'size': {
+						if (typeof(rawValue) == 'number')
+							value = format(rawValue, { locale: config.defaultLang });
+						break;
+					}
+					case 'number': {
+						const parsedValue = parseInt(rawValue, 10);
+						if (!isNaN(parsedValue))
+							value = parsedValue.toLocaleString(config.defaultLang);
+						break;
+					}
+				}
+
+				if (value !== undefined)
+					tableRowsArr.push(utils.buildHtml(templates['view'].row, {
+						field: fieldInfo.name + ':',
+						value: value.replaceAll('\n', '<br>'),
+					}));
+			}
+
+			return utils.buildHtml(templates['view'].table, { tableRows: tableRowsArr.join('\n') });
+		};
+
+		const title = utils.sanitizeInject(entry.title);
+		const newDefs = Object.assign({}, defs);
+		const sortedGameData = entry.gameData.toSorted((a, b) => new Date(b.dateAdded).getTime() - new Date(a.dateAdded).getTime());
+		return {
+			Title: title,
+			Header: title,
+			logoUrl: `${config.imageUrl}/${entry.logoPath}`,
+			screenshotUrl: `${config.imageUrl}/${entry.screenshotPath}`,
+			entryTable: buildTable(entry, viewInfo.game),
+			addAppInfo: entry.addApps.length == 0 ? '' : utils.buildHtml(templates['view'].addapp, Object.assign(newDefs, {
+				addAppTables: entry.addApps.map(addApp => buildTable(addApp, viewInfo.addApp)).join('\n'),
+			})),
+			gameDataInfo: sortedGameData.length == 0 ? '' : utils.buildHtml(templates['view'].gamedata, Object.assign(newDefs, {
+				gameDataTable: buildTable(sortedGameData[0], viewInfo.gameData),
+			})),
+			oldGameDataInfo: sortedGameData.length < 2 ? '' : utils.buildHtml(templates['view'].oldgamedata, Object.assign(newDefs, {
+				oldGameDataTables: sortedGameData.slice(1).map(gameData => buildTable(gameData, viewInfo.gameData)).join('\n'),
+			})),
 		};
 	},
 	'search-info': (_, lang) => {

@@ -53,15 +53,15 @@ async function serverHandler(request, info) {
 		utils.logMessage(`${blockRequest ? 'BLOCKED ' : ''}${ipAddress} (${userAgent}): ${request.url}`);
 
 	// If request needs to be blocked, return a Not Found error
-	if (blockRequest) throw new NotFoundError();
+	if (blockRequest) throw new utils.NotFoundError();
 
 	// Make sure request is for a valid URL
 	const requestUrl = URL.parse(request.url);
-	if (requestUrl === null) throw new BadRequestError();
+	if (requestUrl === null) throw new utils.BadRequestError();
 
 	// If access host is configured, do not allow connections through any other hostname
 	if (config.accessHosts.length > 0 && !config.accessHosts.some(host => host == requestUrl.hostname))
-		throw new BadRequestError();
+		throw new utils.BadRequestError();
 
 	const requestPath = requestUrl.pathname.replace(/^[/]+(.*?)[/]*$/, '$1');
 	const responseHeaders = new Headers({
@@ -90,7 +90,7 @@ async function serverHandler(request, info) {
 	const page = pages[`/${requestPath}`];
 	if (page === undefined) {
 		const filePath = `static/${requestPath}`;
-		if (!utils.getPathInfo(filePath)?.isFile) throw new NotFoundError();
+		if (!utils.getPathInfo(filePath)?.isFile) throw new utils.NotFoundError();
 		responseHeaders.set('Content-Type', contentType(filePath.substring(filePath.lastIndexOf('.'))) ?? 'application/octet-stream');
 
 		return new Response(Deno.openSync(filePath).readable, { headers: responseHeaders });
@@ -124,7 +124,7 @@ async function serverHandler(request, info) {
 
 // Display error page
 async function serverError(error) {
-	const [badRequest, notFound] = [error instanceof BadRequestError, error instanceof NotFoundError];
+	const [badRequest, notFound] = [error instanceof utils.BadRequestError, error instanceof utils.NotFoundError];
 
 	// We don't need to translate this
 	let errorPage = templates.error.main;
@@ -164,6 +164,7 @@ function initGlobals() {
 	globalThis.filteredTags = JSON.parse(Deno.readTextFileSync('data/filter.json'));
 	globalThis.searchInfo = JSON.parse(Deno.readTextFileSync('data/search.json'));
 	globalThis.searchStats = JSON.parse(Deno.readTextFileSync('data/stats.json'));
+	globalThis.viewInfo = JSON.parse(Deno.readTextFileSync('data/view.json'));
 
 	// Other helpful stuff
 	globalThis.lastUpdatedPath = 'data/lastUpdated.txt';
@@ -337,24 +338,4 @@ function getTemplates() {
 		templates[fakeNamespace] = { main: Deno.readTextFileSync(`templates/${fakeNamespace}.html`) };
 
 	return templates;
-}
-
-// 400 Bad Request
-class BadRequestError extends Error {
-	constructor(message) {
-		super(message);
-		this.name = this.constructor.name;
-		this.status = 400;
-		this.statusText = 'Bad Request';
-	}
-}
-
-// 404 Not Found
-class NotFoundError extends Error {
-	constructor(message) {
-		super(message);
-		this.name = this.constructor.name;
-		this.status = 404;
-		this.statusText = 'Not Found';
-	}
 }

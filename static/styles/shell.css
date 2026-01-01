@@ -377,9 +377,10 @@ body {
 	font-size: 2rem;
 }
 .fp-content-subheader {
+	font-size: 1.5rem;
+}
+.fp-content-subheader:not(:first-child) {
 	margin-top: 1.3rem;
-
-	font-size: 1.7rem;
 }
 .fp-content-spacer {
 	height: 1rem;

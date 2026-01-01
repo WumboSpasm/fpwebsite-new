@@ -57,10 +57,13 @@
 	"/view": {
 		"namespace": "view",
 		"styles": ["view.css"],
-		"scripts": [],
+		"scripts": ["view.js"],
 		"fragments": [
-			"row",
-			"addapp"
+			"addapp",
+			"gamedata",
+			"oldgamedata",
+			"table",
+			"row"
 		]
 	},
 	"/discord": {

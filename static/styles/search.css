@@ -353,14 +353,18 @@ div[class='fp-search-expand'] {
 }
 .fp-search-stats-row {
 	display: flex;
+	justify-content: center;
 }
 .fp-search-stat {
-	flex: 1 0 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 .fp-search-stat-count {
 	font-family: var(--fp-header-font);
-	font-size: 2rem;
+	font-size: 1.75rem;
+}
+.fp-search-stat-spacer {
+	min-width: 1rem;
+	flex-basis: 15%;
 }

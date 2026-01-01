@@ -311,3 +311,23 @@ export function logMessage(message) {
 	if (config.logToConsole) console.log(message);
 	if (config.logFile) try { Deno.writeTextFile(config.logFile, message + '\n', { append: true }); } catch {}
 }
+
+// 400 Bad Request
+export class BadRequestError extends Error {
+	constructor(message) {
+		super(message);
+		this.name = this.constructor.name;
+		this.status = 400;
+		this.statusText = 'Bad Request';
+	}
+}
+
+// 404 Not Found
+export class NotFoundError extends Error {
+	constructor(message) {
+		super(message);
+		this.name = this.constructor.name;
+		this.status = 404;
+		this.statusText = 'Not Found';
+	}
+}

@@ -1,3 +1,8 @@
 {
-	"Header": "View Entry"
+	"Logo": "Logo",
+	"Screenshot": "Screenshot",
+	"Entry_Info": "Entry Information",
+	"Add_Apps": "Additional Applications",
+	"Game_Data": "Game Data",
+	"Old_Game_Data": "View Outdated Game Data"
 }
