@@ -53,8 +53,8 @@
 	border: 0.15rem solid var(--fp-border-color);
 }
 .fp-view-table td:first-child {
-	width: 25%;
-	min-width: 7rem;
+	width: 28%;
+	min-width: 8rem;
 
 	font-weight: bold;
 	text-align: right;
