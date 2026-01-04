@@ -1,26 +1,41 @@
 const params = new URL(location).searchParams;
 
 document.addEventListener('DOMContentLoaded', () => {
-	initResults();
 	if (params.get('advanced') == 'true')
 		fetch('data/search.json').then(async searchInfo => initAdvancedMode(await searchInfo.json()));
+	if (document.querySelector('.fp-search-result'))
+		initResultLogos();
 });
 
-function initResults() {
-	const logoObserver = new IntersectionObserver(entries => {
-		for (const entry of entries) {
-			if (entry.isIntersecting) {
-				logoObserver.unobserve(entry.target);
-				const logo = document.createElement('img');
-				logo.className = 'fp-search-result-logo';
-				logo.src = entry.target.dataset.logo;
-				entry.target.appendChild(logo);
-			}
-		}
-	});
+function initResultLogos() {
+	const logoContainers = document.querySelectorAll('.fp-search-result-logo-container');
+	const loadLogo = (logoContainer) => {
+		const logo = document.createElement('img');
+		logo.className = 'fp-search-result-logo';
+		logo.src = logoContainer.dataset.logo;
+		logoContainer.appendChild(logo);
+	};
 
-	for (const logoContainer of document.querySelectorAll('.fp-search-result-logo-container'))
-		logoObserver.observe(logoContainer);
+	// Check if the browser supports IntersectionObserver
+	if ('IntersectionObserver' in window) {
+		// IntersectionObserver is supported, so load logos only when visible
+		const logoObserver = new IntersectionObserver(entries => {
+			for (const entry of entries) {
+				if (entry.isIntersecting) {
+					logoObserver.unobserve(entry.target);
+					loadLogo(entry.target);
+				}
+			}
+		});
+
+		for (const logoContainer of logoContainers)
+			logoObserver.observe(logoContainer);
+	}
+	else {
+		// IntersectionObserver is not supported, so load all logos immediately
+		for (const logoContainer of logoContainers)
+			loadLogo(logoContainer);
+	}
 }
 
 function initAdvancedMode(searchInfo) {
@@ -70,7 +85,7 @@ function createParameter(searchInfo, field, filter, value) {
 	const type = getParamType(searchInfo, field, filter);
 	if (!type) return null;
 
-	const deleteButton = createDeleteButton();
+	const deleteButton = createDeleteButton(searchInfo);
 	const fieldSelect = createFieldSelect(searchInfo, field, type);
 	const filterSelect = createFilterSelect(searchInfo, type, filter);
 	const valueInput = createValueInput(searchInfo, type, field, value);
@@ -178,10 +193,18 @@ function createValueTextBox(initialValue) {
 	return valueTextBox;
 }
 
-function createDeleteButton() {
+function createDeleteButton(searchInfo) {
 	const deleteButton = document.createElement('div');
 	deleteButton.className = 'fp-search-delete-button';
-	deleteButton.addEventListener('click', e => e.target.parentElement.remove());
+	deleteButton.addEventListener('click', e => {
+		const parameter = e.target.parentElement;
+		const container = parameter.parentElement;
+		parameter.remove();
+		// If last parameter is deleted, re-add the default parameter
+		if (container.children.length == 0)
+			// The timeout is to force some visual feedback, because otherwise it might look like nothing is happening
+			setTimeout(() => addDefaultParameter(searchInfo), 50);
+	});
 
 	return deleteButton;
 }

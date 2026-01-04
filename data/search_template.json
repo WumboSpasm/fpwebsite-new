@@ -3,27 +3,26 @@
 		"string": {
 			"generic": "Catch-All",
 			"id": "ID",
-			"library": "Library",
 			"title": "Title",
+			"series": "Series",
 			"developer": "Developer",
 			"publisher": "Publisher",
-			"series": "Series",
+			"source": "Source",
+			"library": "Library",
 			"tags": "Tag",
 			"platforms": "Platform",
 			"playMode": "Play Mode",
 			"status": "Status",
-			"notes": "Notes",
-			"source": "Source",
-			"releaseDate": "Release Date",
-			"originalDescription": "Original Description",
 			"language": "Language",
+			"notes": "Notes",
+			"originalDescription": "Original Description",
 			"applicationPath": "Application Path",
 			"launchCommand": "Launch Command"
 		},
 		"date": {
+			"releaseDate": "Release Date",
 			"dateAdded": "Date Added",
-			"dateModified": "Date Modified",
-			"releaseDate": "Release Date"
+			"dateModified": "Date Modified"
 		},
 		"number": {
 			"tags": "# Tags",
@@ -55,6 +54,7 @@
 			"arcade": "Games",
 			"theatre": "Animations"
 		},
+		"platforms": {},
 		"playMode": {
 			"Single Player": "Single Player",
 			"Multiplayer": "Multiplayer",
@@ -65,17 +65,16 @@
 			"Hacked": "Hacked",
 			"Partial": "Partial",
 			"Not Working": "Not Working"
-		},
-		"platforms": {}
+		}
 	},
 	"sort": {
 		"title": "Title",
+		"series": "Series",
 		"developer": "Developer",
 		"publisher": "Publisher",
-		"series": "Series",
 		"platform": "Platform",
+		"releaseDate": "Release Date",
 		"dateAdded": "Date Added",
-		"dateModified": "Date Modified",
-		"releaseDate": "Release Date"
+		"dateModified": "Date Modified"
 	}
 }
