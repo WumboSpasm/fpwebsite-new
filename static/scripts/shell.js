@@ -10,9 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	for (const hiddenContentContainer of document.querySelectorAll('.fp-hidden-content-container')) {
 		const hiddenContentHeader = hiddenContentContainer.querySelector('.fp-hidden-content-header');
 		hiddenContentHeader.addEventListener('click', () => { toggleHiddenContent(hiddenContentContainer); });
-		// Make sure it's hidden
-		const hiddenContent = hiddenContentContainer.querySelector('.fp-hidden-content');
-		if (!hiddenContent.hidden) toggleHiddenContent(hiddenContentContainer);
 	}
 });
 
@@ -24,9 +21,8 @@ function toggleSidebar() {
 
 function toggleLanguageSelect() {
 	const languagesContainer = document.querySelector('.fp-languages-container');
-	languagesContainer.hidden = !languagesContainer.hidden;
 	const languagesToggle = document.querySelector('.fp-languages-toggle');
-	languagesToggle.dataset.toggled = languagesContainer.hidden ? 'false' : 'true';
+	languagesToggle.dataset.toggled = languagesContainer.classList.toggle('fp-hidden') ? 'false' : 'true';
 }
 
 function toggleTheme() {
@@ -44,6 +40,5 @@ function updateThemeIcon() {
 
 function toggleHiddenContent(hiddenContentContainer) {
 	const hiddenContent = hiddenContentContainer.querySelector('.fp-hidden-content');
-	hiddenContent.hidden = !hiddenContent.hidden;
-	hiddenContentContainer.style.setProperty('--fp-hidden-content-arrow-icon', `var(--fp-${hiddenContent.hidden ? 'down' : 'up'}-arrow-icon)`);
+	hiddenContentContainer.style.setProperty('--fp-hidden-content-arrow-icon', `var(--fp-${hiddenContent.classList.toggle('fp-hidden') ? 'down' : 'up'}-arrow-icon)`);
 }

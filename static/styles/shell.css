@@ -393,6 +393,7 @@ body {
 .fp-content-large-spacer {
 	height: 1.5rem;
 }
+
 .fp-hidden-content-container {
 	--fp-hidden-content-arrow-icon: var(--fp-down-arrow-icon);
 
@@ -428,4 +429,10 @@ body {
 	padding: 1rem 0;
 
 	border-top: 0.15rem solid var(--fp-border-color);
+}
+
+/* Generic classes */
+
+.fp-hidden {
+	display: none;
 }
