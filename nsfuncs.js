@@ -10,7 +10,7 @@ export const namespaceFunctions = {
 		for (const lang in locales) {
 			const langUrl = new URL(url);
 			langUrl.searchParams.set('lang', lang);
-			langButtons.push(`<a class="fp-sidebar-button fp-button fp-alternating" href="${langUrl.search}">${locales[lang].name}</a>`);
+			langButtons.push(`<a class="fp-shell-sidebar-button fp-shell-button fp-shell-alternating" href="${langUrl.search}">${locales[lang].name}</a>`);
 		}
 
 		return { 'LANGUAGE_SELECT': langButtons.join('\n'), };

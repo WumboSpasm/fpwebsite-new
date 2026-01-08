@@ -1,3 +1,13 @@
+/* Constants */
+
+:root {
+	--fp-search-delete-button-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="%23fff"><path d="M291-221.91 221.91-291l189-189-189-189L291-738.09l189 189 189-189L738.09-669l-189 189 189 189L669-221.91l-189-189z"/></svg>');
+	--fp-search-first-page-icon: url('data:image/svg+xml;utf8,<svg viewBox="0 0 28 16" fill="%23fff" xmlns="http://www.w3.org/2000/svg"><path d="m4 8 8-6v12Zm10 0 8-6v12Z"/></svg>');
+	--fp-search-last-page-icon: url('data:image/svg+xml;utf8,<svg viewBox="0 0 28 16" fill="%23fff" xmlns="http://www.w3.org/2000/svg"><path d="m14 8-8-6v12Zm10 0-8-6v12Z"/></svg>');
+}
+
+/* Mobile accommodations */
+
 @media (max-width: 87.99rem) {
 	.fp-search-stats {
 		flex-direction: column;
@@ -20,117 +30,8 @@
 	}
 }
 
-:root {
-	--fp-light-search-box-focus-border-color: #00aaff;
-	--fp-light-search-button-background-color: #0077ff;
-	--fp-light-search-button-background-hover-color: #0066ee;
+/* Search */
 
-	--fp-dark-search-box-focus-border-color: #0088cc;
-	--fp-dark-search-button-background-color: #0044bb;
-	--fp-dark-search-button-background-hover-color: #0055cc;
-}
-
-:root:not([data-theme='dark']) {
-	--fp-search-box-focus-border-color: var(--fp-light-search-box-focus-border-color);
-	--fp-search-button-background-color: var(--fp-light-search-button-background-color);
-	--fp-search-button-background-hover-color: var(--fp-light-search-button-background-hover-color);
-}
-:root[data-theme='dark'] {
-	--fp-search-box-focus-border-color: var(--fp-dark-search-box-focus-border-color);
-	--fp-search-button-background-color: var(--fp-dark-search-button-background-color);
-	--fp-search-button-background-hover-color: var(--fp-dark-search-button-background-hover-color);
-}
-
-:root {
-	--fp-search-checkbox-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="%23fff"><path d="M382-240 154-468l57-57 171 171 367-367 57 57z"/></svg>');
-	--fp-search-delete-button-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="%23fff"><path d="M291-221.91 221.91-291l189-189-189-189L291-738.09l189 189 189-189L738.09-669l-189 189 189 189L669-221.91l-189-189z"/></svg>');
-	--fp-search-first-page-icon: url('data:image/svg+xml;utf8,<svg viewBox="0 0 28 16" fill="%23fff" xmlns="http://www.w3.org/2000/svg"><path d="m4 8 8-6v12Zm10 0 8-6v12Z"/></svg>');
-	--fp-search-last-page-icon: url('data:image/svg+xml;utf8,<svg viewBox="0 0 28 16" fill="%23fff" xmlns="http://www.w3.org/2000/svg"><path d="m14 8-8-6v12Zm10 0-8-6v12Z"/></svg>');
-}
-
-.fp-search-text-box {
-	--fp-search-box-border-color: var(--fp-border-color);
-
-	all: unset;
-	min-width: 0;
-	padding: 0.3rem 0.6rem;
-	box-sizing: border-box;
-
-	border: 0.15rem solid var(--fp-search-box-border-color);
-	border-radius: 0.5rem;
-	box-shadow: inset 0 0 0.3rem var(--fp-search-box-border-color);
-}
-.fp-search-text-box:focus {
-	--fp-search-box-border-color: var(--fp-search-box-focus-border-color);
-}
-.fp-search-button {
-	all: unset;
-	padding: 0.5rem 0.75rem;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-
-	color: var(--fp-navigation-text-color) !important;
-	text-align: center;
-	text-decoration: none !important;
-	text-shadow: 0 0;
-	background-color: var(--fp-search-button-background-color);
-	border-radius: 0.5rem;
-	cursor: pointer;
-}
-.fp-search-button:hover {
-	background-color: var(--fp-search-button-background-hover-color);
-}
-.fp-search-button-icon {
-	width: 100%;
-	height: 100%;
-}
-.fp-search-dropdown {
-	all: unset;
-	padding: 0.3rem 1.5rem 0.3rem 0.5rem;
-	box-sizing: border-box;
-	display: flex;
-	align-items: center;
-
-	text-overflow: ellipsis;
-	background-image: var(--fp-down-arrow-icon);
-	background-position: right 0.35rem top 0.41rem;
-	background-size: 0.8rem;
-	background-repeat: no-repeat;
-	background-color: var(--fp-alt-background-color);
-	border: 0.15rem solid var(--fp-border-color);
-	border-radius: 0.5rem;
-}
-.fp-search-dropdown:hover {
-	background-color: var(--fp-border-color);
-}
-.fp-search-checkbox {
-	all: unset;
-	width: 1rem;
-	height: 1rem;
-	flex-shrink: 0;
-
-	border-width: 0.15rem;
-	border-style: solid;
-	border-color: var(--fp-border-color);
-	border-radius: 0.25rem;
-}
-.fp-search-checkbox:hover {
-	background-color: var(--fp-alt-background-color);
-}
-.fp-search-checkbox:checked {
-	background-image: var(--fp-search-checkbox-icon);
-	background-position: center;
-	background-color: var(--fp-search-button-background-color);
-	border-color: var(--fp-search-button-background-color);
-}
-.fp-search-checkbox:checked:hover {
-	background-color: var(--fp-search-button-background-hover-color);
-	border-color: var(--fp-search-button-background-hover-color);
-}
-.fp-search-checkbox-label {
-	padding-left: 0.5rem;
-}
 .fp-search-table {
 	margin: 1.25rem auto 0.5rem;
 
@@ -179,7 +80,7 @@
 .fp-search-advanced-parameter > :not(:first-child):not(:last-child) {
 	margin-right: 0.25rem;
 }
-.fp-search-advanced-parameter > .fp-search-dropdown:not([name='value']) {
+.fp-search-advanced-parameter > .fp-dropdown:not([name='value']) {
 	min-width: 10rem;
 }
 .fp-search-advanced-parameter > [name='value'] {
@@ -196,12 +97,12 @@
 	background-position: center;
 	background-size: 1rem;
 	background-repeat: no-repeat;
-	background-color: var(--fp-search-button-background-color);
+	background-color: var(--fp-button-background-color);
 	border-radius: 1.25rem;
 	cursor: pointer;
 }
 .fp-search-delete-button:hover {
-	background-color: var(--fp-search-button-background-hover-color);
+	background-color: var(--fp-button-background-hover-color);
 }
 .fp-search-thin {
 	font-size: 0.75rem;
@@ -229,10 +130,10 @@ div[class='fp-search-expand'] {
 	display: flex;
 	align-items: center;
 }
-.fp-search-options-group > :not(.fp-search-checkbox):not(:last-child) {
+.fp-search-options-group > :not(.fp-checkbox):not(:last-child) {
 	margin-right: 0.5rem;
 }
-.fp-search-options-group > .fp-search-checkbox:not(:first-child) {
+.fp-search-options-group > .fp-checkbox:not(:first-child) {
 	margin-left: 0.5rem;
 }
 

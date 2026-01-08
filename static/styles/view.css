@@ -1,6 +1,10 @@
+/* Constants */
+
 :root {
 	--fp-gray-right-arrow-icon: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="%23888" xmlns="http://www.w3.org/2000/svg"><path d="m13 8-8-6v12Z"/></svg>');
 }
+
+/* Entry viewer */
 
 .fp-view-container {
 	--fp-toggle-arrow-icon: var(--fp-gray-right-arrow-icon);

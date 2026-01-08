@@ -105,7 +105,7 @@ function createParameter(searchInfo, field, filter, value) {
 
 function createFieldSelect(searchInfo, initialField, initialFieldType) {
 	const fieldSelect = document.createElement('select');
-	fieldSelect.classList.add('fp-search-dropdown', 'fp-search-thin');
+	fieldSelect.classList.add('fp-dropdown', 'fp-search-thin');
 	fieldSelect.name = 'field';
 	for (const type in searchInfo.field) {
 		for (const field in searchInfo.field[type]) {
@@ -141,7 +141,7 @@ function createFilterSelect(searchInfo, type, initialFilter) {
 	if (!filterList) return null;
 
 	const filterSelect = document.createElement('select');
-	filterSelect.classList.add('fp-search-dropdown', 'fp-search-thin');
+	filterSelect.classList.add('fp-dropdown', 'fp-search-thin');
 	filterSelect.name = 'filter';
 	for (const filter in filterList) {
 		const filterOption = document.createElement('option');
@@ -167,7 +167,7 @@ function createValueSelect(searchInfo, field, initialValue) {
 	if (!valueList) return null;
 
 	const valueSelect = document.createElement('select');
-	valueSelect.classList.add('fp-search-dropdown', 'fp-search-thin');
+	valueSelect.classList.add('fp-dropdown', 'fp-search-thin');
 	valueSelect.name = 'value';
 	for (const value in valueList) {
 		const valueOption = document.createElement('option');
@@ -184,7 +184,7 @@ function createValueSelect(searchInfo, field, initialValue) {
 
 function createValueTextBox(initialValue) {
 	const valueTextBox = document.createElement('input');
-	valueTextBox.classList.add('fp-search-text-box', 'fp-search-thin', 'fp-search-expand');
+	valueTextBox.classList.add('fp-text-box', 'fp-search-thin', 'fp-search-expand');
 	valueTextBox.type = 'text';
 	valueTextBox.name = 'value';
 	if (initialValue)

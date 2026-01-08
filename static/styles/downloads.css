@@ -1,16 +1,4 @@
-@media (max-width: 63.99rem) {
-	.fp-downloads-tab-content {
-		flex-direction: column;
-	}
-	.fp-downloads-tab-content > :not(:last-child) {
-		margin-bottom: 1rem;
-	}
-}
-@media (min-width: 64rem) {
-	.fp-downloads-tab-content > :not(:last-child) {
-		margin-right: 1.5rem;
-	}
-}
+/* Page theme */
 
 :root {
 	--fp-light-downloads-warning-background-color: #ffdddd;
@@ -36,6 +24,24 @@
 	--fp-downloads-notice-background-color: var(--fp-dark-downloads-notice-background-color);
 	--fp-downloads-notice-border-color: var(--fp-dark-downloads-notice-border-color);
 }
+
+/* Mobile accommodations */
+
+@media (max-width: 63.99rem) {
+	.fp-downloads-tab-content {
+		flex-direction: column;
+	}
+	.fp-downloads-tab-content > :not(:last-child) {
+		margin-bottom: 1rem;
+	}
+}
+@media (min-width: 64rem) {
+	.fp-downloads-tab-content > :not(:last-child) {
+		margin-right: 1.5rem;
+	}
+}
+
+/* Downloads */
 
 .fp-downloads-tab-container {
 	max-width: 64rem;
@@ -130,7 +136,7 @@
 	justify-content: center;
 
 	text-decoration: none !important;
-	background-image: radial-gradient(ellipse at top left, var(--fp-light-navigation-background-color-1), var(--fp-light-navigation-background-color-2));
+	background-image: radial-gradient(ellipse at top left, var(--fp-light-shell-background-color-1), var(--fp-light-shell-background-color-2));
 	border-radius: 0.5rem;
 	box-shadow: 0 0.1rem 0.4rem -0.05rem #000000;
 }
@@ -143,7 +149,7 @@
 	padding-top: 0.2rem;
 }
 .fp-downloads-tab-button-text {
-	color: var(--fp-navigation-text-color);
+	color: var(--fp-shell-text-color);
 	font-size: 1.25rem;
 	font-weight: bold;
 	text-align: center;
@@ -162,7 +168,7 @@
 	top: 0;
 	right: 0;
 
-	color: var(--fp-navigation-text-color);
+	color: var(--fp-shell-text-color);
 	background-color: #00000066;
 }
 .fp-downloads-tab-alt-link-container > .fp-downloads-tab-button-hash {
@@ -198,10 +204,10 @@
 	background-color: var(--fp-downloads-notice-background-color);
 	border-color: var(--fp-downloads-notice-border-color);
 }
-.fp-old-version-downloads {
+.fp-downloads-old-version {
 	margin: 0.25rem 0;
 	padding-left: 2rem;
 }
-.fp-lost-version {
+.fp-downloads-lost-version {
 	color: #ff3333;
 }

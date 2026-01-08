@@ -3,9 +3,9 @@ rootData.theme = localStorage.getItem('fp-theme') || (window.matchMedia('(prefer
 
 document.addEventListener('DOMContentLoaded', () => {
 	updateThemeIcon();
-	document.querySelector('.fp-sidebar-toggle').addEventListener('click', toggleSidebar);
-	document.querySelector('.fp-languages-toggle').addEventListener('click', toggleLanguageSelect);
-	document.querySelector('.fp-theme-button').addEventListener('click', toggleTheme);
+	document.querySelector('.fp-shell-sidebar-toggle').addEventListener('click', toggleSidebar);
+	document.querySelector('.fp-shell-languages-toggle').addEventListener('click', toggleLanguageSelect);
+	document.querySelector('.fp-shell-theme-button').addEventListener('click', toggleTheme);
 
 	for (const hiddenContentContainer of document.querySelectorAll('.fp-hidden-content-container')) {
 		const hiddenContentHeader = hiddenContentContainer.querySelector('.fp-hidden-content-header');
@@ -15,13 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function toggleSidebar() {
 	rootData.mobileSidebar = rootData.mobileSidebar != 'true' ? 'true' : 'false';
-	const sidebarToggle = document.querySelector('.fp-sidebar-toggle');
+	const sidebarToggle = document.querySelector('.fp-shell-sidebar-toggle');
 	sidebarToggle.dataset.toggled = rootData.mobileSidebar;
 }
 
 function toggleLanguageSelect() {
-	const languagesContainer = document.querySelector('.fp-languages-container');
-	const languagesToggle = document.querySelector('.fp-languages-toggle');
+	const languagesContainer = document.querySelector('.fp-shell-languages-container');
+	const languagesToggle = document.querySelector('.fp-shell-languages-toggle');
 	languagesToggle.dataset.toggled = languagesContainer.classList.toggle('fp-hidden') ? 'false' : 'true';
 }
 
@@ -34,8 +34,8 @@ function toggleTheme() {
 
 function updateThemeIcon() {
 	if (!rootData.theme) initTheme();
-	const themeButton = document.querySelector('.fp-theme-button');
-	themeButton.style.backgroundImage = `var(--fp-sidebar-${rootData.theme == 'light' ? 'dark' : 'light'}-theme-toggle-icon)`;
+	const themeButton = document.querySelector('.fp-shell-theme-button');
+	themeButton.style.backgroundImage = `var(--fp-shell-${rootData.theme == 'light' ? 'dark' : 'light'}-theme-toggle-icon)`;
 }
 
 function toggleHiddenContent(hiddenContentContainer) {
