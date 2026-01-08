@@ -27,7 +27,9 @@ const defaultConfig = {
 	logBlockedRequests: true,
 	databaseFile: 'data/flashpoint.sqlite',
 	fpfssUrl: 'https://fpfss.unstable.life',
-	imageUrl: 'https://infinity.unstable.life/images',
+	imageServer: 'https://infinity.unstable.life/images',
+	zipServer: 'https://download.unstable.life/gib-roms/Games',
+	legacyServer: 'https://infinity.unstable.life/Flashpoint/Legacy/htdocs',
 	pageSize: 100,
 	updateFrequency: 1440, // 24 hours
 	defaultLang: 'en-US',

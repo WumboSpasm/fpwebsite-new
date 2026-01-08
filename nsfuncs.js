@@ -3,6 +3,8 @@ import { GameSearchSortable, GameSearchDirection, newSubfilter } from 'npm:@fpar
 
 import * as utils from './utils.js';
 
+const idExp = /^[a-z\d]{8}-[a-z\d]{4}-[a-z\d]{4}-[a-z\d]{4}-[a-z\d]{12}$/;
+
 export const namespaceFunctions = {
 	'shell': (url) => {
 		// Prepare language select
@@ -193,7 +195,7 @@ export const namespaceFunctions = {
 				// Build search result HTML
 				searchResultsArr.push(utils.buildHtml(templates['search'].result, {
 					resultId: searchResult.id,
-					resultLogo: `${config.imageUrl}/${searchResult.logoPath}?type=jpg`,
+					resultLogo: `${config.imageServer}/${searchResult.logoPath}?type=jpg`,
 					resultTitle: utils.sanitizeInject(searchResult.title),
 					resultCreator: utils.sanitizeInject(resultCreator),
 					resultPlatform: searchResult.platforms.join('/'),
@@ -245,7 +247,6 @@ export const namespaceFunctions = {
 	},
 	'view': async (url, _, defs) => {
 		// Check if an ID has been supplied and if it is properly formatted
-		const idExp = /^[a-z\d]{8}-[a-z\d]{4}-[a-z\d]{4}-[a-z\d]{4}-[a-z\d]{12}$/;
 		const id = url.searchParams.get('id');
 		if (id === null || !idExp.test(id))
 			throw new utils.BadRequestError();
@@ -346,8 +347,8 @@ export const namespaceFunctions = {
 		return {
 			Title: title,
 			Header: title,
-			logoUrl: `${config.imageUrl}/${entry.logoPath}`,
-			screenshotUrl: `${config.imageUrl}/${entry.screenshotPath}`,
+			logoUrl: `${config.imageServer}/${entry.logoPath}`,
+			screenshotUrl: `${config.imageServer}/${entry.screenshotPath}`,
 			entryTable: buildTable(entry, viewInfo.game),
 			addAppInfo: entry.addApps.length == 0 ? '' : utils.buildHtml(templates['view'].addapp, Object.assign(newDefs, {
 				addAppTables: entry.addApps.map(addApp => buildTable(addApp, viewInfo.addApp)).join('\n'),
@@ -358,6 +359,45 @@ export const namespaceFunctions = {
 			oldGameDataInfo: sortedGameData.length < 2 ? '' : utils.buildHtml(templates['view'].oldgamedata, Object.assign(newDefs, {
 				oldGameDataTables: sortedGameData.slice(1).map(gameData => buildTable(gameData, viewInfo.gameData)).join('\n'),
 			})),
+		};
+	},
+	'play': async (url, lang, defs) => {
+		// Check if an ID has been supplied and if it is properly formatted
+		const id = url.searchParams.get('id');
+		if (id === null || !idExp.test(id))
+			throw new utils.BadRequestError();
+
+		// Fetch the entry, or display an error if it doesn't exist
+		const entry = await fp.findGame(id);
+		if (entry === null)
+			throw new utils.NotFoundError();
+
+		let gameZip, launchCommand;
+		if (entry.gameData.length > 0) {
+			// If the game is zipped, return the path and launch command of the latest game data
+			const sortedGameData = entry.gameData.toSorted((a, b) => new Date(b.dateAdded).getTime() - new Date(a.dateAdded).getTime());
+			const newestGameData = sortedGameData[0];
+			gameZip = `${config.zipServer}/${entry.id}-${new Date(newestGameData.dateAdded).getTime()}.zip`;
+			launchCommand = newestGameData.launchCommand;
+		}
+		else {
+			// If the game is not zipped, return its legacy launch command
+			gameZip = '';
+			launchCommand = entry.legacyLaunchCommand;
+		}
+
+		// Remove any prefixes from the launch command
+		const httpIndex = launchCommand.indexOf('http://');
+		if (httpIndex != 0) launchCommand = launchCommand.substring(httpIndex);
+
+		// Build entry player HTML
+		const title = utils.sanitizeInject(entry.title);
+		return {
+			Title: title,
+			Header: title,
+			legacyServer: config.legacyServer,
+			gameZip: gameZip,
+			launchCommand: launchCommand,
 		};
 	},
 	'search-info': (_, lang) => {
