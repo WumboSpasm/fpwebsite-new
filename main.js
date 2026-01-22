@@ -15,6 +15,7 @@ const flags = parseArgs(Deno.args, {
 
 // Default config
 const defaultConfig = {
+	hostName: '0.0.0.0',
 	httpPort: 80,
 	httpsPort: 443,
 	httpsCert: null,
