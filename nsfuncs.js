@@ -305,8 +305,11 @@ export const namespaceFunctions = {
 						// Parse date into formatted string
 						const parsedValue = new Date(rawValue);
 						if (!isNaN(parsedValue)) {
-							// Only display time if the original string defines it
-							if (rawValue.length == 10)
+							if (rawValue.length == 4)
+								value = `${parsedValue.getUTCFullYear()}`;
+							else if (rawValue.length == 7)
+								value = `${parsedValue.getUTCMonth() + 1}/${parsedValue.getUTCFullYear()}`;
+							else if (rawValue.length == 10)
 								value = parsedValue.toLocaleDateString(config.defaultLang, { timeZone: 'UTC' });
 							else
 								value = parsedValue.toLocaleString(config.defaultLang, { timeZone: 'UTC' });
