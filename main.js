@@ -146,6 +146,9 @@ async function serverError(error) {
 	return new Response(errorPage, { status: error.status ?? 500, headers: { 'Content-Type': 'text/html; charset=UTF-8' } });
 };
 
+// Log when server is started
+function serverListen(addr) { utils.logMessage(`server listening at ${addr.hostname} (port ${addr.port})`); }
+
 // (Re)define global variables
 function initGlobals() {
 	// Try to load config file
@@ -212,6 +215,7 @@ async function initServer() {
 		globalThis.httpServer = Deno.serve({
 			port: config.httpPort,
 			hostname: config.hostName,
+			onListen: serverListen,
 			onError: serverError,
 		}, serverHandler);
 
@@ -222,6 +226,7 @@ async function initServer() {
 			cert: Deno.readTextFileSync(config.httpsCert),
 			key: Deno.readTextFileSync(config.httpsKey),
 			hostName: config.hostName,
+			onListen: serverListen,
 			onError: serverError,
 		}, serverHandler);
 }
