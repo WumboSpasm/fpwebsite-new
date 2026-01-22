@@ -66,12 +66,6 @@
 			"row"
 		]
 	},
-	"/play": {
-		"namespace": "play",
-		"styles": ["play.css"],
-		"scripts": ["play.js"],
-		"fragments": []
-	},
 	"/discord": {
 		"namespace": "discord",
 		"styles": [],
