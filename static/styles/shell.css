@@ -405,6 +405,12 @@ body {
 .fp-content-large-spacer {
 	height: 1.5rem;
 }
+.fp-content-divider {
+	height: 0.15rem;
+	margin: 1rem 0;
+
+	background-color: var(--fp-border-color);
+}
 
 /* Page elements */
 
