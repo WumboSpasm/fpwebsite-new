@@ -1,6 +1,8 @@
 {
-    "/data/search.json": {
-        "namespace": "search-info",
-        "type": "application/json; charset=UTF-8"
-    }
+	"/data/search.json": {
+		"namespace": "search-info"
+	},
+	"/discord": {
+		"namespace": "discord"
+	}
 }

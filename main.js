@@ -86,7 +86,7 @@ async function serverHandler(request, info) {
 	const endpoint = endpoints[`/${requestPath}`];
 	if (endpoint !== undefined) {
 		responseHeaders.set('Content-Type', endpoint.type);
-		return new Response(await namespaceFunctions[endpoint.namespace](requestUrl, lang), { headers: responseHeaders });
+		return await namespaceFunctions[endpoint.namespace](requestUrl, responseHeaders, lang);
 	}
 
 	// Otherwise, check if the request points to a page; if not, serve from static directory

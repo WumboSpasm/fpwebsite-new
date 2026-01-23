@@ -364,7 +364,7 @@ export const namespaceFunctions = {
 			})),
 		};
 	},
-	'search-info': (_, lang) => {
+	'search-info': (_, headers, lang) => {
 		// Get search page translation
 		const translation = Object.assign({},
 			locales[config.defaultLang].translations['search'],
@@ -381,6 +381,8 @@ export const namespaceFunctions = {
 		}
 
 		// Serve the translated search info
-		return JSON.stringify(langSearchInfo);
+		headers.set('Content-Type', 'application/json; charset=UTF-8');
+		return new Response(JSON.stringify(langSearchInfo), { headers: headers });
 	},
+	'discord': () => Response.redirect('https://discord.gg/kY8r2BbPQ9'),
 };
