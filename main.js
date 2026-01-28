@@ -13,29 +13,6 @@ const flags = parseArgs(Deno.args, {
 	default: { 'update': false, 'config': 'config.json' },
 });
 
-// Default config
-const defaultConfig = {
-	hostName: '0.0.0.0',
-	httpPort: 80,
-	httpsPort: 443,
-	httpsCert: null,
-	httpsKey: null,
-	accessHosts: [],
-	blockedIPs: [],
-	blockedUAs: [],
-	logFile: 'server.log',
-	logToConsole: true,
-	logBlockedRequests: true,
-	databaseFile: 'data/flashpoint.sqlite',
-	fpfssUrl: 'https://fpfss.unstable.life',
-	imageServer: 'https://infinity.unstable.life/images',
-	zipServer: 'https://download.unstable.life/gib-roms/Games',
-	legacyServer: 'https://infinity.unstable.life/Flashpoint/Legacy/htdocs',
-	pageSize: 100,
-	updateFrequency: 1440, // 24 hours
-	defaultLang: 'en-US',
-};
-
 // Initialize stuff
 initGlobals();
 await initDatabase();
@@ -153,7 +130,7 @@ function serverListen(addr) { utils.logMessage(`server listening at ${addr.hostn
 // (Re)define global variables
 function initGlobals() {
 	// Try to load config file
-	globalThis.config = Object.assign({}, defaultConfig);
+	globalThis.config = JSON.parse(Deno.readTextFileSync('data/config_template.json'));
 	const configPath = flags['config'];
 	if (utils.getPathInfo(configPath)?.isFile) {
 		Object.assign(config, JSON.parse(Deno.readTextFileSync(configPath)));

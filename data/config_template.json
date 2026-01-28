@@ -1,0 +1,21 @@
+{
+	"hostName": "0.0.0.0",
+	"httpPort": 80,
+	"httpsPort": 443,
+	"httpsCert": null,
+	"httpsKey": null,
+	"accessHosts": [],
+	"blockedIPs": [],
+	"blockedUAs": [],
+	"logFile": "server.log",
+	"logToConsole": true,
+	"logBlockedRequests": true,
+	"databaseFile": "data/flashpoint.sqlite",
+	"fpfssUrl": "https://fpfss.unstable.life",
+	"imageServer": "https://infinity.unstable.life/images",
+	"zipServer": "https://download.unstable.life/gib-roms/Games",
+	"legacyServer": "https://infinity.unstable.life/Flashpoint/Legacy/htdocs",
+	"pageSize": 100,
+	"updateFrequency": 1440,
+	"defaultLang": "en-US"
+}
