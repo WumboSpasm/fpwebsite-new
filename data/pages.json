@@ -31,7 +31,7 @@
 	},
 	"/branding": {
 		"namespace": "branding",
-		"styles": [],
+		"styles": ["branding.css"],
 		"scripts": [],
 		"fragments": []
 	},

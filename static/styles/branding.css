@@ -1,0 +1,90 @@
+.fp-branding-designs {
+	width: 100%;
+	max-width: 40rem;
+	margin: 0 auto 1rem;
+	display: block;
+}
+
+.fp-branding-color-1, .fp-branding-color-2 {
+	font-family: monospace;
+}
+.fp-branding-color-1::before, .fp-branding-color-2::before {
+	width: 0.75rem;
+	height: 0.75rem;
+	margin: 0.25rem 0.25rem 0 0;
+	vertical-align: top;
+	display: inline-block;
+
+	border: 0.05rem solid var(--fp-text-color);
+	content: '';
+}
+.fp-branding-color-1::before {
+	background-color: #e81c24;
+}
+.fp-branding-color-2::before {
+	background-color: #7c1315;
+}
+
+.fp-branding-downloads {
+	margin-top: 0.75rem;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.fp-branding-download-container {
+	margin: 0.25rem;
+	padding: 0.75rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	text-align: center;
+	border: 0.15rem solid var(--fp-border-color);
+}
+.fp-branding-assets > .fp-branding-download-container {
+	width: 18rem;
+}
+.fp-branding-wallpapers > .fp-branding-download-container {
+	width: 20rem;
+}
+.fp-branding-banners > .fp-branding-download-container {
+	width: 18rem;
+}
+.fp-branding-download-image {
+	background-image: url('/images/branding/transparent.png');
+}
+.fp-branding-assets .fp-branding-download-image {
+	width: 16rem;
+	height: 16rem;
+}
+.fp-branding-wallpapers .fp-branding-download-image {
+	width: 20rem;
+}
+.fp-branding-banners .fp-branding-download-image {
+	width: 5.5rem;
+}
+.fp-branding-download-title {
+	margin: 0.5rem 0.5rem 0.25rem;
+}
+.fp-branding-wallpaper-ratios {
+	margin-top: 0.25rem;
+	display: flex;
+	justify-content: center;
+}
+.fp-branding-wallpaper-ratio {
+	display: flex;
+	justify-content: center;
+}
+.fp-branding-wallpaper-ratio-divider {
+	margin: 0.25rem 1rem;
+	flex-shrink: 0;
+	flex-basis: 0.15rem;
+
+	background-color: var(--fp-border-color);
+}
+.fp-branding-wallpaper-sizes {
+	margin-left: 0.4rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
