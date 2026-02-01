@@ -257,7 +257,7 @@ export const namespaceFunctions = {
 			throw new utils.NotFoundError();
 
 		// Function to build table HTML given a set of data and field definitions
-		const buildTable = (source, fields) => {
+		const buildTable = (source, fields, actions = false) => {
 			const tableRowsArr = [];
 			for (const field in fields) {
 				const rawValue = source[field];
@@ -339,6 +339,13 @@ export const namespaceFunctions = {
 					}));
 			}
 
+			// Include action buttons in entry info table
+			if (actions)
+				tableRowsArr.push(utils.buildHtml(templates['view'].row, {
+					field: 'Actions:',
+					value: utils.buildHtml(templates['view'].actions, { id: id }),
+				}));
+
 			// Build and return table HTML
 			return utils.buildHtml(templates['view'].table, { tableRows: tableRowsArr.join('\n') });
 		};
@@ -352,7 +359,7 @@ export const namespaceFunctions = {
 			Header: title,
 			logoUrl: `${config.imageServer}/${entry.logoPath}`,
 			screenshotUrl: `${config.imageServer}/${entry.screenshotPath}`,
-			entryTable: buildTable(entry, viewInfo.game),
+			entryTable: buildTable(entry, viewInfo.game, true),
 			addAppInfo: entry.addApps.length == 0 ? '' : utils.buildHtml(templates['view'].addapp, Object.assign(newDefs, {
 				addAppTables: entry.addApps.map(addApp => buildTable(addApp, viewInfo.addApp)).join('\n'),
 			})),

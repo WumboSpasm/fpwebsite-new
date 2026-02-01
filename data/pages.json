@@ -63,7 +63,8 @@
 			"gamedata",
 			"oldgamedata",
 			"table",
-			"row"
+			"row",
+			"actions"
 		]
 	}
 }
