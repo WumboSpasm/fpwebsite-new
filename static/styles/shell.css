@@ -12,6 +12,7 @@
 	--fp-light-text-box-focus-border-color: #00aaff;
 	--fp-light-button-background-color: #0077ff;
 	--fp-light-button-background-hover-color: #0066ee;
+	--fp-light-scrollbar-color: #999999;
 	--fp-light-shell-text-color: #ffffff;
 	--fp-light-shell-background-color-1: #d60a1e;
 	--fp-light-shell-background-color-2: #5f030a;
@@ -19,6 +20,7 @@
 	--fp-light-shell-social-logo-opacity: 0.9;
 	--fp-light-shell-logo-bevel-color-1: #800000;
 	--fp-light-shell-logo-bevel-color-2: #ff0000;
+	--fp-light-shell-scrollbar-color: #d19ea3;
 
 	--fp-dark-header-color: #ffffff;
 	--fp-dark-text-color: #eeeeee;
@@ -31,6 +33,7 @@
 	--fp-dark-text-box-focus-border-color: #0088cc;
 	--fp-dark-button-background-color: #0044bb;
 	--fp-dark-button-background-hover-color: #0055cc;
+	--fp-dark-scrollbar-color: #777777;
 	--fp-dark-shell-text-color: #eeeeee;
 	--fp-dark-shell-background-color-1: #84030e;
 	--fp-dark-shell-background-color-2: #380103;
@@ -38,6 +41,7 @@
 	--fp-dark-shell-social-logo-opacity: 0.8;
 	--fp-dark-shell-logo-bevel-color-1: #400000;
 	--fp-dark-shell-logo-bevel-color-2: #bb0000;
+	--fp-dark-shell-scrollbar-color: #a57b80;
 }
 
 :root:not([data-theme='dark']) {
@@ -52,6 +56,7 @@
 	--fp-text-box-focus-border-color: var(--fp-light-text-box-focus-border-color);
 	--fp-button-background-color: var(--fp-light-button-background-color);
 	--fp-button-background-hover-color: var(--fp-light-button-background-hover-color);
+	--fp-scrollbar-color: var(--fp-light-scrollbar-color);
 	--fp-shell-text-color: var(--fp-light-shell-text-color);
 	--fp-shell-background-color-1: var(--fp-light-shell-background-color-1);
 	--fp-shell-background-color-2: var(--fp-light-shell-background-color-2);
@@ -59,6 +64,7 @@
 	--fp-shell-social-logo-opacity: var(--fp-light-shell-social-logo-opacity);
 	--fp-shell-logo-bevel-color-1: var(--fp-light-shell-logo-bevel-color-1);
 	--fp-shell-logo-bevel-color-2: var(--fp-light-shell-logo-bevel-color-2);
+	--fp-shell-scrollbar-color: var(--fp-light-shell-scrollbar-color);
 }
 :root[data-theme='dark'] {
 	--fp-header-color: var(--fp-dark-header-color);
@@ -72,6 +78,7 @@
 	--fp-text-box-focus-border-color: var(--fp-dark-text-box-focus-border-color);
 	--fp-button-background-color: var(--fp-dark-button-background-color);
 	--fp-button-background-hover-color: var(--fp-dark-button-background-hover-color);
+	--fp-scrollbar-color: var(--fp-dark-scrollbar-color);
 	--fp-shell-text-color: var(--fp-dark-shell-text-color);
 	--fp-shell-background-color-1: var(--fp-dark-shell-background-color-1);
 	--fp-shell-background-color-2: var(--fp-dark-shell-background-color-2);
@@ -79,6 +86,7 @@
 	--fp-shell-social-logo-opacity: var(--fp-dark-shell-social-logo-opacity);
 	--fp-shell-logo-bevel-color-1: var(--fp-dark-shell-logo-bevel-color-1);
 	--fp-shell-logo-bevel-color-2: var(--fp-dark-shell-logo-bevel-color-2);
+	--fp-shell-scrollbar-color: var(--fp-dark-shell-scrollbar-color);
 }
 
 /* Constants */
@@ -160,7 +168,14 @@
 	}
 }
 
-/* The body */
+/* Top-level elements */
+
+:root {
+	scrollbar-color: var(--fp-scrollbar-color) var(--fp-alt-background-color);
+}
+:root[data-active-modal] {
+	overflow: hidden;
+}
 
 body {
 	margin: 0;
@@ -232,6 +247,8 @@ body {
 	overflow-y: auto;
 	bottom: 0;
 	flex-direction: column;
+
+	scrollbar-color: var(--fp-shell-scrollbar-color) var(--fp-shell-alt-background-color);
 }
 .fp-shell-sidebar-logo {
 	padding: 0.3rem 0 0.6rem;
@@ -541,9 +558,6 @@ body {
 	border-top: 0.15rem solid var(--fp-border-color);
 }
 
-:root[data-active-modal] {
-	overflow: hidden;
-}
 :root[data-active-modal] .fp-modal-container {
 	width: 100%;
 	height: 100%;
