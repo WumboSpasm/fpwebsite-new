@@ -257,7 +257,8 @@ export const namespaceFunctions = {
 			throw new utils.NotFoundError();
 
 		// Function to build table HTML given a set of data and field definitions
-		const buildTable = (source, fields, actions = false) => {
+		// actions: 0 = no Actions row, 1 = Actions row without 9o3o link, 2 = Actions row with 9o3o link
+		const buildTable = (source, fields, actions = 0) => {
 			const tableRowsArr = [];
 			for (const field in fields) {
 				const rawValue = source[field];
@@ -340,15 +341,26 @@ export const namespaceFunctions = {
 			}
 
 			// Include action buttons in entry info table
-			if (actions)
+			if (actions > 0)
 				tableRowsArr.push(utils.buildHtml(templates['view'].row, {
 					field: 'Actions:',
-					value: utils.buildHtml(templates['view'].actions, { id: id }),
+					value: utils.buildHtml(templates['view'].actions, {
+						id: id,
+						oooHidden: actions == 2 ? '' : ' fp-hidden',
+					}),
 				}));
 
 			// Build and return table HTML
 			return utils.buildHtml(templates['view'].table, { tableRows: tableRowsArr.join('\n') });
 		};
+
+		// Check if entry is supported by 9o3o
+		const oooExts = ['.swf', '.dcr', '.dir', '.wrl', '.wrl.gz', '.x3d'];
+		const doOoo = [entry.legacyLaunchCommand]
+			.concat(entry.gameData.map(gameData => gameData.launchCommand))
+			.concat(entry.addApps.map(addApp => addApp.launchCommand))
+			.map(launchCommand => launchCommand.toLowerCase())
+			.some(launchCommandLower => oooExts.some(ext => launchCommandLower.includes(ext)));
 
 		// Build entry viewer HTML
 		const title = utils.sanitizeInject(entry.title);
@@ -359,7 +371,7 @@ export const namespaceFunctions = {
 			Header: title,
 			logoUrl: `${config.imageServer}/${entry.logoPath}`,
 			screenshotUrl: `${config.imageServer}/${entry.screenshotPath}`,
-			entryTable: buildTable(entry, viewInfo.game, true),
+			entryTable: buildTable(entry, viewInfo.game, doOoo ? 2 : 1),
 			addAppInfo: entry.addApps.length == 0 ? '' : utils.buildHtml(templates['view'].addapp, Object.assign(newDefs, {
 				addAppTables: entry.addApps.map(addApp => buildTable(addApp, viewInfo.addApp)).join('\n'),
 			})),
