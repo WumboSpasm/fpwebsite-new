@@ -11,6 +11,30 @@ document.addEventListener('DOMContentLoaded', () => {
 		const hiddenContentHeader = hiddenContentContainer.querySelector('.fp-hidden-content-header');
 		hiddenContentHeader.addEventListener('click', () => { toggleHiddenContent(hiddenContentContainer); });
 	}
+
+	const modalContainer = document.querySelector('.fp-modal-container');
+	if (modalContainer) {
+		const modalCloseButton = modalContainer.querySelector('.fp-modal-close-button');
+		const modal = modalContainer.querySelector('.fp-modal');
+		let activeModalContent;
+
+		for (const modalButton of document.querySelectorAll('[data-modal]'))
+			modalButton.addEventListener('click', () => {
+				activeModalContent = modal.querySelector('.fp-modal-content#' + modalButton.dataset.modal);
+				if (activeModalContent) {
+					activeModalContent.classList.remove('fp-hidden');
+					rootData.activeModal = modalButton.dataset.modal;
+				}
+			});
+
+		modalContainer.addEventListener('click', event => {
+			if (event.target != modalContainer && event.target != modalCloseButton)
+				return;
+
+			delete rootData.activeModal;
+			activeModalContent.classList.add('fp-hidden');
+		});
+	}
 });
 
 function toggleSidebar() {

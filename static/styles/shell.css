@@ -92,6 +92,7 @@
 	--fp-up-arrow-icon: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="%23888" xmlns="http://www.w3.org/2000/svg"><path d="m8 3-6 8h12Z"/></svg>');
 	--fp-down-arrow-icon: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="%23888" xmlns="http://www.w3.org/2000/svg"><path d="m8 13-6-8h12Z"/></svg>');
 	--fp-checkbox-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="%23fff"><path d="M382-240 154-468l57-57 171 171 367-367 57 57z"/></svg>');
+	--fp-close-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="%23fff"><path d="M291-221.91 221.91-291l189-189-189-189L291-738.09l189 189 189-189L738.09-669l-189 189 189 189L669-221.91l-189-189z"/></svg>');
 
 	--fp-shell-sidebar-width: 15rem;
 	--fp-shell-navbar-height: 3.5rem;
@@ -538,6 +539,59 @@ body {
 	padding: 1rem 0;
 
 	border-top: 0.15rem solid var(--fp-border-color);
+}
+
+:root[data-active-modal] {
+	overflow: hidden;
+}
+:root[data-active-modal] .fp-modal-container {
+	width: 100%;
+	height: 100%;
+	padding: 1rem;
+	overflow: auto;
+	box-sizing: border-box;
+	z-index: 3;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-color: #000a;
+}
+:root:not([data-active-modal]) .fp-modal-container {
+	display: none;
+}
+.fp-modal {
+	margin: auto 0;
+	padding: 1.5rem 2rem;
+	box-sizing: border-box;
+	z-index: 4;
+	position: relative;
+
+	background-color: var(--fp-background-color);
+	border-radius: 1rem;
+	box-shadow: 0 0.25rem 0.75rem -0.25rem #000;
+}
+.fp-modal-close-button {
+	width: 1.5rem;
+	height: 1.5rem;
+	position: absolute;
+	top: -0.5rem;
+	right: -0.5rem;
+
+	background-image: var(--fp-close-icon);
+	background-position: center;
+	background-size: 1.25rem;
+	background-repeat: no-repeat;
+	background-color: var(--fp-button-background-color);
+	border-radius: 0.75rem;
+	box-shadow: 0 0.25rem 0.5rem -0.25rem #000;
+	cursor: pointer;
+}
+.fp-modal-close-button:hover {
+	background-color: var(--fp-button-background-hover-color);
 }
 
 /* Generic classes */

@@ -1,7 +1,6 @@
 /* Constants */
 
 :root {
-	--fp-search-delete-button-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="%23fff"><path d="M291-221.91 221.91-291l189-189-189-189L291-738.09l189 189 189-189L738.09-669l-189 189 189 189L669-221.91l-189-189z"/></svg>');
 	--fp-search-first-page-icon: url('data:image/svg+xml;utf8,<svg viewBox="0 0 28 16" fill="%23fff" xmlns="http://www.w3.org/2000/svg"><path d="m4 8 8-6v12Zm10 0 8-6v12Z"/></svg>');
 	--fp-search-last-page-icon: url('data:image/svg+xml;utf8,<svg viewBox="0 0 28 16" fill="%23fff" xmlns="http://www.w3.org/2000/svg"><path d="m14 8-8-6v12Zm10 0-8-6v12Z"/></svg>');
 }
@@ -93,7 +92,7 @@
 	align-self: center;
 	flex-shrink: 0;
 
-	background-image: var(--fp-search-delete-button-icon);
+	background-image: var(--fp-close-icon);
 	background-position: center;
 	background-size: 1rem;
 	background-repeat: no-repeat;

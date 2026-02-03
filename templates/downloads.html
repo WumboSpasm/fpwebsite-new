@@ -39,11 +39,11 @@
 							<img class="fp-downloads-tab-button-icon" src="/images/download.svg">
 							<div class="fp-downloads-tab-button-text">{Windows_Infinity_Main_Download}</div>
 						</a>
-						<div class="fp-downloads-tab-button-hash" title="{Copy_MD5}" data-hash="TODO" data-copied="{MD5_Copied}">MD5</div>
+						<div class="fp-downloads-tab-button-hash" title="{Verify_Integrity}" data-modal="windowsInfinityHash">Verify</div>
 					</div>
 					<div class="fp-downloads-tab-alt-link-container">
 						<a href="https://download.flashpointarchive.org/upload/fp14static.7z">{Windows_Infinity_Alt_Download}</a>
-						<div class="fp-downloads-tab-button-hash" title="{Copy_MD5}" data-hash="TODO" data-copied="{MD5_Copied}">MD5</div>
+						<div class="fp-downloads-tab-button-hash" title="{Verify_Integrity}" data-modal="windowsInfinityHash2">Verify</div>
 					</div>
 				</div>
 				<div class="fp-downloads-tab-divider"></div>
@@ -66,10 +66,11 @@
 							<img class="fp-downloads-tab-button-icon" src="/images/download.svg">
 							<div class="fp-downloads-tab-button-text">{Windows_Ultimate_Main_Download}</div>
 						</a>
-						<div class="fp-downloads-tab-button-hash" title="{Copy_MD5}" data-hash="TODO" data-copied="{MD5_Copied}">MD5</div>
+						<div class="fp-downloads-tab-button-hash" title="{Verify_Integrity}" data-modal="windowsUltimateHash">Verify</div>
 					</div>
 					<div class="fp-downloads-tab-alt-link-container">
 						<a href="https://download.unstable.life/ultimate-direct/">{Windows_Ultimate_Alt_Download}</a>
+						<div class="fp-downloads-tab-button-hash" title="{Verify_Integrity}" data-modal="windowsUltimateHash">Verify</div>
 					</div>
 				</div>
 			</div>
@@ -127,7 +128,7 @@
 							<img class="fp-downloads-tab-button-icon" src="/images/download.svg">
 							<div class="fp-downloads-tab-button-text">{Linux_Infinity_Main_Download}</div>
 						</a>
-						<div class="fp-downloads-tab-button-hash" title="{Copy_MD5}" data-hash="TODO" data-copied="{MD5_Copied}">MD5</div>
+						<div class="fp-downloads-tab-button-hash" title="{Verify_Integrity}" data-modal="linuxInfinityHash">Verify</div>
 					</div>
 				</div>
 			</div>
@@ -457,5 +458,22 @@
 		<ul class="fp-downloads-old-version">
 			<li><a href="https://archive.org/download/FlashpointCore/Flashpoint%20Core.zip">{Download}</a> (824MB)</li>
 		</ul>
+	</div>
+</div>
+<div class="fp-modal-container">
+	<div class="fp-modal">
+		<div class="fp-modal-close-button"></div>
+		<div class="fp-modal-content fp-hidden" id="windowsInfinityHash">
+			Windows Infinity Installer Hash Placeholder
+		</div>
+		<div class="fp-modal-content fp-hidden" id="windowsInfinityHash2">
+			Windows Infinity Zip Hash Placeholder
+		</div>
+		<div class="fp-modal-content fp-hidden" id="windowsUltimateHash">
+			Windows Ultimate Hash Placeholder
+		</div>
+		<div class="fp-modal-content fp-hidden" id="linuxInfinityHash">
+			Linux Infinity Hash Placeholder
+		</div>
 	</div>
 </div>

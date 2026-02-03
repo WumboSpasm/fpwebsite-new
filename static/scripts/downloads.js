@@ -15,8 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		const elem = document.querySelector(`.fp-downloads-tab-selector[data-platform='${platform}']`);
 		elem.addEventListener('click', () => { selectPlatform(platform); });
 	}
-	for (const elem of document.querySelectorAll('.fp-downloads-tab-button-hash'))
-		elem.addEventListener('click', copyHash);
 });
 
 function selectPlatform(platform) {
@@ -25,17 +23,4 @@ function selectPlatform(platform) {
 	for (const tab of document.querySelector('.fp-downloads-tabs').children)
 		tab.dataset.selected = (tab.dataset.platform == platform).toString();
 	localStorage.setItem('fp-platform', platform);
-}
-
-function copyHash(e) {
-	const elem = e.target;
-	if (elem.textContent == elem.dataset.copied)
-		return;
-	const hash = elem.dataset.hash;
-	navigator.clipboard.writeText(hash).then(() => {
-		if (copyHash.textContent === undefined)
-			copyHash.textContent = elem.textContent;
-		elem.textContent = elem.dataset.copied;
-		copyHash.copiedTimeout = setTimeout(() => { elem.textContent = copyHash.textContent; }, 1500);
-	});
 }

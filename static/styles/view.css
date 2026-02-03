@@ -104,3 +104,7 @@
 .fp-view-old-game-data-toggle:hover {
 	background-color: var(--fp-alt-background-color);
 }
+
+#launchFlashpoint {
+	text-align: center;
+}
