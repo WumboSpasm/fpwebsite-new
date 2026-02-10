@@ -2,7 +2,7 @@
 	"Title": "News",
 	"Header": "News",
 	"Index_News": "All News",
-	"Index_News_Tag": "News with tag \"$1\"",
+	"Index_News_Tag": "News With Tag \"$1\"",
 	"Index_Tags": "Tags",
 	"By_Author": "by $1",
 	"Entry_Byline1": "Posted by $1{$2} on $3",

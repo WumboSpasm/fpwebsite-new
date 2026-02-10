@@ -217,7 +217,7 @@ export const namespaceFunctions = {
 				}),
 				tags: newsEntry.tags
 					.toSorted((a, b) => a.localeCompare(b, { sensitivity: 'base' }))
-					.map(tag => `<a class="fp-news-tag" href="/tags/${tag}">${tag}</a>`)
+					.map(tag => `<a class="fp-news-tag" href="/news/tags/${tag}">${tag}</a>`)
 					.join(''),
 				namespace: newsEntry.namespace,
 				content: content,
