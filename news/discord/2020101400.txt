@@ -1,0 +1,1 @@
+Hi folks. Yet another slightly modified build of Infinity that should fix that networking problem...again, and also remembers to fix Auditorium, is up. Again, if you've been having problems, grab the new build.

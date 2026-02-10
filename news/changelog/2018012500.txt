@@ -1,0 +1,19 @@
+Flashpoint zero rev. 1
+
+* Added games:
+ * Desktop Tower Defense
+ * Don't Shit Your Pants
+ * Don't shoot the puppy
+ * Frog Fractions
+ * Malstrum's Mansion
+ * McDonald's Videogame
+ * SimGirls
+ * Time Fcuk
+
+* Games I tried to add and failed
+ * Auditorium Demo (has a lot of serverside files)
+ * Fantastic Contraption (some versions of this game have different copy protection, but all of them fail at a certain point during loading)
+
+* Changed the port used on the web server from 80 to 22500, to avoid conflicts with any other web servers. Changed CommandLine variable in LaunchBox to match. (Just using localhost as normal would work, but I wouldn't want to interrupt anything.)
+
+* Added a note in the readme that Visual C redistributable is required.

@@ -1,0 +1,595 @@
+Flashpoint 3.1 - Opening Night
+
+Flashpoint now consists of two seperate projects - Flashpoint Arcade and Flashpoint Theatre. Changes will be split into two sections - if a change is unique to that version it'll be there.
+
+We fiddled with some of the not-Flashpoint-related XML files included in LaunchBox, and cut the launch time by a factor of 10. Seriously, it opens in like a second now.
+
+Note: we have NOT updated to LaunchBox 8.3 yet, since the majority of features are mainly for LaunchBox Next, and we aren't ready to upgrade yet.
+
+***
+Arcade:
+
+Games added:
+* 1 Screen Hero
+* 13 Worms
+* 1HG: A Schoolboy Crush
+* 1HG: A Schoolgirl Fantasy
+* 1HG: Hot Summer Nights
+* 2.3
+* 20 Waves
+* 2012 Shelter
+* 2013 Shelter
+* 400 Years
+* 625 Sandwich Stacker
+* A Crow in Hell
+* A Crow in Hell 2
+* A Crow in Hell 3
+* A Dralien Day
+* A Fall from Grace
+* A Ghoslty Journey
+* A Gun, In Time
+* A Night in Crazytown
+* A Night in Crazyville
+* A Rabbit Fable
+* A Second Chance
+* A Snail Story
+* A Stroll in Space
+* A.I. Vendetta
+* A.l.i.a.s 1
+* A.l.i.a.s 2
+* A.l.i.a.s 3
+* Abandoned in Alaska
+* Abandoned in Canada
+* Absorption
+* Abuba the Alien
+* Acaro
+* Adventures of Valentin
+* Age of Defense
+* Age of Wonders
+* Agent J's Mission
+* Agent Woof
+* Agnry Faic
+* Ahoge 23
+* Albert the Alien
+* Alchemia
+* Alchemy Swap
+* Alien Atack Team
+* Alien Complex
+* Alien Education
+* Alien Family
+* Alien Paroxysm
+* Alien Shooter
+* Alien Striker
+* Alien Thief
+* Aliens the Boardgame
+* All Out
+* All We Need is Brains 2
+* Alliant
+* Alpha Bounty
+* Alter
+* Amateur Surgeon Christmas
+* Amazing Islands
+* Amazing Sheriff
+* Anbot 2
+* Android 18's Thirst For Power
+* Andy the Athlete
+* Anko's Room
+* Anti TD
+* Anti-Terrorist Rush
+* Ants Evening
+* Antventure
+* Anxiety Crusher
+* Aoyama's Handjobs
+* Apartment 13
+* Apocalyptic Tower
+* Apple Shooter
+* Aquascapes
+* Arcanorum
+* Archers Duty
+* Arkandian Legends 1: Crusade
+* Arkandian Legends 2: Revenant
+* Arkandian Legends 3: Explorer
+* Armored Fighter
+* Armored Fighter New War
+* Arms Dealer
+* Arms Dealer 2
+* Around the World in 80 Days
+* Artifission Chapter 0
+* Artifission Chapter 1
+* Artillerize
+* Artillery Rush
+* Artillery Rush 2
+* Ashley the Existentialist
+* Assassin's Greed
+* Assembots
+* Astroback
+* Atlantis Quest
+* Atlantis Squarepantis - Bus Rush
+* Aubital
+* Auditorium Demo
+* Automaton Part 0 - The Introduction
+* Automaton Part 1 - The Automaton
+* Automaton Part 2 - Mr.  Crumpet
+* Avengers Global Chaos
+* Avengers Hero -Vs- Alien Robot
+* Average Joe
+* Awaken Front Line
+* Awesome Seaquest
+* Awol Nation
+* Ayame's Pleasure
+* Azkend
+* BRICK[bricksmash]SMASH
+* Bad Ice-Cream
+* Balance (3tang)
+* Balloon Man
+* Balls!
+* Banned from Equestria (Daily)
+* Battle Cry Age of Myths
+* Beach Party Paradise
+* Bejeweled 2
+* Beverly Hills Mansion Escape
+* Bible Fight (Hacked)
+* Big Head Football
+* Big Tree Top Gun
+* Bionic Chainsaw Pogo Gorilla
+* Bitzy Blitz
+* Black Ridge Asylum
+* Bomb Disposal Hippos
+* Bosley
+* Bowser World Destroyer
+* Box Clever Level Pack
+* Bubble Tanks 3
+* Bubble Tanks TD
+* Bulma's Saiyan Fuck
+* Cake Mania
+* Cake Mania 2
+* Cake Mania 3
+* Call Of Duty
+* Call Of Duty 2
+* Call of Atlantis
+* Call of Duty: Ghost Arcade
+* Call of the Ages
+* Can your Pet
+* Card Toss
+* Carnage 2 (Hacked)
+* Cartoon Hero
+* Cash Grabber
+* Castle Wars 2
+* Castle Wars 2.5
+* Cat Ninja
+* Chairlift Challenge
+* Chi-Chi's Seduction
+* Clavier Chiant
+* Clobe: the portal adventure
+* Coffee Rush
+* Coign of Vantage
+* Corporate Climber
+* Cosmo Kramer's Hentai Adventure 2
+* Cosmo Kramer's Hentai Adventure 3: Kramer's Christmas Hentai Adventure
+* Cradle of Egypt
+* Cradle of Persia
+* Cradle of Rome
+* Cradle of Rome 2
+* Crazy Nut
+* Cream Wolf (Hacked)
+* Create a Cyborg
+* Create your own Female Fighter
+* Create your own Mortal Kombat Ninja
+* Cressamzomb: Chasseur de Zombies
+* Crystal Story 2
+* Darfur is Dying
+* Dead Drunk V1.9
+* Deadly Neighbours
+* Deadly Neighbours 2
+* Deady!
+* Death Row Diner
+* Deathmatch Apocalypse
+* Decision 3
+* Demon Tournament
+* Diamond Mine
+* Diesel Valkyrie VS. the Undead Reich
+* Dinogen
+* Dinosaur Zookeeper
+* Dodgeman 2
+* Dreary Asylum
+* Dumbolf - Part 1: The Gauntlet
+* Echoes: Operation Stranglehold
+* Eggy's Death Chamber
+* Eggz Blast!
+* El joc de la prehistòria: Poblat 1
+* El joc de la prehistòria: Poblat 2
+* El joc de la prehistòria: Poblat 3
+* El joc de la prehistòria: Poblat 4
+* ElectroCity
+* Elements (jmtb02)
+* Expedia Rewards Jumper
+* Fairway to Hell
+* Falling Sands
+* Fat Slice
+* Fat Wizard
+* Fight the Futon
+* Final Fantasy VII: All about Random Battles
+* Fishdom
+* Fishdom 2
+* Fishdom 3
+* Fishdom: Frosty Splash
+* Fishdom: Harvest Splash
+* Fishdom: Spooky Splash
+* Five Minutes to Kill (Yourself)
+* Five Minutes to Kill (Yourself) Reloaded
+* Five Minutes to Kill (Yourself) Wedding Day
+* Flabby Physics
+* Flappy Turd
+* Flash Element TD
+* Flash Geometry Wars
+* Flash Stuntz
+* Flash Surf
+* Fox Creator 1.2
+* Foxy Sniper Pirate Shootout
+* Freeway Fury 2
+* Freeway Fury 3
+* Fucking Pere Noel Killer
+* Full Metal Alchemist Presents Lust
+* Full Metal Alchemist Presents Winry Rockbell
+* Funky Truck Arizona
+* Game & Watch: Dodgeman
+* Game & Watch: Dodgeman (Limited Edition)
+* Game & Watch: God of War
+* Gen
+* Get Off My Lawn
+* Girls Like Robots: Nerdfest
+* Give Up
+* Give Up Robot 2
+* Glean
+* Glean 2
+* Gravity Runner
+* Great Dungeon in the Sky
+* HRmageddon
+* Haluz
+* Hammer Time (in 60 Seconds)
+* Hardboiled
+* Hardy Game
+* Hardy Game 2
+* Heart of Ice
+* Hemp Tycoon
+* Hexcelle
+* Hi-Q Einstein
+* Hinata's Memory Game
+* Hinata's Training
+* Holiday Time Travel Escape Easter
+* Holiday Time Travel Escape Saint Patrick's Day
+* Holiday Time Travel Escape: Christmas
+* Holiday Time Travel Escape: Halloween
+* Holiday Time Travel Escape: New Years Eve
+* Holiday Time Travel Escape: Thanksgiving
+* Holiday Time Travel Escape: Valentine's Day
+* Home Sheep Home 2: Lost Underground
+* Home Sheep Home 2: Lost in London
+* Home Sheep Home 2: Lost in Space
+* Hoshi Saga 2
+* Hoshi Saga 3
+* Hoshi Saga 4: Ringo
+* Hoshi Saga 5: Ringoame
+* Hoshi Saga 6: Ringoen
+* Hoshi Saga 7: Ringohime
+* Hoshi Saga 8: Dokuringo
+* Hoshi Saga 9: Minnano Hoshisaga
+* Hot Air Jr.
+* Hot Shot Business
+* Hot Summer of Love
+* Hot Throttle
+* House
+* House of Dead Ninjas
+* HumanChop
+* Hunted Forever
+* Icarus Needs
+* Icarus Proudbottom Teaches Typing!
+* Ice (Hacked)
+* Ino's Desire
+* Into Space 2
+* Intruder: Combat Training
+* Intrusion 2 Demo
+* J.K. Rowling Official Site
+* Jade Wolf
+* Jade Wolf 2
+* Japan Soccer
+* Jinx Minx Tower Escape
+* Johnny Backflip
+* Jungle Zombie
+* Kakato Otoshi
+* Kanako's Initiation
+* Killbot
+* Kindergarten Killer
+* Korrode
+* Kung-Fu 2 Turbo (Hyper Mega Edition) - American Dad vs. Family Guy
+* L'acampada
+* LOOT The Game
+* Lance la Hache sur Ben Laden
+* Lance la Hache sur Jean-Marie Messier
+* Lee Lee's Quest
+* Lee Lee's Quest 2
+* Les 7 vides del meu gat
+* Liberation of Santa
+* Lint
+* Llama Adventure
+* Looney Tunes Bugs Bunny In The Island of Dr. Moron
+* Looney Tunes Sylvester Under the Sea
+* Maganic Wars
+* Maganic Wars Survival
+* Magic Layers
+* Mario Cart
+* Mario Cart 2
+* Marvin Spectrum
+* Matsumoto's Body
+* Maze of Darkness
+* Mickey and Pete in Stage Fright!
+* Mickey's House of Mouse - Pack the House
+* Mindfeed
+* Mini-City
+* Mission in Space: The Lost Colony
+* Moglin Punting!
+* Monolith's Mario World
+* Monolith's Mario World II
+* Monolith's Mario World Three
+* Monster Stack 2
+* Moonwalk: Bye bye Michael
+* Mountain Maniac
+* Murdoc's Operation Rejuvenation
+* Mushroom Revolution
+* My Lil' Bastard
+* N-Dimensions
+* Nanao's Gift
+* Narusegawa's Great Out Door
+* Naruto's Rage
+* Necronator 2: Dragons Unleashed
+* Necrorun 2.0
+* Nell's Orgasm
+* Neon Race
+* Neon Race 2
+* Nova Centaurus
+* Nunchuck Charlie
+* Nurse Quest
+* One Man and His Dinosaur
+* Orb
+* Organ Trail
+* Orgasm Girl
+* Orgasm Girl 2
+* Orihime Music!
+* Papa Louie
+* Papa Louie 2 When Burgers Attack!
+* Papa Louie 3 When Sundaes Attack!
+* Papa's Cheeseria
+* Papa's Cupcakeria
+* Papa's Donuteria
+* Papa's Freezeria
+* Papa's Hot Doggeria
+* Papa's Pancakeria
+* Papa's Pastaria
+* Papa's Taco Mia!
+* Papa's Wingeria
+* Paper Mario World
+* Paper Mario World 2
+* Paper Venture
+* Paper Venture 2
+* Parking Mania
+* Parking Mania 2
+* Paws
+* Peacefree: Intergalactic Liberation Army
+* People Bucket
+* Pepe Le Pews Love Run
+* Perdition
+* Perfect Strangers
+* Pica-Pic
+* Pixel
+* Pixel 2
+* Pixel Toilet
+* Pizza City (Hacked)
+* Pizza Shack Deluxe
+* Planet Punch
+* Pre-Civilization Marble Age
+* Pre-Civilization Stone Age
+* Project Eddie
+* Rabbit Wants Cake
+* Rare Breeds: Petunia
+* Rat Maze
+* Rat Maze 2
+* Raze 2
+* Red Rogue
+* Reimu Bros
+* Renegade Racing
+* Rick and Morty: Rushed Licensed Adventure
+* Rizk
+* Robot Unicorn Attack Evolution
+* Roly-Poly Cannon: Bloody Monsters Pack
+* Rubble Trouble: Moscow
+* Rukia's Dilema
+* Russel's Animal Kwackers
+* SHIFT 4
+* Sakura's Beat
+* Sakura's Scandal
+* Sausage Factory (Hacked)
+* Scary Maze Game
+* School Flirting Game
+* Sex Kitten - Maids
+* Sex Kitten - Megamart
+* Sex Kitten Sim-Date
+* Sex Kitten Sim-Date 2
+* Sex Kitten Sim-Date 3
+* Sex Kitten Sim-Date 4
+* Sex Kitten Sim-Date 5
+* Sex Kitten Sim-Date 6
+* Sex Kitten Sim-RPG
+* Sex Kitten: Memories
+* Sexy No Jutso
+* Shining Mine
+* Shootermata
+* Shredding Goofy
+* Ski Runner
+* Ski Runner 2
+* Slime Laboratory
+* Slime Laboratory 2
+* Smacky
+* Sode's Foreplay
+* Sola Rola - The Gravity Maze
+* Soundodger
+* Space Invaders (Neave)
+* Sparkle
+* Spent
+* Squadz II
+* Steam Birds
+* Steam Birds Survival
+* Stick War 2
+* Storm the House 2
+* Sunburn
+* Super House of Dead Ninjas
+* Svetlograd
+* Swords and Sandals 2
+* Swords and Sandals 3
+* Taringa Escape
+* Temari's Motion
+* Text Twist
+* Text Twist 2
+* The Amazing Patate Drive
+* The Ballads of Reemus - When the Bed Bites (Demo)
+* The Drunken Assassin
+* The Enchanted Cave
+* The Enchanted Cave 2
+* The Fairly Odd Parents! Timmy's Tile Turner
+* The Impossible Quiz Book: Chapter 1
+* The Impossible Quiz Book: Chapter 2
+* The Impossible Quiz Book: Chapter 3
+* The Path of Hercules
+* The Rise of Atlantis
+* The Several Journeys of Reemus Chapter 1 - The Royal Journey
+* The Several Journeys of Reemus Chapter 2 - The All Knowing Parasite
+* The Several Journeys of Reemus Chapter 3 - Know Thy Enemy
+* The Several Journeys of Reemus Chapter 4 - The Beastly Blackhole of Bureaucracy
+* Thing Thing Arena 2
+* Thing Thing Arena 3
+* Thing Thing Arena Classic
+* Thing Thing Arena Pro
+* Thisissand
+* Timemu
+* Tinysasters 2
+* Titan Lunch Retaliation
+* Tofu Hunter
+* Tower Squadz
+* Trollface Quest 1
+* Try Harder
+* Tsunade's Lesson
+* Turbo Granny (Hacked)
+* Turkageddon
+* Unohana's Make A Porn
+* VVVVVV Demo
+* Vector TD
+* Vegas Nights
+* Victorian BMX: Death on Wheels
+* Viva Caligula
+* Viva Caligula! In Hell!
+* WEG Search: Ants
+* WEG Search: Birds
+* WEG Search: Spiders
+* Wagon Dash 3D
+* Wake Up Simulator
+* Watch out Behind You Hunter
+* Where We Remain
+* Wickebine Kigyouden
+* Wild Hearts Stage Dive
+* William and Sly 2
+* World of Dreams
+* Xonix 3D
+* Yonas Worm
+* Zee and the Alien Machine
+* Zigmond III
+* Zombie Flood
+* Zombie Hooker Nightmare
+* Zombie Hooker Nightmare XXXMas
+* Zombie Incursion
+* Zombie Squirrel Attack
+* Zombie at the Gates
+* Zombocalypse
+* Zombocalypse 2
+
+We now have rudimentary controller support! You can right-click a game, and if it has "Start With Controller Support" as an option, it will open the utility AntiMicro with a profile already set to go alongside the game, and will close along with Flash Player. When Launchbox closes, AntiMicro will attempt to be closed again, in an instance where it might not have been closed properly the first time. This probably will interrupt any other controller supporting apps as long as it's open. Here's a list of games that support controllers right now:
+ * :the game:
+ * Abobo's Big Adventure
+ * Alien Hominid
+ * Boxhead
+ * Canabalt
+ * Robot Unicorn Attack
+ * Upgrade Complete
+
+Added the beta for The Impossible Game. Right click on The Impossible Game's Launchbox entry.
+
+Fixed the following games for the new sitelock stuff:
+ * Balls in Space
+ * JayIsGames Casual Gameplay Banner 2008
+ * Ragdoll Cannon
+
+* Fixed Chuck the Sheep. It still had to run in a browser. I'm dumb.
+* Fixed Elephant Quest, it won't hang on talking to the API anymore.
+* Fixed Robot Unicorn Attack's music.
+* Rehacked Tetris N-Blox, it was unresponsive to the new site stuff.
+* Updated Amateur Surgeon. It now has all the surgeries available.
+* Updated Learn to Fly 2. You can get the Omega Manual now.
+* Updated Bloons TD 3 with its site exclusive levels.
+* Updated Bejeweled 2.
+* Updated Call of Atlantis.
+
+***
+Theatre:
+
+Added animations:
+* $eG@
+* Animator vs. Animation
+* Arrow to the Knee
+* Awesome Chaotix
+* Awesome Tribute
+* Awesomeraptor
+* Batman: Bright Day
+* CS Go Trailer
+* Charlie the Unicorn
+* Chucks New Tux
+* DE_dust2
+* Dad's Home
+* Grand Theft Awesome IV
+* Grand Theft Boner
+* Hal the Misinterperative Porn Star
+* Homestar Runner
+* Homestar Runner. Yes, all of it. It's all in one entry.
+* How Valve Got Their Logo
+* It's Freakin' Mario
+* It's a Halo Thing
+* Luigi in 60 Seconds
+* Mad Mad Mario
+* Madness Combat
+* Mario Kart Underground
+* Mega Man & Pompous Robots
+* Metal Gear Awesome
+* Metal Gear Awesome 4: Guns of the Awesome
+* Metal Gear Fiesta
+* Metal Gear Funnies
+* Milk of the Manwhore
+* Mr Happy Face
+* Narwhals
+* Opium Cop
+* Pokemon Hunter
+* Pokemon but with Animals
+* Pokemon: The Lost Ending
+* Potter Puppet Pals
+* Resident Evil Code Veronica Flash Edition Part 1
+* Salad Fingers Episode 1
+* Skyrim Bear
+* Spongebob Sickpants
+* StarFox Excelent Adventur
+* Tankmen
+* Tankmen 2
+* The End of the World
+* The Legend of Zelda - Link and the Pig
+* The Matrix Has You
+* The Ultimate Showdown of Ultimate Destiny
+* There's Something About Halo
+* Xiao Xiao No. 3
+* Zelda Whatever
+
+Theatre has a standalone copy of Pale Moon with the Flash plugin preinstalled, purely for Homestar Runner.

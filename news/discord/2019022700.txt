@@ -1,0 +1,7 @@
+@everyone Release 5.5, "Iron & Copper", is available now. (I've been playing too much Deus Ex and I have no other codenames for this release.) 5.5 doesn't change much. 800 new games, some tech updates, a new credits listing in the launcher, and that's about it. As always, the changelog has everything if you want to have a look: http://bluemaxima.org/flashpoint/changelog.txt
+
+There's been some major refactoring of Flashpoint we've been wanting to do for maintenance and simplicity's sake, but due to the breakneck schedule of releasing month to month, making it happen while not interrupting the regular process has been difficult, so for a while at least, we're not going to be working on 'the next release', instead just doing the tweaks, polishing and upheavals that we need to do. The next release will be out once we're confident we've got everything up to scratch. 5.5 should still work in the meantime, and we will still be accepting curation submissions, if they're in the queue they get in Flashpoint.
+
+There is a small checklist of things that we do need help with though to get more games supported, so if you have some experience with anything in the following link, we'd appreciate it if you could take a look at this list and send us the right way: http://bluemaxima.org/flashpoint/datahub/Help_Wanted_List Some of these will help us get those last few games that we don't support yet into Flashpoint. There's always more to be done though; don't forget that we always need curators and testers.
+
+#downloads, as always.

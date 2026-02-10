@@ -1,0 +1,177 @@
+![](2019103000_00.png)
+
+Have you ever had the inclination to play a game where you, as Paul Blart, drive around the mall on your segway, catching criminals? Well, if this was *somehow* your fantasy, you could do it from the convenience of your web browser, in the webgame Paul Blart: Mall Cop.
+
+Yeah. Advergames are weird… but did you know there’s a *secret* behind this game? Well, okay, not really. It’s essentially shovelware. On the other hand, the technology which powered many 3D browser games — such as Paul Blart: Mall Cop — does have an interesting story behind it, and it’s a story with a surprising beginning.
+
+![Real Pool was the first 3D game on the Shockwave.com games website](2019103000_01.png)
+
+Let’s roll the clock back to Y2K, well before the existence of HTML5. Flash was the hot new browser plugin on the block, and everybody wanted to get their hands on it. However, there was one thing Flash didn’t do well: 3D. Infusing the internet with 3D content was all the rage, and for that, Shockwave was the right tool to use. In fact, one could say that Shockwave was relegated purely to use in 3D applications, while Flash took centre stage for anything else — but it wasn’t always this way!
+
+Before we begin, I want to bring up **BlueMaxima’s Flashpoint.** If you just want a hassle free way to play Shockwave games, Flashpoint provides a way to do so on modern Windows. For more information, [check out Flashpoint’s website.](http://bluemaxima.org/flashpoint/) Now then, let’s continue.
+
+## Flash Vs. Shockwave
+
+At this point, you may be confused about what the difference between Flash and Shockwave actually is — if you’ve ever played any browser games, it’s likely you’ve at least heard of both, or perhaps even thought they were one and the same. I’ve answered the question of how they differ on the internet before, so I am going to largely quote but also elaborate upon what I’ve explained previously.
+
+![](2019103000_02.png)
+
+First, we must take a look back at Macromedia’s earlier history. If you grew up during the multimedia boom, you likely recognize the Made With Macromedia logo from the cover of your favourite rich interactive multimedia CD-ROM videogame experience (is that enough buzzwords?) When you see this logo on the boxart of a game, it means that the game was made using a tool called Macromedia Director.
+
+## Macromedia Director?
+
+Director has existed since 1985, though it originally had the name MacroMind VideoWorks. The MacroMind company later merged with Paracomp to become Macromedia. It was meant for the easy creation of applications without the need to learn a more advanced language like C++, while still remaining powerful and flexible. Director provided a [movie metaphor](http://www-it.fmi.uni-sofia.bg/courses/maten/module3/directortutor.html) for application development — assets such as graphics and sound were *cast members,* and the on-screen interface was the *stage,* with the *score,* composed of many *frames,* controlling what the stage looked like. Interactivity was provided by *scripts,* which would manipulate the current *frame* of the movie.
+
+![[Director’s authoring environment featuring the “movie metaphor”](http://eclass.teiion.gr/modules/document/file.php/EPDO279/1.%20Director%20Basics.pdf)](2019103000_03.png)
+
+The goal of this metaphor, of course, was to make it easy to understand interface design with little programming knowledge required.
+
+A great appeal of Director was that it could import many different file formats. Bitmaps, sounds, QuickTime videos, JPEG, MP3, Animated GIFs, you name it, Director could import those files and have them all interact off each other under the same roof — and, it was cross-platform, with both Mac and Windows support.
+
+![Screenshots of Journeyman Project: Turbo (left) and Spaceship Warlock (right,) games created using Director](2019103000_04.png)
+
+Director was the driving force behind games such as 1991’s [Spaceship Warlock](https://obscuritory.com/essay/joe-sparks-interview/) by Mike Saenz and Joe Sparks, or 1993’s [Journeyman Project: Turbo](https://en.wikipedia.org/wiki/The_Journeyman_Project) by Presto Studios, both pre-rendered adventure titles. There’s a great deal of interesting history to Director’s development — if you’d like to read more about it, there’s an [extensive history article on Lingo Workshop,](http://lingoworkshop.com/Articles/history) but I want to get back to how this relates to Shockwave.
+
+### The Internet Is A Series Of Tubes
+
+Naturally, Macromedia sought to bring this technology to the internet, as a quote from the original creator of Director, Marc Canter, in 1995, reveals.
+
+> It becomes increasingly more apparent that CD-ROM is not the only form for delivery for multimedia content. Various forms of broadband distribution will come into place throughout the world this century, and Director will form a bridge across these platforms to guarantee compatibility and scalability of your creative work.
+
+They didn’t want Director to just be limited to CD-ROMs, they wanted it in your web browser too. There was just one problem: Director files were big, often many MBs in size — fine for CDs, but a no go for 1995’s internet. The answer? Compression.
+
+![The logo for Macromedia Shockwave](2019103000_05.jpg)
+
+“Shockwave” was Macromedia’s term which meant “compressed for the web.” The first entry in the Shockwave line of products was Shockwave Director Player — so called because it was a **player** for **Director** content which had been **compressed for the web.** Because it was, at the time, the first and only product in the Shockwave line of products, Shockwave Director Player was often shortened to just “Shockwave.” This will come up again later.
+
+### Shockwave’s Early Years
+
+![Toy Story Concentration: the first commercial use of Shockwave](2019103000_06.png)
+
+According to [D. Lane Media,](http://www.dlanemedia.com/) “the Toy Story Concentration game produced for Buena Vista Pictures marked the first commercial use of Shockwave on the World Wide Web.” At only 240 KB, the game was simple, but quicker to download thanks to the compression technology.
+
+Another early adopter was indie developer [Ezone,](https://ezone.com/) who used Shockwave for their first game “Lenny in the Dingo’s Den.” Game programmer Simon Edis recalls the story.
+
+> We put it up on our site and registered it with the only search engine around at the time ‘Yahoo’. If you went into the ‘Games’ category on Yahoo I think there were only about 5 links and one of them was for Lenny.
+
+Ezone went on to make webgames for Universal, Disney and Nickelodeon, and now develop games for the Nintendo Switch.
+
+![Lenny in the Dingo’s Den, the first Shockwave game by Ezone, from 1996](https://youtu.be/R-tOVMRiaxY)
+
+Things were looking good for Shockwave as the go-to medium to provide interactive experiences over the internet. However, a new, unsuspecting technology was on the horizon — a new tool which, given enough time, would steal the browser plugin spotlight.
+
+## Macromedia Flash.
+
+In the beginning — and by the beginning I mean 1995, the same year that the Shockwave plugin released — there was a company called FutureWave Software. FutureWave had a product called FutureSplash, which was a vector drawing application. FutureWave realized their technology had potential on the web, and they pitched it to Adobe, who turned it down at the time. However, there was another company that was more keen on the idea.
+
+In the November of 1996, Macromedia acquired FutureSplash, and decided to shorten its name… to Flash. This was well after the introduction of the well established Director with its Shockwave plugin, and Flash had a much smaller scope: it was a simple graphics and animation tool capable of creating buttons, menus, banners and fancy text, and little more. It had basic scripting in the form of ActionScript, but nothing that could match the advanced and powerful Lingo scripting language Director provided.
+
+Now, Macromedia was faced with a similar problem to what they had with Director. They wanted Flash content to be playable in the browser, but it’d be too slow to download over the internet. So the answer? Compression. It was time to add a new product to the Shockwave line of products.
+
+![](2019103000_07.jpg)
+
+So, Macromedia created Shockwave Flash Player. Remember, *Shockwave was Macromedia’s word which meant “compressed for the web.”* So the Shockwave Flash Player was a **player** for **Flash** content which had been **compressed for the web.** Hence the name, Shockwave Flash Player.
+
+So there was a Shockwave Director Player for compressed Director content, and a Shockwave Flash Player for compressed Flash content. This naming scheme makes sense when you can see the full picture, but in reality, the majority of people by this point were familiar with Shockwave Director Player as just “Shockwave.” To those uninitiated, it now appeared that there was both a Shockwave AND a Shockwave Flash.
+
+As a result, Shockwave Flash Player was more often referred to as just Flash, to avoid confusion with what was already being referred to as Shockwave. So when we say Shockwave, we’re referring to the first word in Shockwave Director Player, but when we say Flash, we’re referring to the second word in Shockwave Flash Player.
+
+![The latest version of Shockwave still references Director in the Add-ons Manager](2019103000_08.png)
+
+When Adobe acquired these names in 2005, they decided to roll with what, by this point, was popular convention, and rename Shockwave Director Player to just Shockwave and Shockwave Flash Player to just Flash. The filetype SWF originally stood for ShockWave Flash, but Adobe now defined it instead as an acronym for [Small Web Format,](https://www.pcmag.com/encyclopedia/term/55333/swf) to further avoid confusion.
+
+There was actually a third Shockwave plugin by Macromedia — the seldom mentioned [Shockwave Authorware Player,](https://download.cnet.com/Authorware-Web-Player/3000-2139_4-51364.html) which was primarily used for educational purposes, and was discontinued in 2007, several years after the last release in 2003.
+
+### Flash Can’t Do Videogames!
+
+![Alien Hominid, of Newgrounds fame, is one of many games made in Flash — but it wasn’t always obvious Flash was a viable medium for games](2019103000_09.jpg)
+
+In retrospect, it seems laughable, but around the time period of Flash’s introduction, the prospect of creating a game in Flash seemed impossible. Don’t take my word for it — let’s read some articles that were written during this era.
+
+In the article [Director is Dead?](http://director-online.dasdeck.com/buildArticle.php?id=818) written March 6, 2000, Alan Levine wrote the following.
+
+> Out on my thin limb here, I cannot remotely see how Flash will encroach on the domain of Director and just shake my head at people who do not see the immense differences between these tools. In its present version, Flash is an incredible delivery platform for mostly linear content through an agonizing interface. For making Eyecandy. Okay a bunch of ActionScripted buttons can provide branching, but the ‘programmable’ brains behind is miniscule compared to Lingo. And the script environment will send you screaming into the night.
+
+Furthermore, in the article [Let the eat Java](http://director-online.dasdeck.com/buildArticle.php?id=126) *\[sic,\]* written March 9, 1998, Zac Belado commented on the fact that browsers would ship with Flash but not Shockwave.
+
+> It may sound cynical but it’s really the only thoughts you can have when you see a wonderful technology like Shockwave get short shrift compared to Flash. Flash is a very cool technology but aside from smooth looking eyecandy, what can it do? Can you make a database front-end with it? Can you make a game with it? Can you generate a robust website navigation system with it?
+
+These articles, obviously, have aged poorly, as we now know games, and robust website navigation systems, were in fact completely possible in Flash — or at least, were going to be, with improvements to its scripting language, ActionScript, that were inspired by Flash’s increasing popularity.
+
+## So What Happened?
+
+You may well be aware that Flash Player will be discontinued in 2020. Adobe announced this years in advance, so we could all prepare for when it happened, because the industry was so dependent on Flash for a time. What you may not know is that Shockwave was already [discontinued earlier this year](https://helpx.adobe.com/shockwave/shockwave-end-of-life-faq.html) — on April 9, 2019, with one month of notice and little fanfare.
+
+Why did Flash steal the spotlight? What happened to Shockwave, which looked like such a promising technology at the dawn of the net?
+
+Well, the answer is that Flash became more popular — vastly more popular — and that’s primarily for three good reasons.
+
+The first reason is the price tag. Perhaps Macromedia thought that with the advanced capabilities of Director, it was worth the $1000 price tag as opposed to Flash’s $400. The reality of the situation, however, is that people don’t like advanced. People like simple, and Flash was simple to use.
+
+This naturally coincides with the other reason why Flash was the better choice: it was simpler and more generally useful. Put yourself in the shoes of a web designer during this time: Flash can make banners, menus, buttons, and advertisements. Flash was a one man band. You could create your art and script it too! Director couldn’t do any of that by itself — you needed to import existing media, created using another tool.
+
+Finally, in combination with these reasons, around the time period of 1998–2000 Macromedia began pushing for deals with OEMs such as Dell and Apple to include Flash with PCs, which meant that a great deal of users had Flash without the need to even download it. However, Director did manage to hold on in one key area…
+
+### The Single Reason Anyone Used Shockwave After Flash’s Takeover
+
+There was one feature Shockwave had that Flash didn’t get until late in its life. It’s a feature that Director never originally had, but that it got in version 8.5 (released in April 2001,) and it was a game changer: Shockwave 3D. Now, Flash did eventually get Stage3D, but it didn’t perform as well, and was very late to the party, since it wasn’t included with Flash until version 11 (in 2011.) Director’s 3D Lingo became a major selling point, to the extent that 3D web content was virtually the primary reason to use Shockwave after Adobe acquired it in December 2005.
+
+First announced in the summer of 2000 [at SIGGRAPH,](http://director-online.dasdeck.com/buildArticle.php?id=891) Shockwave 3D was developed as a joint effort between Macromedia and Intel, based on Intel 3D’s IFX Toolkit. According to [Okino,](https://www.okino.com/conv/exp_sw3d.htm) it was highly anticipated.
+
+> Almost every major 3D company bought into the idea of exporting their 3D content to the .w3d file format, for the desired purpose of streaming their 3D data quickly across the Internet to the large installed user base of Shockwave players. Considerable development effort, enthusiasm and marketing was invested in these custom Shockwave-3D exporters and related support software in each major 3D animation product, including Okino’s own software products.
+
+Well into the mid-2000s, game portals such as Miniclip and AddictingGames made use of Shockwave 3D. Notable developers of Shockwave 3D games include Robotduck, Xform, and Kinelco. [MacWorld reported](https://www.macworld.com/article/1017332/shockwave.html) on Shockwave 3D’s exciting future.
+
+> If you’ve been waiting for Shockwave 3D Web content, wait, no longer. It’s here from big names such as CBS Sports, FoxKids, Lego, National Geographic and Shockwave.com.
+
+![LEGO Studios Backlot by Templar Studios: an early use of Havok Physics with Shockwave 3D](2019103000_10.png)
+
+The introduction of the Havok Physics Engine to Director was also put to great use. One of the earliest examples of Havok Physics in a Shockwave 3D game was LEGO Studios Backlot from 2002, a Shockwave 3D game by Templar Studios, which has you explore and interact with objects in a LEGO movie set.
+
+Robotduck produced a total of [62 games,](http://robotduck.com/gameography) many of which made use of Shockwave 3D. Notable amongst them is M3Power Jetski Challenge, an advertisement for Gilette which had “over 100 million game plays… making it the most successful advergame on the Internet,” [according to Miniclip.](https://web.archive.org/web/20120214181224/http://corporate.miniclip.com:80/advertising/advergames)
+
+![](https://youtu.be/DftyWZOugdI)
+
+Perhaps one of the most ambitious uses of Shockwave 3D was for Burnin’ Rubber 4 by Xform, originally released in 2010. It can be [purchased on itch.io](https://xformgames.itch.io/burnin-rubber-4) as of 2018, and is a racing game featuring five large free-roaming worlds.
+
+Another impressive game was Nick Kang’s [Phosphor Beta](http://rasterwerks.com/game/phosphor/beta2.asp), a multiplayer first person shooter, originally conceived in 2007, which received many updates.
+
+![Phosphor Beta by Rasterwerks is an advanced display of Shockwave 3D’s capabilities](2019103000_11.png)
+
+What’s ironic about this is that Director was originally used for 2D, pre-rendered, point and click adventures, and as time went on, it fell out of use for that purpose and became almost exclusively for advanced realtime 3D rendered experiences. Paul Blart: Mall Cop and Journeyman Project are built upon the same technology, yet the two couldn’t be more polar opposite.
+
+Shockwave was never originally meant to be used solely for 3D, and yet, it eventually was, thanks to Flash virtually replacing it for other purposes — and as much as I like 3D games, it feels like Shockwave never reached its full potential.
+
+![](https://twitter.com/marccanter4real/status/1038466393430085632)
+
+![](https://twitter.com/schussler/status/1038162399163899905)
+
+Apparently, I’m not alone in that thinking.
+
+### The Beginning Of The End
+
+The latest version before the Adobe acquisition was Director MX 2004 (aka version 10.0) which had originally released in, well, 2004, but continued getting updated — even for a little while after the acquisition — until March 14, 2006 with the final patch, version 10.1.1.16. However, after this final patch to Director MX 2004, there was a long period of silence during which much speculation was had in regards to how Adobe would handle the beloved software.
+
+A new version of Director would not be seen until Director 11 in 2008. This was Adobe’s first new major Director version release. The biggest change that was made was adding Unicode support — which while certainly useful, was underwhelming as the main selling point of a new major version.
+
+A more useful update came in the form of [Director 11.5](https://www.macworld.com/article/1139581/director.html) in March 2009, which boasted a new audio mixer, byte arrays, H.264 codec playback, and MacOS Leopard support. While this wasn’t enough to warrant a new version number, it seemed that Adobe was still paying Director some attention. Unfortunately, it would not be for long.
+
+![The logo for Director 12](2019103000_12.jpg)
+
+Director 12, released February 11, 2013, was the last Director version, and introduced the ability to publish to iOS and added more advanced 3D features such as stereoscopy. Director never was updated to be 64-bit compatible, and for this reason, Director applications built for Mac are no longer supported as of MacOS Catalina.
+
+As such, in February 2017, [Director and Shockwave for Mac were discontinued.](https://www.ibtimes.com/adobe-ends-macromedia-discontinuing-adobe-director-contribute-shockwave-mac-support-2482677) The Shockwave Player for Windows was maintained until more recently, on April 9, 2019, when it was discontinued as well. Since Shockwave’s EOL, a few very inconvenient bugs have already cropped up.
+
+Most notably, Shockwave 3D isn’t compatible with newer Nvidia graphics cards on Windows 10, due to a basic [buffer overflow](https://gaming.stackexchange.com/questions/339173/how-can-i-play-dcr-shockwave-games/339841#339841) error when reading hardware specifications. There is also a bug in which timestamps are always zero, meaning they now always correspond to the date of January 1, 1970.
+
+All of this is on top of the fact that mainstream browsers, such as Google Chrome or Mozilla Firefox, no longer support plugins. With browsers no longer supporting plugin-based content, websites that host these games will see a decline in revenue and disappear, as we’ve already begun to observe.
+
+## This Is Why Flashpoint Is So Important
+
+![](https://youtu.be/qrU6RJbeKfo)
+
+There is an entire era of gaming at risk of disappearing if we don’t act soon. Shockwave is deader than Flash, webgames are largely seen as a fad that has ended, and if we don’t act quickly to preserve Shockwave games, they will meet a similar fate to that of silent films.
+
+Thankfully, BlueMaxima’s Flashpoint provides a solution. We have configured over 1000 Shockwave games to be easily playable at the click of a mouse, resolving any compatibility issues and with no additional setup. If our Lingo experts can’t get your Shockwave game running on today’s computers, nobody can.
+
+In the aftermath of Shockwave’s discontinuation, and with Adobe no longer providing support, Flashpoint is the largest repository of Shockwave content the web has to offer — find us on our [official website!](http://bluemaxima.org/flashpoint)

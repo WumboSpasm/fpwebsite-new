@@ -1,0 +1,11 @@
+The problem for Windows 7 users has been resolved with a small patch. This also resolves issues with 3DVIA Player and PopCap Plugin that we didn't identify during testing.
+
+Here's a link to the patch: https://bluemaxima.org/flashpoint/Flashpoint_Proxy_Patch.zip
+
+Here's instructions:
+
+**Haven't downloaded Infinity yet**: Download Infinity normally. The patch has been applied to the version we're distributing now.
+**Have already downloaded Infinity**: Download the patch, extract the zip, move the folder so that the folders match up, overwrite all existing files, or redownload Infinity.
+**Have downloaded Ultimate**: See above instructions, minus the re-download bit - we can't update Ultimate in the same way.
+
+Sorry for the trouble.

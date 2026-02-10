@@ -1,0 +1,10 @@
+We're looking for help localizing Flashpoint Launcher into other languages! We've set up a new Crowdin project page so you can contribute.
+
+Head to the project page linked below, right click on the language you wish to translate for and press Translate All. You are encouraged to have an updated Flashpoint Launcher open during translation so that you can make sense of the contexts given for each word/sentence. Links are below:
+
+CrowdIn Project Page: https://fpl-translations.bluemaxima.org/
+Extra Translator Info: https://support.crowdin.com/for-volunteer-translators/
+Latest Launcher Downloads: https://github.com/FlashpointProject/launcher/releases/tag/latest
+Advanced Translation Guide: https://bluemaxima.org/flashpoint/datahub/Translation_Guide
+
+If you're proficient in your language and would like to approve translations as a proofreader, or don't see your preferred language on the CrowdIn page, just send DM our project manager, @Colin.

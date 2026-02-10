@@ -1,0 +1,24 @@
+*LOOK SKYWARD AND REMEMBER,*
+*YOUR SPIRIT OF ADVENTURE CARRIES ON!*
+
+Hello @everyone, Flashpoint 8.1, "Spirit of Adventure" is now available! The last two months have brought plenty of updates to the table, and I want to take some time to talk about them in depth, because there's a few things you might want to know...
+
+First thing is new content count. Not as big as 8.0 by a long shot, but we still have 4,100 new games and 1,200 new animations. It's still a lot! Even with this being one of the smaller updates in the past few months, we still added a full Blu-Ray worth of size to Ultimate...and that's compressed.
+
+Second is that the launcher has received some massive updates. We've migrated to an SQLite database, for multiple reasons, mainly performance - the launcher should now be faster than ever, with limits imposed by those pesky XMLs gone. However, for the purpose of stress-testing, Infinity in particular has a new, somewhat exclusive feature...
+
+For those of you in the know, you'll know a while back that I and DarkMoe did a full scrape of Newgrounds, publishing it under the name Newgrounds Auditorium - it contained over 131,000 Flash animations from the site. Due to its overall size, however, it was impossible to integrate into Flashpoint proper, both filesize wise and with the ridiculous amount of entries it has. With Infinity and the new launcher version though, both problems are more or less solved, so for Infinity users only, we've integrated Auditorium into the launcher - you will find a new, third tab next to Games and Animations called NG Auditorium, that contains all 131,000 of these animations, ready to stream from the internet. (This can be duplicated in Ultimate; just ask if you want more details)
+
+There's also another new feature - download on demand logos and screenshots! This is enabled in Infinity by default; basically, when you're in Grid view, or you click a game and the right sidebar is open, the logos and screenshots will download automagically to your PC and be displayed in the launcher. No more stages! No more needing to grab separate zips! It's all there, when you need it. Don't want it? There's a new config option to turn it off. (We're hoping to augment this with an ability to download *the database itself* on demand, but that's for another time...) (Also note that Auditorium doesn't have logos or screenshots; this is to be expected)
+
+This isn't getting into plenty of other things new in this version (the usual new extras, a few bugfixes related to certain plugins, a new plugin named Pulse, a big update to Tags, and the usual ridiculous amount of metadata fixes). As always, the changelog is available with both versions if you wanna see that. https://bluemaxima.org/flashpoint/changelog.txt (There's more indepth launcher changelogs at https://github.com/FlashpointProject/launcher/releases/)
+
+---
+
+Two more things I feel the need to talk about:
+
+\* There's been news recently that Adobe has added a 'killswitch' into the latest versions of the Adobe Flash Player, which means they can stop Flash working in browsers and on PCs at will. We can't be sure if this has made its way into other Flash-related things on the web (think Newgrounds Player, or Supernova, etc.), but what we can guarantee is that Flashpoint is not and will not be affected by this killswitch. We're using versions older than the killswitch, and we won't be updating until we're sure we can either disable said killswitch, or if our methods don't contain the killswitch. Be calm and carry on.
+
+\* In relation to that, our logo, while a lovely beast of combining old and new Flash logos is great, considering the expanded scope of the project and the potential of someone breathing down our necks, we're open to suggestions for new Flashpoint logos. If you have an artistic drive and feel like you can come up with something that'll pass my ridiculously high barrier, please, feel free to send off a message on #logo-discussions.
+
+8.1 is available from #downloads now, with more mirrors coming as we can make them. Enjoy.

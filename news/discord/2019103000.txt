@@ -1,0 +1,7 @@
+@everyone Hello. This isn't a version release beep, but due to the long length of time between releases these days, I've been told that people believe the project is dead in the water due to a lack of communication. The new status update, which hopefully I'll have the time to throw together every month, should help with that.
+
+The status update is an article on Medium with details about how we do things here, some odd additions to the library recently, steps forward on the tech side of things, and another, 200GB sized surprise at the bottom if you're fast enough. There's also two extra articles linked at the bottom, one by me, and one by our Shockwave master Tomy.
+
+Have a read if you're interested: https://medium.com/bluemaximas-flashpoint/flashpoint-status-update-october-2019-efb740ebb825
+
+TL;DR: new neat stuff, still on track for a post-Christmas release of the next version. Let me know what you think in #flashpoint-chat.

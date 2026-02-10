@@ -1,0 +1,197 @@
+Flashpoint Version One
+
+* Added games:
+ * 3 Foot Ninja II
+ * Achievement Unlocked 2
+ * Achievement Unlocked 3
+ * Alice is Dead Chapter 2
+ * Alice is Dead Chapter 3
+ * Anika's Oddysey
+ * Antbuster
+ * Arcuz 2: Dungeons
+ * Armor Mayhem
+ * Armor Picross 2
+ * Arrival in Hell II
+ * Artillery Live
+ * Battalion Commander
+ * Bejeweled 2
+ * Berzerk Ball 2
+ * Blockhead: The Game
+ * Brawl Royale
+ * Bubble Tanks II
+ * Building Rush
+ * Bunny Flags
+ * Bunny Invasion 2
+ * Caribbean Admiral
+ * Chronotron
+ * Civilizations Wars
+ * Clicker Heroes
+ * Closure
+ * Colour My Heart
+ * Colour My World
+ * Combat Instinct 3
+ * Crush the Castle Player's Pack
+ * Crystal Story
+ * Cube Escape: The Cave
+ * Curse Village
+ * D-Day Defender
+ * Death vs Monstars
+ * Decision
+ * Deep Sleep
+ * Deeper Sleep
+ * Defend Your Castle
+ * Demonic Defence 4
+ * Detective Grimoire
+ * Diggy
+ * Don't Escape
+ * Dragon Boy
+ * Earn to Die 2012
+ * Enigmata 2: Genu's Revenge
+ * Epic Battle Fantasy
+ * Epic Battle Fantasy III.3: Bullet Heaven
+ * Epic Battle Fantasy IV
+ * Epic Boss Fighter 2
+ * Epic Combo
+ * Epic War 4: Alliance of Heroes
+ * Epsilon
+ * Fancy Pants Adventure: World 2
+ * Fancy Pants Adventure: World 3
+ * Feudalism
+ * Fishy
+ * Fixation
+ * Flash's Bounty
+ * Frontier
+ * Frozen Islands
+ * Gap Monsters
+ * Gravitee Wars
+ * Hex Empire
+ * Hippolyta
+ * Hitbox
+ * Home Story: 1971
+ * Homerun in Berzerk Land
+ * ImmorTall
+ * Incredibots
+ * Infinity Inc
+ * JackSmith
+ * K.O.L.M.
+ * Kick the Critter
+ * La Isla de lo Mono
+ * Larry: Pup Run
+ * Legend of the Void
+ * Legend of the Void 2
+ * Lil' Einstein's Manhattan Project
+ * Looming
+ * Loot Hero
+ * Magic Pen
+ * Majesty of Colors
+ * Mario Combat
+ * Mighty Knight
+ * Mine Blocks
+ * Momentum Missile Mayhem: Ultimate Edition
+ * Music Catch 2
+ * My Friend Pedro
+ * Neverending Light
+ * Nevermore 3
+ * New York Shark
+ * Newgrounds Levels
+ * Newgrounds Pass 3
+ * No Time To Explain
+ * Obey The Game
+ * Office Lover Kiss
+ * Overkill Apache
+ * Paladog
+ * PixEvo: The Fountain
+ * Powerfox
+ * Primary
+ * Quantum of Light
+ * Ragdoll Achievement
+ * Rage III
+ * Ray
+ * Ray Part 2
+ * Red
+ * Red Baron
+ * Red Moon
+ * Red Remover
+ * Reincarnation: A Demon's Day Out
+ * Reincarnation: Riley's Out Again
+ * Road of Fury
+ * Robot Dinosaurs That Shoot Beams When They Roar
+ * Robot Wants Kitty
+ * Rogue Soul
+ * Rokko Chan
+ * Royal Warfare
+ * SHIFT 2
+ * Sands of the Coliseum
+ * Sentry Knight
+ * Shopping Cart Hero
+ * Sierra 7
+ * SkyQuest
+ * Snailiad
+ * Soviet Rocket Giraffe
+ * Steampunk Tower
+ * Stellar Squad
+ * Stick War
+ * Storm the House 3
+ * Strategy Defense 3
+ * Straw Hat Samurai
+ * Super Crazy Guitar Maniac Deluxe 3
+ * Super Cut-It
+ * Super Stacker 2
+ * Tactical Assassin
+ * Tactical Assassin 2
+ * Takeover
+ * Tentacle Wars
+ * Tetraform
+ * Tetris'd
+ * The Arrow Of Time
+ * The Deepest Sleep
+ * The Endless Zombie Rampage
+ * The Gun Game
+ * The King's League
+ * The Peacekeeper
+ * The Rise of a Knight
+ * The Visitor
+ * Thing-Thing 2
+ * Thing-Thing 3
+ * Thing-Thing 4
+ * This Is The Only Level Too
+ * Totem Destroyer
+ * Totem Destroyer II
+ * Tower of Greed
+ * Tremerz
+ * Triachnid
+ * Ultimate Crab Battle
+ * Ultimate Porsche Racing
+ * Unreal Flash 2007
+ * Upgrade Complete 2
+ * Warlords
+ * Weapon
+ * What's Inside The Box
+ * Windows Doors
+ * Witch Hunt
+ * Wondorous Lands
+ * WpnFire
+ * Yellow
+ * You Have to Burn the Rope
+ * Zombie Society Dead Detective: Brain Drain
+ * Zombotron 2
+ * Zuma
+
+* Added Hacked games:
+ * Arcuz
+ * Ginormo Sword
+ * Onslaught 2.2
+ * The Last Door: Chapter 1
+ * Trials Dynamite Tumble
+
+The Flash Player projector executable has been updated to version 29 (previously 28 in all of the Flashpoint test runs).
+
+The entire set is now TorrentZipped; new versions now won't need a complete redownload of the entire set. The entire set has been reorganized to accomodate for TorrentZipping.
+
+Almost every game in the set has been played with due to this, which is why I'm fully expecting to put out a Release 1.1 to fix a few issues.
+
+We're back to the batch file, because half of the antiviruses in the world (not including the one I'm using) detected the executable as either a generic Trojan or a bitcoin miner.
+
+The batch file has had some QoL updates; it'll now error out if it can't find the games folder, it will install the prerequisites only once, during setup, and it now also installs .NET Framework 4.7, to cover all of the prerequisite bases.
+
+The readme also got a bit of a tuneup.

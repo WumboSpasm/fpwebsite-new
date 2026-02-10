@@ -1,0 +1,57 @@
+It’s been almost a month since I wrote about Flashpoint here on Medium and watched it spread across the internet like wildfire. Medium, to Gamasutra, to Reddit, to Tumblr, and on it went, showing up everywhere and getting hundreds of thousands of views, and thousands of downloads.
+
+Work has continued on in the tailwind of the spotlight and Flashpoint 3.0 is officially out, and with that I would like to say we’ve succeeded in what we set out to do. But I’d like to take the time to document some of what’s transpired over the past few weeks.
+
+---
+
+Gamasutra were the first to notice Flashpoint, and did a nearly full-on copy paste job of what I wrote to their website, but it worked. Before I knew it, that URL was being linked on several places on Reddit. /r/Games, /r/emulation and /r/pcgaming had tons of views on each of them. It even showed up on Tumblr at one point, and I don’t know what ‘notes’ are, but damn if there wasn’t several thousand of them. This isn’t even counting the thousands of views and claps on the Medium article.
+
+![If that isn’t getting eyes on the problem, I don’t know what is.](2018053000_00.png)
+
+The biggest notable change was on our Discord server. We went from barely breaking 30 to breaking one thousand people today, with over 200 of them online at any one time. It became so unmanageable I had to hand moderation powers to anyone I even remotely trusted.
+
+![This could not be any more insane.](2018053000_01.png)
+
+I ended up making a ‘curation’ process for the Discord so that anyone who wanted to add a game, could…and we got so many entries in that I had to close the channel while I caught up. The game requests channel also got so full that we have enough work to last us weeks. We have a dedicated team of over a dozen people working to add new games to the project.
+
+![This is just part of it. The scrolling in the requests goes on for days.](2018053000_02.png)
+
+Special mentions need to go out to DarkMoe, who’s basically my second in command at this point. He whipped up a new autocurator which can basically take these files and add them to Flashpoint’s database without me having to do much work other than test that they got it right. I can (and have) added over 50 games in under an hour with this.
+
+We even got a bunch of creators in. I’ve been able to say hello to the creators of some of the biggest games from back in the day — nothing beats the creator of Armed with Wings coming in and saying that he’s super impressed with our work, or the guy who made SHIFT and Indestructotank asking us to keep going so his work doesn’t disappear. Even Kongregate sent someone over to egg us on, although they weren’t able to specifically help due to potential legal issues.
+
+---
+
+And so we come to the new release, Flashpoint 3.0. We have a new sitelock-averting system that’s so effective we’ve been able to remove over 60% of previously hacked titles, not to mention adding a few new ones that needed something more advanced. This is fantastic for preservation’s sake — having the completely untouched files is miles ahead of where we were.
+
+The 2500 games (yes, 2500 — we’ve expanded 3x in size since April) in 3.0 will go on to become much more in time. With the new autocurator, redirector and extra population on the Discord server, we can add new games at a breakneck pace without needing to modify them. Combine that with our SWF archive Flashfreeze doubling in size and we are so close to having everything in a position where we can save it.
+
+And that’s not even going over other things, like how:
+
+- We’ve saved several games that were hidden deep in the Internet Archive and almost nowhere else.
+- We’ve got a version of a game that never released outside of the original developers.
+- We’ve diverted a ton of attention towards another project working to save and document Shockwave games.
+- We’re working on saving some of the biggest Flash games ever to hit the internet.
+- We saved a game that even the original creators thought was lost.
+
+---
+
+I originally wrote up the Medium article to get as many eyes on the Flash game problem as possible. Flash was going down and nobody was looking to help it, but now, with both more dedicated technical hands and helpful curators on the team, Flashpoint is looking to grow practically exponentially towards the end of the year.
+
+I designed Flashpoint with one mission in mind from the very beginning — a decentralized platform for Flash where nobody had to download or find any Flash games or weird ways to make them work. The more copies of Flashpoint there are, the less likely chance that Flash will be truly wiped out.
+
+With:
+
+- Multiple gigabytes of new games.
+- Hundreds of thousands of views.
+- Thousands of downloads.
+- Hundreds of people helping.
+- Dozens of games saved from near extinction.
+- One gargantuan spotlight on the problem.
+- Thousands of copies of Flashpoint across the world, each capable of playing all the games they contain, independent of any Flash portal shutting down.
+
+I’m pretty sure I can safely call this ‘**mission accomplished**’.
+
+Join our Discord at https://discord.gg/S9uJ794 to help us preserve history, or just to grab the new release. There’s still a lot to do, but we’re in the best possible place to do it.
+
+![](2018053000_03.jpg)

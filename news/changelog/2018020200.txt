@@ -1,0 +1,65 @@
+Flashpoint zero rev. 3
+
+Close to a full release!
+
+* Added games:
+ * Age of War
+ * Balloon in a Wasteland
+ * Bloons
+ * Breaking the Bank
+ * Bush Shoot-Out
+ * Clash 'n' Slash Worlds Away
+ * Chaos Faction
+ * Colony
+ * Commando
+ * Divine Intervention
+ * Dragon Fist 3
+ * Endless War 3
+ * Endeavor
+ * Flash Trek Broken Mirror
+ * Fleeing the Complex
+ * Flight
+ * Heli Attack 3
+ * Infiltrating the Airship
+ * Lakeview Cabin
+ * Learn to Fly
+ * Mardek Chapter 1
+ * Manufactoria
+ * Material Sniper
+ * Microlife
+ * Monster's Den: Book of Dread
+ * Motherload
+ * Mr. Bounce
+ * Peasant's Quest
+ * Ragdoll Laser Dodge
+ * Reflections
+ * Sift Heads
+ * SmileysWar
+ * Spewer
+ * Streets of Fire
+ * Submachine 1: The Basement
+ * The Unfair Platformer
+ * The World's Hardest Game
+ * Thing-Thing Arena
+ * Trapped
+ * Treasure Box
+ * Trials 2 Flash Preview
+ * Viridian Room
+ * Winnie The Pooh's Home Run Derby (both Japanese and English versions)
+
+* Added Online Only games:
+ * Corporation Inc
+
+* Added Hacked games:
+ * Mud and Blood 2
+ * Robot Unicorn Attack
+ * Robot Wants Ice Cream
+ * One Chance
+ * Stealing the Diamond
+ * Warfare 1944
+
+* Yep, now we have two versions of One Chance, one I hacked and one I didn't.
+
+* New background! Something nice and bright to offset the terrible LaunchBox default font.
+
+* Default zoom is now larger because that dang title-wrapping on 90% of the games was annoying me to pieces.

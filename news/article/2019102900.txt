@@ -1,0 +1,44 @@
+![](2019102900_00.jpg)
+
+This isn’t directly a story about Flashpoint and its development, but I feel in order to get across the principles that guide me through the development of the web game preservation project, I need to go and write about the one man who gave me said principles over the course of lots of junk food, YouTube lectures and general computer wizardry.
+
+That man is Jason Scott, a self described “free-range archivist”, “angel of death” and leader of several technological culture preservation communities around the world wide web, the more notable ones being ArchiveTeam (a rogue preservation group, the most famous of the saviors of GeoCities) and the head software curator of Archive.org. He has been doing culture preservation for almost as long as I have been alive; I was six at the time he made Textfiles.com. For good measure, I plan on linking a random Jason Scott lecture every few paragraphs, all of which should be watched at some point.
+
+![](https://youtu.be/fYI_XtT7sgQ)
+
+I originally found out about this beast of an archivist from one of his earliest projects, [Textfiles](http://textfiles.com/), a small window into a culture of bulletin board systems, ANSI art, phone phreaking and everything inbetween in a tiny period of the 80s. After that I watched his two documentaries, multiple of his lectures, and eventually joined the ArchiveTeam, helping out with minor projects in minor ways over the years. (My greatest claim to helping them is, depending on what way you look at it, is conceiving the concept that other people turned into the ArchiveTeam Warrior, or being mentioned in one of his lectures as the 15-year old that was worried about being sued over poetry. I wasn’t a smart kid.)
+
+See, the first thing that I had to learn about archiving and how important it was, was that nobody was going to do it unless someone stepped up to the plate. Example after example has been referenced in his videos of sites that just said, “We’re leaving now, goodbye”, and in 30 days, no more no less, they do the equivalent of firebombing their own personal Alexandrias. Data, gone. They don’t care. They’re practically paid not to. The first thing you do when you watch a Jason Scott lecture is note just how carefree some of these businesses can be with data, and how happy they are to see it gone at the end.
+
+Textfiles appeals to me way more than the documentaries or the lectures do, if I’m being honest. It’s one thing to show people a window into internet history through slides and stories, it’s another thing entirely to be able to dive in and examine it yourself, see the connections, read it all as easily as if you had just dropped into a computer room in the mid 80s. The instant appeal of this kind of jump-in-and-go archive cannot be overstated, and is another major point in the favor of how Jason does things; almost every project that he starts, he makes sure people can see and get it easily.
+
+![](https://youtu.be/QCAL_YgYiP0)
+
+He basically built Textfiles.com with his own two hands, and that makes all the difference. Assembling all of the files and writing descriptions of their contents, neatly organizing and making sure they’re all readable in a browser at the drop of a hat, and presenting it all in an authentic way. It’s great to contrast this to something like, say, the famous GeoCities archive that went up on ThePirateBay. While it’s a cool archive, it’s nowhere near as user-accessible as you might hope; a 641GB 7zip file that extracts to an even bigger size was pretty untenable in 2013, and trust me, I tried. (Other sites do allow you to browse GeoCities online, I’m just making a point here.)
+
+This also brings up a point pretty notable to the realm of software archival, although it does apply to every other kind of archival too: there’s no point in having an archive if you can’t partake in it. It’s cool to keep a few thousand CDs in a warehouse somewhere, but no-one can access them that way and see what’s on them, so he made [cd.textfiles.com](http://cd.textfiles.com/) to back up and allow for end-user viewing of endless shareware CDs. Old games so far out of copyright are neat to have, but if you can’t play them it misses the point entirely, so he pushed hard for the Emularity, the nickname for the in-browser emulation suites on Archive.org that let people play these games as easily as possible from a stable source.
+
+![](https://youtu.be/oLe_n4xN9vw)
+
+Allow me to summarize the three major points of cultural preservation that I’ve learned from years of Jason Scott lectures:
+
+- No-one’s going to do it for you, and the owners may well disappear it without warning. Archive as soon as possible, as much as possible.
+- It’s cool if you have the archive, but if it can’t be viewed by anyone who cares, there’s basically no point to it. Paintings without a gallery.
+- The more user friendly the archive is, the more likely you are to draw and keep onlookers, if not outright convert them to your cause.
+
+These three points have more or less been the driving force of Flashpoint’s philosophy since its inception, easily demonstrated by not only this project, but the other project that inspired the inception of Flashpoint, eXo’s eXoDOS. It’s basically Flashpoint but for DOS games; double-click in the launcher to setup & run the games automagically with no user interference required in the majority of cases.
+
+It wasn’t just that at the end of the day though. I have one more point to make about cultural preservation. You’re not just doing it for the present. You’re doing it for the past: the people who made these things had stories behind them, reasons for doing them, both of which may be lost, but still exist in a form of what’s being archived. And you’re doing it for the future: people who might never have had a clue about this kind of thing fifty years from now might still stumble across your archive long after you’re gone and be as captivated by those stories as you were when you started.
+
+Jason’s proved this point again and again by always coming back to the personal stories; the morimi factory hit by a tsunami, the gay man who finally found his partner, the baby who died years before the website was created on GeoCities. At worst, the personal is just as interesting as the technology; at best, these stories will extend well beyond the technical aspect. In fact, in the two GeoCities cases listed a sentence or two ago, it already has. GeoCities is gone but records of these stories remain.
+
+With that said, let’s update that list of cultural preservation goals again:
+
+- The work won’t get done by itself. If you care, do it now, before it’s too late.
+- It’s useless if others can’t view it. Practically paintings without a gallery.
+- The more user friendly the archive is, the more likely you are to get people interested.
+- It’s as much for the memories of the past and historians of the future as the members of the present.
+
+That’s all from me.
+
+![](https://youtu.be/qh7EARxkxoU)

@@ -3,43 +3,60 @@
 		"namespace": "home",
 		"styles": ["home.css"],
 		"scripts": ["home.js"],
-		"fragments": []
+		"fragments": [],
+		"lenient": false
 	},
 	"/news": {
 		"namespace": "news",
-		"styles": [],
+		"styles": ["news.css"],
 		"scripts": [],
-		"fragments": []
+		"fragments": [
+			"index",
+			"index_entry",
+			"index_tag",
+			"entry",
+			"entry_imageset",
+			"entry_image",
+			"entry_youtube",
+			"entry_twitter",
+			"entry_codeblock"
+		],
+		"lenient": true
 	},
 	"/faq": {
 		"namespace": "faq",
 		"styles": [],
 		"scripts": [],
-		"fragments": []
+		"fragments": [],
+		"lenient": false
 	},
 	"/downloads": {
 		"namespace": "downloads",
 		"styles": ["downloads.css"],
 		"scripts": ["downloads.js"],
-		"fragments": []
+		"fragments": [],
+		"lenient": false
 	},
 	"/source": {
 		"namespace": "source",
 		"styles": [],
 		"scripts": [],
-		"fragments": []
+		"fragments": [],
+		"lenient": false
 	},
 	"/branding": {
 		"namespace": "branding",
 		"styles": ["branding.css"],
 		"scripts": [],
-		"fragments": []
+		"fragments": [],
+		"lenient": false
 	},
 	"/contact": {
 		"namespace": "contact",
 		"styles": [],
 		"scripts": [],
-		"fragments": []
+		"fragments": [],
+		"lenient": false
 	},
 	"/search": {
 		"namespace": "search",
@@ -52,7 +69,8 @@
 			"pagebuttons",
 			"result",
 			"stats"
-		]
+		],
+		"lenient": false
 	},
 	"/view": {
 		"namespace": "view",
@@ -65,6 +83,7 @@
 			"table",
 			"row",
 			"actions"
-		]
+		],
+		"lenient": false
 	}
 }

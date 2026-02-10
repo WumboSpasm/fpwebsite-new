@@ -1,0 +1,97 @@
+![(It’s actually way higher than this now.)](2019112900_00.png)
+
+Another month gone and another newsletter to help let people know what we’ve been up to. We’ve got new technology, new games and a little bit of polish everywhere else to help brush up 7.0 for release at the end of next month.
+
+---
+
+Might as well start with that new technology. Say hello to ShiVa3D.
+
+![](2019112900_01.png)
+
+We managed to adapt the desktop player for the ShiVa3D engine to work with the web versions of the platforms’ games, and Flashpoint comes with a fair few games on the platform to try out. This makes platform number thirteen supported by Flashpoint; no, we don’t know when it’ll end either.
+
+---
+
+This next game, Colonel Kerfuffle in Castle Calamity, might not appear too special on the surface.
+
+![](2019112900_02.png)
+
+It’s a weird situation though that helps you realize just how important an effort like ours is, though. Allow me to tell a story…
+
+Curator Choror submitted the game, but only with the first level included, due to the Internet Archive, where he grabbed it from, only having the first level. The game was split into six SWFs; one for the five levels and one for the main game, so the Archive wasn’t able to grab everything due to not being able to see through the SWF to do that.
+
+Seeing this, I decided to go on a little bit of a journey, and taking a look at where everywhere else hosted the game, it turned out all of them looked at a GameZHero website. So I went there to look…
+
+![](2019112900_03.png)
+
+It’s a little hard to make heads or tails of that screenshot, so I’ll tell you. See, the SWF of the main game loads fine, but the SWF to level 1 is way too small; 221 bytes isn’t much of anything, let alone a level. Therefore, I thought that it was loading from the wrong place, and I was right. Their website has gone under some renovations since this game was made, and the SWFs aren’t where they used to be. But see, since GameZHero was the original host, you would think they still have the levels, just in a different place. What about in the same folder as the main game SWF as it is now?
+
+![](2019112900_04.png)
+
+Bingo. They still had all five original levels, intact. It all worked in Flashpoint once I downloaded and added them to Choror’s original curation. We seem to be the only people who have a complete copy of the game at this point. If you don’t have people looking at situations like this, you may well lose games that are still there, just not working due to something as simple as a website change.
+
+---
+
+How do you archive an entire website’s worth of loops? I found myself asking this question after learning of the death of Pown.it.
+
+![The message you get from Pown.it if you try to visit it today.](2019112900_05.png)
+
+Pown.it was a relatively famous site that carried multiple thousand Flash loops. Flash loops are simple, repeating animations with music that were immensely popular over the years. Pown.it was one of many, but was also very close to the top of the food chain, only being challenged by the likes of Dagobah.net and z0r.de.
+
+Going through them all one by one would take a ridiculous amount of time, not to mention that there isn’t much meta on what the loops are; good luck finding dupes in the pile of 5,300 loops that are in the archive.
+
+The Internet Archive did a great job of saving the site, considering what they had to work with; they got practically every individual loop, a lot of the top rated pages, and a few of the other pages, but not everything. There are also utilities to grab entire sites from archive.org, soooo…
+
+![](2019112900_06.png)
+
+![](2019112900_07.png)
+
+![](2019112900_08.png)
+
+Works for me, at least until we can get around to sorting through and getting everything separate. It’ll be in Flashpoint 7.0.
+
+---
+
+We’re looking for people that can translate our launcher into multiple languages. You can see our progress below, and sign up to help (but please be in our launcher chat as well):
+
+https://crowdin.com/project/flashpoint-launcher
+
+---
+
+![](2019112900_09.png)
+
+![](2019112900_10.png)
+
+How about some new Launcher themes, as well? They‘re a bit over the top, but they’re still fun representations of the time some were playing Flash games in.
+
+---
+
+![](2019112900_11.png)
+
+![](2019112900_12.png)
+
+Have some stats on the visits and hits to the site. November has actually been the busiest month in the site’s history, with over a week to go (as of this writing). Over 200,000 unique visitors in one year is far beyond what I ever expected this project to be.
+
+The individual sources as to where people are coming from are ridiculously varied, to boot…
+
+![](2019112900_13.png)
+
+![](2019112900_14.png)
+
+Google, YouTube, Tumblr, Reddit, a bunch of random articles... One way or another, we’re spreading everywhere, and that really only happens due to the ridiculous response of the community. More people sharing means more people aware of the problems.
+
+![](2019112900_14.png)
+
+And there’s the top countries. Go Australia.
+
+---
+
+It’s come to our attention that, due to several factors in relation to our curation process (mainly the fact that everything in said process is community sourced) several games that are still able to be bought and downloaded off the internet from their original creators have been included in Flashpoint. This was never our intention; outside of titles that are no longer available to be bought legitimately, Flashpoint is meant to be for titles that are freely available. We’ll try to improve our process in the future, and we’re working on removing the offending content come 7.0 and later versions. If your paid content is in Flashpoint, please let us know and we’ll have the content removed as soon as possible.
+
+---
+
+It’s a relatively quiet month; mainly just more work on the backend and adding games. There’s more coming in the queue towards the release of 7.0, which will hopefully happen at the end of next month as has been planned since the release of 6.3. As for me, I’m going to go on a well deserved break; god knows I need it before the behemoth of new stuff that’s in version 7 goes out.
+
+One last thing; if you enjoy the work we do and want to support similar projects like it, the [Internet Archive](https://archive.org/) is running a donation drive. A lot of what we do around here wouldn’t be possible without them.
+
+PS. anyone thought of a good codename yet? I’ve had no luck.

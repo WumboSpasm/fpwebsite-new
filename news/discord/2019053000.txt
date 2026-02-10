@@ -1,0 +1,9 @@
+@everyone Hello, Flashpoint 6.1 "Preservationware" is now available.
+
+This isn't the biggest update in Flashpoint history (kinda hard to top 6.0 on that count) but we still have 1,500 new titles and support for yet another plugin, Authorware. There's also, of course, a changelog with about a hundred individual fixes in it, so this is still a pretty sizable update. You'll find the links in #downloads as always, we'll be adding more mirrors as we can make them. There really isn't much else to say about this update, so have at it.
+
+With that said, I understand that downloading 100+GB again is a massive pain in the neck, and we're working on a solution to that. Watch this post if you're interested; I (or someone else) will edit it with more details once we have something more concrete to show.
+
+I just want to take the time to shill another, smaller project I've been working on, just while I'm here: instance_archive, a GameMaker game archival project. I admit I haven't put near as much effort into it as I have Flashpoint, but with Flashpoint being as big a monstrosity as it is to work on, can you blame me? If you want to learn more about that, you can get the freshly minted first release here: http://bluemaxima.org/instance_archive/
+
+Hopefully we're back on the monthly release schedule without much issue. Version 6.2 should be out by the end of June, and considering that DarkMoe uploaded 1200 games to go into it today...well, let's just say it'll be Moe's great escape.

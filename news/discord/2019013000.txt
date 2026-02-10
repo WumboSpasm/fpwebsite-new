@@ -1,0 +1,9 @@
+@everyone Flashpoint 5.4, "Recombination"...and Flashpoint 5.4.1, "74%", are available now.
+
+The major feature of 5.4 is the return of Flashpoint Theatre, our small side project trying to save a bunch of Flash/other kinds of animations. The Launcher has been updated pretty significantly to reflect this, with an "Arcade" and a "Theatre" tab separating the two kinds. There's also been a few new animations added to celebrate, but we could always use people adding more. (Just because it's in Newgrounds Auditorium doesn't mean it's not allowed here.) A lot of the other tech has been given a tune up as well, hopefully things will be a bit smoother from now on.
+
+Of course we've been adding new games, too, and just over a thousand are included in this new release. We've added some more infamous Flash games, including a particularly controversial one I won't name here, some long requested titles like Mission in Snowdriftland, some outright oddities including the entirety of the WonderFL Archive, a little bit of everything. There's also been plenty of updates to games already in the collection, too. You can always check the changelog if you want to see that stuff in detail.
+
+There is also 5.4.1, which is just a small patch of stuff that either a) I forgot or b) got fixed inbetween wrapping up 5.4 and actually getting it uploaded. It's a small zip located in the downloads, all you need to do is extract it over the top of your Flashpoint install (you'll be overwriting a handful of files). It's not required, but it would be nice if you got it.
+
+#downloads, as always.

@@ -1,0 +1,43 @@
+It’s been one month since the release of *301.* Considering that it was the biggest release we’ve put out since the project began, we’ve been trying to relax the pace a little, and not throw in massive, project-defining changes each week. That’s not to say there hasn’t been any progress whatsoever, though, and in this smaller-than-usual update, I’d like to take you through said progress.
+
+**The Current**
+
+The master build of Flashpoint has mainly received fixes (such as the Windows 7 and PopCap Plugin/3DVIA Player stuff) and new games. The day I write this, version 8.1, currently codenamed “Spirit of Adventure” because I can’t stop listening to [this damned Aether Realm album](https://www.youtube.com/watch?v=Mp5gh-F9bkY), passed 2000 new games, and there’s a couple hundred new animations on top as well.
+
+![Just a small sample. In ultra-widescreen, because why not.](2020052900_00.jpg)
+
+![Animations in not-widescreen. Just not enough of them for this one, sorry!](2020052900_01.png)
+
+We’ve taken the time to expand the Vitalize and Hypercosm libraries a little, there’s plenty of educational titles showing up, and a few hidden gems here and there this time. As always though, we’re open to more people coming and helping; we’ve managed to get through almost 40% of the request list, but there’s always more to do.
+
+One other bonus has made its way in though; we’ve integrated TOMY’s Old CPU Simulator into Flashpoint Secure Player, meaning we should be able to get some games that were previously crazy fast into way more playable speeds.
+
+![You can’t tell it’s running at normal speed, but it’s still really goddamn hard.](2020052900_02.png)
+
+And here’s a quick preview of what the changelog looks like currently.
+
+![](2020052900_03.png)
+
+**The New**
+
+With the rather slow period of transitioning to and from the pandemic, we had a bit of a stall on the Launcher. Thanks to a bit more free time on the part of our devs though, we have some neat new features and tweaks to show off, with more to come.
+
+Please note that whether or not any of this will make it into 8.1 remains to be seen — these sorts of things take time.
+
+![No more logo and screenshot upgrade required — we’re gonna get images straight from the internet.](2020052900_04.png)
+
+![Tags are getting a big overhaul. There’s gonna be easier ways to filter them, they’ll be shaded differently for easier sorting, and we’ll even have a big list of them to browse through. Even just having them in a list like this in the right sidebar is an improvement.](2020052900_05.png)
+
+![Yay, better random picks! We’ve needed that re-roll button forever.](2020052900_06.png)
+
+![The new launcher version will be using a single-file database. Finally shedding LaunchBox XMLs completely for a massive speed boost.](2020052900_07.png)
+
+[There’s more on the way](https://gist.github.com/colin969/a45e249d2aa81d4ae4bda2a56d9da572) that I can’t quite show you just yet — whether they be so minor that they aren’t worth displaying, or hard to actually show off. With that said, the big ones are:
+
+- A more intelligent way of packing, downloading and playing games. We’re gonna be packing them into ZIPs, basically.
+- A form of Infinity that can continuously pull new databases from the net — no more downloading and extracting new versions, it’s all live.
+- More plugins, of course! Although we’re trying to polish up what we have before we go too crazy with new stuff.
+
+**The End**
+
+And that’s pretty much it for now. Flashpoint will continue on as normal until we’re ready for the next release. We’re hoping next month, if only as a maintenance release, but until then, there’s still 50,000 pieces of web media to go enjoy. Have fun.

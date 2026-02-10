@@ -4,9 +4,9 @@ import { namespaceFunctions } from './nsfuncs.js';
 
 // Build a list of text definitions to supply to the HTML template
 export async function buildDefs(namespace, lang, url = null) {
-	const defs = lang == config.defaultLang
-		? locales[config.defaultLang].translations[namespace]
-		: Object.assign({}, locales[config.defaultLang].translations[namespace], locales[lang].translations[namespace]);
+	const defs = Object.assign({}, locales[config.defaultLang].translations[namespace]);
+	if (lang != config.defaultLang)
+		Object.assign(defs, locales[lang].translations[namespace]);
 	if (Object.hasOwn(namespaceFunctions, namespace))
 		Object.assign(defs, await namespaceFunctions[namespace](url, lang, defs));
 
@@ -342,15 +342,20 @@ export function replaceSlices(str, slices) {
 }
 
 // Sanitize string to ensure it can't inject tags or escape attributes
-export function sanitizeInject(str) {
+export function sanitizeInject(str, extra = {}) {
 	if (str.length == 0) return str;
-	const charMap = {
+	const charMap = Object.assign({
 		'<': '&lt;',
 		'>': '&gt;',
 		'"': '&quot;',
-	};
+	}, extra);
 	const charMapExp = new RegExp(`[${Object.keys(charMap).join('')}]`, 'g');
 	return str.replace(charMapExp, m => charMap[m]);
+}
+
+// Remove beginning, trailing, and repeating slashes from string
+export function trimSlashes(str) {
+	return str.replace(/^[/]+(.*?)[/]*$/, '$1').replace(/\/+/g, '/');
 }
 
 // Run Deno.lstat without throwing error if path doesn't exist

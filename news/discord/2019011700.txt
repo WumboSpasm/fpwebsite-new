@@ -1,0 +1,1 @@
+Hello again everyone, we've finished converting all the request channels over to the new spreadsheet, so if you want to request a new game, simply hit up #request-a-game for the details. #request-an-animation is also there, although we don't quite have a sheet for it just yet.

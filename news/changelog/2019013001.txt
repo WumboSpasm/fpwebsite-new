@@ -1,0 +1,11 @@
+Flashpoint 5.4.1 - '74%'
+
+* SPR for Shockwave has been updated to fix a bug with pressing Escape.
+* Zeta Flow was included in 5.4, but it didn't make it into the database for some reason. That's fixed now.
+* Changed the note for Acno's Energizer due to its custom level feature being weird.
+* Downgraded Arcuz to version 1.1 so you can actually save your game.
+* Fixed the splash screen at the end of IGPX: T.I.E. Game.
+* Fixed Sweet Wild West.
+* Renamed K-Fed to K-FED: Dancing with Fire.
+* Removed a dupe of Tanooky Tracks (Tanooki Tracks).
+* Removed a couple of pointless notes.

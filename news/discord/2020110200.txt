@@ -1,0 +1,19 @@
+Hi @everyone, sorry for the radio silence for the past two months, but we've been hard at work making 9.0's biggest feature, the game zip system - compressing games comprised of hundreds or thousands of files into one - and it's finally ready to show off in some fashion, so instead of having a long, somewhat unengaging article about the system, how about I just show you?
+
+https://youtu.be/bNyPGi8CI4o
+
+This'll hopefully whet your appetite for the next version, which will hopefully be out by the end of the year in order to give Flash a proper send off.
+
+---
+
+There's something else I'd like to mention, too, since it's related to this project and its goals. Ruffle, the HTML5-based Flash emulator, has recently found its way onto the Internet Archive in a playable form, and we've had a request for help from archivist extraordinare Jason Scott to get as many games and animations that are working on Ruffle onto the Archive as possible. I've already contributed a couple of dozen; here's one, just as a demonstration that the tech works. A Flash game working on the archive, *no Flash required*.
+
+https://archive.org/details/helicoptergame_flash
+
+---
+
+If you want to help, pop over to the Ruffle server's #ruffle-showcase server and read the wiki link in the channel's topic for detailed information. The more we get working there, the more attention we get for Ruffle, and the more likely Ruffle becomes more complete and compatible as a result.
+
+Here's an invite link:
+
+https://discord.gg/ESxjxMgeMD

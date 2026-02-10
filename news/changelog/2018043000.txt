@@ -1,0 +1,109 @@
+Flashpoint 1.3
+
+* Added games:
+ * 1066
+ * 7 Minute Bash
+ * Abduction
+ * Age of Defense 3
+ * Agnry Faic 2
+ * Aimbooster
+ * Anaksha: Female Assassin
+ * Armed with Wings: Culmination
+ * Balloon Invasion
+ * Balls in Space
+ * Barbarian Onslaught: The Secret of Steel
+ * Basket Balls
+ * Basket Balls: Level Pack
+ * Battleship: the beginning
+ * Belial Chapter 1
+ * Belial Chapter 2
+ * Belial Chapter 2.5
+ * Billiard Blitz 2
+ * Bloblink 2
+ * Bloom Defender
+ * Brave Shorties 2
+ * Chuck the Sheep
+ * Collapse It
+ * Crumbled 2
+ * Cube Tower
+ * Cursor Invisible
+ * Cyber UF2
+ * Damn Birds
+ * Dogfight 2
+ * Don't Escape 2
+ * Don't Escape 3
+ * Drop Dead
+ * Epic Battle Fantasy: Adventure Story
+ * Evoland Classic
+ * Experimental Shooter
+ * Field Command
+ * Field Command 2
+ * Field Command 3
+ * Fireboy and Watergirl in The Crystal Temple
+ * Fireboy and Watergirl in The Forest Temple
+ * Fireboy and Watergirl in The Ice Temple
+ * Fireboy and Watergirl in The Light Temple
+ * Flying Candy
+ * Found Lost
+ * Freeway Fury
+ * Gateway II
+ * Ghost Guidance
+ * Go to Hell
+ * Grey Matter
+ * Hobo Prison Brawl
+ * I Wish I Were The Moon
+ * Into Space
+ * Jetpack Jackass
+ * Jetpack Jailbreak
+ * Jungle Magic
+ * Larry: Big Dipper
+ * Larry: Gnomergeddon
+ * Levers
+ * Little Defenders
+ * Meeblings
+ * Mining Truck
+ * Mission Migration
+ * Monkey Go Happy 2
+ * My Little Pony: Adventures in Ponyville
+ * Nuclear Outrun
+ * Ollie's Dance Experience
+ * Park
+ * Pee Man
+ * Perfect Shot
+ * Pico vs. Uberkids
+ * Poltergifts
+ * Potty Racers
+ * Potty Racers 2
+ * Prior
+ * Ragdoll Avalanche 2
+ * Ragdoll Cannon Remake
+ * Redstar Fall
+ * Reincarnation: Let The Evil Times Roll
+ * Robokill 2: Leviathan Five
+ * Rom Check Fail
+ * Rubble Trouble: New York
+ * Sinjid Battle Arena
+ * Smoking Kills
+ * Spike: A Love Story
+ * Submachine 2: the Lighthouse
+ * Submachine 3: the Loop
+ * Super Crazy Guitar Maniac Deluxe
+ * Super Crazy Guitar Maniac Deluxe 2
+ * Super Crazy Guitar Maniac Deluxe 4
+ * The Game of Disorientation
+ * The Quest for the Rest
+ * The Savior
+ * The Visitor Returns
+ * Today I Die
+ * Toy Tank Arena
+ * Treadmillasaurus Rex
+ * Utopia Mining
+ * Vampire Physics
+ * White Chamber
+ * Windfall
+
+* Updated Apache to 2.4.33. Don't remember what it was previously, sorry. This is the first time the server's been updated since Flashpoint's initial version, but it looks like it updated okay.
+
+* Thanks to DarkMoe for pointing out some errors on my part with screenshots; those have been fixed.
+
+* Thanks once again to SpikePit for a lot of suggestions and a fair amount of effort in helping to add them.

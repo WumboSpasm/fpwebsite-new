@@ -1,0 +1,632 @@
+Flashpoint 3.2 - Shock and Awe
+
+Flashpoint now supports Shockwave titles. Shockwave content is a bit more tempremental than your traditional Flash stuff, so don't expect new games too fast. If you want just Shockwave titles, you can sort by Platform.
+
+We've added an "OldProjectors" folder that'll hold onto the older Flash projector versions for games that need them. They serve no purpose right now but hopefully will in the future.
+
+Updated the Reset Flashpoint batch file.
+
+***
+Arcade:
+
+* Added Flash games:
+  * - Music in Motion -
+  * 4 Elements
+  * 4 Elements II
+  * 60 Seconds to Save The Queen
+  * 7Up Basketbots
+  * 7up Pinball
+  * 999: Nine Hours, Nine Persons, Nine Doors Demo
+  * Abandoned Christmas Lodge
+  * Achilles II: Origin of a Legend
+  * Aethership
+  * Aisleen
+  * Alchemia
+  * Altered States Episode 1: The Lusty Barfly
+  * Altered States Episode 2: The Suspicious Cop
+  * Ambition Episode 1: The Desperate Dad
+  * Ambition Episode 2: The Hitchhiker
+  * Ambition Episode 3: The Psychological Assessment
+  * Ambition Episode 4: The Tryst Part 1
+  * Ambition Episode 5: The Tryst Part 2
+  * Ambition Episode 6: The Suspects
+  * Ambition Episode 7: The Interrogation
+  * Ambition Episode 8: The Interrogation Part 2
+  * Ambition Episode 9: The Marriage Counselor
+  * Ambition Episode 10: The Trial
+  * Angol Mois Hentai
+  * Anti-Idle: The Game (Hacked)
+  * Ar Portal 2nd Anniversary
+  * Arcane Online Mystery Serial: The Miller Estate Episode 1
+  * Arcane Online Mystery Serial: The Miller Estate Episode 2
+  * Arcane Online Mystery Serial: The Miller Estate Episode 3
+  * Arcane Online Mystery Serial: The Miller Estate Episode 4
+  * Arcane Online Mystery Serial: The Stone Circle 1
+  * Arcane Online Mystery Serial: The Stone Circle 2
+  * Arcane Online Mystery Serial: The Stone Circle 3
+  * Arcane Online Mystery Serial: The Stone Circle 4
+  * Arcane Online Mystery Serial: The Stone Circle 5
+  * Arcane Online Mystery Serial: The Stone Circle 6
+  * Arcane Online Mystery Serial: The Stone Circle 7
+  * Arcane Online Mystery Serial: The Stone Circle 8
+  * Astro Barrier (Hacked)
+  * ATV Destroyer
+  * Awesome Cars
+  * Baby Boom
+  * Babylympus
+  * Back in Time 2
+  * Back to Earth
+  * Ballistic Biscuit
+  * Balloon Pop (Hacked)
+  * Bank Alone Franklin
+  * Barn Yarn
+  * Baron's Gate 2
+  * Barons Gate
+  * Bastion
+  * Battle Field 2
+  * Battle Force
+  * Battle of Iwo Jima - Final Counter Attack
+  * Bazooki a Silent Affair
+  * Beach Bar Babe!
+  * Beaking Great Mango Quest
+  * Bermuda Diver
+  * Big Bad Ape
+  * Big Ben Boris
+  * Big Money!
+  * Binary
+  * Bio Zombie Origin
+  * Bionicsons
+  * Black IV - Time of Revenge
+  * Black Knight Insurrection
+  * Black Thing
+  * Black Thing 2
+  * Black Thinking
+  * Blacklight
+  * Blast Off
+  * Blitzer
+  * BLOCnog
+  * Bloodbath Avenue 2
+  * BloodShot
+  * BlueShift
+  * Bob the Robber
+  * Bob the Robber 2
+  * Bobblestitch
+  * Bomb Town - Blow up Paris
+  * Bone Sniffer
+  * Boom Town
+  * Borderlands (Flash Tribute)
+  * Boss vs Employee
+  * Boulder Blast
+  * Bowja the Ninja 1 - On Factory Island
+  * Bowja the Ninja 2 - In Bigman's Compound
+  * Bowja the Ninja 3 - Ninja Kami
+  * Bowja the Ninja 3.5 - Fall of Yokai
+  * Box Bot
+  * Brickshooter Egypt
+  * Bridgecraft
+  * Brink of Alienation - Substance Episode 1
+  * Brother
+  * Build the Bridge
+  * Building Blaster 2 - Level Pack
+  * Bulldozer Mania
+  * Bullet the Bounty Hunter
+  * Burglar Hunt
+  * Button Search
+  * cairnDE
+  * Canopy
+  * Caps
+  * Car Eats Car 3 - Twisted Dream
+  * Carcassone
+  * Carl the Chef
+  * Carlos and The Dark Order Mystery
+  * Carlos and The Murder Farm
+  * Castle Runnner
+  * Cave Chaos 2
+  * Cavern
+  * Central Alien Agency
+  * Cereus Peashy
+  * Chamber Door
+  * Chancealot
+  * Chaos Racer
+  * Cheese Dreams
+  * Cheese Dreams ver. 2 Demo
+  * Chestnut Avenue 101
+  * Chestnut Avenue 102
+  * Chisel 2
+  * Chomp and the Temple of Puzzles
+  * Chop'Kdo (Hacked)
+  * Christmas Trouble
+  * Chronicles of Raynor
+  * Cinema Madness
+  * City Siege 4 - Aliens Siege
+  * City Siege Sniper - Welcome to Snafu Island
+  * Claire's Necklace
+  * Claustrophobium
+  * Click Defense - Green Danger
+  * ClickPlay 1
+  * ClickPlay 2
+  * ClickPlay 3
+  * ClixSposing Kitraandra
+  * ClixSposing Samus
+  * CloneSpace
+  * Clumsy Robber
+  * Clumsy Scientist
+  * Cobb the Miner
+  * Cobra Squad
+  * Coca-Cola Volleyball
+  * Codename: Gordon
+  * Coke Zero Classic Football
+  * Coke Zero Retro Electro Football
+  * Collapse!
+  * Collateral Damages
+  * Colonial Wars
+  * Combat Hero Adventures
+  * Computer Defense
+  * Cops and Burglar
+  * Copy Shot
+  * Cosmic Clicks
+  * Courage The Cowardly Dog: Nightmare Vacation
+  * Crazy go Nuts 2
+  * Crazy Hangover 2
+  * Crazy Old Man
+  * Creative Kill Chamber
+  * Creepos Tales
+  * Creepos Tales 2
+  * Crime Shit
+  * Crimson Sin
+  * Crunchball 3000
+  * Cryo Mayhem
+  * CSI:NY Keyboard Crime Scene
+  * Cube (Hacked)
+  * Cyberchase Quest 4: Stop the Stormerator (Hacked)
+  * Cyberchase: Railroad Repair
+  * Cyberchase: The Quest, Quests 1 & 2
+  * Cyberchase: Virus Hunt
+  * Cyberchase: Vortex
+  * D'arc Mini Challenge
+  * Dead Convoy
+  * Deedlit Castle Fuck
+  * Demolition Drifters
+  * Destroy the Village
+  * Disc Battle
+  * DK Country GBC Interactive
+  * DK Country Kremling Krushin
+  * Dragonbomb
+  * Draka
+  * Dribble
+  * Duke Dashington Remastered
+  * Dynamite Train
+  * EnDice
+  * EnDice Complete
+  * Endless War
+  * Endless War 2
+  * Enemy 585
+  * Escape from Abandoned Castle (Hacked)
+  * Escape from Abandoned Castle 2 (Hacked)
+  * Escape from Ghost House (Hacked)
+  * Escape from Luxury House (Hacked)
+  * Escape from Modern House (Hacked)
+  * Escape from the Flooded Room
+  * F1 Pit Challenge
+  * Feed the Head
+  * Find It! (The UPS Store)
+  * First Day Frenzy (The Office)
+  * Fishdom H2O: Hidden Odyssey
+  * Fishdom: Seasons Under The Sea
+  * Flash Trek - Delta Expanse
+  * FlashGate
+  * FlashTrek - Assault
+  * FlashTrek - Assault v2
+  * FlashTrek - Broken Mirror 3
+  * FlashTrek - Defiant
+  * FlashTrek - Dominion Wars
+  * FlashTrek - Romulan Wars
+  * Flashtrek Broken Mirror 4
+  * FlashTrek II
+  * FlashTrek- Imperial Wars
+  * Flight of the Hamsters
+  * Fragments
+  * Frank TV - Face Off
+  * Frantic 2
+  * Frantic 3
+  * Free Kick 2012
+  * Friskies Wonderland Quest
+  * Friskies Wonderland Quest II
+  * Fuka Ayase Hentai
+  * Futilitris
+  * Gardenscapes
+  * Garfield's Scary Scavenger Hunt
+  * Garfield's Scary Scavenger Hunt 2
+  * Gem Training: Bubble Bounce
+  * GemCraft - Chasing Shadows
+  * GemCraft Labyrinth
+  * Gems Swap Fall Feast
+  * Gems Twist Dreidel Dance
+  * Gemsona Maker
+  * Get Out
+  * Get Out 2
+  * Get Set Boogie
+  * Give Up 2
+  * Glory Hole RPG
+  * Goldburger To Go
+  * Golden Trails: The New Western Rush
+  * Goliath The Soothsayer
+  * Gunbridge
+  * Hawthorne Medicine Match-Up
+  * HogBusters: Training Camp
+  * Hoshi Saga 10: Minnano 2
+  * Hoshi Saga 11 - Hoshisaga Reishiki
+  * Hoshi Saga 12: Minnano 3
+  * Hot Air Jr Demo
+  * Huebrix
+  * Icarus Needs
+  * Imagia 1 - The Tower
+  * Imagia 2 - The Dome
+  * Imagia 3 - The Quarry
+  * Incredibox V1
+  * Inquisitive Dave
+  * Inside the Haiti Earthquake (online only)
+  * Ironman Armored Popper
+  * It's Just TIC TAC TOE
+  * It's Raining Cats and Dogs
+  * Jade Wolf 3 (demo)
+  * Jelly Truck
+  * Jetski (Pepsi)
+  * Just Shut Up and Drive
+  * Karkat Hug Simulator
+  * Katamari Damacy English
+  * Katie Commando
+  * Knight Trap
+  * Koga Akemi Hentai
+  * Kung Pow
+  * L.A. Rex
+  * La Birbichette (Hacked)
+  * Lance la Hache sur J.C. Vandamme
+  * Lance la Hache sur Jean Charest
+  * Last Battle
+  * Lawnmower (Coca-cola)
+  * Learn to Fly Idle
+  * Lemon Smash
+  * Lethal Race
+  * Life Ark 2
+  * Life Ark 3
+  * Life Ark 4
+  * Life Ark 5
+  * Lipton Better BBQ Challenge
+  * Lipton Dinner Games
+  * Lockehorn
+  * Lolly vs The Energy Monkeys
+  * London Rex
+  * Looney Tunes Safe Cracker
+  * Luigi's Mansion Interactive
+  * Luigi's Mansion: PolterCue
+  * Madness Ambulation
+  * Madness Premeditation
+  * Malik's Busy Day
+  * Mancala Snails
+  * Math Baseball
+  * May (Haruka) PokeHentai
+  * Mechanical Soldier
+  * Memphis Beat Blues
+  * Mini Bet on Soldier
+  * Mini Trackmania
+  * Mini Train
+  * Mining Truck 2: Trolley Transport
+  * Minute Maid Mah-jongg
+  * Mitoza
+  * Money Truck
+  * Monster Truck Demolisher
+  * Monster Truck Destroyer
+  * Monster Trucks Attack
+  * Moon Police
+  * Mushroom Madness
+  * Mushroom Madness 2
+  * Mushroom Madness 3
+  * Myosotis Chapter 1
+  * Myosotis Chapter 2
+  * Myosotis Chapter 3
+  * Myosotis Chapter 4
+  * Mystic Hunter
+  * Nameless THE GAME
+  * Natation
+  * Necronomicon Card Game
+  * New York Defender
+  * New York Defender 2
+  * NG's 20th Anniversary Collab
+  * Nitrohaul
+  * Nitrome Must Die
+  * Nude Runner
+  * NUMB3ERS: Digit Decoder
+  * NY Rex
+  * Office Trap
+  * One and One Story
+  * Open Doors
+  * Open Doors 2
+  * Orange Tree & Girl
+  * Pandemic
+  * Pandemic American Swine
+  * Pepsi Finger Footy
+  * Pepsi Handball
+  * Pepsi Max
+  * Pepsi Max Breakout
+  * Pepsi Pinball
+  * Phantom Pharaoh's Treasure Trap
+  * Pizzatron 3000 (Hacked)
+  * Playing with Fire
+  * Playing with Fire 2
+  * Playing with Fire 3
+  * Pogo
+  * Polar Race (Coca-Cola)
+  * Potion Bar
+  * Potion Master (Charmed)
+  * ppppSuperWiiU Interactive
+  * Prince of War
+  * Princess Curse
+  * Project ARSE
+  * Purina's Virtual Pet Game
+  * Puzzlestruck
+  * Questionaut
+  * Quietus
+  * R!se
+  * Radical Fishin' (Demo)
+  * Radical Fishin' (Full)
+  * Rainbowgeddon
+  * Rally (Hacked)
+  * Red Beard on Gold Hunt
+  * Renaire
+  * Rescue Team
+  * Rescuenator
+  * Revenge of Brainzilla
+  * Rocketville
+  * Rodeo Grobot (Hacked)
+  * Romance of Rome
+  * Rubble Trouble: Moscow
+  * Rubble Trouble: Tokyo
+  * Rushed
+  * S-Tuner
+  * Sac de Noeuds (Hacked)
+  * Save Kaledoiscope Reef
+  * Scooby Doo and the Creepy Castle
+  * Scooby Doo: Crystal Cove Online
+  * Scrabble Sprint
+  * Sequester
+  * Sex Kitten RPG2: MindFuck
+  * Sex Kitten: Armageddon!
+  * Sex Kitten: Crime Spree
+  * Sex Kitten: Day Care
+  * Sex Kitten: HELL!!!11
+  * Sex Kitten: Jungle Mayhem
+  * Sex Kitten: Mesa Madness
+  * Sex Kitten: Mexico
+  * Sex Kitten: Prison Break
+  * Sex Kitten: TV Dinner!
+  * Shadez
+  * Shadez 2
+  * Shadez 3
+  * ShellCore Command Episode 2 Infection
+  * Shields of Gemland
+  * Siege Tank Defence
+  * Silly Sausage
+  * Sim Sim City
+  * Sinjid
+  * Skate Mania
+  * Sky Serpents
+  * Skywire VIP Extended
+  * Slalom (Hacked)
+  * Slayer 1: Dark Knight
+  * Slayer 2: Deathwing
+  * Slayer 3
+  * Sling
+  * Sling Fire
+  * Sling Ice
+  * Sling Ice Junior
+  * Sling Junior
+  * Slingette
+  * Slingoween
+  * Sniper Team
+  * Sniper Team 2
+  * Snowy Pines Asylum
+  * Sonic Boom Town
+  * Sonic Boom Town 2
+  * Sonic Speed Dimension (beta)
+  * Spank the Nurse!
+  * Spell-Caster Solitare (Charmed)
+  * Spermattack
+  * Squawk
+  * Stand-Up Standoff
+  * Star Bound
+  * Starcraft Flash RPG
+  * Starcraft FlashAction 2
+  * StarCraft FlashAction 3
+  * Starcraft FlashAction 4
+  * StarCraft FlashAction 5
+  * StarCraft FlashAction 5 SE2008
+  * Steamlands
+  * Steamlands Player Pack
+  * Stick RPG 2
+  * Street Fighter: Legend of Ansatsuken
+  * Strife!
+  * Stumped
+  * Super Ascii Art Shooter
+  * Super Granny 4
+  * Super Snot Put
+  * Super Sonic Master Quest
+  * Super Treadmill
+  * Super WalkLand: Aura's Destiny
+  * Swindler
+  * Synapsis
+  * Synapsis 2
+  * Talesworth Arena
+  * Tank in Action
+  * Tank Mania
+  * Temple Glider
+  * Test Subject Arena
+  * Test Subject Blue
+  * Test Subject Green
+  * The Bear Thieves
+  * The Border Lands
+  * The Bucket
+  * The Closer - Sweet Shot
+  * The Kung Fu Statesmen
+  * The Life Ark
+  * The Morning After
+  * The Mysterious Anno Chest
+  * The Necronomicon - Book of Dead Names
+  * The Negotiator Episode 2: Customer Service
+  * The Negotiator Episode 3: The Raise
+  * The Polar Express: Train Adventure
+  * The Prince Edward
+  * The Puzzling War
+  * The Sandbox
+  * The Walking Dead - Dead Reckoning
+  * Tifa Lockhart Hentai
+  * Tifa Lockhart's Doggy-Style Hentai
+  * Time 4 More Cat
+  * Tiny Formula
+  * Toon Crisis
+  * Toon Crisis 2: Toon Raider
+  * Tork
+  * Tractor Mania
+  * Tradewinds 2
+  * Train Mania
+  * Truck Mania
+  * Truck Mania 2
+  * Truck Wars
+  * Tube Crisis
+  * Tug Boat
+  * Undercover Secret Order
+  * Valencia Surehunter: Staff of the Irismancer
+  * Valor
+  * Vampire Fever
+  * Verkiezingstrijd 2006
+  * Videl's Heavenly Pleasure
+  * Viking
+  * Villainous
+  * Viper Ace
+  * Viral Outbreak
+  * Virus
+  * Volvo FH16 700
+  * Walker
+  * Warlords 2: Rise of Demons
+  * Warlords: Epic Conflict
+  * Warlords: Heroes
+  * Water Mania
+  * Whack your PC
+  * Word Crunch
+  * World's End: Chapter 1
+  * World's End: Chapter 2
+  * World's End: Chapter 3
+  * Worm Food
+  * X227
+  * Yadomaru's Urge
+  * Yamanaka's Heat
+  * Yaruo Quest
+  * Yaruo Quest 2
+  * Yaruo Quest 3
+  * Yaruo Quest 4
+  * Yoshino's Style
+  * Yuroichi's Fantasy
+  * Yuroichi's Itch
+  * Zap the Cap (Sprite)
+  * Zeitenwende
+  * Zodiac Starz
+  * Zodiac Starz (Blitz Version)
+  * Zombie Tank
+  * Zombotron
+
+* Added Shockwave games:
+  * 3D's Hyperjet Racing
+  * Bourne Stunt Simulator
+  * Braap Braap
+  * Cartoon Cartoon Summer Resort Episode 1: Pool Problems
+  * Cartoon Cartoon Summer Resort Episode 2: Tennis Menace
+  * Cartoon Cartoon Summer Resort Episode 3: Vivian vs. The Volcano
+  * Cartoon Cartoon Summer Resort Episode 4: Disco Dilemma
+  * Dexter's Labyrinth
+  * Follow the Leader
+  * Formula G1
+  * Gorillaz Final Drive
+  * Havok Xtra RC Car Demo
+  * Lenny Loosejocks in Space
+  * OK Go Rescue the Band
+  * OnlineGames Racer
+  * Pimp My Ride
+  * Ricky Bobby's Fast Track
+  * Roll On
+  * Shooting Force
+  * Street Dive
+  * Street Sesh
+  * Stunt Bike Island
+  * Tiger Cross
+  * ToyRoom
+  * Vertigolf
+  * Virtual 3D City
+  * WONKAir Hockey
+
+Added Pale Moon Portable to the Arcade side, all browser games use it now.
+Fixed a few games that required the browser.
+Updated Pillage the Village to warn about how you have to Control>Play.
+Updated MOTAS slightly. It's still not complete.
+Updated GunBlood.
+A bunch of minor metadata updates.
+
+***
+Theatre:
+
+* Added animations:
+  * $oopah NiN10Doh!
+  * Badger Badger Badger
+  * Brawl Taunts
+  * Castaway
+  * El Mono Mario: 1 - Decisiones Traviesas
+  * El Mono Mario: 2 - Cena con Senos
+  * El Mono Mario: 3 - Casino la Pongo
+  * El Mono Mario: 4 - Penetrando al Primer Mundo
+  * El Mono Mario: 5 - Clases de Apoyo
+  * El Mono Mario: 6 - Reanimando al Pepino
+  * El Mono Mario: 7 - Elecciones de Embergadura
+  * El Mono Mario: 8 - Enfermera Enfermerita, te hago la Colita
+  * El Mono Mario: 9 - Mono Fashion
+  * El Mono Mario: 10 - Adivina Quien Viene A Garchar!
+  * El Mono Mario: 11 - La Muky de mi Suegra
+  * El Mono Mario: 12 - Nelson no se va!
+  * El Mono Mario: 13 - Cachi de Mar del Plata
+  * El Mono Mario: 14 - Cachi de Mar del Plata 2
+  * Gym Battle Vs Turkey
+  * More Brawl Taunts
+  * Nameless 1
+  * Nameless 2
+  * Nameless 3
+  * Nameless 4 Vol.1
+  * Nameless 4 Vol.2
+  * Nameless 4 Vol.3
+  * Nameless 4 Vol.4
+  * Nameless 5 Vol.1
+  * Nameless 5 Vol.2
+  * Nameless 6 Vol.1
+  * Nameless 6 Vol.2 Part 1/2
+  * Nameless 6 Vol.2 Part 2/2
+  * Nameless 6 Vol.3 Part 1/2
+  * Nameless 6 Vol.3 Part 2/2
+  * Nameless 7 Part 1
+  * Nameless 7 Part 2
+  * Nameless 7 Part 3
+  * Nameless 7 Part 4
+  * Nameless 7 Part 5
+  * Nameless TRAILER
+  * NiN10Doh
+  * Nintendo Power
+  * One More Brawl Taunts
+  * PBalls
+  * Phoenix Wrong
+  * Phoenix Wrong 3
+  * Phoenix Wrong Rides Again
+  * Phoenix Wrong: Last Stand
+  * Phoenix Wrong: Lawgasm
+  * Salad Fingers Episode 2
+  * Saturday Morning Watchmen
+  * Street Fighter Collab
+  * Super Mario Hyadain
+  * The Assumption Song
+
+Added some missing Homestar Runner content.

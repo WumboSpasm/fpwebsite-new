@@ -1,0 +1,15 @@
+.- .--. .--. .-. --- .- -.-. .... .. -. --. / .--. .-.. .- -. . - / -. .. -. .
+
+@everyone Flashpoint 8.2, Approaching Planet Nine, is now available! The new features in this version include three new technologies, seven thousand new entries overall and the usual set of general polish that you can find in the changelog once you've downloaded the new version. Which, of course, is available at the usual #downloads. We've also updated Flashpoint Core, now Flashpoint Core 8.2, to follow up with the new techs and changes. All curators, please update ASAP.
+
+With that said, if you pay attention, you might note that we're...behind. Due to ongoing technical issues with the ridiculous amount of files in Flashpoint (we're looking at over 1.2 million in this version), our backup system to preserve day-over-day work broke so badly that we needed to spend time testing and looking for new backup solutions...which we couldn't find, because nothing is truly suited to this kind of project. We've been working on new tech to bring the file count down ASAP. Curations have been behind while we try and find something new as a result. So, to stave off the potential disaster of losing work that we've done, I made the decision to release this version so there's a fallback. The next version of Flashpoint is hopefully going to have ways of slimming down the file count as much as we can, and it will probably need a overhaul of underlying tech in the process. Don't worry, we've got this under control. Too many smart people are working on this to screw it up. The new version will be out as soon as we can figure out the kinks. Hopefully before Flash is gone.
+
+---
+
+Two more things: @nosamu wrote an article about how he (and others) managed to add the ShiVa technology into Flashpoint. Have a look: https://medium.com/bluemaximas-flashpoint/shiva3d-web-games-what-they-are-and-how-we-saved-them-20c2a2f486ec
+
+We also have some server restructures going on, because of course we do. Hopefully they'll be self-explanatory once they're done.
+
+And as always, please learn how to curate if you have the time. There's still a ton of work to do before Flash is gone.
+
+.-.. --- -. --. / .-.. .. ...- . / ..-. .-.. .- ... ....

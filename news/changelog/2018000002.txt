@@ -1,0 +1,44 @@
+Flashpoint zero rev. 6
+
+* Added games:
+ * 3 Foot Ninja
+ * Age of War 2
+ * Boxhead 2Play
+ * Boxhead Rooms
+ * Boxhead More Rooms
+ * BowMaster
+ * Connect It
+ * The Codex of Alchemical Engineering
+ * CQC
+ * Crimson Warfare
+ * Crimson Room
+ * Decay of Men
+ * Demons vs Fairyland
+ * Double Match 3
+ * Dummy Never Fails
+ * Effing Worms
+ * Epsilon Strain
+ * Ether War
+ * Fairy Solitaire
+ * Fling a Thing
+ * Freedom Tower 2: The Invasion
+ * Fusion Rocket
+ * Galactic Gems
+ * Gemcraft Chapter Zero
+ * Grow Island
+ * Hide the Fart
+ * Infectonator 2
+ * Infectonator: World Dominator
+ * Insectonator
+ * Indestructotank 2
+ * Indestructotank Anniversary Edition
+ * Meat Boy
+ * Road of the Dead 2
+ * Sonny 2
+ * Zombie Tormentor
+
+* Added hacked games:
+ * Canary
+ * Fault Line
+
+* Upgraded to LaunchBox 8.0. Launching LaunchBox (heh) should be a lot faster overall.

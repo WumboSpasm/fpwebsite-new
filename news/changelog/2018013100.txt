@@ -1,0 +1,25 @@
+Flashpoint zero rev. 2
+
+* Added games:
+ * Dad 'n Me
+ * Electricman 2
+ * Happy Wheels Demo
+ * Indestructotank
+ * Insane Orb
+ * Madness: Project Nexus
+ * Matrix Rampage
+ * Skull Kid
+ * Spec Ops: War on Terrorism
+ * Super Smash Flash
+ * Tone Matrix
+ * Ultimate Flash Sonic
+
+* Added Online Only games:
+ * One Chance
+ * Pokemon Tower Defense
+ * Super Mario Bros Crossover 3.1
+
+* Added Hacked games:
+ * Dino Run
+
+The major addition in rev. 2 is for games that currently don't work without an internet connection, but will with it. Check the Notes tab (on the details pane) for more info about why Online Only games are such. You can filter to the Online Only games by typing that ("Online Only", no quotes) into the search bar in LaunchBox. If anyone wants to take on the challenge of making these games work without an internet connection, please, let me know.

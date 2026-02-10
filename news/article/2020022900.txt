@@ -1,0 +1,113 @@
+Hello, and welcome back to the Flashpoint status update. The fruits of our labor were out in the open for everyone to see the last two months so this wasn’t exactly *needed*, but this new version of Flashpoint is definitely taking longer in the oven, so please, feel free to strap in and have a gander at what we’ve been up to since the release of 7.1.
+
+**A Popularity Spike**
+
+Might as well get the most obvious thing out of the way first. To say there was an avalanche of new users of Flashpoint recently is an understatement; much like our less recent spikes in popularity, all it takes is one big source to spread to a much larger scale, and the biggest of the big happened this time…
+
+![](https://twitter.com/bfod/status/1223113527830798337)
+
+That spread to Kotaku…
+
+![](https://twitter.com/Kotaku/status/1223683587637153792)
+
+And that spread ***everywhere else.***
+
+![These are just the top results. There’s hundreds of these articles and social media mentions!](2020022900_00.png)
+
+Most major gaming and tech sites got on the YouTube bandwagon, and even a few YouTubers (do you have any idea how weird it is to hear Linus of Linus Tech Tips say your real name out loud?). I (and some of the team) even did interviews for a couple of these articles, and I’ll link them both below:
+
+https://www.wired.com/story/flash-games-digital-preservation-flashpoint/
+
+https://www.polygon.com/2020/2/10/21124247/flash-support-history-of-web-1-0-flashpoint-bluemaxima
+
+As a result. Flashpoint broke *several* records in terms of things like monthly unique visits. In fact, we had more unique people visit Flashpoint’s website in this month than the *entirety* of 2019. My servers were so stressed from people downloading Flashpoint that an automatic abuse switch flipped in my web hoster. That was fun to deal with!
+
+![I am legitimately surprised my webhost hasn’t tried to kill me for serving nearly 40TB in two months.](2020022900_01.png)
+
+While the visibility boost has passed by at this point we’re still holding steady at around three times the baseline of what we used to have just three months ago, even three or four weeks on from the mass influx. I’m not gonna do anything that even remotely resembles complaining about that.
+
+Also, fun thing I learned just before this is due to go live; Flashpoint was featured on a local physical magazine!
+
+![](2020022900_02.jpg)
+
+**So Long, Nitrome**
+
+With that said, though, sometimes popularity brings other situations, and one that we’ve had to deal with recently is famous developer Nitrome asking us to remove all of their titles from Flashpoint.
+
+![](2020022900_03.png)
+
+I’d be lying if I said I was happy about this result, but they asked nicely, they have plans of their own for their own IP, and we all know how stuffy copyright law can be in this regard. I do plan on complying with this, and in one way or another, Nitrome will be absent from public Flashpoint releases come the next version, whenever that may be (hopefully, end of March).
+
+With that said though, I still believe that keeping such a notable treasure trove of titles publicly playable is important to not only web game history but Nitrome’s history, especially since there’s a handful of games you can’t play anymore outside of Flashpoint (mainly ones reliant on Unity Web Player). While I won’t link any social media account or email account belonging to Nitrome, polite disagreement (and *nothing else*) on said accounts may help them realize this might be important enough to reverse course on their decision and help us work something out.
+
+**Redirector, Begone!**
+
+Onto the big improvements for whatever the next version of Flashpoint is going to be called! (Honestly, we usually save the codenames until right before release.)
+
+![](2020022900_04.png)
+
+For those of you who aren’t aware about how Flashpoint works, here’s the rundown — we include three components in Flashpoint; the server, which hosts the games, the software which plays them, and a redirector, a middle man which points said software to the web server we run. This allows us to pull fancy tricks like subverting sitelocks, having certain net-reliant games working offline, etc.
+
+The redirector has always been a bit of a fickle middleman though. Due to the way it works we have to change the *system proxy* of the computers running it, which can turn out to simply not work on certain setups (mainly things like VPNs or computers with actual proxies). This can also do things like set off certain antivirus software, which we don’t like.
+
+The major step for this new version is removing reliance on the redirector step of the process, once and for all. We’ve already been halfway there for the last few versions; the majority of our supported platforms already know how to properly talk to proxies, but one little piece of software, the Flash projector, has often been a stiff upper lip in the process — it can’t be configured in the same way, and actually has certain safeguards in place to prevent it.
+
+![This slimy little bugger is the main thing responsible for it.](2020022900_05.png)
+
+With that said though, those workarounds have been subverted. We now have Flash projectors capable of talking only to our proxy, with a bonus added benefit of games not being able to talk on HTTPS anymore — basically guaranteeing that if it works in Flashpoint, it’s guaranteed to work offline now (a problem we’ve been dealing with thanks to HTTPS for some time).
+
+There are still a couple of minor plugins that aren’t working with a redirectorless approach, and we don’t know exactly how every game on the projectors in the collection will react to it, but initial tests have been more than promising.
+
+Overall, results will hopefully increase the amount of systems Flashpoint can run on, not interrupt things like VPNs, and hopefully convince those people who think taking over the system proxy is a bad idea that we aren’t here to nick all your data. Promise.
+
+Now we just need to fix up that annoying bug that keeps the server from starting up sometimes…
+
+**A Viscape For All**
+
+Oh hey, another obscure plugin I’ve never heard of!
+
+Superscape’s Viscape is a simple to understand plugin; it’s designed for displaying and navigating 3D demonstrations and virtual worlds in the browser. While there doesn’t seem to be very many ‘traditional’ games on it, there are plenty of experiences that would be a shame to lose.
+
+![Welcome to Fort Apache!](2020022900_06.png)
+
+A new team member by the name of Sgeo airdropped into the project around the same time as the mass influx, and thanks to his help, we now have a working implementation of Viscape, and we’ll be shipping some of its experiences alongside Flashpoint in the next version.
+
+![It isn’t yellow, but it’ll do.](2020022900_07.png)
+
+**4,000 And Counting**
+
+The popularity influx has definitely helped with another thing, however, and that’s new game count. We’ve gotten half a dozen new curators over the course of the past month, and them, plus a bunch of our regular curators, has upped the current number of new games to over four thousand.
+
+Flash benefits the most of course, with over 3,200 new entries, a lot of Moe’s favorite genre of escape the room, plenty of new games from other sources (including a hopefully finished MaxGames library), and plenty of other platforms getting lots of new entries as well; over a hundred new Shockwave titles and 50 new Unity titles.
+
+![Some of them aren’t actually bad at all!](2020022900_08.png)
+
+We’ve definitely gotten a bit of a boost in an area that we didn’t expect though; good old animutations, the phenomena spawned by Neil Cicierega. One new curator has been tackling AnimutationPortal.com for the past couple of weeks, bringing us this absolute ridiculousness, nice and safe from Flash’s upcoming demise.
+
+![What?](2020022900_09.png)
+
+I also found out something interesting; the last effort of famous animation genius Chuck Jones was on a Flash webtoon called Thomas Timberwolf. We have them all in Flashpoint now. They aren’t even all on YouTube, for some reason.
+
+![TIM-BER!](2020022900_10.jpg)
+
+**Hard Drive Dumpster Diving**
+
+The thing about old computers is that they can have treasure troves of old files; everything from old software to caches of the internet. Caches that might have treasure troves of games we think are lost. In fact, thanks to one of these, we have a lot of previously-thought-gone Candystand games.
+
+As a result, members of the Flashpoint team have been working on a new utility — a cache dumper. Something we can load on older computers, run, and have a look at old files. Files that may have things we never thought we’d see again.
+
+You can have a look at the newest version of the dumper, with in-depth instructions, at the link below. If you do have an old computer with a potentially salvageable haul of treasure, please make sure to join our Discord and send us what you have. You never know what you might have recovered.
+
+https://bluemaxima.org/flashpoint/datahub/Recovering_Files_from_Browser_Cache
+
+**One More Thing**
+
+![](https://youtu.be/MDxF-WkEjD0?list=PLmVMWpMa3VLfFe2DgWVkmVItZD2-cVw7f)
+
+Despite all the time I’ve spent working on Flashpoint, I’ve never truly had the opportunity to sit down and actually *play* games in it very often. At the badgering of a few members of the crew, I’ve decided to turn it into an (irregular) series. Whenever I get the opportunity I’ll sit down and play some random choices from the pile. Maybe I’ll get lucky and find some hidden gems…
+
+That’s it for this month’s status update. We’re hoping to be back next month with a new version of Flashpoint, full of treats and delights for you to play around with.
+
+And remember, there’s always more in the pipeline…
+
+![](2020022900_11.png)

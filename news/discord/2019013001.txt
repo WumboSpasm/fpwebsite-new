@@ -1,0 +1,5 @@
+@everyone I apologize for the second beep in such a short time but we had some Infinity related server troubles that need a second emergency patch.
+
+**This is only for 5.4 Infinity, 5.4 Ultimate is unaffected. You do not need to download Infinity again if you downloaded it *after* this beep.**
+
+You have two options: redownload Infinity 5.4 from the same URL as it's been fixed there, or download the zip file attached to this message and extract it so that you overwrite the one file that it updates. Sorry again for the beep.

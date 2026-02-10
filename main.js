@@ -43,7 +43,7 @@ async function serverHandler(request, info) {
 	if (config.accessHosts.length > 0 && !config.accessHosts.some(host => host == requestUrl.hostname))
 		throw new utils.BadRequestError();
 
-	const requestPath = requestUrl.pathname.replace(/^[/]+(.*?)[/]*$/, '$1');
+	// Initialize headers with caching that varies with the chosen language
 	const responseHeaders = new Headers({
 		'Cache-Control': 'max-age=14400',
 		'Vary': 'Cookie',
@@ -59,17 +59,28 @@ async function serverHandler(request, info) {
 			lang = config.defaultLang;
 	}
 
+	// Get path of URL with slashes cleaned up
+	const requestPath = '/' + utils.trimSlashes(requestUrl.pathname);
+
 	// Check if the request points to an endpoint
-	const endpoint = endpoints[`/${requestPath}`];
-	if (endpoint !== undefined) {
-		responseHeaders.set('Content-Type', endpoint.type);
-		return await namespaceFunctions[endpoint.namespace](requestUrl, responseHeaders, lang);
+	for (const path in endpoints) {
+		const endpoint = endpoints[path];
+		if (requestPath == path || (endpoints[path].lenient && requestPath.startsWith(path))) {
+			responseHeaders.set('Content-Type', endpoint.type);
+			return await namespaceFunctions[endpoint.namespace](requestUrl, responseHeaders, lang);
+		}
 	}
 
-	// Otherwise, check if the request points to a page; if not, serve from static directory
-	const page = pages[`/${requestPath}`];
+	// Otherwise, check if the request points to a page
+	let page;
+	for (const path in pages) {
+		if (requestPath == path || (pages[path].lenient && requestPath.startsWith(path)))
+			page = pages[path];
+	}
+
+	// If the request does not point to an endpoint or page, serve files from static directory
 	if (page === undefined) {
-		const filePath = `static/${requestPath}`;
+		const filePath = 'static' + requestPath;
 		if (!utils.getPathInfo(filePath)?.isFile) throw new utils.NotFoundError();
 		responseHeaders.set('Content-Type', contentType(filePath.substring(filePath.lastIndexOf('.'))) ?? 'application/octet-stream');
 
@@ -144,10 +155,11 @@ function initGlobals() {
 	globalThis.endpoints = JSON.parse(Deno.readTextFileSync('data/endpoints.json'));
 	globalThis.locales = getLocales();
 	globalThis.templates = getTemplates();
-	globalThis.filteredTags = JSON.parse(Deno.readTextFileSync('data/filter.json'));
+	globalThis.newsInfo = JSON.parse(Deno.readTextFileSync('data/news.json'));
 	globalThis.searchInfo = JSON.parse(Deno.readTextFileSync(utils.getPathInfo('data/search.json')?.isFile ? 'data/search.json' : 'data/search_template.json'));
 	globalThis.searchStats = JSON.parse(Deno.readTextFileSync(utils.getPathInfo('data/stats.json')?.isFile ? 'data/stats.json' : 'data/stats_template.json'));
 	globalThis.viewInfo = JSON.parse(Deno.readTextFileSync('data/view.json'));
+	globalThis.filteredTags = JSON.parse(Deno.readTextFileSync('data/filter.json'));
 
 	// Other helpful stuff
 	globalThis.updateInProgress = false;

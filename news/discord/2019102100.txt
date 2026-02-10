@@ -1,0 +1,19 @@
+Hello @everyone. This beep is important. I'm sure a lot of you here are aware of MOTAS, Mystery of Time and Space, Jan Albartus' magnum opus of adventure games, that disappeared from the internet a while back. Game provider AlbinoBlackSheep did manage to recover some of it, but the game was incomplete, missing levels 14 through 20, and the music didn't work properly, and some languages too.
+
+Why am I bringing this up?
+
+Because I have good news.
+
+**WE HAVE THE MISSING LEVELS.**
+
+You have user RidgeX to thank for it. He backed it up back in 2008. All of it, including the missing languages. And music. And levels. He just showed up and provided it, and we've integrated it into Flashpoint. MOTAS, as it was before it disappeared off the internet in 2008, is now fully playable again.
+
+And there's one more thing.
+
+If you have Flashpoint 6.3 Infinity, **you can play the complete version right now.**
+
+We've updated the master server that hosts Flashpoint's files. This includes the missing levels, soundtrack and what have you. All you need to do is find the MOTAS entry in Flashpoint (search for MOTAS or Mystery of Time and Space) and double-click it. It'll boot the refreshed copy with the new levels and you'll be able to play it through. Please note that if you want the music playback, you'll need to download the Other Technologies pack on the Home tab. (Ultimate will have the full game in the next major version.)
+
+MOTAS is one of the holy grails of missing Flash games, and it works, right here, right now. Go have fun.
+
+Here's a screenshot of level 19, running through Flashpoint.

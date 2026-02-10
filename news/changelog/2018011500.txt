@@ -1,0 +1,55 @@
+Flashpoint zero original release (you're welcome SpikePit)
+
+* Added games:
+ * Achievement Unlocked
+ * Alien Hominid
+ * Bowman
+ * Bowmaster: Prelude
+ * Boxhead
+ * Bullet Time Fighting
+ * Canabalt
+ * Crush the Castle
+ * Doodle God
+ * Drag Racer V3
+ * Elephant Quest
+ * Escaping the Prison
+ * Fancy Pants Adventure: World 1
+ * Gemcraft
+ * Grow Cube
+ * Infectonator
+ * Interactive Buddy
+ * Karoshi: Suicide Salaryman
+ * Line Rider Beta 1
+ * Miami Shark
+ * N: The Way of the Ninja
+ * Nanaca Crash
+ * Newgrounds Rumble
+ * Pandemic
+ * Pandemic II
+ * Portal: The Flash Version
+ * QWOP
+ * Rebuild
+ * Road of the Dead
+ * Shift
+ * Sinjid Shadow of the Warrior
+ * Soda Dungeon Lite
+ * Sonny
+ * Stick Cricket
+ * Stick RPG
+ * Stick RPG Complete
+ * Strike Force Heroes
+ * Super Mario 63
+ * Super Mario Crossover
+ * Superfighters
+ * Tanks
+ * Territory War
+ * The Classroom
+ * The Impossible Quiz
+ * The Last Stand
+ * This is the Only Level
+ * Upgrade Complete
+ * Wonderputt
+ * Xiao Xiao no. 4
+ * Xiao Xiao no. 9
+ * Yeti Sports: Pingu Throw
+ * Yeti Sports: Pingu Throw (Blood Mod)

@@ -1,0 +1,35 @@
+Hello, @everyone.
+
+Flashpoint 5.3, "Revolution", is now available. We have a lot to talk about in relation to that codename. But if you don't care for that and just want to go to the release...#downloads, and have a Merry Christmas.
+
+With that said though, we've been trying to wrap this release up quick so that we could get this out in time for Boxing Day (Australia time), and outside of some hard drive issues on my part, we managed to pull that off. The reason for that is, on Boxing Day, ~48 hours from when this message goes up, is the one year anniversary of Flashpoint; the day I decided "screw it, let's save as many Flash games as we possibly can".
+
+Considering that we've hit 10,000 games...yeah, I'd say we've saved a lot. In fact, and I'm going to hammer this point home - we've started a web game preservation revolution. We're beyond most preservation efforts by a country mile at this point, and it's kind of amazing.
+
+First things first is that I've decided to make a new Medium article, which just went live as I was typing this. It describes the revolution of Flashpoint development, with a blow-by-blow on the major stuff we've added, along with going over the beginning of the project really quickly. If you want to read / share that, it's right here: https://medium.com/@bluemaximax011/how-we-saved-flashs-gaming-legacy-and-started-a-web-game-preservation-revolution-51c2e5098209
+
+---
+
+I've also created a new 'general purpose' video trailer for Flashpoint, again for advertisements' sake, to go over the bright points. If you have any forums or things that appreciate snappier advertisements, send 'em this: https://youtu.be/qrU6RJbeKfo There's links in the description if you need to copy-paste them.
+
+---
+
+Let's go over the new features of this release really quickly.
+
+\* Flashpoint Infinity has probably benefited the most from 5.3. It's leagues ahead in terms of being beginner friendly.
+\* We cut the size down several hundred megabytes by including low quality Flash logos by default. This is helped out massively by...
+\* Integrated support for downloading other tech and screenshots! No more 'download three zips and extract them on top of eachother' nonsense. Just go to the home tab in the launcher and click the Download buttons. Once they've downloaded and extracted, restart Flashpoint Launcher and everything will be in place.
+\* Support in the router for file streaming from supported servers. This will make files download part by part, instead of waiting for the whole thing, if you're on a supported server. Here's the cool part though: remember Flash loading bars? Guess what you can watch on Infinity now...(this also helps with reliability. You probably won't need to close and reopen a game while it's downloading.)
+\* There's also a couple more things, such as download progress being displayed in the Logs tab, and a fix for an annoying bug that's been bothering us for months.
+\* We have a new tech! 3D Groove GX is a plugin that previously only worked on Internet Explorer 6. Yes, SIX. It only has one game, but hey, we've built it.
+\* Unity, Shockwave, and Flash have been updated in several ways to improve their compatibility.
+\* Four new playlists! Three by me, one by nosamu.
+\* The usual set of updated games, fixes and updates to the database. You can see (most) of them in the changelog, as always.
+
+(One thing I forgot to mention: there's no Flashpoint Theatre, for this release. We're working on that. Stay tuned.)
+
+---
+
+The web game preservation revolution is truly underway. 10,000 games saved, in an easily playable format, only a few clicks away, inside of a year. Just this time last year, this kind of convenience, quality and preservation of this many web games was almost unthinkable. So come on, and join the fun. We always need not only people to play it to test it, but more people to help add to the archive. We still have big things coming down the road, and the list of web games, Flash or not, that need backing up will continue to be endless. One year to go until the sun sets on Flash...but thankfully, we're ready.
+
+That link again is #downloads. We've also recently given http://bluemaxima.org/flashpoint/ a small revamp, so if you need a simple link, that works too. And don't forget you can still share around that Medium article and YouTube trailer. But either way, have fun. That's what we're all here for, right?

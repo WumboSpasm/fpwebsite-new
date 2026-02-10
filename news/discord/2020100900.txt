@@ -1,0 +1,3 @@
+Hi folks. We've uploaded a slightly modified build of Infinity that has a networking issue fixed up; if you've been having trouble with Infinity recently, try redownloading this new build. If you're not having problems, don't panic, you don't need to redownload anything.
+
+Sorry for a lack of monthly update for October; there honestly hasn't been much happening that is noteworthy or that we can realistically show off. Do know that big features planned for Version 9 are coming along, and there's currently over 6,000 new games in the current master build with 2,000 more still to be processed.

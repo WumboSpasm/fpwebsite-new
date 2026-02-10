@@ -1,0 +1,131 @@
+Hello. The release schedule between new versions of Flashpoint has been getting longer and longer in recent months. For this and other reasons, it leads to some people thinking the project is dead due to little communication between new versions. I’m hoping a monthly newsletter in the vein of Dolphin’s Progress Report will help people think otherwise. With that said, let’s jump into the changes and fixes that have happened since the release of version 6.3 and today, with a little bit of a look behind the scenes at how Flashpoint goes through development.
+
+---
+
+Before we begin, I’d like to talk about where Flash will be heading in the near future. It’s been a bit over a year since my first article, where I last talked about this; considering that Flash will be removed from every major browser by default in just under a year from *now*, it’s as good a time as any to touch on why it’s a bad thing for anyone who’s a fan of the content again.
+
+The main problem with Flash is not that Flash itself is being dumped from major browsers, at least not directly. You could say “just download a Flash projector and play the SWFs through that” with no fuss, which, to some scale, is true. And the content will still be there when the plugin is gone, so there’s no problem! The internet is forever and all that garbage.
+
+This outlook is wrong on a few levels. The content will still be there when the Flash plugin is gone, yes. But what you need to remember is that people pay for the servers, and everything stored on them. When they decide something isn’t worth paying for, they can simply remove the content like deleting a file off a thumb drive. Poof, gone. You won’t be getting that SWF back if someone didn’t make a copy of it.
+
+“But we can just download the SWFs ahead of time!” Yeah, you can, and a lot of the time, that will work. But what about the times that it doesn’t? What about when a game is sitelocked? What about when a game requires more than just the one front-facing SWF? What about if it needs a server to host things like user levels (an example being the millions of levels stored by Happy Wheels)?
+
+These are the problems being sorted out by a platform like Flashpoint. You need to take all of these other things into consideration; when the plugin goes away, so does easy user accessibility, which reduces view counts, which reduces the reason to keep the pages up. Then you lose games and animations when they get removed.
+
+The severity of this problem may be reduced by the introductions of plugins like *Supernova* and *Ruffle.* But what about the more obscure Flash sites, hosted by creators who have forgot about them, or, god forbid, might even be dead? They might not know. They might not be in a position to keep it all up forever. Alongside the public knowledge that Flash is dying, it’s entirely possible that smaller site owners will decide they’ve had enough and we’ll lose access to that content forever.
+
+If there’s one thing I’ve learned about the internet after all the years I’ve spent in and around the digital archiving sphere, it’s that pretending that “the internet is forever” is a lie. Something could spread everywhere and disappear just as quickly. The internet is not some mystical cloud of everlasting knowledge; it’s a bunch of computers in a datacenter somewhere pushing data to the outside world. You can’t recreate something out of nothing, so if there’s anything you remotely care about out there, you should make an effort to save it. That’s what we’re up to.
+
+---
+
+Before I talk about just where Flashpoint is up to at this moment in time, it’s probably time I told you about just how I update it with new games and material.
+
+Allow me to show you a directory tree of what I call the *master copy.*
+
+![](2019103001_00.png)
+
+It looks pretty much identical to the normal directory tree of Flashpoint, doesn’t it? Well, it pretty much is. Most of the tools required to maintain it are more or less included alongside Flashpoint. Curation tools are all built into the launcher, and it’s not hard to move files individually. The only nonstandard stuff is in the Data directory; it has a script (thanks eientei) that can give me an updated set of new games, which is what I use to push out the bottom section of the [Game Master List](https://bluemaxima.org/flashpoint/datahub/Game_Master_List#Coming_in_6.4).
+
+I maintain the master copy the usual way; download games and import them using the built in Curate tab in the launcher, make the edits and bugfixes to the files directly as needed, and at the end of a release cycle, I have a script or two to help me push out releases. It still takes a while though; at this current point in Flashpoint’s file size, a full copy of the master build can take 17 hours to upload, in optimum conditions.
+
+We do have some ways to protect the master build though; mainly, version control (nice job Dri0m). Doing version control on a million files is hellish on pretty much any kind of version control system, but we finally managed to find one that works in the form of Mercurial. I’ve only had to roll back drastic mistakes twice, but I was grateful that it was there to let me fix those mistakes easily.
+
+![I’m not creative with my revision names.](2019103001_01.png)
+
+I’ve been working the same way since around the new launcher’s introduction. It makes things fairly easy on me, gives me some backup if I need it, and it helps keep everything nice and tidy. Unfortunately, it also has a couple of downsides — the mirror is almost impossible to do, nobody has managed to pull down the entire master build, and that means no-one can work on it just yet. So it’s all me for now. Yay.
+
+---
+
+With that out of the way let’s talk about Flashpoint itself. We’re about 3,000 games up at this point over 6.3, which is kind of insane at this point of the month. I’d like to take the time to highlight just *some* of them, because going over all of them would be kind of insane.
+
+**MOTAS / Mystery of Time and Space, Completed At Last**
+
+Yeah, I tried a big push for this one, but it apparently didn’t make it too far, so let’s try again. MOTAS, or Mystery of Time and Space, was previously missing the last levels of the game: a problem that has since been solved by someone coming along and just dumping the rest of the game in our lap. I just want to point out that games like MOTAS are one of the biggest examples of “someone needs to save it” situation I talked about earlier in this newsletter. We’ve been looking for this damn game for years, and it took RidgeX, who backed the game up in *2008*, to come along to provide it for us. Save your shit, folks.
+
+You can play the completed MOTAS in the current version of Flashpoint Infinity; ignore the fact it says that it’s the not-complete version, it’ll still pull down the previously missing levels as you go.
+
+![](2019103001_02.png)
+
+**Miles upon Miles of Escape the Room titles**
+
+The resident right-hand man for me, mister DarkMoe, has a guilty pleasure for escape the room titles, so if you see a huge batch of them in any one place when you sort by Date Added, it was probably him that managed to do it.
+
+![](2019103001_03.png)
+
+He writes simple bots that download entire websites, ready for him to take almost-but-not-really automated logos and screenshots, tests them, and puts them in a big flippin’ package to stick into Flashpoint, and he’s been doing this for quite some time. Escape the Room games are massive in number on the internet, so someone going through the pile like this is probably the only way they were going to be done.
+
+This kind of thing has been used for more than just ETR titles though…
+
+**(Almost) Every Remaining Game on ArmorGames.com**
+
+That headline is not a joke.
+
+![](2019103001_04.png)
+
+One of my personal pet projects over the last few versions was working my way through Armor Games and making sure that I had every last game that they had on the website at the time, curating ones we didn’t have as I went. As of around 6.2’s launch, I had combed through half of the sites’ pages. After getting frustrated at the length of it, I was offered a compromise; find out what games were left to be added to Flashpoint, and Moe would pull his magic trick on AG, too.
+
+I did and he did.
+
+![](2019103001_05.png)
+
+There might be a couple of games missing from the sites’ past and there may be a new Flash game or two in the future, but, with very few exceptions (and possibly a couple of games we don’t know about for one reason or another), we have every game on ArmorGames now.
+
+I guess I’ll have to go through something like MaxGames next…hopefully it’ll at least be shorter than ArmorGames.
+
+**2-XL Talking Robot Emulator**
+
+This one caught me off guard the first time I saw it in the curation queue by relatively new curator sm_programmer. What the hell is a 2-XL Talking Robot, and what does it even have to do with Flash or webgames?
+
+![](2019103001_06.png)
+
+It was a toy released in the 70s by Tiger Electronics that more or less gave players a choose-your-own-adventure style audio tape — you could swap audio tracks during play as answers to questions for a different journey each time. It’s such a bizarre concept, and someone took the effort to make an “emulator” for it in Flash, and now it’s in Flashpoint. I might have to do a video on this thing at some point…
+
+I bring up the 2-XL entry in Flashpoint because, in the middle of the storm of escape the room titles, weird games about girls furiously using toilets (do *not* ask) and filling out the ranks of popular flash portals that we have in varying states of completion, some unusual but standout ones can tend to slip by if you aren’t paying attention. I’d like to jump back to just before 6.3’s release to talk about one that’s kinda neat…
+
+**ByteCamp**
+
+I don’t know much about the Canadian business called ByteCamp, but they must have taught some kind of class for coding games in Flash at some point, which would then be added to some kind of launcher on their website. I can’t explain how 700 games, clearly designed by younger children, made it into Flashpoint via a single entry otherwise…
+
+![](2019103001_07.png)
+
+Yeah, this is actually a thing we have in Flashpoint now. I don’t understand how people manage to find this kind of stuff; it’s just…a thing that Choror found by browsing the Internet Archive. It’s an oddity like this that would never be saved by someone just downloading one SWF; this is 700+ individual SWFs, not to mention the XML that holds all the info about these games. It’s definitely something you can’t get the traditional way.
+
+---
+
+For those of you who were paying particularly close attention, you might have noticed that the launcher looks…slightly different. For those of you who weren’t, here, have a side-to-side comparison:
+
+![](2019103001_08.png)
+
+It’s a really subtle change, but it’s also massively effective. Darkening of the UI bits, a subtle gradient in the background and a slight change to highlighted boxes gives the theme just a little bit more polish and helps the launcher stand out that little bit better. We call this new theme “Metal” and from the next major version it’ll be the default theme. You can thank Wumbo for it; he’s also the one behind our website. He’s also putting in a couple of extra themes for the next version which are a little more blissful…
+
+The launcher is coming through with some new tricks as well thanks to old guard obelisk and new face Colin. The following build is still in the works, but I’d love to show you some of its new features…
+
+![Click on a kind of metadata and it’ll automatically filter the search for you.](2019103001_09.png)
+
+![There’s a splash screen now, which should help with some problems with loading.](2019103001_10.png)
+
+![How about support for non-English languages?](2019103001_11.png)
+
+![And some new features for curators. On the fly curation testing and exporting, alongside a revamped curation interface.](2019103001_12.png)
+
+One final major update to the platform that just went in the day I’m writing this part of the newsletter - we used to use two different browsers; K-Meleon for most of the plugins, Basilisk for HTML5 and Unity. We managed to move all of the plugins being used in K-Meleon to Basilisk though, so we can say goodbye to K-Meleon after over a year of service. You will be missed. (Or not, really. It was a bit of a performance hog in its dying days — it was a 50/50 shot at whether it crashed whenever I opened it.)
+
+![This is always the game I use to test 3DVIA Player.](2019103001_13.png)
+
+We do plan on introducing more features into Flashpoint later on this version’s development cycle, but at the moment, this is what is either done, or in a stable enough state to show off. The rest of the things implemented so far are things like bugfixes and duplicate removals — you know, minor stuff.
+
+![](2019103001_14.png)
+
+---
+
+This newsletter is already two thousand words as is, so it’s about time I brought it to a close. I’d like to take the opportunity to give you two extra pieces of reading.
+
+I wrote up [an article about the man who inspired me to start on digital history](https://medium.com/bluemaximas-flashpoint/the-angel-of-death-cultural-archival-philosophy-and-flashpoint-20f58e82ddd4) and the lessons I’ve learnt in the process.
+
+And another man on the Flashpoint project, TOMYSSHADOW, wrote up [the history of 3D in Shockwave](https://medium.com/bluemaximas-flashpoint/the-story-of-shockwave-and-3d-webgames-8f3647865a7) (and how what most of us know as Shockwave really should be called Director).
+
+---
+
+Flashpoint 6.4 (or probably 7.0 at this point, to be honest) is still in the works as of this newsletter, but it’s gonna take some more time, mainly because release cycles of Flashpoint are often quite stressful for me personally, so I’ve been lengthening them, not only to give myself a little bit of a weight off my shoulders, but to allow members more time to do longer-in-the-tail projects that’ll help the project in the long run. (The swap to Basilisk and launcher improvements in this newsletter are a direct result of this; if we were releasing every thirty days like clockwork, some of these simply wouldn’t get done as efficiently.)
+
+With that said though, we have had a planned release window of “the end of the year” for whatever the next version of Flashpoint happens to be, and this is still holding true; a release after Christmas sometime should still happen, bar any major disasters on the way there. Hopefully I’ll be back sometime in late November / early December with another, hopefully smaller update like this one to keep everyone notified of our progress. Until then though, Flashpoint 6.3 is still available [on our website](https://bluemaxima.org/flashpoint/). (The in-progress build that was previously linked here is no longer available.)

@@ -1,0 +1,19 @@
+@everyone The nightmare ends. Version 8.0, *301*, is now available for download. (If you don't understand the meaning of the name, read the second point below, then look up HTTP Code 301.)
+
+The list of changes is, frankly, ridiculous:
+
+\* 10,000 new games. Yeah, you read that right. Ten **thousand**. (And a thousand-ish new animations). Everything from niche Japanese developers to a full archive of Sploder.
+\* The Redirector is gone, long live the Redirector. Just you and the server, no proxy trickery required. Hopefully this helps Flashpoint usability and stability significantly.
+\* We've added our own app, the Flashpoint Secure Player, to do a bunch of new things and allow us to support more plugins than ever before. There's three new supported plugins as a result; Viscape, Vitalize and Hypercosm, and more to come.
+\* A fancy new manual. (I'm quite proud of it myself. Came out better than I expected. If you've used Flashpoint before you know what to expect, but I'd like to see people give their opinions on it anyway https://bluemaxima.org/flashpoint/Manual.pdf)
+\* Tons of fixes, alternate versions and plenty of other minor things you can read about in the changelog. https://bluemaxima.org/flashpoint/changelog.txt
+
+Downloads are available in the usual places; the site, #downloads, etc. Be ready for a big one if you like Ultimate - we added nearly 100GB to this release. I can't guarantee when the next version will be ready, mainly because I'm about to swap out the power supply on my PC and there's always the chance I'll screw it up. Either way, go get downloading, and wish me luck.
+
+---
+
+(One more thing, there's a new version of the Flashpoint Cache Dumper that supports Windows 9x era machines. See #web-cache for more details on that, if you have an old PC that might have games for us on it.)
+
+---
+
+(Also please don't forget that Nitrome games have been removed from this release at their request. Read slightly more here: https://medium.com/bluemaximas-flashpoint/flashpoint-status-update-march-2020-6b1bd57e5df0)

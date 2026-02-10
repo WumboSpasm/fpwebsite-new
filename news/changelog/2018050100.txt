@@ -1,0 +1,15 @@
+Flashpoint 1.3.1
+
+Added Escape from 26 to bring the game count back to 850.
+Fixed Smoking Kills.
+Fixed ROM Check Fail.
+Fixed Utopian Mining's name.
+Fixed Fireboy vs Watergirl titles.
+Fixed Pico vs Uberkids logo.
+Fixed Dark Cut logo (using a Photoshopped Dark Cut 2 logo).
+Fixed Throw Me screenshot.
+Fixed White Chamber a bit (is now marked as "Hacked").
+Removed One Chance's unhacked version.
+Added pre-rev 1 games to changelog.
+
+You can thank DarkMoe for most of these changes/fixes.

@@ -1,0 +1,11 @@
+Flashpoint 1.3.2
+
+Added Watchmen: Minutemen Arcade.
+The server now listens to port 22501 for HTTPS instead of 443, despite never actually needing to use HTTPS for anything. Should sort out some compatibility issues if something else is listening on that port.
+Added a new version of Corporation, Inc that should work offline. Downside is you can't save your game anymore.
+Added a new version of Pokemon Tower Defense that works without its account system, but again, no proper saving.
+Fixed Smoking Kills again.
+Fixed Monkey Go Happy.
+Fixed ROM Check Fail not being marked as hacked.
+
+Thank DarkMoe once again for a lot of these fixes/hacks.

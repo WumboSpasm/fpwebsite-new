@@ -1,0 +1,58 @@
+Flashpoint 1.1
+
+* Added games:
+ * A Cup of Cursors
+ * Air Pressure
+ * Ball Revamped
+ * Bloody Fun Day
+ * Body Ladder
+ * Cannoncrotch
+ * Castle Woodwarf
+ * Cyclomaniacs
+ * Deliver that Fulp
+ * Demons Down Under
+ * Dodge
+ * Earth Taken
+ * Epic Coaster
+ * Every Day The Same Dream
+ * Exmortis 2
+ * Fear Unlimited
+ * Feed the King
+ * Fragger
+ * Hack Slash Crawl (Hacked)
+ * I Am An Insane Rogue A.I.
+ * Incursion
+ * Interlocked
+ * Mechanical Commando 2
+ * Medieval Rampage 2
+ * Moby Dick: The Video Game
+ * Monster Evolution
+ * Multitask
+ * Necronator (Hacked)
+ * Nicholas' Weird Adventure 2
+ * Orchestrated Death
+ * Paradox Embrace
+ * Penguinz
+ * Phage Wars
+ * Pirateers
+ * Rage
+ * Run, Jesus Run!
+ * Sugar, Sugar
+ * Sushi Cat-a-Pult
+ * Symphony
+ * Tax Time!
+ * The I of It
+ * Theme Hotel
+ * Tower Droids
+ * Transmigration
+ * Trap Master
+ * Trick or Treat Adventure
+ * Winning! The Charlie Sheen Game
+ * light-Bot
+ * zOMGies
+
+* Updated LaunchBox to 8.2. Don't think it has much to do with Flashpoint. I don't like the new interface.
+
+* Flashpoint no longer needs to install; now that the reason for the weird installer is gone, it doesn't need to do that. It just runs from the zip.
+
+* Updated the readme to remove a few things and add a link to the new Discord. https://discord.gg/S9uJ794

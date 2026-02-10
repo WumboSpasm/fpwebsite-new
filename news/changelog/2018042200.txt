@@ -1,0 +1,217 @@
+Flashpoint 1.2
+
+* Added games:
+ * 3D Logic 2
+ * A Bad Taste of Pico
+ * A Goody Life
+ * Achilles
+ * All Hallows Eve
+ * Alphaland
+ * Amberial
+ * Amberial: Nebulosa Realms
+ * American Dream
+ * Ancient Planet
+ * Aracnophilia
+ * Arc of Templar
+ * Armed with Wings
+ * Armed with Wings 2
+ * Armed with Wings 3
+ * Armor Mayhem Chronicles
+ * Backyards Buzzing
+ * Batman: The Cobblebot Caper
+ * Battle Gear 2: World Domination
+ * Battle for Gondor
+ * Billiards
+ * Blacksmith Lab
+ * Bloody Blades
+ * Bloons TD 5
+ * Bomboozle
+ * Boombot
+ * Boombot 2
+ * Bubble Tanks
+ * Burger Defense
+ * Burrito Bison Revenge
+ * Canyon Defense
+ * Captain America: Shield of Justice
+ * Cave Escaper
+ * Champion
+ * Charger Escape
+ * Circlo
+ * Civet's Odyssey
+ * Clear Vision 2
+ * Coil
+ * Commando 2
+ * Commando 3
+ * Continuity
+ * Crazy Go Nuts
+ * Cyclomaniacs 2
+ * DJ Maniax
+ * DX Hockey
+ * Danny Phantom: Urban Jungle Rumble
+ * Dark Cut
+ * De-Animator
+ * Decision 2
+ * Deep Freeze
+ * Defuse and Escape
+ * Demolition City
+ * Demonic Defence 3
+ * Diesel and Death
+ * Dino Strike
+ * Dogfight
+ * Dolphin Olympics 2
+ * Draw Play
+ * Drink-O-Meter 2
+ * Duck Life
+ * Duck Life 2
+ * Duck Life 3
+ * Duck Life 4
+ * Dune Buggy
+ * Dynasty Street
+ * Electric Box
+ * Elona Shooter
+ * Emo Game
+ * Emo Game 1.5
+ * Emo Game 2
+ * Endless War 4
+ * Endless War 5
+ * Endless War 6
+ * Endless War 7
+ * Enigmata Stellar War
+ * Epic Combo Redux
+ * Epic War
+ * Escape Artist
+ * Eternal Red
+ * Fantastic Contraption
+ * Feudalism II
+ * Feudalism III
+ * Final Ninja
+ * Final Ninja Zero
+ * Fishbane
+ * Flood Runner 2
+ * Frantic
+ * Give Up, Robot
+ * Go Go Plant 2
+ * Governor of Poker
+ * Grid 16
+ * Hanna in a Choppa
+ * Heavy Weapons
+ * Hong Kong Ninja
+ * Host Master and the Conquest of Humor
+ * I Can Hold My Breath Forever
+ * I Have 1 Day
+ * Kingdom Rush Frontiers
+ * League of Evil
+ * Learn to Fly 2
+ * Legend of the Golden Robot
+ * Lesbian Spider-Queens of Mars
+ * Line Rider
+ * Loved
+ * Lucky Tower
+ * Mad Monday
+ * Magnet Face
+ * Mardek Chapter 2
+ * Mardek Chapter 3
+ * Marvel's Avengers: Skrull Takedown
+ * Mega Man Vs. Ghosts and Goblins
+ * MegaMash
+ * Mind the Blox
+ * MoneySeize
+ * Monkey Go Happy
+ * Monster Master
+ * More Zombies
+ * Naya's Quest
+ * Pac-Xon
+ * Penalty Fever
+ * Pencak Silat 1.2
+ * Pencak Silat 2.1
+ * Penguin Diner
+ * Phoenotopia
+ * Pillage the Village
+ * Pokemon Diamond and Pearl: Breakdown Blast
+ * Pokemon: Towering Legends
+ * Population: Tire
+ * Power Pool
+ * Prince of Persia: The Forgotten Sands
+ * Ragdoll Cannon
+ * Ragdoll Cannon 2
+ * Railroad Rampage
+ * Rebuild 2
+ * Red Code
+ * Redder
+ * Riddle School 2
+ * Riddle School 3
+ * Rollercoaster Creator
+ * Run
+ * Run 2
+ * Run 3
+ * Russian Affairs
+ * Samorost
+ * Samurai Jack: Code of the Samurai
+ * Samurai Warrior
+ * Scope: First Blood
+ * SeppuKuties
+ * Sift Heads 2
+ * Sift Heads 3
+ * Sift Heads 4
+ * Sift Heads 5
+ * Sift Heads Remasterized
+ * Sift Heads: World
+ * Sift Heads: World Act 2
+ * Sift Heads: World Act 3
+ * Sift Heads: World Act 4
+ * Sift Heads: World Act 5
+ * Sift Heads: World Act 6
+ * Sift Heads: World Ultimatum
+ * Small Worlds
+ * Soakamon
+ * Solarmax
+ * Space Bounty
+ * SpartaMan 2
+ * Splitter
+ * Spot the Difference Excel-MP Art Edition
+ * Strike Force Heroes 2
+ * Strike Force Heroes 3
+ * Super Chick Sisters
+ * Super Mario Sunshine 64
+ * Super Stacker
+ * TROGDOR!
+ * Tactical Assassin: Substratum
+ * Teen Titans: One on One
+ * Teenage Mutant Ninja Turtles: Double Damage
+ * Tequila Zombies
+ * The Blocks Cometh
+ * The Blue Chamber
+ * The Great Basement Escape
+ * The Great Gatsby
+ * The King of Fighters Wing
+ * The Last Night
+ * The Rise of a King
+ * Thieving Raccoon
+ * Thor: Bring the Hammer
+ * Throw It
+ * Too Many Ninjas!
+ * Tower Bloxx
+ * Treasure Seas Incorporated
+ * Treasure of Cutlass Reef
+ * Tuper Tario Tros
+ * Twinshot
+ * Unreal Flash
+ * Upgrade Complete 3mium
+ * Western Front 1914
+ * Zombies Took My Daughter
+ * fl0w
+
+* Special thanks for this version need to go out to SpikePit, who in this version of Flashpoint:
+ * Contributed a ton of suggestions.
+ * Added metadata for most of those suggestions.
+ * Played through the entirety of Final Ninja Zero to get all of its included files.
+
+* A big thanks to Nefarious for figuring out why Fantastic Contraption didn't work as expected.
+
+* Five games have been updated with a new way to display message boxes, which should be a little more user friendly (and organization friendly on my end).
+
+* Sushi Cat-A-Pult's SWF has been updated; the old one would loop endlessly on the second cutscene. (Thanks DemonWing90!)
+
+* The Visitor's SWF has been updated; the old one would crash when you use the fishing pole. (Thanks NightmareShadowed!)
+
+* Updated Flash Player to 29.0.0.140 (from 29.0.0.113).

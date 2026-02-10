@@ -1,0 +1,7 @@
+Hello @everyone. Flashpoint 7.1, "Stay on Target" is now available at the usual places (#downloads, the website).
+
+First thing is an apology. I originally pushed Flashpoint 7.0 out the door in a state that, looking back at all the problems we've found regarding it over the past month, was not acceptable. I don't really have an excuse; we should have held out for longer. 7.1 is the first in a set of steps to fix up things; 7.1 has been put out relatively quickly to push out multiple fixes and updates that should have gone out with 7.0. This includes fixes for the launcher, a fair few games that found themselves broken in 7.0, and 2000+ games and 100+ new animations on top of that.
+
+There's more coming in 7.2 and onwards, of course, but that'll be for another time. Please enjoy the new release and flood us with bug reports if you find them.
+
+We're always looking for more translators (https://fpl-translations.bluemaxima.org/), curators, and others to help work on the project. If you've got the spare time, please consider helping us out.

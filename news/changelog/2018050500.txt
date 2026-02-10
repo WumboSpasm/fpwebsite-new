@@ -1,0 +1,211 @@
+Flashpoint 1.4
+
+1.4 is the result of over 100 requests given to us since the big public push thanks to the Medium article I wrote up, so the credits list for this one would be a mile long if I credited everyone. You guys know who you are, though!
+
+And of course, special credits to DarkMoe and SpikePit.
+
+* Added games:
+ * 5th_prtscr
+ * 8-Bit Odin Sphere
+ * Aggressive Alpine Skiing
+ * Animator vs Animation: The Video Game
+ * Bacon
+ * Ball Revamped 2: Metaphysik
+ * Bike Mania
+ * Blink
+ * Boomshine
+ * Bosses!!!
+ * Boxball
+ * Broken Arms
+ * Bullet Bill 3
+ * Bush Royal Rampage
+ * Chimgam
+ * Cinderella French Mansion Escape
+ * City Jumper
+ * Concerned Joe
+ * Crush 2
+ * Cubefield
+ * Curse of the Red Ninja
+ * Cursors of the Future!
+ * DKicker
+ * Demologic
+ * Demologic 2
+ * Demologic 2 Level Pack
+ * Derpy's Story
+ * Dicewars
+ * Doeo
+ * Dogfight Aces
+ * Dolphin Dash
+ * Dragon Age Journeys
+ * Enough Plumbers 2
+ * Entomo
+ * Epic Battle Fantasy 4.4: Bullet Heaven 2
+ * Escape
+ * Escape from Puppy Death Factory
+ * Escape the Car
+ * Everbound: Quest for Finality
+ * Exit Path 2
+ * Film School: The Interactive Adventure
+ * Flygirrl
+ * Fold
+ * Fork It!
+ * Formation
+ * Four Second Firestorm
+ * Four Second Frenzy
+ * Four Second Fury
+ * Free Kick Mania
+ * Free Space Invaders
+ * Freekick Fusion
+ * Froggy
+ * Gamma Bros
+ * Garbage Dreams
+ * Gem Tower Defense
+ * Get Lost
+ * Glass Delivery
+ * God's Playing Field
+ * Gold Miner
+ * Gunny Bunny
+ * H4X3D By Megahurtz
+ * Halloween Trick or Treat Escape 2
+ * Haluz 2
+ * Handless Millionair
+ * Hapland
+ * Hapland 2
+ * Hapland 3
+ * Happy Pill
+ * Haxatron 2000
+ * He Scores
+ * Hearts
+ * Hexxagon
+ * Inside a Dead Skyscraper
+ * Interactive Buddy 2 Prototype Version
+ * Jack French 2: The Good Dr. Ferrer
+ * Jack French 3: Jack French and the Seven Dwarves
+ * JayIsGames Casual Gameplay Banner 2008
+ * Jetspeed
+ * Jungle Forest Escape
+ * King of Buttons
+ * King of Buttons 2
+ * King of Buttons 3
+ * Krystine and the Children in Chains
+ * Kure Waste Chase
+ * Laser Crawler
+ * Lenny Loosejocks Australia Day Blast
+ * Like Like Likes Shields
+ * Line Game
+ * Loco Cocoa
+ * MOTAS: Mystery of Time and Space
+ * Magnetism
+ * Manamancers
+ * Marshmallow Gorge
+ * Mayan Escape
+ * Mayhem in the Skies!
+ * Mike Shadow: I Paid For It!
+ * More Mindless Violence
+ * Nekra Psaria
+ * Nekra Psaria 2
+ * Nekra Psaria 3
+ * Nekra Psaria 4
+ * Nevermore
+ * Nevermore 2
+ * New Star Soccer
+ * Night House Rescue
+ * Nimian Flyer Legends
+ * Nine Rooms
+ * Numrows
+ * Numrows 2
+ * Odechi
+ * Offender
+ * Offender 2: World War B: War on Rabbits
+ * Operation Pedopriest
+ * Paperwork Panic
+ * Physicar
+ * Pico's School DX
+ * Playing Field 2
+ * Powerpuff Girls D: Battle in Megaville
+ * Punk-o-Matic 2
+ * Puzzle Farter
+ * Queer Power
+ * Quibble Race
+ * RGB Shooter
+ * Riddle School 4
+ * Riddle School 5
+ * Riddle Transfer 2
+ * Rob Baggio's Magical Kicks
+ * Rolling Stones
+ * Rullo
+ * Samsara Room
+ * Samurai Sam
+ * Sherlock Holmes 2
+ * Slacker
+ * Slacker Adventure
+ * Snake
+ * SpaceCom Chapter 1: The Big Gib
+ * Spec Ops: War on Terrorism II
+ * Sports Heads Football
+ * Spot the Designer
+ * Sprout
+ * Squares 2
+ * Stackopolis
+ * Stan James Original Free Kick Challenge
+ * Stick Avalanche
+ * Stick Avalanche 2
+ * Stick Fighter
+ * Stream Line
+ * Streemerz
+ * Strong Bad's Message Bored
+ * StrongBadZone
+ * Submachine 4: the Lab
+ * Submachine 5: the root
+ * Submachine 6: The Edge
+ * Sugar Toast Runner
+ * Super Big Gun Adventure
+ * Super Mario Bros. Goomba Mode
+ * Super Tofu Boy
+ * TRAITOR
+ * Tetrageddon
+ * Tetris N-Blox
+ * Tetrisnake
+ * The Book of Living Magic
+ * The Fabulous Screech
+ * The Fog Fall
+ * The Fog Fall 2
+ * The Fog Fall 3
+ * The Fog Fall 4
+ * The Fright Before Christmas
+ * The Gatekeeper
+ * The Infinite Ocean
+ * The Missile Game 3D
+ * The Old West Shoot Em Up
+ * The Old West Shoot Em Up 2
+ * They Came From My Inbox
+ * Thy Dungeonman
+ * Thy Dungeonman 2
+ * Thy Dungeonman 3
+ * Tom's Trap-o-Matic
+ * Tomb of Doom
+ * Tuer Tuer Tuer
+ * Tumbler
+ * Twilight vs. Walking
+ * Uninvited: Quest for the Red Diamond
+ * Unmanned
+ * Urban Sniper
+ * Urban Sniper 2: Vengence
+ * Vector Runner
+ * Vertical Drop Heroes
+ * Walkright
+ * Warrior House Escape
+ * When Pigs Fly
+ * Which-Way Adventure
+ * Winterbells
+ * Yeti Sports: Seal Bounce
+ * You Shall Know The Truth
+ * Zelda: Lampshade
+ * Zombie Society Dead Detective: Walls Can Bleed
+ * [RESPAWN]
+ * [REVIVE]
+
+Fixed Super Mario Bros Crossover. (How long was that broken, good god)
+Added new hacked version of Material Sniper that supports offline play.
+Added new hacked version of Demons vs Fairlyand that supports offline play.
+A couple of minor fixes and changes I've forgotten about, mostly metadata related.

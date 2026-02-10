@@ -1,0 +1,93 @@
+Welcome to another monthly update, hopefully with all the news fit to print about the development of Flashpoint. We have plenty of things to talk about this time around, so let’s get into it.
+
+**Ch-Ch-Ch-Changes**
+
+There’s a few big things worth talking about going into the next version, but they deserve their own, bigger sections of the update. Instead, I’m gonna post a few minor things from the changelog and talk about them.
+
+`* Updated Apache to 2.4.43 (was 2.4.38).`
+
+`* Updated PHP to 7.4.8 (was 7.3.2).`
+
+We haven’t updated the baseline server software that Flashpoint runs on for a while. I planned to do it back around 8.0 time, but I ran into a problem that I didn’t have the time to debug. Now that I have, I can say that it’s simple. PHP needed an update to the VC++ libraries that it needs, and the only way I found out was via running it on the command line. This was a common problem, apparently, since it was the first result for the error message on the Google autocomplete. This update should fix a problem with running Flashpoint inside a OneDrive folder that a lot of new users encounter.
+
+`* Moved multiple local Shockwave games onto the server.`
+
+This piece of our Shockwave implementation has been a bit of a pain in the neck for us to deal with. When Shockwave was first implemented in Flashpoint, none of the games ran directly from the server; they instead ran from a Games folder inside the Shockwave folder. A lot of games still work this way as it’s not a simple drag and drop; even on Infinity, you can go into the FPSoftware/Shockwave/Games folder and see them, as they’re downloaded as part of the Infinity package. To ease the burden on Infinity, contributor Ekulreklawyks has been moving these games onto the server. Hopefully in the next version they’ll all be running server-side.
+
+`* Removed multiple 18+ animation duplicates.`
+`* Removed a duplicate of Ace Powder’s Mountain Mayhem.`
+`* Removed a duplicate of Bill the Demon.`
+`* Removed a duplicate of Failman: The Man Who Fails.`
+`* Removed a duplicate of Garfield Bedtime Match-Up.`
+`* Removed a duplicate of Knievel’s Wild Ride.`
+`* Removed a duplicate of My Little Pony — Rainbow Dash Gems Collection.`
+`* Removed a duplicate of Pac Ram.`
+`* Removed a duplicate of Pumpkin Bash.`
+`* Removed a duplicate of Revenge of the Cow-Boy.`
+`* Removed a duplicate of Stitch Tiki Bowling.`
+`* Removed a duplicate of Sub Shooters.`
+`* Removed two duplicates of Simpsons games.`
+
+It’s impressive how many dupes manage to sneak into each new version. I do actually have some things here to help out; there’s a function built into the launcher that tells me if the *launch command* is the same as something already in FP, but games with slightly off names, different sources or just ones I can’t remember (56,000 games is a lot, y’know) will slip through the cracks. I mean, jeez, who remembers Garfield Bedtime Match-Up?
+
+`* Assorted metadata fixes.`
+
+If I listed out every little metadata fix that made it into a new version of FP, the text file would be too big to open on most computers without crashing Notepad. We manage to squeeze several *hundred* in per version now, and thanks to our new metadata editing system introduced just after the release of 8.1, it’s just a fair bit easier to one-click import fixes and changes into FP. You’ll be seeing a fair few fixed original descriptions in the next version too…
+
+`Flashpoint 8.2 — “Domain of the Creator”`
+
+I usually keep a placeholder version number and name at the top of the changelog; this one in particular was me pulling into the energy of the chuunibyou nexus. nosamu liked it, at least. I have the same thing in the launcher, which mainly serves as a reminder for me to update it when a new version goes out so I don’t die of embarassment.
+
+![](2020073100_00.png)
+
+There’s around 4,000 new games in the newest version of Flashpoint, and as always, you’re able to go and look at [the bottom of the master list](https://bluemaxima.org/flashpoint/datahub/Game_Master_List#Coming_in_the_next_version) if you want to see them in detail. There’s plenty of new escape the room, dress up and Baby Hazel games, because it seems like people are Rain Man levels of dedicated to curating those sorts of games, but hey, who am I to judge. That’s not all that’s there though…
+
+**Tender Caring Love**
+
+As of this moment we have two new plugins in the next version of Flashpoint; here’s a quick look at them.
+
+![Tcl (an abbreviation of Tool Command Language).](2020073100_01.png)
+
+Tcl (pronounced “tickle”) is an interpreted language dating back to 1988. Like Java, Tcl was conceived as a way to build cross-platform applications and later gained the ability to run in web browsers via applets (called “Tclets”). The resemblance to Java is no coincidence; Sun gave Tcl a boost in 1994 when they hired the team to standardize the language and develop a web plugin. However, the team left Sun in 1998 to found their own company, and the Tcl plugin soon fell by the wayside. Though the open-source community continues to develop the Tcl language, the web plugin saw its final release in 2006. This plugin is now fully implemented in Flashpoint along with some Tclets like the one above.
+
+![VRML (an abbreviation of Virtual Reality Modelling Language).](2020073100_02.png)
+
+Virtual Reality Modeling Language, or VRML, is an open standard that aimed to bring interactive 3D worlds to the web. Much like with HTML, multiple competing implementations of VRML emerged, each with their own unique features and quirks. Besides 3D worlds, VRML was also used to create simple web games and animations like the dance party above. We’ve been working on adding three new VRML plugins to Flashpoint, and more in the future if the need arises.
+
+![If this isn’t the 90s in a nutshell I don’t know what is.](2020073100_03.png)
+
+**Graffiti Unlimited**
+
+![](2020073100_04.png)
+
+I was tipped off to this one on the YouTube comments of the Flashpoint trailer. After a quick note on the Discord server, it was curated by fourinone. Graffiti Unlimited uses a really neat trick; by overlaying 2D artwork on multiple videos shot at different angles, you can make it look like you’ve painted all over a billboard, a car, a train, you name it.
+
+But the gallery was another story entirely. The site contained hundreds of thousands of unique pieces of art made using the software, ready to be shared around at will, and watched in the same way as in the game. What to do about that?
+
+![](2020073100_05.png)
+
+![](2020073100_06.png)
+
+We’ve implemented the top 200 rated pieces of art on the site into our own gallery, which can still show the art as implemented on the site in that cool-as-hell superimposed way.
+
+“But what about all the other graf-”
+
+![](2020073100_07.png)
+
+[“Nevermind.”](https://bluemaxima.org/flashpoint/datahub/Thumbnail_Downloads)
+
+**BT Tower 360 Panorama of London**
+
+This one was so big we couldn’t even put it in the master copy of Flashpoint.
+
+![](2020073100_08.png)
+
+This panorama has over one million — yes, *million* — individual photos that add up to 36GB of size. It’s big. *Really* big. To put that into comparison, the current version of Flashpoint, which is no slouch, only has about 1.2 million files at the moment (and we’re working on shrinking that down, but there’s only so much you can do).
+
+As a result, I recommended to silasqwerty, the curator of this majestic beast, to slap it into a copy of Flashpoint Core and upload that to the internet instead. I always intended Flashpoint to not be a centralized thing under one name (probably really bad that I named it *BlueMaxima’s Flashpoint*) but to be easily spun off for other projects in relation to web games and web content.
+
+It also brings up a question as to what will need to be standalone now and in the future. At least, while I’m still the one working on the master build every day. The master build is going to hit 500GB, whether in this version or the next one, and I’m having trouble actually uploading that anywhere since it takes over a day at this point. It’s not a question I have to answer yet, but one I will definitely need to consider sooner rather than later.
+
+[You can download the copy of Core with the panorama built into it at this link.](https://archive.org/details/bt-tower-360-panorama-of-london-flashpoint-core-2013)
+
+That brings us to the end of our monthly update. There’s always more to see and more to talk about, but hopefully we can get 8.2 or 9.0 or whatever the next version is going to be out at the end of next month. If not, there’ll be another update. See you then.

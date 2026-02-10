@@ -1,0 +1,11 @@
+Hi @everyone. Flashpoint 6.2, "Moe's Great Escape", and Newgrounds Auditorium 2.0 is now available.
+
+The big change from 6.1 to 6.2 is easily the 6,000 new games...yes, really, we've shot right past 20,000 to about 22,000 in this release? It's kinda silly. Most of that is thanks to our big man DarkMoe who wanted to grab a couple of sites worth of escape the room games on a whim and somehow ended up doing a few thousand himself. There's plenty new outside of that though, alongside a few updates to how things like the launcher and router for Infinity work. You can always check the changelog for more details.
+
+This should appeal to people who like Newgrounds; a few months ago myself and DarkMoe went on a journey to archive all of Newgrounds' flash animations in an automated scrape to database sort of deal. It 99% worked, but thanks to Launchbox being a crippled mess with 131,000 animations, it was never particularly usable. Thanks to the new launcher and a bit of tweaking though, I managed to get it working much better; the new and improved Newgrounds Auditorium 2.0 is almost infinitely better, has a few bugfixes, and even has a playlist (thanks to eientei) of the top viewed 1,200 animations so you don't have to go, for lack of a better term, 'dumpster diving'.
+
+Both Flashpoint 6.2 and Newgrounds Auditorium 2.0 are available now in #downloads. 6.2 Ultimate has a torrent from the word go this time, and we'd prefer it if you used it instead of the direct links, but they're still there if you need them. Newgrounds Auditorium 2.0's Ultimate version is not available at the moment (damn thing's still uploading) but it should be up within a few days, hopefully; thankfully the Infinity version is only 120MB, so you can start watching the animations right away. I'm not even going to try to guarantee a release date for the tenative Flashpoint 6.3, since I've been proven wrong on my release dates one too many times now.
+
+---
+
+(One other thing; updater isn't working at this time. Still looking into it. Sorry.)

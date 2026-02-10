@@ -1,0 +1,13 @@
+Hey @everyone, it's been a month since the release of 7.1. We've been working hard over here since then, and it's about time we talk publicly about a bunch of things that have happened between then and now.
+
+Read the link below for updates on:
+
+\* A look at February's popularity spike
+\* The upcoming removal of Nitrome titles
+\* Our attempts to circumvent the redirector
+\* Introducing the new Viscape plugin
+\* Microscopic preview of the 4,000 new curations since 7.1
+\* Talking about the new tool for recovering games from older PCs
+\* Me looking at random games from the Flashpoint library
+
+https://medium.com/bluemaximas-flashpoint/flashpoint-status-update-march-2020-6b1bd57e5df0

@@ -1,0 +1,75 @@
+Another month, another update. We were originally planning to release what is definitely going to be 8.0 around this time, but it’s not always possible for one reason or another. Let’s talk about some of those reasons — a big development has happened very recently that’s worth having a chat about, and I’d like to elaborate on something from the last update…
+
+---
+
+**Your Head A’Sploder**
+
+I teased in the last status update, at the very bottom, how we were working on Sploder, the online ‘game creation kit’. As of today, that little project is done and on a final quality pass, so we’re in the clear to talk about it more in-depth. (Please excuse the lack of visual aids for this one; I’m not the one at the helm of this particular project, I merely know how it works.)
+
+![](2020032900_00.png)
+
+Sploder is absolutely massive. They have several million titles from people who created games on their engine from all over the planet, with some of their busiest days having over a thousand separate entries a day. Scraping this behemoth of a site would be an absolute nightmare for most people.
+
+Not for our beloved DarkMoe, though. On a stream he hosted recently, he told me & others about how he built a bot to scrape, page by page, game by game, every creation on Sploder — everything from the levels to the authors, tags and ratings, to the data itself — and how it’s all gone into an absolutely massive 33GB database. That’s about double the size of our current Happy Wheels database, just FYI.
+
+![](2020032900_01.png)
+
+Alongside that comes a rewrite of the scripts that run on the site to fetch game data, add it to their players, and run the games. There’s more to it than just that though; there are tons of images, sounds and other resources that would drive the file count of Flashpoint into the tens of millions. Thankfully for us, Moe continues to be a beacon of bright ideas. He wrote a script that lets us store all of these loose images and extra resources in zip files. Overall, it drops the file count by about 99.9%.
+
+The overall Sploder filesize hasn’t been tallied yet. We know the database of levels is going to be *around* 33GB. And doing some other estimations, we can assume that the image sizes can be anywhere near 100GB. If we decide to include those in 8.0 too, it’ll be a real chore to upload all at once. The database will absolutely go in, though…and with it, Sploder, arguably the biggest user-generated content platform to exist in Flash, will be saved.
+
+![](2020032900_02.png)
+
+If you have version 6.3, 7.0 or 7.1 of Flashpoint Ultimate, you can actually try out this tech, as we’ve had a demonstration of this in there for a while now. Most of the work with this completed database is gonna be dropping the full thing in, and some slight script optimizations.
+
+---
+
+**Cleaning Up After Ourselves**
+
+For those of you familiar with Flashpoint’s internal workings, we’ve been using batch scripts and inelegant solutions for a while now. These have been working as expected and hoped, but certain plugins need more in-depth solutions that our current tech hasn’t been able to provide. We’ve also needed a solution for certain platforms that we can easily revert, so that we don’t leave junk on people’s computers that isn’t really needed once the plugins aren’t running anymore.
+
+![](2020032900_03.png)
+
+Enter [Flashpoint Secure Player](https://github.com/FlashpointProject/FlashpointSecureTools/tree/master/FlashpointSecurePlayer).
+
+I don’t know how Tomy convinced himself to work on this one. It’s an absolutely massive project. He describes it as a ‘weak sandbox’ — we can configure it to make certain system changes (files, registry keys), then when the program closes, change them right back. And as soon as you close it, it’s gone, like it was never there.
+
+We haven’t had time to thoroughly test this tech yet, but we’re definitely looking to include it in 8.0. It’s probably going to bring some big changes for game curations, but there’s not much we can do about that. We’re gonna need a new version of Core too…but that won’t happen without warning. We’ll figure it out.
+
+It also comes with a third set of benefits, which was the original point of this project…
+
+![](2020032900_04.png)
+
+With the new Redirectorless tech that we talked about [back in the March update](https://medium.com/bluemaximas-flashpoint/flashpoint-status-update-march-2020-6b1bd57e5df0), it was running into a few difficulties. Mainly, that two platforms, 3D Groove GX and ActiveX, refused to work with that setup. This solves both of those, too — effectively a standalone player for ActiveX, and letting us tweak 3D Groove GX to work as well.
+
+To the layman, these changes may not seem like much. But these massive under-the-hood improvements will make Flashpoint even more flexible, safe and content-rich than it ever could have been before. All we need is time.
+
+---
+
+**A Nice Coffee Break**
+
+![](2020032900_05.png)
+
+For those of you who haven’t been paying attention to the other project that I’ve been working on, Kahvibreak, it’s a similar sort of collection to Flashpoint, but it collects Java phone games. Nokia64 and I have been polishing Kahvibreak up a lot recently (honestly, it’s been 90% Nokia’s work), and we just passed 1,000 individual titles.
+
+We’ve just released the latest version of Kahvibreak, which contains all these games, over on the [Kahvibreak](https://bluemaxima.org/kahvibreak/) website. If you have a numpad and feel like diving into another bit of retro gaming history, it’s right there for the taking. It’s not much when you compare it to Flashpoint, which is about to pass 46,000 games and 50,000 entries, but hey.
+
+---
+
+**Four Score and 7,500 Games Ago**
+
+As of this moment, there are approximately 7,500 new titles in the newest version of Flashpoint, meaning we’ve been keeping up the pace of new titles from last month’s popularity spike. This is, of course, fantastic news, except for me, who has to process all of them by hand…That, and the poor server, which now has to deal with the 340GB of space that Ultimate will take up eventually. We haven’t even added in Sploder yet…
+
+Anyway, this update is a bit shorter than most, so I’m gonna take the opportunity to highlight just how many titles have gone in over the past month alone. The short video below shows just how many there have been, at a pretty reasonable speed…
+
+![](https://youtu.be/LV-g3Mg3Or0)
+
+Everything from random assortments of Flash portal games, to weird Japanese escape the room titles about cans, to weird Japanese games in general, to things that are likely to give epileptics the worst night of their lives are here and ready to go (we do have a Seizure Warning tag, but no guarantees), and this is just from March. We’re continuing our quest to be the most complete archive of webgame works on the planet. No virus is gonna stop us…
+
+---
+
+Apologies for taking so long to release Flashpoint 8.0, but with the amount of work that continues to go into each release, it’s possible to just not be ready when the time comes. We didn’t even talk about how we plan to replace the entire Java portion, or how we hope to convert our metadata into a more reliable database format, but those are things for the future.
+
+The way we’re going, by the time we’re ready to push out 8.0, we might have passed the 50,000 game mark, making us have more games than the entirety of MAME’s arcade collection or many microcomputers from the 80s, which would be bloody insane.
+
+Flashpoint 7.1 is still available at the usual places, and will continue to be available until 8.0 is ready and out, hopefully by the end of April. Either way, there’ll be another beep on [our Discord](http://discord.gg/S9uJ794). See you then.

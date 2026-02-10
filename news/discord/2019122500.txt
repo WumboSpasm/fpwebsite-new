@@ -1,0 +1,16 @@
+@everyone It's been a long, long, long, ***long*** three months, and kill me now if this turns out broken, but if it stays in the stable any longer I'm going to lose my mind. Flashpoint 7.0, uncreatively titled "Eight Thousand Hours" (because that's about how long we have until Flash is truly gone) is out now, in #downloads and on the newly refreshed website. The sheer amount of changes and new games in this release (a little over 8,000!) are way too many to list, so as always, there's a changelog at https://bluemaxima.org/flashpoint/changelog.txt.
+
+Other things that need mentioning on quickfire:
+
+We have a new tool for checking the cache files of old hard drives for games previously thought lost, if you have an old computer try giving this a run on it:
+https://bluemaxima.org/flashpoint/datahub/Recovering_Files_from_Browser_Cache#Flashpoint_Cache_Dumper
+
+We're still looking for translations for the launcher: https://fpl-translations.bluemaxima.org/
+
+I also put out a new version of the Kahvibreak project recently at https://bluemaxima.org/kahvibreak/
+
+We also have a #highscores channel now, if you feel like competing with other Flashpoint users
+
+Keep an eye on this channel for other things I might have forgot if you want to help the project out. (Seriously. This release is huge, and we have more coming in the future. Although I don't think we'll try testing anything until the egg nog is out of everyone's system...)
+
+It's currently 8:30am on Christmas morning and I have my family beating down my door to get me out and socializing, so I'm just going to leave it here. Happy holidays.

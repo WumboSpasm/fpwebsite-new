@@ -1,0 +1,58 @@
+Flashpoint zero rev. 4
+
+* Added games:
+ * Amorphous+
+ * Arcane
+ * Arrival in Hell
+ * Battalion: Nemesis
+ * Bloxorz
+ * Chopraider
+ * Creeper World: Evermore
+ * Cursor 10
+ * Don't Look Back
+ * Double Wires
+ * Dungeon Escape
+ * Exmortis
+ * Frozen Frenzy
+ * Gimme Friction Baby
+ * Hanger
+ * Hexagon
+ * Hot Dog Bush
+ * Humbug
+ * Intrusion
+ * Jack French 1: All Roads Lead To Paradise
+ * Jahooma's Logicbox
+ * Johnny Rocketfingers
+ * Nicholas' Weird Adventure
+ * Papa's Pizzeria
+ * Pico's School
+ * Plazma Burst
+ * Raze
+ * Riddle School
+ * Robot Unicorn Attack Heavy Metal
+ * Seventh Sky
+ * Storm the House
+ * Swords and Sandals
+ * Synopsis Quest
+ * The Dead Case
+ * The Room Tribute
+ * The Torture Chamber II
+ * The Waitress
+ * Thing-Thing
+ * Toss the Turtle
+ * Void
+ * Vox Populi Vox Dei
+ * Warbears
+ * Zombie Inglor
+
+* Added Hacked games:
+ * CLOP
+ * Dismantlement Radio
+ * Madness Interactive
+ * Tower of Heaven
+
+* New background again featuring the new logo from a220strobe!
+
+* The batch file that starts LaunchBox has been updated; it will now try to install the Visual C++ redistributable needed to run LaunchBox silently before launching it, and it will minimize the batch window and the Apache window, for a cleaner, more user friendly first launch.
+
+* Unrelated to the project directly, but the website now looks like a website.

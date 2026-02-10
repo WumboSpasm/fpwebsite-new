@@ -1,0 +1,6 @@
+Hello everyone! This is **not** a Flashpoint Infinity or Ultimate release, but Flashpoint Core 4 is now available. If you're interested in curating for Flashpoint, this announcement is for you.
+Core 4 features a revamped Curate tab. Now you can use Flashpoint Launcher to make curations - just click the New Curation button on the Curate tab to get started. On the Curate tab, you'll be able to fill out metadata, test games, and export your finished curations for inclusion in Flashpoint. You can even load and edit existing curations. Hopefully this turns out easier.
+Flashpoint Core 4 also has the new ShiVa3D plugin support, Java games in the browser, and merges all our browser usage into Basilisk. Yes, :rip: :K_Meleon:.
+If you have questions about any step of the curation process, you know the usual places to ask, and https://bluemaxima.org/flashpoint/datahub/Curation_Tutorial is always there. And if you're an experienced curator, we'd really appreciate it if you familiarize yourself with Core 4, so you can help new curators with whatever questions they may have.
+Here is the download link: https://bluemaxima.org/flashpoint/Flashpoint%20Core%204.7z.
+We have a newsletter coming soon as well, so stay tuned!

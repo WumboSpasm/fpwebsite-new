@@ -1,0 +1,77 @@
+Flashpoint zero rev. 7
+
+* Added games:
+ * :reimagine the game:
+ * :replaying the game:
+ * :the game:
+ * A Small Favor
+ * Aether
+ * Angel of the Battlefield
+ * Another Small Favor
+ * Apples in the Tree
+ * Back to the Cubeture
+ * Balloon Duel
+ * Battle Gear
+ * Burrito Bison
+ * Castle Crashing the Beard
+ * Cave of Wonders
+ * Chaos Faction 2
+ * Chibi Knight
+ * Ching-Chong Beautiful
+ * Coma
+ * Crush the Castle 2
+ * Cursed Treasure 2
+ * Dadgame
+ * Depict1
+ * Domo-Kun's Angry Smashfest
+ * Drunken Masters
+ * Enough Plumbers
+ * Epic War 3
+ * Epos
+ * Exit Path
+ * Foreign Creature
+ * Foreign Creature 2
+ * Goin' Up
+ * Gretel & Hansel
+ * Haunt the House
+ * Hedgehog Launch
+ * House of Wolves
+ * How To Raise A Dragon
+ * K-Fed
+ * Kingdom Rush
+ * Knightmare Tower
+ * Lab of the Dead
+ * Larry and the Gnomes
+ * Level Up
+ * Little Wheel
+ * Madness Accelerant
+ * Madness Hydraulic
+ * Madness Regent
+ * Madness Retaliation
+ * Murloc RPG
+ * PicoBlast
+ * Pixel Purge
+ * Portal Defenders
+ * Press Space To Win
+ * Relive Your Life
+ * Royal Squad
+ * Seed of Destruction
+ * Solipskier
+ * Starwish
+ * Strikeforce Kitty
+ * Sushi Cat
+ * Sydney Shark
+ * The Breach
+ * The Company of Myself
+ * The Legends of Hiro
+ * The Several Journeys of Reemus
+ * The Torture Game 2
+ * Warfare 1917
+ * William and Sly
+ * Xeno Tactic
+
+* Added hacked games:
+ * Alice is Dead Episode 1
+ * Epic Battle Fantasy II
+
+* Upgraded LaunchBox to 8.1. Not entirely sure what the difference is between 8.0 and 8.1, but it's there anyway.

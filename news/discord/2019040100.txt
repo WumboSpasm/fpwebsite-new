@@ -1,0 +1,5 @@
+@everyone
+
+**The following is not an April Fools Joke.**
+
+Hello. This isn't a release announcement as we're still working on what's going to be Flashpoint 6.0. Unfortunately the server we were running Infinity on has been changed for technical reasons, and we need to patch 5.5 again to compensate for it. If you're running Flashpoint 5.5 Infinity, below you'll find a zipped patch; extract it into the Flashpoint folder (and overwrite router.php when you're prompted to). If you aren't running it yet or don't want to go through that effort, you can redownload 5.5 Infinity from #downloads, it's been updated with the new file that you need. This doesn't affect Flashpoint 5.5 Ultimate (the big pack). This shouldn't happen again. Apologies for the beep.

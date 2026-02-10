@@ -1,0 +1,70 @@
+![Some of the ShiVa games you can play right now in Flashpoint.](2020082700_00.png)
+
+If you dig deep enough into a web game site, you never know what you might find. And on March 31, 2019, Flashpoint volunteer eientei95 decided to try his luck on [Agame.com](https://www.agame.com/).
+
+Now, if you’ve played a Flash game in the past few years, you’ve probably seen the Agame.com logo, if not visited the site. What you might not know is that they are owned by a Dutch company called [Spil Games](https://en.wikipedia.org/wiki/Spil_Games), which owns over [thirty other web game portals](https://spilgames.com/games/), as well as a number of popular mobile games. Needless to say, eientei had a lot of ground to cover!
+
+Luckily, eientei wasn’t on his own. [Archive.org’s Wayback Machine](https://web.archive.org/), through its free [CDX API](https://github.com/internetarchive/wayback/tree/master/wayback-cdx-server), provides an unmatched capability to find hidden gems on nearly any website. With a quick URL query, eientei had a list of every URL on the Agame.com [CDN](https://en.wikipedia.org/wiki/Content_delivery_network) that the Wayback Machine had ever captured.
+
+The `www8.agame.com/mirror/` directory contains an organized folder of games. It includes subfolders for advergames, Flash games, Shockwave games, and more. But as eientei looked through the folder, he noticed a small, mysterious directory called “shiva.”
+
+```
+http://www8.agame.com/mirror/shiva/t/the-hunt/TheHunt-startup.stk
+http://www8.agame.com/mirror/shiva/t/the-hunt/TheHunt.html
+```
+
+These were the only files indexed by Wayback Machine in that directory. The HTML link contained only a bit of JavaScript code and this text: “Application created with ShiVa.” What was ShiVa, and what was it doing on the Agame.com CDN?
+
+[ShiVa](https://archive.is/20190502064938/https://en.wikipedia.org/wiki/ShiVa), we found, is a 3D game engine similar to Unity. And just like Unity, ShiVa once had its own browser plugin, called ShiVa Web Player. The game we had found, called The Hunt, was a technical demo produced by ShiVa Technologies (then called StoneTrip) to show what the engine is capable of. I found a [gameplay video](https://www.youtube.com/watch?v=UCgMCupq_x0) and was immediately impressed — That level of graphical quality was unheard of in web games of the time! I knew I had to get ShiVa games working in Flashpoint somehow.
+
+![The gameplay video that fueled my determination.](https://youtu.be/UCgMCupq_x0)
+
+First, I attempted to install the plugin in my browser and try out the game. Although I found an installer for ShiVa Web Player fairly quickly, I discovered that the game was embedded using a script called `stkobject1.8.js`. This script was supposed to load from ShiVa’s servers, but ShiVa had moved to a new domain, and the script was inaccessible. Luckily, the script was still available from Wayback Machine. But how could I get the script to load from there?
+
+To test whether the game would work with the script from Wayback Machine, I decided to add the game to Flashpoint. This let me use Flashpoint’s “fake internet,” which allows files to load as if from their original websites. I downloaded the script from Wayback Machine and added it to a location in Flashpoint matching its original URL on the internet. Next, I did the same for the game files and the original HTML file. Finally, I used Flashpoint’s browser to load the HTML file. I had all the game files, and I had the plugin installed, so the game should work, right?
+
+Well, it didn’t. You see, just like Unity Web Player and some other plugins, the ShiVa3D Web Player installer is really just a stub. That means that when the user first loads a ShiVa3D web game, the plugin attempts to download the playback components necessary to play the game. Unfortunately, these components were also requested from the ShiVa3D server, which was no longer online. And Wayback Machine had not saved these files. I had the game files, and I had the plugin, but I still couldn’t play the game!
+
+At this point I was stumped, so I searched the internet to see if anyone else had reported the same problem. Sure enough, I found [this thread](https://web.archive.org/web/20190331194444/http://shiva-engine.com/forum/viewtopic.php?f=20&t=30304) on the ShiVa forums describing the same issue. I learned from the thread that the beta version of the player should be unaffected by the problem, so I looked for a game that used the beta version. Soon I found one on GameJolt called [Kumoon](https://gamejolt.com/games/kumoon/42309).
+
+![Kumoon playing in Flashpoint. Read on to learn how we did it!](2020082700_01.png)
+
+When I tried to load this game, I discovered a whole new problem: the servers for the *beta version* of ShiVa Web Player had an expired SSL certificate. This meant that I could only connect to the site over HTTP, although the game attempted to load a script from it over HTTPS. So once again, I added the game files, HTML, and script to Flashpoint in order to work around the problem with the original website. But did the plugin work this time?
+
+…No, Kumoon did not work either. Somehow, although the beta server was still online, the URL for the required components did not exist. I gave up in frustration.
+
+---
+
+Fast-forward nearly seven months, to October 28. That evening, I had a sudden epiphany. A while ago, I remembered, LeoV from the Flashpoint [Discord group](https://discord.gg/qhvAkhWXU5) had found a standalone Unity Web Player installer inside the installer for the Unity development environment. I had been searching for an installer for that specific Unity version everywhere, but unable to find one. *What if I could apply this idea to ShiVa Web Player, too?*
+
+To test my idea, I visited the [ShiVa3D website](https://web.archive.org/web/20200809042911/https://shiva-engine.com/) and downloaded the free ShiVa 1.9.2 Web Edition. Since I wasn’t planning on creating my own ShiVa3D content, I simply opened the installer in [7-Zip](https://www.7-zip.org/) and examined its files. At first I was disappointed: the ShiVa3D Web Player installer was the same as the one I already had. But I soon found something more interesting.
+
+![“S3DPlayer-1.9.2.0.exe”, it turns out, is the standalone desktop player!](2020082700_02.png)
+
+Jackpot! After I installed the program, I could play any ShiVa3D STK file, including ones that were originally embedded on webpages. I discovered that for better or worse, ShiVa Web Player files are identical to their desktop counterparts, and are only lacking the executable and components necessary to play them, since this role is fulfilled by the plugin. This means that ShiVa Web Player games can reach ludicrous file sizes. In 2013, who in their right mind was going to sit through a hundred megabyte download just to play a web game? It’s no wonder this plugin never caught on.
+
+Anyway, since ShiVa Web Player content wasn’t really “optimized for web”, this meant that the desktop player was capable of playing plugin content just fine. This is a very different situation from Unity Web Player; better optimization means that Unity Web Player files can only be played with the browser plugin. Gamers in 2013 hadn’t suffered in vain!
+
+![The opening cutscene of The Hunt, playing in the ShiVa desktop player](2020082700_03.png)
+
+All I had to do now was get this new program working in Flashpoint. And at first, everything seemed so flawless! It was too good to be true. The ShiVa3D Player was portable, so I could just copy it from its Program Files location directly into Flashpoint. The program could load any ShiVa3D game filename or URL. It even had a command-line parameter to determine whether it started in fullscreen. I just needed to figure out how to get the player to use Flashpoint’s proxy.
+
+The first thing I tried was to use the Flashpoint Redirector. (The Redirector has since been replaced by [Flashpoint Proxy](https://github.com/FlashpointProject/FlashpointProxy), but back then, it was the best we had.) The Redirector sets the system proxy, so if ShiVa3D Player obeys the system proxy (as most programs do), then it should work fine in Flashpoint. Unfortunately, it does not obey the system proxy. Next, I tried setting the HTTP_PROXY environment variable using a batch file. This did not work either.
+
+I was stumped once again, so I searched the internet. Unfortunately, a lot had changed in seven months. The entire ShiVa3D forums were replaced with a page stating “This site is currently down for maintenance — please come back soon.” Incidentally, I discovered that the server for the beta version of the ShiVa3D Web Player was completely gone as well. In fact, if I did not have the foresight to save the forum threads mentioned in this article to Wayback Machine, they would be gone too.
+
+With everything that could have possibly helped me wiped from the internet, I decided to try my luck with the documentation included with the development environment. I scoured the help PDF, but I found absolutely nothing about proxy settings! As far as I could tell, ShiVa had no way to use anything but a direct internet connection.
+
+So what could I do with a direct internet connection? I couldn’t use Flashpoint’s fancy “fake internet”, but I *could* use Flashpoint’s server the old-fashioned way, using [*localhost*](https://en.wikipedia.org/wiki/Localhost). Luckily for us, nearly all ShiVa Web Player games are self-contained, and do not require internet access or to be located on a particular website. I created a simple batch file that could convert a game’s original URL to a localhost URL and launch it:
+
+```
+SET URL=%*
+SET URL=http\://localhost:22500%URL:~6%
+START /B ShiVa3D\S3DEngine.exe --fullscreen=0 %URL%
+```
+
+It was a bit of a hack, but it worked! And just like that, we had a new technology supported in Flashpoint. I made a [curation tutorial](https://bluemaxima.org/flashpoint/datahub/ShiVa3D_Curation), and we’re discovering more games, animations, and other oddities all the time. As of Flashpoint 8.2, our contributors have saved **87** ShiVa3D web games and **53** animations — I didn’t think so many existed on the internet! We’ve also improved our implementation, replacing my original batch file with a fancy [Flashpoint Secure Player](https://github.com/FlashpointProject/FlashpointSecureTools/tree/master/FlashpointSecurePlayer) configuration.
+
+---
+
+As this story demonstrates, it’s not always programming skill that moves the Flashpoint project forward (though tons of coding goes into developing Flashpoint Launcher and Secure Player; shoutout to our amazing developers!). Often, breakthroughs are a matter of collaboration, dedication, and a bit of creative thinking. Volunteering for Flashpoint is rewarding because there are so many ways to make a difference, regardless of your skill level. If this sounds interesting, be sure to check out our [website](https://bluemaxima.org/flashpoint/) and join our [Discord](https://discord.gg/qhvAkhWXU5).

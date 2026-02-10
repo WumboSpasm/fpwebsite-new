@@ -1,0 +1,421 @@
+Flashpoint 3.0 - Keys to the Kingdom
+
+* Added games:
+ * 16
+ * 2D Memory Trial
+ * 3D Etch a Sketch
+ * 3D Maze
+ * A Knight to Remember
+ * Agent Scarecrow 2: Aggressive Shopping
+ * Agent Scarecrow: The Birth of Scarecrow
+ * Agent Scarecrow: The Birth of Scarecrow Redux
+ * Agony: The Portal
+ * Alex in Danger (Hacked)
+ * Alexia Crow The Cave of Heroes (Hacked)
+ * Alexia Crow The Deal of the Gods (Hacked)
+ * Alexia Crow: The Pandora's Box (Hacked)
+ * Alien's Quest
+ * Aliens & Outlaws
+ * Amateur Surgeon
+ * Amateur Surgeon 2
+ * An Escape Series 1
+ * An Escape Series 2
+ * An Escape Series 2.5
+ * An Escape Series 3
+ * An Escape Series 4
+ * An Escape Series 5
+ * An Escape Series 6
+ * An Escape Series 7
+ * Anno 1404
+ * BOUNCE SHOT (Hacked)
+ * Baba Yaga
+ * Back in Time
+ * Backyard Boxing
+ * Bad Ice-Cream 2
+ * Bad Ice-Cream 3
+ * Base Jumping
+ * Battalion Skirmish
+ * Battle of the Four Kingdoms (Beta)
+ * Bejeweled 1
+ * Bejeweled 3
+ * Bejeweled Blitz Beta
+ * Bejeweled Blitz Regular
+ * Bejeweled Twist
+ * Belial Ars Arcana
+ * Big Bed Boogeyman
+ * Bill the Demon
+ * Bionicle Legend Begins
+ * Bionicle Mask Matcher
+ * Bionicle Mata Nui The Online Game (Hacked)
+ * Bionicle Rapid Descent
+ * Bionicle Toa Builder
+ * Bite Jacker
+ * Black Box (Hacked)
+ * Blox
+ * Bomber Bob
+ * Booze Up
+ * Bow Street Runner
+ * Brain Hotel
+ * Brainless Monkey Rampage
+ * Brainsplatters 2
+ * Bump Battle Royale
+ * Button Hunt 3
+ * CCC Dress up v.2
+ * Calamari
+ * Call of Atlantis
+ * Camouflage Snake
+ * Camper-Strike
+ * Canadair: Bombardier D'Eau
+ * Captain Forever
+ * Caravaneer
+ * Caravaneer 2
+ * Carrot Defense
+ * Celebrity Fight Club
+ * Chaotic
+ * Cheat2Win
+ * Cheese Dreams New Moon
+ * Choose Your Weapon 5
+ * Chronon (Hacked)
+ * City Siege
+ * City Wizard
+ * Clockwork Cat
+ * Cody's Nightmare Vacation
+ * Coil
+ * Colourblind
+ * Combat Instinct 2
+ * Crab Ball
+ * Crazy Halloween
+ * Crazy Penguin Catapult
+ * Cutie Quake
+ * Cybercat
+ * Darker Ride Escape
+ * Daytraders of the Dead
+ * Dead Tread
+ * Death Lab
+ * Death Village
+ * Defend Your Nuts
+ * Dental Damage
+ * Die Anstalt - Psychiatrie für misshandelte Kuscheltiere
+ * Dino Meat Hunt 2 Extra
+ * Ditto
+ * DragonAge Legends Remix 01
+ * Drunk
+ * Dwarf Complete (Hacked)
+ * Earth Dismantlement
+ * Earth Taken 2
+ * Effing Hail
+ * Elite Base Jump
+ * Elsa Heart Surgery
+ * Empty Room Escape
+ * Escape From Crystal Lake
+ * Faraday's Flaw
+ * Feed Them All
+ * Fix-a-turkey
+ * Flaming Zombooka 2
+ * Flash-Drive Demo Version
+ * Flightless
+ * Flue
+ * FluffKitty
+ * Fluffball
+ * Fly Guy
+ * Fly Plane
+ * FlyEatin
+ * Fracuum
+ * Furry Tale
+ * Future Development Company (Hacked)
+ * Galactic Gravity Golf
+ * Galves Adventure (Hacked)
+ * Geo Land: The Dream Traveller
+ * Get A Life
+ * Get On Top
+ * Ghost Shooter
+ * Graveyard
+ * Greedy Ghouls!
+ * Gridlock
+ * Grow Cannon (Hacked)
+ * Grow Cinderella
+ * Grow Maze (Hacked)
+ * Grow Nano 1 (Hacked)
+ * Grow Nano 2 (Hacked)
+ * Grow Nano 3 (Hacked)
+ * Grow Nano 4 (Hacked)
+ * Grow Ornament (Hacked)
+ * Grow RPG
+ * Grow Valley
+ * Grow v1 (Hacked)
+ * Grow v2 (Hacked)
+ * Grow v3 (Hacked)
+ * Grumpy Knight
+ * Guardians
+ * Gunny Bunny 2 Double Sight
+ * Hackers VS. Hackers
+ * Halloween Trick or Treat Escape 3
+ * Halloween Trick or Treat Escape 4
+ * Halloween Trick or Treat Escape 5
+ * Halloween Trick or Treat Escape 6
+ * Halloween Trick or Treat Escape 7
+ * Hanoka
+ * Hell of Fear
+ * Hero in the Ocean
+ * Hotel Escape 3 (Hacked)
+ * How To Make A Bunny Lay Easter Eggs
+ * How To Make A Chocolate Easter Bunny
+ * Hulk Smash-Up
+ * I Am Lightning
+ * I Know Where Bruce Lee Lives
+ * Ice Punch
+ * Icebeak
+ * Imperium
+ * IncrediBots 2
+ * IndestructoCopter
+ * IndestructoTank 3
+ * IndestructoTank Launch
+ * Internet Tennis
+ * Japanese Baseball
+ * JayIsGames Banner 2012
+ * Jellydad Hero
+ * Kasumi Rebirth
+ * Keepups
+ * Kermit Kombat
+ * Killego
+ * Knockers
+ * Labyrinth Secrets of ShadowHaven (Hacked)
+ * Lander X
+ * Last Requests
+ * Lilo & Stitch Peanut Butter Express
+ * Line Runner
+ * Line Runner 2
+ * Lock-n-Roll
+ * Lone Survivor Demo
+ * Lonely house-moving
+ * Lucky Tower 2
+ * Luminara
+ * Luxor 5th Passage
+ * Luxor QFTA
+ * MEKURI MASTER (Hacked)
+ * Madhouse
+ * Madville
+ * Make-o Your Own Stinko (Man)
+ * Mario & Luigi RPG - Wariance
+ * Mario Party 7 - Bowser's Lair Hockey
+ * Mario Strikers - Heads Up
+ * Mars Massacre
+ * Maverick
+ * Mecharon
+ * Mecharon Survival
+ * Medieval Rampage
+ * Medieval Rampage 3
+ * Medieval Rampage 4
+ * Meet In (Hacked)
+ * Megaman Zero Alpha
+ * Meowcenaries (Hacked)
+ * Metal Slug Brutal 2
+ * Metroid Prime - Trivia
+ * Metroid Prime Hunters - Know Your Enemy
+ * Midnight Spooks: The Photo
+ * Midnight Spooks: The Thing in the Basement
+ * Mini Pool 2
+ * Miracle Witch (Hacked)
+ * Monster Corp
+ * Mountain Bike
+ * Murloc II Episode 1: Camp Gizbo
+ * Murloc Stranglethorn Fever
+ * MushBits
+ * Mutant Fighting Cup
+ * My Dear Boss
+ * My Pet Protector
+ * My Pet Protector 2
+ * My Pet Protector 3
+ * Nails 020 - Box
+ * Neon Rider
+ * Ninja Dog
+ * Ninjufo
+ * Nintendogs Puppy Quiz
+ * Obama Rider
+ * Odama - Crush & Conquer
+ * One Hour Back
+ * One On One
+ * Oodlegobs
+ * Pacman
+ * Palisade Guardian
+ * Palisade Guardian 2
+ * Palisade Guardian 3
+ * Palisade Guardian 4
+ * Path of Freeman
+ * Peacefree Tactical Warfare
+ * Penguins Attack 2
+ * Penguins Attack 3
+ * Penguins Attack 4
+ * Penguins Attack TD
+ * Penny's Antartic Adventure - Penguin Diner 2
+ * Persist
+ * Phantom Imperial
+ * Ping Pong 3D
+ * Pixel Room
+ * Plants vs Zombies (demo)
+ * Playroom 1
+ * Playroom 2
+ * Plunger
+ * Pointless Platformer
+ * Pokemon Trozei - Learn to Play!
+ * Polarium Puzzle Challenge
+ * Pole Riders
+ * Pootris
+ * Pothead Zombies
+ * Pothead Zombies 2
+ * Project Wasteland 0
+ * Protocol
+ * Protocol Prologue
+ * Pursuit of Hat
+ * Pursuit of Hat 2
+ * Qlight
+ * RPG Rider
+ * Ragdoll Avalanche
+ * Rally Point 2
+ * Ray & Cooper
+ * Rescue Mission
+ * Retron
+ * Robot Wants Fishy
+ * Rural Racer
+ * Rusty Lake Hotel
+ * Rusty Lake Roots
+ * Rusty Racer
+ * SPACE CAPSTAR II (Hacked)
+ * San Marino
+ * Saunavihta Yetis
+ * Savage Huskies
+ * Save The Kitty
+ * Scooby Doo Adventure 2 Creepy Cave-In Ep 2
+ * Scooby Doo Adventure River Rapids Rampage Ep One
+ * Scooby Doo Adventure The Temple of Lost Souls Episode 4
+ * Scooby Doo Ghost Ship Episode One
+ * Scooby Doo Pirate Ship of Fools Ep 4
+ * Shadow Factory
+ * Shaolin Dodgeball
+ * Shapely
+ * Sheep Racer
+ * Sheriff the Revenge
+ * Shine
+ * Shit Snake
+ * Shop Empire 1
+ * Shop Empire 3
+ * Shop Empire Fable
+ * Shop Empire Galaxy
+ * Shop Empire Rampage
+ * Shop Empire Underground
+ * Shopping Cart Hero 2
+ * Shopping Cart Hero 3
+ * Sift Heads Cartels Act 1
+ * Simpsons 3D: Save Springfield
+ * Singing Horses
+ * Skrillex Quest
+ * Snakes
+ * Snowball Siege
+ * Snowball Siege 2
+ * Social Interaction Trainer
+ * Sonic Boom Cannon 3D
+ * Space is Key Hell
+ * Spin Doctor
+ * Splatman
+ * Spongebob Deep Sea Surgeon
+ * Spyro Cavern Escape
+ * Squirrel Squash
+ * Squirrel Squash 2
+ * Stair Fall
+ * StickMan Sam - Part 1
+ * StickMan Sam - Part 2
+ * StickMan Sam - Part 3
+ * StickMan Sam - Part 4
+ * StickMan Sam 9
+ * Storm Ops
+ * Storm Ops 2 Desert Storm
+ * Storm Ops 3
+ * Storm Ops 4
+ * Street Fighter II - Ryu vs Sagat
+ * Submolok
+ * Super Beefjerks
+ * Super Handball
+ * Super Mafia Land
+ * Super Mario PowPowPow
+ * Super Stocktake
+ * Sushi Cat the Honeymoon
+ * Swimming Anime Dating Sim: VERY BETA
+ * Swindler 2
+ * Sword-Occident Warrior
+ * Tactics 100 Live
+ * Tails Cosmic Rush
+ * Tails Nightmare
+ * Tails Nightmare 2
+ * Tennis Game
+ * Test Subject Arena 2
+ * Test Subject Complete
+ * Tetris Labs
+ * The Adventures of Red: The Quest for the Chocolate Muffin
+ * The Blind Swordsman
+ * The Budget Invasion
+ * The Idiot Test
+ * The Idiot Test 2
+ * The Idiot Test 3
+ * The Idiot Test 4
+ * The King of Fighters 2000
+ * The Legend of the Rice Hat Warrior
+ * The Nokkians I
+ * The Proposal
+ * The Right Mix
+ * The Sun Goes to Space
+ * The Timewaster Ultra
+ * The Ultimate Idiot Test
+ * The Ultimate Stickman Fighting Game Experience
+ * The Way of the Exploding Stick
+ * There's 2 Wires?!
+ * They Took Our Candy!
+ * Tickets 4 Love
+ * Time Assault
+ * Transform (Hacked)
+ * Trapped Part Three: The Labyrinth (Hacked)
+ * Treehouse Hero
+ * Truco Argentino
+ * True Swing Golf
+ * Tsure Game 6-4
+ * Tsure Game 7
+ * Tsure Game 8
+ * Tsure Game 9
+ * Turn Undead
+ * Turnament
+ * Twinshot 2
+ * Urban Brawl
+ * V-Tech Rampage RIAA Edition
+ * Virtual Cop
+ * WEG Search Butterflies
+ * Warp Shot
+ * Wave  Warrior Sonic EXE Episode 1
+ * Wave Warrior Sonic EXE 2 Dark
+ * Wave Warrior Sonic EXE 2 Light
+ * Wave Warrior Sonic EXE Episode 1 (Edited)
+ * Westerado
+ * Wild Wild West
+ * Wings of Ge.Ne.Sis
+ * Xenosquad
+ * Zombie Slash
+ * Zombie Smasher
+ * Zombies Ate My Motherland
+ * Zoo Keeper
+ * Zuma's Revenge
+ * birdy
+ * changeType()
+
+Adds the new 'keys to the kingdom' system. We now have a much more effective method for subverting sitelocks, thanks to the community. A lot of hacked games have been updated with untouched SWFs in order to take advantage of this new system while being 1:1 copies of the original games.
+
+This also fixes over half of the games that previously required use of a browser; Gravitee Wars, Ragdoll Achievement, Fantastic Contraption and Chuck the Sheep now all run properly without one.
+
+This is also the first version of Flashpoint to use DarkMoe's Autocurator. The metadata may be a little weird because of that, but hopefully adding newer games should be much faster than before on my end.
+
+We now have an Extras folder for game files that should be included for archival sake.
+
+Replaced the Rose & Camellia games with more archival-complete versions. They'll need to be retested for safety.
+
+Fault Line now uses an older Flash projector executable - this lets it run without lagging when the mouse moves.
+
+Updated Infectonator: World Dominator with a hacked version that unlocks its final level.
+
+Fixed a few embarassing metadata errors. There's always more though!

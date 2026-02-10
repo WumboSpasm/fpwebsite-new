@@ -1,4 +1,12 @@
 {
 	"Title": "News",
-	"Header": "News"
+	"Header": "News",
+	"Index_News": "All News",
+	"Index_News_Tag": "News with tag \"$1\"",
+	"Index_Tags": "Tags",
+	"By_Author": "by $1",
+	"Entry_Byline1": "Posted by $1{$2} on $3",
+	"Entry_Byline2": "Posted to $1 by $2{$3} on $4",
+	"Entry_Byline3": "$1{Posted to $2} by $3{$4} on $5",
+	"Unknown_Date": "unknown date"
 }

@@ -1,0 +1,50 @@
+Flashpoint zero rev. 5
+
+* Added games:
+ * 4 Wheel Madness
+ * 50 States
+ * Bloody Rage
+ * Bloons TD 2
+ * Bloons TD 3
+ * Bloons TD 4
+ * Bowman 2
+ * Bubble Spinner
+ * Bubble Trouble
+ * Clear Vision
+ * Curveball
+ * Disorderly
+ * Epic Battle Fantasy 3
+ * Girp
+ * Helicopter Game (yes, THAT one)
+ * Kitten Cannon
+ * Mahjongg
+ * Mastermind: World Conquest
+ * Max Dirt Bike
+ * Mini-Putt
+ * Mini-Putt 2
+ * Moto Rush
+ * Newgrounds Sim
+ * Pitch Hitter 2
+ * Raft Wars
+ * Raiden X
+ * Soulmech: Shinobu
+ * Stunt Bike Draw
+ * Stunt Dirt Bike
+ * Super Karoshi
+ * The Classroom 2
+ * The Classroom 3
+ * The Impossible Quiz 2
+ * The Impossible Quizmas
+ * The Last Stand 2
+ * The Last Stand Union City
+ * World Domination Demo
+
+* Games I couldn't add
+ * Bloons TD 5. For whatever reason, the standalone, even directly from their website, doesn't load a stage.
+
+* The batch file has had a few major updates:
+ * There's an EXE now that not only does the same thing, but launches -no- windows except for LaunchBox, meaning it's a heck of a lot more user friendly. The batch file is still there, though. If this works out, it'll probably only be a debug launcher.
+ * Apache doesn't appear at all anymore either so it can't be closed accidentally. I will need to find a way to troubleshoot Apache if something goes wrong, though.
+ * The installers for the Visual C++ redistributable now wait their turns instead of trying to execute simultaneously.
+
+* Removed my Apache log files from the zip, because I'm an idiot.

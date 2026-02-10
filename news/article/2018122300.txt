@@ -1,0 +1,171 @@
+![The tiniest selection of what we have.](2018122300_00.png)
+
+As of December 26th, 2018, it’ll have been one year since I decided to go and preserve as many Flash games as I possibly could. With the future of Flash games uncertain and ticking ever closer towards a potential endless pit, it was time to act, or get off the pot.
+
+Over the course of 365 days, we’ve created something incredible.
+
+![Yes, that does say ten thousand and fifteen.](2018122300_01.png)
+
+---
+
+Let’s briefly go over the story again, in case you didn’t see it the first time.
+
+![](https://youtu.be/65crLKNQR0E)
+
+Flash games were huge. Massive. Games went viral. Developers jumped into the spotlight, many moving onto greatness in the wider industry. Genres were created. Communities formed, large and small. And that’s just the games — Flash animations took up an even larger spot, and arguably an even larger place in the early internet cultural realm.
+
+![](2018122300_02.png)
+
+But as time wore on, Flash’s dilapidated codebase of worm-eaten wood and rusted metal resulted in security leaks, performance problems and the outright denial of entry onto mobile platforms. Eventually, the death knell sounded. By the year 2020, Flash will disappear from most desktop internet browsers.
+
+![](2018122300_03.png)
+
+At this time last year, I didn’t know anyone who was making an effort to save this unmatched historical artifact of 2000s internet society. You would see someone here and there saving a few SWFs, but it was otherwise complete silence from the usual crowd. So I started Flashpoint - an all in one archival project, museum and playable collection of Flash games, as safe as possible from the eventual death and server shutdowns of Flash game sites.
+
+A few months of struggle and a sudden relocation all were worth it in the end, when I wrote my [other article on the subject](https://blog.usejournal.com/adobe-flashs-gaming-legacy-thousands-upon-thousands-of-titles-and-my-efforts-to-save-it-58c14811558a).
+
+![](2018122300_04.png)
+
+That article wasn’t intended to be more than “send it to a few games sites / big names and see if we can get the word out”. Medium had other ideas. At the time I wasn’t aware that it was practically a social network of its own, and within a few hours thousands of people had the idea of saving Flash stuck in their minds.
+
+![](2018122300_05.png)
+
+Our Discord was flooded with thankful pilgrims and former developers, giving us the leg up we needed to keep working. We went from one man maintaining the archive to over fifty people contributing in some way, from adding games to new features and testing.
+
+And that was just the first month. Through a constant influx of new members, requests and ideas, Flashpoint has been evolving at a rate I didn’t believe was possible. Let’s go over just the highlights.
+
+---
+
+Adding games one by one to Flashpoint was a massive chore at the time. Especially when you have to add them by hand in LaunchBox (our initial launcher). So our first step was to create some tools to streamline the process. DarkMoe, one of the high elders and oldest contributors to the project, whipped up a script to let us take in zips of games already tested, and add them to the library without so much as a keypress. A full on assembly line of games, ready to be added — boosted by the Medium article, which brought in a good amount of people willing to help add games too.
+
+![No keypresses, mainly because you’d need to click the ‘Add to Flashpoint’ button with the mouse.](2018122300_06.png)
+
+We went from adding one game every couple of minutes to adding several dozen games inside of half an hour. This also increased the amount of games we could add per version drastically — every version past 2.0 has had several hundred additions. Our once-a-month schedule results in new versions being jampacked; the most recent version, 5.3, has 1,100 new games.
+
+---
+
+Our server solution was, I admit, insufficient. The Flash Player projector has this annoying tendency to talk to the internet, and when it does, certain Flash files simply break. And for games that know if they’re running in the right spot, forget about it. I didn’t know what to do about the problem — I might have bitten off more than I could chew.
+
+The community came through, like a bolt of lightning striking Benjamin Franklin’s kite. “What about a system proxy?”
+
+![](2018122300_07.png)
+
+The Redirector sounds so simple on the surface. This little utility is at the heart of the matter — using a proxy to forward internet requests from apps like the Flash projector through to the local filesystem. The result is that everything running from your PC’s storage thinks it’s running on the original web address it was built for.
+
+![If you look in the Redirector window, you can see a video file being sent from the hard drive to the projector, in a way not possible without it.](2018122300_08.png)
+
+Our success rate for preserving these games skyrocketed. We could have files in the right place, no hacks needed anymore…the keys to the kingdom of Flash preservation. As long as it talks on HTTP, we can save it — and guess what? The overwhelming majority of Flash games talk on HTTP. They never needed anything else. Despite looking so rag-tag, it’s the most solid method of preserving games made in Flash around.
+
+---
+
+Of course, Flash couldn’t keep all the fun to itself forever.
+
+![Redline Rumble.](2018122300_09.png)
+
+Adobe Shockwave wasn’t exactly familiar to me at the time of making Flashpoint. To make a long story short, it was used for many things, including lots of games of its own. But it’s a completely different platform, and therefore, needed a different approach.
+
+At first I didn’t think it would be worth the effort to preserve, but then I stumbled across this game.
+
+![Based on the TV show Dexter’s Laboratory.](2018122300_10.png)
+
+I originally thought Dexter’s Labyrinth was a Flash game, and I remember quite vividly that it was probably one of the first web games I ever played. And the nostalgia hit about the same amount as the Flash games did.
+
+Thankfully, due to a lot of people coming in and asking about Shockwave games, I had accidentally drawn the attention of a few people who were highly skilled in the Shockwave platform, and given a month or so…
+
+![Our Shockwave system has actually been overhauled recently, improving its overall flexibility and compatibility. So we’re on top in the Shockwave preservation space as well.](2018122300_11.png)
+
+Over the past six months we’ve ended up with support for nine different web game technologies. Adobe Flash, Adobe Shockwave, Unity Web Player, HTML5, PopCap Plugin, Java Applets, 3DVIA Player, Microsoft’s Silverlight and the recently added 3D Groove GX. All of these are usable with no setup. It seems like we’re eventually going to have support for every web game imaginable.
+
+---
+
+The upside to the way Flashpoint is constructed is that it’s decentralized, not reliant on any kind of server at all, and keeps everything local, so there’s no chance of losing anything. Of course, having this many games ready and waiting to play is going to cause a few issues — mainly, size. As much as people might love Flash, downloading a package the size of the one below might make things…complicated, especially on low speed connections.
+
+![Even when you’re only talking about one or two meg web games, it can still get big. 52GB big.](2018122300_12.png)
+
+Our distribute-our-full-database method was *big*. While it still worked for people who had multiple gigabytes to spare, we were still looking for a way around it — what if we could make the games download to the computer as they wanted to be played?
+
+![holy shit](2018122300_13.png)
+
+Turns out, just waiting around for a guy named David to show up works just fine.
+
+So, davidar didn’t exactly come in with our solution on a silver platter — he’d mainly created this little script in an attempt to get Flashpoint working in some shape or form on Linux, and he’d just stumbled into exactly what we needed. It took a couple of weeks of work, but when we’d finished tweaking his script, we could create a version of Flashpoint that could download games as they were played.
+
+![Now that’s a bunch more sensible than before.](2018122300_14.png)
+
+We’ve been working hard on cutting down the size since then, and the next highlight definitely helped, but now we have a version of Flashpoint that’s only half a gigabyte, which is much more reasonable. Also, thanks to some improvements we’ve made to the latest version…
+
+![You can even sit and watch the loading bar fill, just like the old days.](2018122300_15.png)
+
+---
+
+Over the course of the months that we were adding all these features, though, LaunchBox was creaking and groaning under the weight. The several thousand games we’d been adding to it were causing it to lag and give up on lower-spec machines. Many of its features were either superfluous or required payment. And we had ideas for features we wanted in that we couldn’t do. So around version 4.1 we started putting feelers out for someone who wanted to code a new launcher for us…and the call was answered by a great pillar. An obelisk, if you will.
+
+![Isn’t she beautiful?](2018122300_16.png)
+
+Flashpoint Launcher, FPL for short, is our brand spanking new, Electron powered, cross platform, super speedy launcher meant entirely for Flashpoint. It supports everything we need and not an ounce more, and is infinitely faster for it. A quick listing of its benefits are below:
+
+- Flashpoint can now be powered by 100% open source components. The Launcher, Redirector, web server (out-of-the-box Apache) and browsers (Pale Moon / Basilisk / K-Meleon) are all open, with the only closed-source programs being the binaries for the webgame tech, and the optional Fiddler Redirector replacement.
+- Unbelievably fast. Can boot within a couple of seconds on my main machine. Icons load in like a snap of the fingers.
+- We cut several hundred megabytes of bloat from LaunchBox that we just didn’t need.
+- Our server and redirector solution now launches on the fly, with no annoying batch file. We can even configure if you want to swap part of it out.
+- The Home tab supports giving you a random game, if you just feel like grabbing something to play.
+- Playlists! A fantastic little feature that lets people make a small collection of their favorite games based around any theme or idea. We even have a few from notable Flash devs from back in the day.
+
+There’s even more coming, too. That (alpha) in the top left corner isn’t there for show, Flashpoint Launcher is always being worked on.
+
+---
+
+There are so many other highlights of what we’ve been up to related to Flashpoint that I’m going to have to summarize them all in simple images from now on, just to save time:
+
+![We don’t include it in the full Flashpoint distribution for reasons of size, but we have a full archive of Happy Wheels, levels and replays, going from the start of the game to November 2018.](2018122300_17.png)
+
+![We have so much Flash data saved that I needed to buy a new hard drive just to hold all of it.](2018122300_18.png)
+
+![How about a full working backup of Homestar Runner, website and all?](2018122300_19.png)
+
+![That’s included in our Flashpoint Theatre distribution, which is getting a bit of an overhaul (which means it didn’t make it into 5.3), but it’s coming back soon.](2018122300_20.png)
+
+![Or you could just download our entirely automated backup of 130,000 Newgrounds’ Flash animations. All 250GB+ of it. Or just use the Infinity version, which is 2GB.](2018122300_21.png)
+
+![This picture might not look so special, but this backup of MoFunZone was done through the Internet Archive — we basically time-travelled to get this.](2018122300_22.png)
+
+![The same approach works for games too — one of our members reconstructed this weird, weird game entirely from assets grabbed from several parts of the Internet Archive.](2018122300_23.png)
+
+Every day, every week, we have these new little ‘eureka’ moments that help push Flashpoint forward even further. A new game, a new tech, a new way of making it all work. It takes a lot off effort, a lot of manpower and a lot of smarts to make it all happen, and we’re always looking for volunteers.
+
+---
+
+Flashpoint has been actively worked on and built by a staff of over fifty people every day over the past year. Anyone can come in and help:
+
+- If you’re not great on the tech side of things, that’s no problem, just load up Flashpoint and help us test the games and platform.
+- If you have a good memory of the library, you can always help us by making new playlists and recommending games to put into the collection.
+- If you can handle your way around a lightweight version of our platform, you can help us add games.
+- If you’re good at coding, we could always use people to help us code the tools we need.
+
+Every little bit of help we can get along the way is appreciated. By myself I got about a thousand games in over the course of five months. With the team, I got 9,000 games in, in seven months. Even the smallest contribution helps — with Flash dying in one year, we’re low on time. We have links at the end.
+
+---
+
+![](https://youtu.be/qrU6RJbeKfo)
+
+Flashpoint 5.3, codenamed “Revolution”, with 10,000 games included, should be out by the time you see this article. I’ve given Flashpoint codenames since version 3.0 to help signify version differences. 5.0’s version names have been space-themed — Go for Launch to introduce Flashpoint Launcher, The Great Filter for Playlists, Type III because the last one was [a Mesarthim reference](https://www.youtube.com/watch?v=k84LiuMeM_M), and originally, the code name for 5.3 was going to be ‘Orbit’, for us taking one full year around our sun. Someone told me just how wrong I was and suggested ‘Revolution’ as a codename instead.
+
+That name sticks in more ways than one.
+
+Revolution is really the only way to describe what’s been done here.
+
+- We have an intense amount of Flash content on our hard drives — some of the biggest archives of their kind.
+- We’ve created the most robust system for saving even the most stubborn Flash files, and in the process, created the most robust system for saving several other kinds of web content as well.
+- We’ve resurrected plugins that simply didn’t work anymore, or were very close to dying out altogether, not just Flash. We’ve just added 3D Groove GX to Flashpoint — a browser plugin that only works in IE*6*.
+- We have ten thousand pieces of content — more than Armor Games, AddictingGames and MaxGames combined — and more in the pipeline.
+- We’ve devised ways to make this content easily accessible to people in the future, and it’s almost all free of reliance on servers.
+- It’s all only a few clicks away from any Windows desktop…
+- …and it happened in less than a year.
+
+Come join us. Share this article. Let the world know what they’re losing, and what we’ve worked hard to keep. Have some fun along the way — these are all video games, after all — and help us out, with the more people we have, the more we can save before the sun sets on Flash.
+
+Downloads on the first link, community on the second link.
+
+http://bluemaxima.org/flashpoint/
+
+https://discord.gg/S9uJ794

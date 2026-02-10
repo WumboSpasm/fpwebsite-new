@@ -1,0 +1,19 @@
+@everyone
+
+Well, this was a little sooner than expected.
+
+Flashpoint 9.0 is now available from the usual places. There's multiple reasons we moved the release schedule up, but I won't bore you with those. Here's the summary:
+
+\* Ultimate now has support for gamezips - single file distributions of multi-file games, for the purpose of cutting down the filesize on Flashpoint. As a result, the way Ultimate works has changed completely. We need people testing this if available; this is a brand new system that hasn't seen much in the way of widespread trials.
+
+\* Over 12,000 new entries across games and animations.
+
+\* Tons of launcher updates - Flashpoint'll work offline with On Demand Images, no more duplicated games in playlists, lots of new things you can see in the changelog.
+
+\* While we haven't included these in the default Flashpoint installs, if you want Discord rich presence or support for Ruffle, you can install one of our new launcher extensions. https://bluemaxima.org/flashpoint/datahub/Launcher_Extensions
+
+\* The usual bugfixes, additions and thousands of metadata updates.
+
+\* Our new logo! This has been in the works for some time. It's now applied across the site, Flashpoint itself, and this Discord server. Also, a new trailer to go along with it. https://youtu.be/rUatW8cXl-s
+
+We've named this version "Glorious Sunset" as because, barring some freak accident in which we need to release 9.1, this will be the last new version before Adobe pulls the plug on Flash, assuming it happens this year. Hopefully this is as good a showing of Flash's legacy as anything could be.

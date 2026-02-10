@@ -1,0 +1,47 @@
+![One hundred and thirty one THOUSAND animations.](2018072300_00.png)
+
+Hi, I’m BlueMaxima and I’m the guy who created [BlueMaxima’s Flashpoint](https://blog.usejournal.com/adobe-flashs-gaming-legacy-thousands-upon-thousands-of-titles-and-my-efforts-to-save-it-58c14811558a), the Flash game (but now more like general web game) archive, museum and one-click-to-play collection. We’re still working on Flashpoint; the current game count is 4,127 games, and it’s rising, with no thanks to the fact that now we support Shockwave, HTML5, Unity Web Player and soon, hopefully, Java titles. However, that’s not what we’re here to talk about, is it?
+
+![This is what the Newgrounds animation page looked like in 2008. Thanks, Archive.org!](2018072300_01.png)
+
+Newgrounds as a place for user-generated content has been around since 2001, and the most overwhelming content of its kind for the portal was Flash content. From the simplest to the most complex of animations, Flash was used to make hundreds of thousands of animations, and many of them ended up on good old Newgrounds.
+
+Unfortunately, with the already detailed [shuttering of the Flash plugin in 2020,](https://arstechnica.com/information-technology/2017/07/with-html5-webgl-javascript-ascendant-adobe-to-cease-flash-dev-at-end-of-2020/) Newgrounds has needed a way to keep this content online. They have indeed come upon a way, which is currently sweeping through the website (assumedly as long as their servers can withstand it); every Flash animation is slowly being converted to HTML5-compatible video.
+
+![This becomes intensely ridiculous when it converts a one-frame Flash into a 20 second video. All that bandwidth…](2018072300_02.png)
+
+While this is an acceptable-to-the-layman method of making sure that these animations can be viewed by future visitors to the website, there are three key disadvantages to this method:
+
+- This will eventually destroy the original copy of these animations. Sure, it might sound a bit ridiculous to make this sort of comparison, but it really would be like taking the Mona Lisa out of the Louvre and replacing it with a copy on store-bought paper. It might look the same, even identical, but you’ve still lost some history with the changing of the canvas.
+- You lose the resolution advantage. Most Flash art is done in vectors, not bitmaps, the major advantage of vectors being that they can scale infinitely and retain detail, while these videos will lose some of that quality, especially in an age where we have 4K screens, and might even be gaining access to 8K sooner rather than later.
+- Goodbye to Easter Eggs. Any sort of interactivity in these animations is gone; no choose-your-own-adventure beats, no hidden treats to find, even things like scene select screens in compilations aren’t accessible anymore when this conversion process is complete.
+
+So I took it upon myself to save as many Flash animations as possible, alongside the Flash games I originally found myself attempting to attack for Flashpoint. Thankfully, at least, for the animations that are still available, Newgrounds has given us the option of switching to the original SWFs, at least for now, and using this knowledge, myself and the man known as DarkMoe have been working on a project we codenamed Moegrounds — and after a sweep of the entirety of Newgrounds, we bring you Newgrounds Auditorium.
+
+![You’ve already seen a big picture of it in its entirety in the header of the article, so here’s a picture of it running The Ultimate Showdown of Ultimate Destiny.](2018072300_03.png)
+
+Flash games are a little different from your typical Flash movies — they have this annoying tendency to need to load more files after the initial SWF, and there’s no way to check if a game needs to do that. By comparison, animations are usually one and done — they have everything they need in the SWF, so an automation like this was possible.
+
+So over the course of two months, myself and DarkMoe worked on a bot to scrape all of the movies on Newgrounds, grab their SWFs, grab their title, creators, thumbnail and genre, and add it to a database entry in LaunchBox. Combined with the Flashpoint redirector and server to help circumvent sitelocks and ad issues, and as far as we know, we have a fully working collection here. A full, 131,266 animation bonanza.
+
+![](2018072300_04.png)
+
+This does come with some drawbacks. LaunchBox chokes on 131,000 animations. It can open them, but it needs a lot of time and 2GB of RAM free to launch (although it’s less picky once its’ open), and scrolling outside of List View is almost impossible. We haven’t tested every individual animation on here, although we have no reason to believe that we don’t have at least a 99.9% success rate.
+
+There is also the fact we don’t have everything. There are some animations with screwed up names we simply couldn’t get the SWFs for. And anything that was blammed from the Newgrounds server is mostly unreachable — the SWFs are still there, but there’s no way to get the URLs unless you go to an Archive.org page where the SWF was still around, grab the name and feed it to the modern day Newgrounds. And there’s thousands more blammed SWFs. We can’t do that alone.
+
+The last one is that the archive is 270 gigabytes. Yeah. It’s actually not as bad as I expected; Flash compresses well by itself. But you’re still gonna need over 500GB of HDD space to make this work; 245GB to download and 270 to extract. Remember, you’re getting 131,000 animations here. Even if every animation in the package was a single second long, it would take over thirty-six hours to watch all of them.
+
+![And I can promise that there’s very little that is around the one-second mark.](2018072300_05.png)
+
+We can’t really update Newgrounds Auditorium in the same way we’ve been updating Flashpoint, mainly because getting Auditorium onto Archive.org meant I had to suffer through six days of straight uploading and two bluescreens. So any updates are probably going to be through simple extract-over-the-top zip files.
+
+Although honestly there’s not much to update outside of simple fixes for certain things; unless we can find some way to get every blammed and removed animation through one of the most complex web-sweeping bots imaginable, I don’t think we’ll be getting much more than what we have.
+
+But that’s enough of being a negative Nancy, let’s get those download links up! You can find Newgrounds Auditorium for download at its official Archive.org page at https://archive.org/download/NewgroundsAuditorium. Note that you will probably want a zip file called NGAUPatch.zip; it has some files I forgot to include in Auditorium proper that will help with certain animations, which you can get on my GDrive: https://drive.google.com/open?id=1F9UBohi8oO-h3_tEQCJFj87ifuCtfvWz
+
+And if you want more info about the everlasting march to save Flash (and somehow all the other embedded web game technology that found itself along for the ride) you can go check out [the Flashpoint website](http://bluemaxima.org/flashpoint/), where we have links to the Discord this was all created & managed on, links to download the Flashpoint web game and animation collection, and a link to get onto me directly if you really need to (although if you’re into the whole Flash preservation thing you should probably hop on our Discord, we always welcome new members).
+
+![There’s always more that needs archival, after all…](2018072300_06.png)
+
+As I’ve said before and I’ll say again until the ears of the fervent deniers bleed, the cultural impact of Flash on a global scale is too big to ignore, and hopefully all my efforts here will convince people of that. The more people we have paying attention, the more we can save before it’s too late.

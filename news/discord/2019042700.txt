@@ -1,0 +1,17 @@
+@everyone It's been a long two months. Flashpoint 6.0, "Alignment", is available now.
+
+This is the biggest Flashpoint update ever, in pretty much every respect. This update contains over 2500 new games across all ten of our supported platforms. *Ten?* Yup, this update introduces ActiveX support. Yes, the Internet Explorer ActiveX. There's about a dozen games included to start.
+
+We've also got a massive step forward in the form of a tech called AMF; the major benefit this version is that we've managed to crack open the level databases for every game on ArmorGames and added them to Flashpoint in a playable state. This makes Flashpoint arguably the biggest user level database backup for Flash on the planet.
+
+Combine this with a changelog that is a mile long with bugfixes and small additions (http://bluemaxima.org/flashpoint/changelog.txt) and this is absolutely the biggest release so far. Alongside this is an update of Flashpoint Core for curators and hopefully even more to come (a little birdy has been whispering in my ear about Linux support...)
+
+The links are in #downloads, but you better be ready; we broke 100GB this time if you want Ultimate. (You'll need 120GB of hard drive space to extract.)
+
+---
+
+Two other things: while we did include the level databases, their thumbnails are huge; just to cite an example, Crush the Castle 2, the biggest one added this time around, was a 1GB database...and 29GB of thumbnails. For the purpose of keeping this collection not insane on the file count, we're offering three thumbnail set downloads separately from Flashpoint: CTC2, Splitter 2, and every game that uses the ArmorGames UI to generate thumbnails. All those links are also in #downloads.
+
+The last thing is that we gave Flashpoint a bit of a directory restructure for a multitude of reasons that aren't worth getting into here, but we've left a "Start Flashpoint" shortcut in the main Flashpoint folder. If you want to make a shortcut to Flashpoint though, make a shortcut to FlashpointLauncher.exe in the Launcher folder, and not the Start Flashpoint shortcut.
+
+Have fun.

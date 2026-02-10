@@ -1,0 +1,539 @@
+Flashpoint 4.1 - 'Javality'
+
+Added games:
+* うねりの塔 (Tower of Wind)
+* カエリング (Frog Catering)
+* 昭和の心 (Heart of Showa)
+* 2 Billiards 2 Play
+* 2112 Cooperation 1
+* 2112 Cooperation 2
+* 2112 Cooperation 3
+* 2112 Cooperation 4
+* 2112 Cooperation 5
+* 2D Knock-Out
+* 99 Rooms
+* A.R.C.S.
+* A220 Mission 1
+* Adventures of Miss Libellule: Queen of Snakes
+* Adventures of Miss Libellule: The Earl of Octopuser
+* Adventures of Miss Libellule: the Mother of the Bird Men
+* Agent P Strikes Back
+* Aisha Clan-Clan Hentai Game
+* Alchemy
+* Alien Attack
+* Alloy Arena
+* Alphattack
+* Antimatiere
+* Apocalipseed
+* Arthur Comics: So Funny I Forgot to Laugh!
+* Ask Guru Joe
+* Atari Lunar Lander
+* Atari Millipede
+* Atari Missile Command
+* Atari Yars' Revenge
+* BFDIA 5b
+* Back2Back
+* Back2Back - Reloaded
+* Backfire
+* Badass Builder 2
+* Balance (Miniclip)
+* Ballunacy
+* Banger Racing
+* Basket Avec Nico (French)
+* Battle Without End
+* Battle for Slugterra
+* Beetle Buggin'
+* BigJump Challenge
+* Bilhar (Portuguese)
+* Binky's Facts and Opinions
+* Bit Battles
+* Blair The Motivator
+* Blob Escape from Lab-16B
+* Blobs
+* Blobs - Peg Solitaire 2
+* Bloomin' Gardens
+* Blow Things Up 2
+* Blox Forever
+* Bloxbox
+* Blueprint Billiards
+* Bomboozle 2
+* Boom Boom Volleyball
+* Bullseye (John Tear)
+* Bunni: How We First Met
+* Burnin' Rubber HTML
+* Bush Aerobics
+* Cable Capers 2
+* Cannon Blast
+* Canyon Glider
+* Cargo Breach
+* Cartoon Network Bean-Bag-Tag
+* Cartoon Network Kick-The-Can
+* Cash Machine
+* Castle Clout
+* Cat in Japan
+* Cave Puzzles: A Gift
+* Celenite
+* Cell-Out
+* Chick Flick
+* Civiballs
+* Civilizations Wars Ice Legend
+* ClickPlay 2
+* Coaster Racer
+* Coldgrip
+* Coma 45
+* Contact
+* Cops and Robbers
+* Copy Cat
+* Cover Orange 2
+* Crash Down
+* Crash the Robot! Explosive Edition
+* Creeper World 2: Academy
+* Cube Cube Cube
+* CubeBuster
+* Dalek Hack
+* Dance Battle
+* Dating Minato
+* Death Call
+* Demon Girl: The Showcase (2017)
+* Desert Storm
+* Detonator
+* Disc Golf
+* Doctor Compactor
+* Dr. Null
+* Dr. Sweetvalley
+* Dragon Princess
+* Drake & Josh's Air Hockey Face-Off
+* Drake in Winterland Competition
+* Drakojan Skies - Acolytes
+* Drakojan Skies - Mission 1
+* Drakojan Skies - Mission 2
+* Drakojan Skies - Mission 3
+* Dress Up Lilly
+* Dress Up Sona
+* Droid Assault
+* Drop Dead 2
+* Drop Dead 3
+* Drop Dead Final Cut
+* Dropsum 2
+* DuBlox
+* Duck
+* Duck Dodgers Mission 1
+* Duck Dodgers Mission 2
+* Duck Dodgers Mission 3
+* Duck Dodgers Mission 4
+* Duck Dodgers Mission 5
+* Dude and Zombies
+* Dungeon Breaker
+* Dynomite
+* E-volution
+* Earl Grey and This Rupert Guy
+* Earn to Die 2 - Exodus
+* Earn to Die 2012 - Part 2
+* Earth Taken 3
+* Ectology
+* Edgestone
+* Edmus
+* Effing Worms Xmas
+* Eien
+* Electric Boy
+* Electro Air Hockey
+* Elevator Breakout
+* Eleventh Hour
+* Elf Story
+* Emit
+* Empty Santa's Sack
+* End Space
+* End of Sonic Inflation
+* Endless Night
+* Endless Zombie Rampage 2
+* Enhanced
+* Epic Boss Fighter
+* Epic Charlie
+* Erline
+* Erline 4 - The Limbo
+* Escape Inc
+* Escape from Ice Mountain
+* Escape from Yepi Planet
+* Escape from the Country
+* Escape from the Warlock
+* Escape the Dungeon
+* Escape the Dungeon
+* Esklavos Chapter 14
+* Esklavos Chapter 15
+* Esklavos Chapter 16
+* Esklavos Chapter 17
+* Euroleague Trickshots
+* Evilgeddon - Spooky Max
+* Evolution
+* Exploit
+* Extraction - Chapter 0
+* F-Zero Flash Edition
+* FOTONICA Demo
+* FWG Pinball
+* Factory Rush
+* Fade
+* Fairune
+* Family Rush
+* FandelTales Scene Viewer
+* Fanta Dash
+* Fatal Fighters
+* Fay Escape
+* Fay Escape 2
+* Fay Escape 3
+* Feed Me
+* Filia Interactive Animation
+* Finding My Heart
+* Finite Moves (Demo)
+* Fire it Up
+* Fireboy and Watergirl Kiss
+* Firefight
+* First Day at School
+* Flaming Zombooka
+* Flaming Zombooka 2 Level Pack
+* Flawed Dimension
+* Flip the Farmer
+* Flood Runner 4
+* Forgotten Rites
+* Fort Blaster
+* Fractured
+* Fractured 2
+* Fractured 3
+* Fractured 4
+* Fragment of Dejavu
+* Frankentory
+* Freedom Skies
+* Freewill Crycle Volume 1 (Redux Edition)
+* Freewill Crycle Volume 2
+* Frog Dares
+* Frontline Defender
+* Frontline Defense 2
+* Frost
+* Frozen Bubble
+* Frusion Breakfast Brawl
+* Frutillitas (1983)
+* Fun in the Sun
+* Furious Space
+* GOKI DASH
+* GOKI DASH #2
+* GOKI DASH (Original)
+* GYROball
+* Galactic Warrior
+* Game Creation (Space Shooter)
+* Gardevoir's Embrace
+* Gemcraft Chapter Zero (Game In A Bottle)
+* Gluefo3
+* Gluey
+* Go Home
+* Goblins Heart
+* Grand Theft Counterstrike
+* Gravitex 2
+* Grey
+* Grow Park
+* Gunfire Echoes
+* Hammerball
+* Haruko Haruhara Hentai Game
+* Heaven's Messenger
+* Heli Strike
+* Hello Worlds
+* HentaiKey Girl
+* Hole In The Wall - Twisted Figures
+* Home Run Boy
+* Hospital 46
+* Hostility - Battle Garden
+* Hostility - TIM3:BOMB 90 second
+* Hot Air
+* How My Grandfather Won The War
+* Humanoid 47
+* Hungry Shapes
+* Ice Breakout
+* Ichabot Crane
+* IcyGifts
+* Icycle
+* In Another Chateau
+* Infected Blood
+* Inishie Dungeon
+* Invasion of the Galactic Goobers
+* Itchana 1 (French)
+* Itchana Tchones 2 (French)
+* Itchana Tchones 3 Zombie Terror (French)
+* Itchana Tchones 4 Alien Wars (French)
+* Ivan Drago - Justice Enforcer
+* Jesus the Arcade Game
+* Juri Han Interactive Animation
+* Kaboomz 3
+* Kakato Otoshi
+* Kerry Aerobics
+* KhanKluay KidsWar
+* Kid Paddle - Blork Quest
+* Kid Paddle - Canyon Monsters
+* Kid Paddle - La Blork Cruncher
+* Kill The Heroes
+* King's Rider
+* Kissing Youngsters
+* Laser Cannon 2
+* Ledge the Spirit Stone
+* Liquid Measure
+* Lunar Command
+* Madness Deathwish 2
+* Magic Balls
+* Magic Pen 2
+* Marble Romp
+* Mating Admiral: Arashi
+* Mating Admiral: Hamakaze
+* Mating Admiral: Isokaze
+* Mecha Dress Up Game
+* Meet & Fuck Robot 2: Selexia
+* Meet and Fuck: Android
+* Mega Drill
+* Meteor Launch
+* Midna Hentai Game
+* Minecraft Tower Defence 2
+* Mini Golf (Electrotank)
+* Minna no Kisekae! R18 (Let's Dress-up! Adult Version)
+* Miyuki Hentai Lucky Star
+* Moon Sweeper
+* Morgana Dress Up
+* Motoko Kusanagi Hentai Game
+* Movie Munchies
+* Music Box of Life 2
+* Mutilate-a-Doll
+* Mutilate-a-Doll 2
+* My Friend Pedro Arena
+* Mysterious Island 49
+* N: The Way of the Ninja (1.4) (Hacked)
+* Nade Reborn
+* Nano Ninja
+* Natsume
+* Natsume 2
+* Naughty Arcade
+* NeaR: Automat-Uh
+* New Land
+* Nick Toldy and the Legend of Dragon Peninsula
+* Night At The Laboratorium
+* Ninja Bear
+* Ninja Game
+* Ninja+
+* Nob War: The Elves
+* Nothing to Hide (Demo)
+* Nudist Trampolining
+* One Click Ninja
+* Openhouse
+* Orbox C
+* Orcs Attack
+* Paint Peggy's Feet
+* Panda Tactical Sniper 2
+* Pebolim
+* Penguin Push
+* Peta's Striptease Quiz
+* Phineas and Ferb in the Transport-inators of Doooom
+* Pinball Football
+* Ping Pong (Oyster Games)
+* Pipol Smasher
+* Pirates of the Stupid Seas
+* Pirates vs Ninjas
+* Planet Basher 2
+* Play Me A Melody
+* Pod Panic
+* Political Duel
+* Political Duel 2
+* Potty Racers 3
+* Power Pool 2
+* Pupzzle
+* Puzzatales 2
+* Puzzle Bubble
+* Pyro
+* Pyro II Community Edition
+* Queen Hunt
+* RSVP The Dinner Party Game
+* Rabbit Rustler
+* Radiator Springs Racing
+* Red Storm
+* Reel Gold
+* Rigelian Hot Shots
+* Road of Fury 2 Nuclear Blizzard
+* Roadkill Revenge
+* Roam and Protect
+* Rock Online
+* Roly Poly
+* Roly-Poly Cannon
+* Roly-Poly Cannon 2
+* Ronin: Spirit of the Sword
+* SHAMBLES
+* SIMSEH: Hornbrook
+* SUPERHOT Prototype
+* Samantha Wins
+* Sandman
+* Santa Artois
+* Save Sammy Maze!
+* Save The Egg
+* Scooby Snapshot
+* Scooby-Doo Magic Mystery Mansion
+* Scooby-Doo! in The Attack of the Vampire Pumpkinheads
+* Scraper Caper
+* Screamin' Beans
+* Sector Warfare
+* Sheepish
+* Sheriff Tripeaks
+* Shibuya Gyaru Dating Sim
+* Shove It Demo
+* Sillybull Street Fighter
+* Skullgirls - On Fours
+* Slow and Blow
+* Smashing
+* Smosh Fighter
+* Snake (Miniclip)
+* Snipedown
+* Sniper Year 2
+* Sniper: Year One
+* Snowman Stacker
+* Soccer Balls
+* Sonic Inflation 2: Battle
+* Sonic Inflation Adventure
+* Sota
+* Space Escape
+* Space Pirates TD
+* Space is Key 2
+* Space is Key Xmas
+* Spank Peggy's Feet
+* Sphere Core
+* Sqr
+* Stan Skates
+* Star Wars Pinball
+* Starship Seven
+* Statetris Africa
+* Statetris Brazil
+* Statetris China
+* Statetris Europe
+* Statetris Germany
+* Statetris Italy
+* Statetris Japan
+* Statetris UK
+* Statetris USA
+* Stay Awake
+* Stealth Hunter
+* Stealth Hunter 2
+* StripBowl!
+* Stunt Crazy
+* Summer's Birthday
+* Super Amigos
+* Super Mario 3D Shooter
+* Super Mario Bus
+* Super Ninja Block
+* Super Norris
+* Super Norris Advance
+* Super Ryu Copter
+* Super Secret Spy Guy 1
+* Super Secret Spy Guy 2
+* Super Secret Spy Guy 3
+* Super Secret Spy Guy 4
+* Super Sneaky Spy Guy 10
+* Super Sneaky Spy Guy 11
+* Super Sneaky Spy Guy 12
+* Super Sneaky Spy Guy 13
+* Super Sneaky Spy Guy 14
+* Super Sneaky Spy Guy 15
+* Super Sneaky Spy Guy 16
+* Super Sneaky Spy Guy 17
+* Super Sneaky Spy Guy 5
+* Super Sneaky Spy Guy 6
+* Super Sneaky Spy Guy 7
+* Super Sneaky Spy Guy 8
+* Super Sneaky Spy Guy 9
+* Super Soldier
+* Super Tiny Leap
+* Super Villainy
+* Surf's Up
+* Surgeon Simulator 2013
+* Survivor Samoa
+* Sushi Go Round
+* Swami Shaggy
+* Tech and Magic
+* Temari Nara Interactive Animation
+* Tennis Ace
+* Tesla Defense
+* Tetris (GamesX.com)
+* The Black Knight
+* The Expendables
+* The Expendables 2
+* The Kung Fu Statesmen
+* The Light Asylum Escape Room 1 - The Beginning
+* The Summoning
+* The Tidepool
+* TheMJ Dress Up Of Madness
+* TheMJ Dress Up Of Madness II
+* Thief of Hearts
+* Timmy
+* Tiny Treasure
+* Toph Beifong Interactive Animation
+* Totally Odd
+* Touching Tifa -INTERACTIVE TOUCHING GAME 2-
+* Trials in Tainted Space
+* Trials: Mountain Heights
+* Trysil Twin Tip
+* Ultimate Chess
+* Urban Unrest
+* Vehicle Tower Defense
+* Vehicles
+* Viaduct Designer
+* Viper
+* Virtual Curling
+* Volcania
+* WITCH GIRL -EROTIC SIDE SCROLLING ACTION GAME 2-
+* Wake Up The Box
+* Wake the Royalty
+* Wallace and Gromit: Invention Suspension
+* Warbears - Adventures
+* Warbears - Mission 02
+* Warbears - Mission 03
+* Warbears - Puzzle Mission
+* Watashi wa hijo ni yoku nihongo hanasenai
+* West Train
+* Whack a Groundhog
+* Wishology Chapter One - The Chosen One!
+* World Gate
+* World Gate 2: Contact
+* World Gate 3: Exodus
+* Wubbzy's Amazing Adventure
+* Wubbzy's Underwater Adventure
+* XRAYE
+* You Don't Know Jack: The Webshow
+* Zebra
+* Zelda Wind Waker Interactive
+* Zombie Exploder
+* Zombie Survival Outbreak
+* Zombie Survival SM
+* aBowman Penguins
+* iStunt 2
+* inFamous Precinct Assault
+* minim
+
+Added animations:
+* Android 18 & Cell Adult Parody
+* Android 18 & Krillin Adult Parody
+* Animated Loading Screen Cat - Night
+* Animated Loading Screen Cat - Sunny
+* Happy Tree Friends - Eyes Cold Lemonade
+* LAZER
+* Record of Lodoss War Fantasy Hentai
+
+We now support Java games.
+
+We now have a batch file set that can back up your Flash save games and restore them.
+
+About 50 games have been fixed for Flashpoint Infinity due to miscapitalized launch commands.
+
+To save as much space as possible (mainly for Infinity), some space saving measures have been taken:
+* Logos and screenshots have been compressed using PNGQuant. (Ones that weren't PNG have been converted to PNG.) This might cause some issues with logos and screenshots.
+* Old projectors that weren't actively being used have been removed.
+* Pale Moon's temporary storage has been cleared.
+
+* Added the ArmorGames version of Gemcraft Zero, which has special powerups locked to it.
+* Added a bunch of new logos to older games.
+* Fixed the VVVVVV Demo.
+* Fixed a couple of swapped screenshots and logos.
+* Fixed credits on some of the games Terry Cavanagh worked on, at his request.
+* Fixed name of Speed Racer to add the subtitle and demo status.
+* Fixed Bubble Tanks TD 1.5's name.
+* Fixed MoFro's genre.
+* Fixed Jinx 3's name.
+* Fixed publisher for two Garfield games.

@@ -1,0 +1,5 @@
+Hey everyone, we're in the process of transitioning our request system to Google Sheets/Google Forms so we're locking down the channels for Java, Unity, HTML5 and #requested-other-games. We kindly ask that you submit any new requests for these platforms through our Google Form which is located here: https://docs.google.com/forms/d/e/1FAIpQLSdd9ifSu_anYKMKE280c3Y3dkmuEApr5N6gKnAmTvKh0F5txA/viewform
+
+You can also view the Google Sheet in it's entirety here: https://docs.google.com/spreadsheets/d/1t0MbYMGm4dq4d5hA1l6MKuVYGyw9XU8UOPHjy2ceHX8/edit?usp=sharing
+
+The other request channels will remain unlocked so you can continue submitting them through Discord for now until we finish converting them. As such, please do not submit any Flash/Shockwave/Animations through the form until we have finished converting those channels. Ask staff if you have any questions.
