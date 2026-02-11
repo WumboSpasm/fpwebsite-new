@@ -621,7 +621,7 @@ function buildTable(source, fields, actions = 0) {
 		tableRowsArr.push(utils.buildHtml(templates['view'].row, {
 			field: 'Actions:',
 			value: utils.buildHtml(templates['view'].actions, {
-				id: id,
+				id: source.id,
 				oooHidden: actions == 2 ? '' : ' fp-hidden',
 			}),
 		}));
