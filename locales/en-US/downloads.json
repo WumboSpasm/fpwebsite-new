@@ -31,7 +31,7 @@
 	"Prerequisites": "Prerequisites",
 	"Verify_Integrity": "Verify Download Integrity",
 	"Old_Releases_Header": "Old Releases",
-	"Old_Ultimate_Infinity_Note": "$1{Note:} Versions of Infinity older than 10.1 are no longer capable of downloading games, and are provided only for posterity.",
+	"Old_Ultimate_Infinity_Note": "$1{Note:} Most old versions of Infinity are no longer capable of downloading games, and are provided only for posterity.",
 	"Old_Flashpoint_5_Note": "Note: must be logged into Internet Archive account to download",
 	"Old_Core_Note": "$1{Note:} Flashpoint Core was the curation environment for Flashpoint prior to version 12. It contains one example game for each platform.",
 	"Old_Flashpoint_Zero_Note": "Note: no relation to the other Flashpoint Zero",
