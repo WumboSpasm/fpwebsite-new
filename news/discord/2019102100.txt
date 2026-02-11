@@ -17,3 +17,7 @@ We've updated the master server that hosts Flashpoint's files. This includes the
 MOTAS is one of the holy grails of missing Flash games, and it works, right here, right now. Go have fun.
 
 Here's a screenshot of level 19, running through Flashpoint.
+
+![](2019102100_00.png)
+
+*[Note: the high-quality version of this image has been lost]*

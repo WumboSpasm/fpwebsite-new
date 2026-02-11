@@ -15,11 +15,11 @@
 			"index_entry",
 			"index_tag",
 			"entry",
-			"entry_imageset",
 			"entry_image",
-			"entry_youtube",
-			"entry_twitter",
-			"entry_codeblock"
+			"entry_codeblock",
+			"article_imageset",
+			"article_youtube",
+			"article_twitter"
 		],
 		"lenient": true
 	},

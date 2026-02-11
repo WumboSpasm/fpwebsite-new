@@ -17,7 +17,14 @@ const codeRenderer = token => {
 // Configure markdown parser for different types of news
 const discordMarked = new Marked().use({
 	breaks: true,
-	renderer: { code: codeRenderer },
+	renderer: {
+		code: codeRenderer,
+		image: token => utils.buildHtml(templates['news'].entry_image, {
+			namespace: 'discord',
+			file: token.href,
+			alt: token.text ? ` alt="${token.text}"` : '',
+		}),
+	},
 });
 const articleMarked = new Marked().use({
 	breaks: true,
@@ -29,7 +36,7 @@ const articleMarked = new Marked().use({
 			// If the image URL is a YouTube link, create a YouTube embed
 			const youtubeMatch = token.href.match(youtubeExp);
 			if (youtubeMatch !== null)
-				return utils.buildHtml(templates['news'].entry_youtube, {
+				return utils.buildHtml(templates['news'].article_youtube, {
 					id: youtubeMatch[1],
 					listId: youtubeMatch[2] !== undefined ? `?list=${youtubeMatch[2]}` : '',
 					caption: caption,
@@ -38,15 +45,19 @@ const articleMarked = new Marked().use({
 			// If the image URL is a Twitter link, create a Twitter embed
 			const twitterMatch = token.href.match(twitterExp);
 			if (twitterMatch !== null)
-				return utils.buildHtml(templates['news'].entry_twitter, {
+				return utils.buildHtml(templates['news'].article_twitter, {
 					handle: twitterMatch[1],
 					id: twitterMatch[2],
 					caption: caption,
 				});
 
 			// Otherwise, create an image or set of images
-			return utils.buildHtml(templates['news'].entry_imageset, {
-				images: token.href.split('|').map(file => utils.buildHtml(templates['news'].entry_image, { file: file })).join('\n'),
+			return utils.buildHtml(templates['news'].article_imageset, {
+				images: token.href.split('|').map(file => utils.buildHtml(templates['news'].entry_image, {
+					namespace: 'article',
+					file: file,
+					alt: '',
+				})).join('\n'),
 				caption: caption,
 			});
 		},
