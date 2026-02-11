@@ -63,12 +63,12 @@
 		"styles": ["search.css"],
 		"scripts": ["search.js"],
 		"fragments": [
-			"simple",
-			"advanced",
+			"mode_simple",
+			"mode_advanced",
 			"navigation",
-			"pagebuttons",
-			"result",
-			"stats"
+			"navigation_page",
+			"content_result",
+			"content_stats"
 		],
 		"lenient": false
 	},
@@ -79,10 +79,10 @@
 		"fragments": [
 			"addapp",
 			"gamedata",
-			"oldgamedata",
+			"gamedata_old",
 			"table",
-			"row",
-			"actions"
+			"table_row",
+			"table_actions"
 		],
 		"lenient": false
 	}

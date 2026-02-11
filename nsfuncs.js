@@ -320,7 +320,7 @@ export const namespaceFunctions = {
 				invalid = true;
 
 			// Build Advanced Mode search interface HTML
-			searchInterface = utils.buildHtml(templates['search'].advanced, newDefs);
+			searchInterface = utils.buildHtml(templates['search'].mode_advanced, newDefs);
 		}
 		else {
 			// Parse Simple Mode query string
@@ -330,7 +330,7 @@ export const namespaceFunctions = {
 
 			// Build Simple Mode search interface HTML
 			newDefs.searchQuery = utils.sanitizeInject(searchQuery ?? '');
-			searchInterface = utils.buildHtml(templates['search'].simple, newDefs);
+			searchInterface = utils.buildHtml(templates['search'].mode_simple, newDefs);
 		}
 
 		let searchContent = '';
@@ -397,7 +397,7 @@ export const namespaceFunctions = {
 				const lastPageUrl = nthPageUrl.search;
 
 				// Build HTML for page navigation buttons
-				pageButtons = utils.buildHtml(templates['search'].pagebuttons, Object.assign(newDefs, {
+				pageButtons = utils.buildHtml(templates['search'].navigation_page, Object.assign(newDefs, {
 					currentPage: currentPage.toLocaleString(lang),
 					totalPages: totalPages.toLocaleString(lang),
 					firstPageUrl: firstPageUrl,
@@ -417,7 +417,7 @@ export const namespaceFunctions = {
 					resultCreator = `by ${resultCreator}`;
 
 				// Build search result HTML
-				searchResultsArr.push(utils.buildHtml(templates['search'].result, {
+				searchResultsArr.push(utils.buildHtml(templates['search'].content_result, {
 					resultId: searchResult.id,
 					resultLogo: `${config.imageServer}/${searchResult.logoPath}?type=jpg`,
 					resultTitle: utils.sanitizeInject(searchResult.title),
@@ -439,16 +439,16 @@ export const namespaceFunctions = {
 		}
 		else
 			// If there is no active search, display statistics in place of search results
-			searchContent = utils.buildHtml(templates['search'].stats, Object.assign(newDefs, {
+			searchContent = utils.buildHtml(templates['search'].content_stats, Object.assign(newDefs, {
 				totalGames: searchStats.games.toLocaleString(lang),
 				totalAnimations: searchStats.animations.toLocaleString(lang),
 				totalGameZip: searchStats.gameZip.toLocaleString(lang),
 				totalLegacy: searchStats.legacy.toLocaleString(lang),
-				platformTotals: searchStats.platforms.map(([platform, total]) => utils.buildHtml(templates['view'].row, {
+				platformTotals: searchStats.platforms.map(([platform, total]) => utils.buildHtml(templates['view'].table_row, {
 					field: platform,
 					value: total.toLocaleString(lang),
 				})).join('\n'),
-				tagTotals: searchStats.tags.map(([tag, total]) => utils.buildHtml(templates['view'].row, {
+				tagTotals: searchStats.tags.map(([tag, total]) => utils.buildHtml(templates['view'].table_row, {
 					field: utils.sanitizeInject(tag),
 					value: total.toLocaleString(lang),
 				})).join('\n'),
@@ -504,7 +504,7 @@ export const namespaceFunctions = {
 			gameDataInfo: sortedGameData.length == 0 ? '' : utils.buildHtml(templates['view'].gamedata, Object.assign(newDefs, {
 				gameDataTable: buildTable(sortedGameData[0], viewInfo.gameData),
 			})),
-			oldGameDataInfo: sortedGameData.length < 2 ? '' : utils.buildHtml(templates['view'].oldgamedata, Object.assign(newDefs, {
+			oldGameDataInfo: sortedGameData.length < 2 ? '' : utils.buildHtml(templates['view'].gamedata_old, Object.assign(newDefs, {
 				oldGameDataTables: sortedGameData.slice(1).map(gameData => buildTable(gameData, viewInfo.gameData)).join('\n'),
 			})),
 		};
@@ -610,7 +610,7 @@ function buildTable(source, fields, actions = 0) {
 
 		// If value was able to be parsed, build HTML for its respective table row
 		if (value !== undefined)
-			tableRowsArr.push(utils.buildHtml(templates['view'].row, {
+			tableRowsArr.push(utils.buildHtml(templates['view'].table_row, {
 				field: fieldInfo.name + ':',
 				value: value.replaceAll('\n', '<br>'),
 			}));
@@ -618,9 +618,9 @@ function buildTable(source, fields, actions = 0) {
 
 	// Include action buttons in entry info table
 	if (actions > 0)
-		tableRowsArr.push(utils.buildHtml(templates['view'].row, {
+		tableRowsArr.push(utils.buildHtml(templates['view'].table_row, {
 			field: 'Actions:',
-			value: utils.buildHtml(templates['view'].actions, {
+			value: utils.buildHtml(templates['view'].table_actions, {
 				id: source.id,
 				oooHidden: actions == 2 ? '' : ' fp-hidden',
 			}),
