@@ -17,8 +17,9 @@
 			"entry",
 			"entry_image",
 			"entry_codeblock",
+			"entry_video",
+			"entry_youtube",
 			"article_imageset",
-			"article_youtube",
 			"article_twitter"
 		],
 		"lenient": true

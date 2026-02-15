@@ -1,9 +1,11 @@
+import { contentType } from 'jsr:@std/media-types@1.1.0';
 import { format } from 'jsr:@std/fmt@1.0.8/bytes';
 import { GameSearchSortable, GameSearchDirection, newSubfilter } from 'npm:@fparchive/flashpoint-archive';
 import { Marked } from 'npm:marked@17.0.1';
 
 import * as utils from './utils.js';
 
+const videoExp = /\.(?:mp4|webm)$/;
 const youtubeExp = /^https?:\/\/(?:www\.)?youtu(?:be\.com\/watch\?v=|\.be\/)([a-z0-9_-]{11})(?:[?&]list=([a-z0-9_-]{34}))?/i;
 const twitterExp = /^https?:\/\/(?:www\.)?(?:twitter|x)\.com\/(.*?)\/status\/([0-9]+)/;
 const idExp = /^[a-z\d]{8}-[a-z\d]{4}-[a-z\d]{4}-[a-z\d]{4}-[a-z\d]{12}$/;
@@ -33,14 +35,22 @@ const articleMarked = new Marked().use({
 			// Create caption out of alt text
 			const caption = token.text != '' ? `<div class="fp-news-article-caption">${articleMarked.parseInline(token.text)}</div>` : '';
 
+			// If the image URL is a video file, create a video embed
+			const videoMatch = token.href.match(videoExp);
+			if (videoMatch !== null)
+				return utils.buildHtml(templates['news'].entry_video, {
+					namespace: 'article',
+					file: token.href,
+					type: contentType(videoMatch[0]),
+				}) + '\n' + caption;
+
 			// If the image URL is a YouTube link, create a YouTube embed
 			const youtubeMatch = token.href.match(youtubeExp);
 			if (youtubeMatch !== null)
-				return utils.buildHtml(templates['news'].article_youtube, {
+				return utils.buildHtml(templates['news'].entry_youtube, {
 					id: youtubeMatch[1],
 					listId: youtubeMatch[2] !== undefined ? `?list=${youtubeMatch[2]}` : '',
-					caption: caption,
-				});
+				}) + '\n' + caption;
 
 			// If the image URL is a Twitter link, create a Twitter embed
 			const twitterMatch = token.href.match(twitterExp);
@@ -86,7 +96,7 @@ export const namespaceFunctions = {
 				let compare = new Date(b.date).getTime() - new Date(a.date).getTime();
 				// If dates are equal, sort by type of news entry
 				if (compare == 0 && a.namespace != b.namespace) {
-					const priorityList = ['changelog', 'discord', 'article'];
+					const priorityList = ['changelog', 'discord', 'article', 'video'];
 					const aIndex = priorityList.findIndex(namespace => namespace == a.namespace);
 					const bIndex = priorityList.findIndex(namespace => namespace == b.namespace);
 					compare = bIndex - aIndex;
@@ -174,7 +184,10 @@ export const namespaceFunctions = {
 				throw new utils.NotFoundError();
 
 			// Get text of news entry and sanitize if not an article
-			let rawText = Deno.readTextFileSync(`news/${newsEntry.namespace}/${newsEntry.id}.txt`);
+			const newsEntryPath = `news/${newsEntry.namespace}/${newsEntry.id}.txt`;
+			let rawText = utils.getPathInfo(newsEntryPath)?.isFile
+				? Deno.readTextFileSync(`news/${newsEntry.namespace}/${newsEntry.id}.txt`)
+				: '';
 			if (newsEntry.namespace != 'article')
 				rawText = utils.sanitizeInject(rawText, { '&': '&amp;' });
 
@@ -188,21 +201,48 @@ export const namespaceFunctions = {
 				}).format(new Date(newsEntry.date));
 
 			// Parse text of news entry based on its type
-			let content;
-			if (newsEntry.namespace == 'article')
-				content = articleMarked.parse(rawText).trim();
-			else if (newsEntry.namespace == 'discord')
-				content = discordMarked.parse(rawText).trim();
-			else if (newsEntry.namespace == 'changelog')
-				content = utils.sanitizeInject(rawText).replace(/(?:^ +| {2,}|\n+|\t+)/gm, match => {
-					const char = match[0];
-					if (char == ' ')
-						return '&nbsp;'.repeat(match.length);
-					if (char == '\n')
-						return '<br>'.repeat(match.length);
-					if (char == '\t')
-						return '&nbsp;'.repeat(match.length * 4);
-				});
+			let content = '';
+			switch (newsEntry.namespace) {
+				case 'article': {
+					content = articleMarked.parse(rawText).trim();
+					break;
+				}
+				case 'discord': {
+					content = discordMarked.parse(rawText).trim();
+					break;
+				}
+				case 'changelog': {
+					content = utils.sanitizeInject(rawText).replace(/(?:^ +| {2,}|\n+|\t+)/gm, match => {
+						const char = match[0];
+						if (char == ' ')
+							return '&nbsp;'.repeat(match.length);
+						if (char == '\n')
+							return '<br>'.repeat(match.length);
+						if (char == '\t')
+							return '&nbsp;'.repeat(match.length * 4);
+					});
+					break;
+				}
+				case 'video': {
+					if (newsEntry.source === null) {
+						const videoMatch = newsEntry.link.match(videoExp);
+						if (videoMatch !== null)
+							content = utils.buildHtml(templates['news'].entry_video, {
+								namespace: newsEntry.namespace,
+								file: newsEntry.link,
+								type: contentType(videoMatch[0]),
+							});
+					}
+					else if (newsEntry.source == 'YouTube') {
+						const youtubeMatch = newsEntry.link.match(youtubeExp);
+						if (youtubeMatch !== null)
+							content = utils.buildHtml(templates['news'].entry_youtube, {
+								id: youtubeMatch[1],
+								listId: youtubeMatch[2] !== undefined ? `?list=${youtubeMatch[2]}` : '',
+							});
+					}
+				}
+			}
 
 			// Build byline parameters
 			let bylineSource = 'Entry_Byline1';
