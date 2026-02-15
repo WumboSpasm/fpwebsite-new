@@ -118,6 +118,11 @@
 	font-size: 1.5rem;
 	font-weight: bold;
 }
+.fp-downloads-tab-section-subheader {
+	font-size: 0.9rem;
+	opacity: 0.85;
+}
+
 .fp-downloads-tab-sizes {
 	flex-grow: 1;
 	display: flex;
