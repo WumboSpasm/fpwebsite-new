@@ -4,11 +4,18 @@ import { namespaceFunctions } from './nsfuncs.js';
 
 // Build a list of text definitions to supply to the HTML template
 export async function buildDefs(namespace, lang, url = null) {
+	const defs = buildRawDefs(namespace, lang);
+	if (Object.hasOwn(namespaceFunctions, namespace))
+		Object.assign(defs, await namespaceFunctions[namespace](url, lang, defs));
+
+	return defs;
+}
+
+// Build a list of unprocessed text definitions to supply to the HTML template
+export function buildRawDefs(namespace, lang) {
 	const defs = Object.assign({}, locales[config.defaultLang].translations[namespace]);
 	if (lang != config.defaultLang)
 		Object.assign(defs, locales[lang].translations[namespace]);
-	if (Object.hasOwn(namespaceFunctions, namespace))
-		Object.assign(defs, await namespaceFunctions[namespace](url, lang, defs));
 
 	return defs;
 }
@@ -377,16 +384,27 @@ export class BadRequestError extends Error {
 		super(message);
 		this.name = this.constructor.name;
 		this.status = 400;
+
 		this.statusText = 'Bad Request';
+		this.statusDesc = 'The requested URL is invalid.';
+
+		this.fancy = false;
 	}
 }
 
 // 404 Not Found
 export class NotFoundError extends Error {
-	constructor(message) {
-		super(message);
+	constructor(url, lang) {
+		super(url.href);
 		this.name = this.constructor.name;
 		this.status = 404;
-		this.statusText = 'Not Found';
+
+		const errorDefs = buildRawDefs('error', lang ?? config.defaultLang);
+		this.statusText = errorDefs['Not_Found'];
+		this.statusDesc = errorDefs['Not_Found_Desc'];
+
+		this.url = url;
+		this.lang = lang;
+		this.fancy = true;
 	}
 }

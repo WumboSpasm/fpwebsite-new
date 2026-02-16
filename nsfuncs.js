@@ -78,11 +78,11 @@ const articleMarked = new Marked().use({
 export const namespaceFunctions = {
 	'shell': (url) => {
 		// Prepare language select
+		const langParams = new URLSearchParams(URL.parse(url)?.searchParams);
 		const langButtons = [];
 		for (const lang in locales) {
-			const langUrl = new URL(url);
-			langUrl.searchParams.set('lang', lang);
-			langButtons.push(`<a class="fp-shell-sidebar-button fp-shell-button fp-shell-alternating" href="${langUrl.search}">${locales[lang].name}</a>`);
+			langParams.set('lang', lang);
+			langButtons.push(`<a class="fp-shell-sidebar-button fp-shell-button fp-shell-alternating" href="?${langParams.toString()}">${locales[lang].name}</a>`);
 		}
 
 		return { 'LANGUAGE_SELECT': langButtons.join('\n'), };
@@ -113,7 +113,7 @@ export const namespaceFunctions = {
 				? sortedNewsInfo.filter(newsEntry => newsEntry.tags.includes(pathSegments[2]))
 				: sortedNewsInfo;
 			if (filteredNewsInfo.length == 0)
-				throw new utils.NotFoundError();
+				throw new utils.NotFoundError(url, lang);
 
 			// If filtering by tag, get a collection of the tags that will exist on the page
 			const validTags = new Set(pathSegments.length == 3 ? filteredNewsInfo.reduce((arr, cur) => arr.concat(cur.tags), []) : []);
@@ -181,7 +181,7 @@ export const namespaceFunctions = {
 			if (!isNaN(id))
 				newsEntry = newsInfo.find(newsEntry => newsEntry.namespace == namespace && newsEntry.id == id);
 			if (newsEntry === undefined)
-				throw new utils.NotFoundError();
+				throw new utils.NotFoundError(url, lang);
 
 			// Get text of news entry and sanitize if not an article
 			const newsEntryPath = `news/${newsEntry.namespace}/${newsEntry.id}.txt`;
@@ -279,7 +279,7 @@ export const namespaceFunctions = {
 			};
 		}
 		else
-			throw new utils.NotFoundError();
+			throw new utils.NotFoundError(url, lang);
 	},
 	'search': async (url, lang, defs) => {
 		const params = url.searchParams;
@@ -509,7 +509,7 @@ export const namespaceFunctions = {
 			searchContent: searchContent,
 		};
 	},
-	'view': async (url, _, defs) => {
+	'view': async (url, lang, defs) => {
 		// Check if an ID has been supplied and if it is properly formatted
 		const id = url.searchParams.get('id');
 		if (id === null || !idExp.test(id))
@@ -518,7 +518,7 @@ export const namespaceFunctions = {
 		// Fetch the entry, or display an error if it doesn't exist
 		const entry = await fp.findGame(id);
 		if (entry === null)
-			throw new utils.NotFoundError();
+			throw new utils.NotFoundError(url, lang);
 
 		// Check if entry is supported by 9o3o
 		const oooExts = ['.swf', '.dcr', '.dir', '.wrl', '.wrl.gz', '.x3d'];

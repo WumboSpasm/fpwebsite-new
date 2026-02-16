@@ -32,8 +32,8 @@ async function serverHandler(request, info) {
 	if (!blockRequest || config.logBlockedRequests)
 		utils.logMessage(`${blockRequest ? 'BLOCKED ' : ''}${ipAddress} (${userAgent}): ${request.url}`);
 
-	// If request needs to be blocked, return a Not Found error
-	if (blockRequest) throw new utils.NotFoundError();
+	// If request needs to be blocked, return a Bad Request error
+	if (blockRequest) throw new utils.BadRequestError();
 
 	// Make sure request is for a valid URL
 	const requestUrl = URL.parse(request.url);
@@ -81,7 +81,7 @@ async function serverHandler(request, info) {
 	// If the request does not point to an endpoint or page, serve files from static directory
 	if (page === undefined) {
 		const filePath = 'static' + requestPath;
-		if (!utils.getPathInfo(filePath)?.isFile) throw new utils.NotFoundError();
+		if (!utils.getPathInfo(filePath)?.isFile) throw new utils.NotFoundError(requestUrl, lang);
 		responseHeaders.set('Content-Type', contentType(filePath.substring(filePath.lastIndexOf('.'))) ?? 'application/octet-stream');
 
 		return new Response(Deno.openSync(filePath).readable, { headers: responseHeaders });
@@ -94,7 +94,7 @@ async function serverHandler(request, info) {
 
 	// Build content
 	const contentDefs = await utils.buildDefs(namespace, lang, requestUrl);
-	const contentHtml = await utils.buildHtml(templates[namespace].main, contentDefs, requestUrl);
+	const contentHtml = utils.buildHtml(templates[namespace].main, contentDefs, requestUrl);
 
 	// Build shell
 	const shellDefs = Object.assign(
@@ -107,7 +107,7 @@ async function serverHandler(request, info) {
 		},
 		await utils.buildDefs('shell', lang, requestUrl),
 	);
-	const shellHtml = await utils.buildHtml(templates.shell.main, shellDefs);
+	const shellHtml = utils.buildHtml(templates.shell.main, shellDefs);
 
 	// Serve it
 	return new Response(shellHtml, { headers: responseHeaders });
@@ -115,24 +115,34 @@ async function serverHandler(request, info) {
 
 // Display error page
 async function serverError(error) {
-	const [badRequest, notFound] = [error instanceof utils.BadRequestError, error instanceof utils.NotFoundError];
+	const status = error.status ?? 500;
+	const statusText = status + ' ' + (error.statusText ?? 'Internal Server Error');
+	const statusDesc = error.statusDesc ?? 'The server encountered an error while handling the request.';
 
-	// We don't need to translate this
-	let errorPage = templates.error.main;
-	if (badRequest || notFound)
-		errorPage = await utils.buildHtml(errorPage, {
-			'error': `${error.status} ${error.statusText}`,
-			'description': badRequest ? 'The requested URL is invalid.' : 'The requested URL does not exist.',
-		});
-	else {
-		utils.logMessage(error.stack);
-		errorPage = await utils.buildHtml(errorPage, {
-			'error': '500 Internal Server Error',
-			'description': 'The server encountered an error while handling the request.',
-		});
+	let errorHtml = utils.buildHtml(templates.error[error.fancy ? 'fancy' : 'main'], {
+		error: statusText,
+		description: statusDesc,
+	});
+	if (error.fancy) {
+		// Render "fancy" errors inside the navigation shell rather than as basic HTML
+		const lang = error.lang ?? config.defaultLang;
+		errorHtml = utils.buildHtml(templates.shell.main, Object.assign(
+			{
+				'TITLE': statusText + ' - Flashpoint Archive',
+				'STYLES': '',
+				'SCRIPTS': '',
+				'CURRENT_LANGUAGE': locales[lang].name,
+				'CONTENT': errorHtml,
+			},
+			await utils.buildDefs('shell', lang, error.url),
+		));
 	}
 
-	return new Response(errorPage, { status: error.status ?? 500, headers: { 'Content-Type': 'text/html; charset=UTF-8' } });
+	// Ensure internal errors are logged
+	if (error.status == 500)
+		utils.logMessage(error.stack);
+
+	return new Response(errorHtml, { status: status, headers: { 'Content-Type': 'text/html; charset=UTF-8' } });
 };
 
 // Log when server is started
@@ -227,7 +237,7 @@ function getLocales() {
 	const locales = JSON.parse(Deno.readTextFileSync('data/locales.json'));
 	for (const lang in locales) {
 		const translations = {};
-		for (const namespace of namespaces.concat(['shell'])) {
+		for (const namespace of namespaces.concat(['shell', 'error'])) {
 			const translationPath = `locales/${lang}/${namespace}.json`;
 			if (utils.getPathInfo(translationPath)?.isFile) {
 				translations[namespace] = JSON.parse(Deno.readTextFileSync(translationPath));
@@ -257,8 +267,12 @@ function getTemplates() {
 
 		templates[namespace] = template;
 	}
-	for (const fakeNamespace of ['shell', 'error'])
-		templates[fakeNamespace] = { main: Deno.readTextFileSync(`templates/${fakeNamespace}.html`) };
+
+	templates.shell = { main: Deno.readTextFileSync(`templates/shell.html`) };
+	templates.error = {
+		main: Deno.readTextFileSync('templates/error.html'),
+		fancy: Deno.readTextFileSync('templates/error_fancy.html'),
+	};
 
 	return templates;
 }
