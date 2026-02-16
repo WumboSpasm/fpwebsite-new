@@ -53,6 +53,7 @@
 	display: flex;
 	flex-direction: column;
 }
+
 .fp-downloads-tab-selectors {
 	height: 2.5rem;
 	display: flex;
@@ -85,6 +86,7 @@
 	height: 1.3rem;
 	margin-right: 0.5rem;
 }
+
 .fp-downloads-tabs {
 	padding: 1.5rem;
 
@@ -102,6 +104,7 @@
 .fp-downloads-tab:not([data-selected='true']) {
 	display: none;
 }
+
 .fp-downloads-tab-content {
 	display: flex;
 	align-items: stretch;
@@ -134,6 +137,7 @@
 .fp-downloads-tab-sizes > :not(:last-child) {
 	margin-right: 1.5rem;
 }
+
 .fp-downloads-tab-button-container {
 	margin: 0.5rem 0;
 	position: relative;
@@ -189,6 +193,7 @@
 	align-items: center;
 	justify-content: center;
 }
+
 .fp-downloads-tab-divider {
 	flex-basis: 0.15rem;
 
@@ -197,6 +202,7 @@
 .fp-downloads-tab-requirements {
 	align-self: center;
 }
+
 .fp-downloads-warning,
 .fp-downloads-notice {
 	padding: 1rem;
@@ -213,6 +219,32 @@
 	background-color: var(--fp-downloads-notice-background-color);
 	border-color: var(--fp-downloads-notice-border-color);
 }
+
+.fp-downloads-hash-file {
+	margin-bottom: 1rem;
+}
+.fp-downloads-hash-table + .fp-downloads-hash-file {
+	margin-top: 1.5rem;
+}
+.fp-downloads-hash-table {
+	width: 100%;
+
+	border-collapse: collapse;
+}
+.fp-downloads-hash-label {
+	padding-right: 0.5rem;
+
+	text-align: right;
+}
+.fp-downloads-hash {
+	width: 100%;
+	padding: 0.4rem;
+
+	font-family: monospace;
+	background-color: var(--fp-alt-background-color);
+	border: 0.15rem solid var(--fp-border-color);
+}
+
 .fp-downloads-old-version {
 	margin: 0.25rem 0;
 	padding-left: 2rem;
