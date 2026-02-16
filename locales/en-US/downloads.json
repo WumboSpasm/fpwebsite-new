@@ -39,5 +39,6 @@
 	"Released_Lower": "released $1",
 	"Download": "Download",
 	"Torrent": "Torrent",
-	"Currently_Lost": "currently lost"
+	"Currently_Lost": "currently lost",
+	"Hashes_For": "Hashes for $1{$2}:"
 }
