@@ -235,12 +235,14 @@
 	padding-right: 0.5rem;
 
 	text-align: right;
+	word-break: keep-all;
 }
 .fp-downloads-hash {
 	width: 100%;
 	padding: 0.4rem;
 
 	font-family: monospace;
+	word-break: break-all;
 	background-color: var(--fp-alt-background-color);
 	border: 0.15rem solid var(--fp-border-color);
 }
