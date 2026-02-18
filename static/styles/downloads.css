@@ -1,12 +1,16 @@
 /* Page theme */
 
 :root {
+	--fp-light-downloads-button-background-color-1: #ff0d26;
+	--fp-light-downloads-button-background-color-2: #77040d;
 	--fp-light-downloads-warning-background-color: #ffdddd;
 	--fp-light-downloads-warning-border-color: #ffbbbb;
 	--fp-light-downloads-notice-background-color: #ddddff;
 	--fp-light-downloads-notice-border-color: #bbbbff;
 	--fp-light-downloads-lost-version-color: #ff3333;
 
+	--fp-dark-downloads-button-background-color-1: #d60a1e;
+	--fp-dark-downloads-button-background-color-2: #5f030a;
 	--fp-dark-downloads-warning-background-color: #660000;
 	--fp-dark-downloads-warning-border-color: #880000;
 	--fp-dark-downloads-notice-background-color: #000066;
@@ -15,6 +19,8 @@
 }
 
 :root:not([data-theme='dark']) {
+	--fp-downloads-button-background-color-1: var(--fp-light-downloads-button-background-color-1);
+	--fp-downloads-button-background-color-2: var(--fp-light-downloads-button-background-color-2);
 	--fp-downloads-warning-background-color: var(--fp-light-downloads-warning-background-color);
 	--fp-downloads-warning-border-color: var(--fp-light-downloads-warning-border-color);
 	--fp-downloads-notice-background-color: var(--fp-light-downloads-notice-background-color);
@@ -22,6 +28,8 @@
 	--fp-downloads-lost-version-color: var(--fp-light-downloads-lost-version-color);
 }
 :root[data-theme='dark'] {
+	--fp-downloads-button-background-color-1: var(--fp-dark-downloads-button-background-color-1);
+	--fp-downloads-button-background-color-2: var(--fp-dark-downloads-button-background-color-2);
 	--fp-downloads-warning-background-color: var(--fp-dark-downloads-warning-background-color);
 	--fp-downloads-warning-border-color: var(--fp-dark-downloads-warning-border-color);
 	--fp-downloads-notice-background-color: var(--fp-dark-downloads-notice-background-color);
@@ -149,12 +157,9 @@
 	justify-content: center;
 
 	text-decoration: none !important;
-	background-image: radial-gradient(ellipse at top left, var(--fp-light-shell-background-color-1), var(--fp-light-shell-background-color-2));
+	background-image: radial-gradient(ellipse at top left, var(--fp-downloads-button-background-color-1), var(--fp-downloads-button-background-color-2));
 	border-radius: 0.5rem;
 	box-shadow: 0 0.1rem 0.4rem -0.05rem #000000;
-}
-:root[data-theme='light'] .fp-downloads-tab-button {
-	filter: brightness(1.25);
 }
 .fp-downloads-tab-button-icon {
 	height: 1.2rem;

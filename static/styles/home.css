@@ -1,3 +1,38 @@
+/* Page theme */
+
+:root {
+	--fp-light-home-download-button-background-color-1: #ff0d26;
+	--fp-light-home-download-button-background-color-2: #77040d;
+	--fp-light-home-search-button-background-color-1: #4bc600;
+	--fp-light-home-search-button-background-color-2: #195800;
+	--fp-light-home-community-button-background-color-1: #7b31ff;
+	--fp-light-home-community-button-background-color-2: #381396;
+
+	--fp-dark-home-download-button-background-color-1: #d60a1e;
+	--fp-dark-home-download-button-background-color-2: #5f030a;
+	--fp-dark-home-search-button-background-color-1: #3c9e00;
+	--fp-dark-home-search-button-background-color-2: #144600;
+	--fp-dark-home-community-button-background-color-1: #6227ff;
+	--fp-dark-home-community-button-background-color-2: #2d0f78;
+}
+
+:root:not([data-theme='dark']) {
+	--fp-home-download-button-background-color-1: var(--fp-light-home-download-button-background-color-1);
+	--fp-home-download-button-background-color-2: var(--fp-light-home-download-button-background-color-2);
+	--fp-home-search-button-background-color-1: var(--fp-light-home-search-button-background-color-1);
+	--fp-home-search-button-background-color-2: var(--fp-light-home-search-button-background-color-2);
+	--fp-home-community-button-background-color-1: var(--fp-light-home-community-button-background-color-1);
+	--fp-home-community-button-background-color-2: var(--fp-light-home-community-button-background-color-2);
+}
+:root[data-theme='dark'] {
+	--fp-home-download-button-background-color-1: var(--fp-dark-home-download-button-background-color-1);
+	--fp-home-download-button-background-color-2: var(--fp-dark-home-download-button-background-color-2);
+	--fp-home-search-button-background-color-1: var(--fp-dark-home-search-button-background-color-1);
+	--fp-home-search-button-background-color-2: var(--fp-dark-home-search-button-background-color-2);
+	--fp-home-community-button-background-color-1: var(--fp-dark-home-community-button-background-color-1);
+	--fp-home-community-button-background-color-2: var(--fp-dark-home-community-button-background-color-2);
+}
+
 /* Mobile accommodations */
 
 @media (max-width: 63.99rem) {
@@ -54,9 +89,6 @@
 	margin: 1.5rem auto 0;
 	display: flex;
 }
-:root[data-theme='light'] .fp-home-buttons {
-	filter: brightness(1.25);
-}
 .fp-home-buttons-lower {
 	display: flex;
 }
@@ -67,7 +99,7 @@
 	align-items: center;
 	justify-content: center;
 
-	background-image: radial-gradient(ellipse at top left, var(--fp-light-shell-background-color-1), var(--fp-light-shell-background-color-2));
+	text-shadow: 0 0;
 	border-radius: 0.75rem;
 	box-shadow: 0 0.1rem 0.4rem -0.05rem #000000;
 	line-height: 0;
@@ -75,11 +107,14 @@
 .fp-home-button:hover {
 	text-decoration: none !important;
 }
+.fp-home-download-button {
+	background-image: radial-gradient(ellipse at top left, var(--fp-home-download-button-background-color-1), var(--fp-home-download-button-background-color-2));
+}
 .fp-home-search-button {
-	filter: hue-rotate(90deg) brightness(2);
+	background-image: radial-gradient(ellipse at top left, var(--fp-home-search-button-background-color-1), var(--fp-home-search-button-background-color-2));
 }
 .fp-home-community-button {
-	filter: hue-rotate(270deg) brightness(1.25);
+	background-image: radial-gradient(ellipse at top left, var(--fp-home-community-button-background-color-1), var(--fp-home-community-button-background-color-2));
 }
 .fp-home-button-text {
 	color: var(--fp-shell-text-color);
