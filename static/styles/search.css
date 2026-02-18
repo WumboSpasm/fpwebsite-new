@@ -7,17 +7,6 @@
 
 /* Mobile accommodations */
 
-@media (max-width: 87.99rem) {
-	.fp-search-stats {
-		flex-direction: column;
-		align-items: center;
-	}
-}
-@media (min-width: 88rem) {
-	.fp-search-stats {
-		justify-content: center;
-	}
-}
 @media (max-width: 79.99rem) {
 	.fp-search-results {
 		--fp-search-result-columns: 1;
@@ -245,11 +234,13 @@ div[class='fp-search-expand'] {
 
 .fp-search-stats {
 	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 .fp-search-stats-column {
 	width: 100%;
 	max-width: 32rem;
-	margin: 0 1rem;
+	margin: 0.5rem 1rem;
 }
 .fp-search-stats-row {
 	display: flex;
