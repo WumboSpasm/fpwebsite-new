@@ -2,7 +2,7 @@ const params = new URL(location).searchParams;
 
 document.addEventListener('DOMContentLoaded', () => {
 	if (params.get('advanced') == 'true')
-		fetch('data/search.json').then(async searchInfo => initAdvancedMode(await searchInfo.json()));
+		fetch('/data/search.json').then(async searchInfo => initAdvancedMode(await searchInfo.json()));
 	if (document.querySelector('.fp-search-result'))
 		initResultLogos();
 });
