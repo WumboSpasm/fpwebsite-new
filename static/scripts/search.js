@@ -2,39 +2,33 @@ const params = new URL(location).searchParams;
 
 document.addEventListener('DOMContentLoaded', () => {
 	if (params.get('advanced') == 'true')
-		fetch('/data/search.json').then(async searchInfo => initAdvancedMode(await searchInfo.json()));
+		fetch('/data/search.json').then(r => r.json()).then(searchInfo => initAdvancedMode(searchInfo));
 	if (document.querySelector('.fp-search-result'))
 		initResultLogos();
 });
 
 function initResultLogos() {
-	const logoContainers = document.querySelectorAll('.fp-search-result-logo-container');
-	const loadLogo = (logoContainer) => {
-		const logo = document.createElement('img');
-		logo.className = 'fp-search-result-logo';
-		logo.src = logoContainer.dataset.logo;
-		logoContainer.appendChild(logo);
-	};
+	const logos = document.querySelectorAll('.fp-search-result-logo');
 
 	// Check if the browser supports IntersectionObserver
 	if ('IntersectionObserver' in window) {
 		// IntersectionObserver is supported, so load logos only when visible
 		const logoObserver = new IntersectionObserver(entries => {
 			for (const entry of entries) {
-				if (entry.isIntersecting) {
+				if (entry.isIntersecting || entry.intersectionRatio > 0) {
 					logoObserver.unobserve(entry.target);
-					loadLogo(entry.target);
+					entry.target.style.backgroundImage = `url('${entry.target.dataset.src}')`;
 				}
 			}
 		});
 
-		for (const logoContainer of logoContainers)
-			logoObserver.observe(logoContainer);
+		for (const logo of logos)
+			logoObserver.observe(logo);
 	}
 	else {
 		// IntersectionObserver is not supported, so load all logos immediately
-		for (const logoContainer of logoContainers)
-			loadLogo(logoContainer);
+		for (const logo of logos)
+			logo.style.backgroundImage = `url('${logo.dataset.src}')`;
 	}
 }
 
@@ -129,8 +123,10 @@ function createFieldSelect(searchInfo, initialField, initialFieldType) {
 		const filterSelect = container.querySelector('[name="filter"]');
 		const valueInput = container.querySelector('[name="value"]');
 
-		filterSelect.replaceWith(createFilterSelect(searchInfo, type));
-		valueInput.replaceWith(createValueInput(searchInfo, type, field));
+		container.insertBefore(createFilterSelect(searchInfo, type), filterSelect);
+		container.insertBefore(createValueInput(searchInfo, type, field), valueInput);
+		filterSelect.remove();
+		valueInput.remove();
 	});
 
 	return fieldSelect;
