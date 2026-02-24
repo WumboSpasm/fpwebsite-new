@@ -39,7 +39,7 @@
 	align-items: center;
 
 	text-align: center;
-	border: 0.15rem solid var(--fp-border-color);
+	border: 0.15rem solid var(--fp-background-color-4);
 }
 .fp-branding-assets > .fp-branding-download-container {
 	width: 18rem;
@@ -80,7 +80,7 @@
 	flex-shrink: 0;
 	flex-basis: 0.15rem;
 
-	background-color: var(--fp-border-color);
+	background-color: var(--fp-background-color-4);
 }
 .fp-branding-wallpaper-sizes {
 	margin-left: 0.4rem;

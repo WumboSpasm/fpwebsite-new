@@ -2,27 +2,28 @@ const rootData = document.documentElement.dataset;
 rootData.theme = localStorage.getItem('fp-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
 document.addEventListener('DOMContentLoaded', () => {
-	updateThemeIcon();
 	document.querySelector('.fp-shell-sidebar-toggle').addEventListener('click', toggleSidebar);
 	document.querySelector('.fp-shell-languages-toggle').addEventListener('click', toggleLanguageSelect);
 	document.querySelector('.fp-shell-theme-button').addEventListener('click', toggleTheme);
 
 	for (const hiddenContentContainer of document.querySelectorAll('.fp-hidden-content-container')) {
-		const hashesMatch = hiddenContentContainer.id == location.hash.substring(1);
+		const hashesMatch = hiddenContentContainer.id && hiddenContentContainer.id == location.hash.substring(1);
 		if (hashesMatch)
 			toggleHiddenContent(hiddenContentContainer, false);
 
 		const hiddenContentHeader = hiddenContentContainer.querySelector('.fp-hidden-content-header');
 		hiddenContentHeader.addEventListener('click', event => {
-			if (event.target.nodeName != 'A' || hashesMatch)
-				toggleHiddenContent(hiddenContentContainer, event.target.nodeName == 'A' && hashesMatch ? false : undefined);
+			if (event.target.nodeName != 'A' || hiddenContentContainer.dataset.toggled != 'true')
+				toggleHiddenContent(hiddenContentContainer);
 		});
 	}
 
 	window.addEventListener('hashchange', () => {
 		const hiddenContentContainer = document.querySelector(location.hash);
-		if (hiddenContentContainer && hiddenContentContainer.className == 'fp-hidden-content-container')
-			toggleHiddenContent(hiddenContentContainer, false);
+		if (hiddenContentContainer
+		 && hiddenContentContainer.className == 'fp-hidden-content-container'
+		 && hiddenContentContainer.dataset.toggled != 'true')
+			toggleHiddenContent(hiddenContentContainer);
 	});
 
 	const modalContainer = document.querySelector('.fp-modal-container');
@@ -51,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function toggleSidebar() {
-	rootData.mobileSidebar = rootData.mobileSidebar != 'true' ? 'true' : 'false';
+	rootData.mobileSidebar = (rootData.mobileSidebar != 'true').toString();
 	const sidebarToggle = document.querySelector('.fp-shell-sidebar-toggle');
 	sidebarToggle.dataset.toggled = rootData.mobileSidebar;
 }
@@ -59,23 +60,14 @@ function toggleSidebar() {
 function toggleLanguageSelect() {
 	const languagesContainer = document.querySelector('.fp-shell-languages-container');
 	const languagesToggle = document.querySelector('.fp-shell-languages-toggle');
-	languagesToggle.dataset.toggled = languagesContainer.classList.toggle('fp-hidden') ? 'false' : 'true';
+	languagesToggle.dataset.toggled = (!languagesContainer.classList.toggle('fp-hidden')).toString();
 }
 
 function toggleTheme() {
-	if (!rootData.theme) initTheme();
 	rootData.theme = rootData.theme == 'light' ? 'dark' : 'light';
 	localStorage.setItem('fp-theme', rootData.theme);
-	updateThemeIcon();
 }
 
-function updateThemeIcon() {
-	if (!rootData.theme) initTheme();
-	const themeButton = document.querySelector('.fp-shell-theme-button');
-	themeButton.style.backgroundImage = `var(--fp-shell-${rootData.theme == 'light' ? 'dark' : 'light'}-theme-toggle-icon)`;
-}
-
-function toggleHiddenContent(hiddenContentContainer, force) {
-	const hiddenContent = hiddenContentContainer.querySelector('.fp-hidden-content');
-	hiddenContentContainer.style.setProperty('--fp-hidden-content-arrow-icon', `var(--fp-${hiddenContent.classList.toggle('fp-hidden', force) ? 'down' : 'up'}-arrow-icon)`);
+function toggleHiddenContent(hiddenContentContainer) {
+	hiddenContentContainer.dataset.toggled = (hiddenContentContainer.dataset.toggled != 'true').toString();
 }

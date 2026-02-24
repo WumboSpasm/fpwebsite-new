@@ -34,8 +34,8 @@
 	display: block;
 
 	line-height: 0;
-	background-color: var(--fp-alt-background-color);
-	border: 0.15rem solid var(--fp-border-color);
+	background-color: var(--fp-background-color-2);
+	border: 0.15rem solid var(--fp-background-color-4);
 }
 .fp-view-image {
 	width: 100%;
@@ -54,7 +54,7 @@
 .fp-view-table td {
 	padding: 0.5rem 0.75rem;
 
-	border: 0.15rem solid var(--fp-border-color);
+	border: 0.15rem solid var(--fp-background-color-4);
 }
 .fp-view-table td:first-child {
 	width: 28%;
@@ -62,7 +62,7 @@
 
 	font-weight: bold;
 	text-align: right;
-	background-color: var(--fp-alt-background-color);
+	background-color: var(--fp-background-color-2);
 }
 .fp-view-table td:last-child {
 	white-space: pre-wrap;
@@ -92,6 +92,12 @@
 	cursor: pointer;
 	touch-action: manipulation;
 }
+.fp-view-old-game-data-toggle:not([data-toggled='true']) {
+	--fp-toggle-arrow-icon: var(--fp-gray-right-arrow-icon);
+}
+.fp-view-old-game-data-toggle[data-toggled='true'] {
+	--fp-toggle-arrow-icon: var(--fp-down-arrow-icon);
+}
 .fp-view-old-game-data-toggle::before {
 	width: 1.1rem;
 	margin-right: 0.5rem;
@@ -104,7 +110,10 @@
 	content: '';
 }
 .fp-view-old-game-data-toggle:hover {
-	background-color: var(--fp-alt-background-color);
+	background-color: var(--fp-background-color-2);
+}
+.fp-view-old-game-data-toggle:not([data-toggled='true']) + .fp-view-old-game-data {
+	display: none;
 }
 
 #launchFlashpoint {
