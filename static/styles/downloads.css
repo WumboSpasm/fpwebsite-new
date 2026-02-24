@@ -247,6 +247,7 @@
 	padding: 0.4rem;
 
 	font-family: monospace;
+	font-size: 0.75rem;
 	word-break: break-all;
 	background-color: var(--fp-background-color-2);
 	border: 0.15rem solid var(--fp-background-color-4);

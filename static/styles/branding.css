@@ -5,9 +5,6 @@
 	display: block;
 }
 
-.fp-branding-color-1, .fp-branding-color-2 {
-	font-family: monospace;
-}
 .fp-branding-color-1::before, .fp-branding-color-2::before {
 	width: 0.75rem;
 	height: 0.75rem;
