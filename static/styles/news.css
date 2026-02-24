@@ -134,13 +134,15 @@
 .fp-news-container p {
 	margin: 1rem 0;
 }
-.fp-news-container li {
+.fp-news-container ol,
+.fp-news-container ul {
 	margin: 0.5rem 0;
 }
 .fp-news-container code {
 	padding: 0.1rem 0.25rem;
 	vertical-align: middle;
 
+	font-size: 0.75rem;
 	border-radius: 0.25rem;
 }
 .fp-news-container blockquote {

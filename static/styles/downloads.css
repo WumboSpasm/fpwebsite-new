@@ -256,6 +256,9 @@
 	margin: 0.25rem 0;
 	padding-left: 2rem;
 }
+.fp-downloads-old-version li {
+	margin-bottom: 0;
+}
 .fp-downloads-lost-version {
 	color: var(--fp-downloads-lost-version-color);
 }

@@ -265,6 +265,9 @@ export async function updateDatabase() {
 	const searchFilter = newSubfilter();
 	search.filter.subfilters.push(searchFilter);
 
+	// Get grand total
+	searchStats.total = await fp.countGames();
+
 	// Get total games
 	searchFilter.exactWhitelist.library = ['arcade'];
 	searchStats.games = await fp.searchGamesTotal(search);

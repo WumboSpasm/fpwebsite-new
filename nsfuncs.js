@@ -281,6 +281,13 @@ export const namespaceFunctions = {
 		else
 			throw new utils.NotFoundError(url, lang);
 	},
+	'faq': (_, lang) => ({
+		grandTotal: searchStats.total.toLocaleString(lang),
+		lastUpdated: new Intl.DateTimeFormat(lang, {
+			dateStyle: 'long',
+			timeZone: 'UTC',
+		}).format(new Date(searchStats.lastUpdated)),
+	}),
 	'search': async (url, lang, defs) => {
 		const params = url.searchParams;
 		const newDefs = Object.assign({}, defs, {

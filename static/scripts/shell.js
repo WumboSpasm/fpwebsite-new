@@ -8,9 +8,22 @@ document.addEventListener('DOMContentLoaded', () => {
 	document.querySelector('.fp-shell-theme-button').addEventListener('click', toggleTheme);
 
 	for (const hiddenContentContainer of document.querySelectorAll('.fp-hidden-content-container')) {
+		const hashesMatch = hiddenContentContainer.id == location.hash.substring(1);
+		if (hashesMatch)
+			toggleHiddenContent(hiddenContentContainer, false);
+
 		const hiddenContentHeader = hiddenContentContainer.querySelector('.fp-hidden-content-header');
-		hiddenContentHeader.addEventListener('click', () => { toggleHiddenContent(hiddenContentContainer); });
+		hiddenContentHeader.addEventListener('click', event => {
+			if (event.target.nodeName != 'A' || hashesMatch)
+				toggleHiddenContent(hiddenContentContainer, event.target.nodeName == 'A' && hashesMatch ? false : undefined);
+		});
 	}
+
+	window.addEventListener('hashchange', () => {
+		const hiddenContentContainer = document.querySelector(location.hash);
+		if (hiddenContentContainer && hiddenContentContainer.className == 'fp-hidden-content-container')
+			toggleHiddenContent(hiddenContentContainer, false);
+	});
 
 	const modalContainer = document.querySelector('.fp-modal-container');
 	if (modalContainer) {
@@ -62,7 +75,7 @@ function updateThemeIcon() {
 	themeButton.style.backgroundImage = `var(--fp-shell-${rootData.theme == 'light' ? 'dark' : 'light'}-theme-toggle-icon)`;
 }
 
-function toggleHiddenContent(hiddenContentContainer) {
+function toggleHiddenContent(hiddenContentContainer, force) {
 	const hiddenContent = hiddenContentContainer.querySelector('.fp-hidden-content');
-	hiddenContentContainer.style.setProperty('--fp-hidden-content-arrow-icon', `var(--fp-${hiddenContent.classList.toggle('fp-hidden') ? 'down' : 'up'}-arrow-icon)`);
+	hiddenContentContainer.style.setProperty('--fp-hidden-content-arrow-icon', `var(--fp-${hiddenContent.classList.toggle('fp-hidden', force) ? 'down' : 'up'}-arrow-icon)`);
 }

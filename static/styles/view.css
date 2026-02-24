@@ -69,8 +69,10 @@
 	word-break: break-word;
 }
 .fp-view-table ul {
-	margin: 0;
 	padding-left: 1rem;
+}
+.fp-view-table li {
+	margin-bottom: 0;
 }
 
 .fp-view-actions {

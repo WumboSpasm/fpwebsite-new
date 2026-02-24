@@ -452,6 +452,32 @@ body {
 
 /* Page elements */
 
+ol, ul {
+	margin: 0;
+	padding-left: 2.5rem;
+}
+ul {
+	list-style-type: none;
+}
+li:not(:last-child) {
+	margin-bottom: 0.5rem;
+}
+ul > li {
+	position: relative;
+}
+ul > li::before {
+	position: absolute;
+	left: -1rem;
+
+	content: '\2022';
+}
+
+code {
+	vertical-align: bottom;
+
+	font-size: 0.9rem;
+}
+
 .fp-text-box {
 	--fp-text-box-border-color: var(--fp-border-color);
 
@@ -569,6 +595,9 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 	content: '';
+}
+.fp-hidden-content-header a {
+	color: var(--fp-text-color) !important;
 }
 .fp-hidden-content {
 	margin: 0 1rem;
