@@ -2,7 +2,7 @@
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
 	<ShortName>Flashpoint Archive</ShortName>
 	<LongName>Flashpoint Archive Search Tool</LongName>
-	<Tags>bluemaxima flashpoint archive preservation flash html5 shockwave unity java game animation</Tags>
+	<Tags>bluemaxima flashpoint archive preservation adobe flash html5 shockwave unity java game animation</Tags>
 	<Description>Search preserved games and animations from the web.</Description>
 	<InputEncoding>UTF-8</InputEncoding>
 	<Image width="64" height="64" type="image/png">http://67.220.73.8:8989/favicon.png</Image>

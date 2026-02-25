@@ -95,14 +95,16 @@ async function serverHandler(request, info) {
 	const contentHtml = utils.buildHtml(templates[page.namespace].main, contentDefs, requestUrl);
 
 	// Build shell
+	const title = utils.sanitizeInject(contentDefs['Title'] ?? '');
 	const shellDefs = Object.assign(
 		{
 			'LANGUAGE_CODE': lang,
-			'TITLE': contentDefs['Title'] ? utils.sanitizeInject(contentDefs['Title']) + ' - Flashpoint Archive' : 'Flashpoint Archive',
+			'TITLE': title ? title + ' - Flashpoint Archive' : 'Flashpoint Archive',
 			'STYLESHEETS': page.styles.map(style => `<link rel="stylesheet" href="/styles/${style}">`).join('\n'),
 			'SCRIPTS': page.scripts.map(script => `<script src="/scripts/${script}" type="text/javascript"></script>`).join('\n'),
 			'AUTHOR': utils.sanitizeInject(contentDefs['Author'] ?? '') || 'BlueMaxima',
-			'OG_URL': request.url,
+			'URL': request.url,
+			'SCHEMA_TITLE': title || 'Flashpoint Archive',
 			'CURRENT_LANGUAGE': locales[lang].name,
 			'CONTENT': contentHtml,
 		},
@@ -139,8 +141,8 @@ async function serverError(error) {
 				'STYLESHEETS': '',
 				'SCRIPTS': '',
 				'AUTHOR': 'BlueMaxima',
-				'OG_TITLE': statusText,
-				'OG_URL': error.url?.href ?? '',
+				'URL': error.url?.href ?? '',
+				'SCHEMA_TITLE': statusText,
 				'CURRENT_LANGUAGE': locales[lang].name,
 				'CONTENT': errorHtml,
 			},
