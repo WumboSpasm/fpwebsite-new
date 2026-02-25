@@ -87,9 +87,9 @@ export const namespaceFunctions = {
 
 			// Build Open Graph locale definitions
 			if (lang == selectedLang)
-				langMetas.unshift(`<meta name="og:locale" content="${lang.replace('-', '_')}">`);
+				langMetas.unshift(`<meta property="og:locale" content="${lang.replace('-', '_')}">`);
 			else
-				langMetas.push(`<meta name="og:locale:alternate" content="${lang.replace('-', '_')}">`);
+				langMetas.push(`<meta property="og:locale:alternate" content="${lang.replace('-', '_')}">`);
 		}
 
 		return {

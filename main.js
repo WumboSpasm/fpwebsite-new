@@ -95,16 +95,13 @@ async function serverHandler(request, info) {
 	const contentHtml = utils.buildHtml(templates[page.namespace].main, contentDefs, requestUrl);
 
 	// Build shell
-	const title = utils.sanitizeInject(contentDefs['Title'] ?? '');
-	const author = utils.sanitizeInject(contentDefs['Author'] ?? '');
 	const shellDefs = Object.assign(
 		{
 			'LANGUAGE_CODE': lang,
-			'TITLE': title ? title + ' - Flashpoint Archive' : 'Flashpoint Archive',
+			'TITLE': contentDefs['Title'] ? utils.sanitizeInject(contentDefs['Title']) + ' - Flashpoint Archive' : 'Flashpoint Archive',
 			'STYLESHEETS': page.styles.map(style => `<link rel="stylesheet" href="/styles/${style}">`).join('\n'),
 			'SCRIPTS': page.scripts.map(script => `<script src="/scripts/${script}" type="text/javascript"></script>`).join('\n'),
-			'AUTHOR': author || 'BlueMaxima',
-			'OG_TITLE': title || 'Flashpoint Archive',
+			'AUTHOR': utils.sanitizeInject(contentDefs['Author'] ?? '') || 'BlueMaxima',
 			'OG_URL': request.url,
 			'CURRENT_LANGUAGE': locales[lang].name,
 			'CONTENT': contentHtml,
