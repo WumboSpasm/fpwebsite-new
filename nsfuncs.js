@@ -76,16 +76,26 @@ const articleMarked = new Marked().use({
 });
 
 export const namespaceFunctions = {
-	'shell': (url) => {
-		// Prepare language select
+	'shell': (url, selectedLang) => {
 		const langParams = new URLSearchParams(URL.parse(url)?.searchParams);
 		const langButtons = [];
+		const langMetas = [];
 		for (const lang in locales) {
+			// Build language select
 			langParams.set('lang', lang);
 			langButtons.push(`<a class="fp-shell-sidebar-button fp-shell-button fp-shell-alternating" href="?${langParams.toString()}">${locales[lang].name}</a>`);
+
+			// Build Open Graph locale definitions
+			if (lang == selectedLang)
+				langMetas.unshift(`<meta name="og:locale" content="${lang.replace('-', '_')}">`);
+			else
+				langMetas.push(`<meta name="og:locale:alternate" content="${lang.replace('-', '_')}">`);
 		}
 
-		return { 'LANGUAGE_SELECT': langButtons.join('\n'), };
+		return {
+			'OG_LOCALES': langMetas.join('\n'),
+			'LANGUAGE_SELECT': langButtons.join('\n'),
+		};
 	},
 	'news': (url, lang, defs) => {
 		const pathSegments = utils.trimSlashes(url.pathname).split('/').map(pathSegment => decodeURIComponent(pathSegment));
@@ -274,7 +284,8 @@ export const namespaceFunctions = {
 				content: content,
 			}));
 			return {
-				'Title': newsEntry.title,
+				Title: newsEntry.title,
+				Author: newsEntry.author,
 				content: newsEntryHtml
 			};
 		}
@@ -528,7 +539,7 @@ export const namespaceFunctions = {
 			throw new utils.NotFoundError(url, lang);
 
 		// Check if entry is supported by 9o3o
-		const oooExts = ['.swf', '.dcr', '.dir', '.wrl', '.wrl.gz', '.x3d'];
+		const oooExts = ['.swf', '.dcr', '.dir', '.dxr', '.wrl', '.wrl.gz', '.x3d'];
 		const doOoo = [entry.legacyLaunchCommand]
 			.concat(entry.gameData.map(gameData => gameData.launchCommand))
 			.concat(entry.addApps.map(addApp => addApp.launchCommand))
@@ -542,6 +553,7 @@ export const namespaceFunctions = {
 		return {
 			Title: title,
 			Header: title,
+			Author: entry.developer || entry.publisher,
 			logoUrl: `${config.imageServer}/${entry.logoPath}`,
 			screenshotUrl: `${config.imageServer}/${entry.screenshotPath}`,
 			entryTable: buildTable(entry, viewInfo.game, doOoo ? 2 : 1),

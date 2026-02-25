@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+	<ShortName>Flashpoint Archive</ShortName>
+	<LongName>Flashpoint Archive Search Tool</LongName>
+	<Tags>bluemaxima flashpoint archive preservation flash html5 shockwave unity java game animation</Tags>
+	<Description>Search preserved games and animations from the web.</Description>
+	<InputEncoding>UTF-8</InputEncoding>
+	<Image width="64" height="64" type="image/png">http://67.220.73.8:8989/favicon.png</Image>
+	<Image width="16" height="16" type="image/x-icon">http://67.220.73.8:8989/favicon.ico</Image>
+	<Url type="text/html" template="http://67.220.73.8:8989/search?query={searchTerms}"/>
+</OpenSearchDescription>

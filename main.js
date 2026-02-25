@@ -82,27 +82,31 @@ async function serverHandler(request, info) {
 	if (page === undefined) {
 		const filePath = 'static' + requestPath;
 		if (!utils.getPathInfo(filePath)?.isFile) throw new utils.NotFoundError(requestUrl, lang);
-		responseHeaders.set('Content-Type', contentType(filePath.substring(filePath.lastIndexOf('.'))) ?? 'application/octet-stream');
 
+		responseHeaders.set('Content-Type', contentType(filePath.substring(filePath.lastIndexOf('.'))) ?? 'application/octet-stream');
 		return new Response(Deno.openSync(filePath).readable, { headers: responseHeaders });
 	}
 
 	responseHeaders.set('Content-Type', 'text/html; charset=UTF-8');
-
-	const namespace = page.namespace;
-	const locale = locales[lang];
+	responseHeaders.set('Content-Language', lang);
 
 	// Build content
-	const contentDefs = await utils.buildDefs(namespace, lang, requestUrl);
-	const contentHtml = utils.buildHtml(templates[namespace].main, contentDefs, requestUrl);
+	const contentDefs = await utils.buildDefs(page.namespace, lang, requestUrl);
+	const contentHtml = utils.buildHtml(templates[page.namespace].main, contentDefs, requestUrl);
 
 	// Build shell
+	const title = utils.sanitizeInject(contentDefs['Title'] ?? '');
+	const author = utils.sanitizeInject(contentDefs['Author'] ?? '');
 	const shellDefs = Object.assign(
 		{
-			'TITLE': contentDefs['Title'] ? `${contentDefs['Title']} - Flashpoint Archive` : 'Flashpoint Archive',
-			'STYLES': page.styles.map(style => `<link rel="stylesheet" href="/styles/${style}">`).join('\n'),
+			'LANGUAGE_CODE': lang,
+			'TITLE': title ? title + ' - Flashpoint Archive' : 'Flashpoint Archive',
+			'STYLESHEETS': page.styles.map(style => `<link rel="stylesheet" href="/styles/${style}">`).join('\n'),
 			'SCRIPTS': page.scripts.map(script => `<script src="/scripts/${script}" type="text/javascript"></script>`).join('\n'),
-			'CURRENT_LANGUAGE': locale.name,
+			'AUTHOR': author || 'BlueMaxima',
+			'OG_TITLE': title || 'Flashpoint Archive',
+			'OG_URL': request.url,
+			'CURRENT_LANGUAGE': locales[lang].name,
 			'CONTENT': contentHtml,
 		},
 		await utils.buildDefs('shell', lang, requestUrl),
@@ -119,18 +123,27 @@ async function serverError(error) {
 	const statusText = status + ' ' + (error.statusText ?? 'Internal Server Error');
 	const statusDesc = error.statusDesc ?? 'The server encountered an error while handling the request.';
 
+	const responseHeaders = new Headers({ 'Content-Type': 'text/html' });
 	let errorHtml = utils.buildHtml(templates.error[error.fancy ? 'fancy' : 'main'], {
 		error: statusText,
 		description: statusDesc,
 	});
+
+	// Render "fancy" errors inside the navigation shell rather than as basic HTML
 	if (error.fancy) {
-		// Render "fancy" errors inside the navigation shell rather than as basic HTML
 		const lang = error.lang ?? config.defaultLang;
+		responseHeaders.set('Content-Type', 'text/html; charset=UTF-8');
+		responseHeaders.set('Content-Language', lang);
+
 		errorHtml = utils.buildHtml(templates.shell.main, Object.assign(
 			{
+				'LANGUAGE_CODE': lang,
 				'TITLE': statusText + ' - Flashpoint Archive',
-				'STYLES': '',
+				'STYLESHEETS': '',
 				'SCRIPTS': '',
+				'AUTHOR': 'BlueMaxima',
+				'OG_TITLE': statusText,
+				'OG_URL': error.url?.href ?? '',
 				'CURRENT_LANGUAGE': locales[lang].name,
 				'CONTENT': errorHtml,
 			},
@@ -139,10 +152,10 @@ async function serverError(error) {
 	}
 
 	// Ensure internal errors are logged
-	if (error.status == 500)
+	if (status == 500)
 		utils.logMessage(error.stack);
 
-	return new Response(errorHtml, { status: status, headers: { 'Content-Type': 'text/html; charset=UTF-8' } });
+	return new Response(errorHtml, { status: status, headers: responseHeaders });
 };
 
 // Log when server is started
