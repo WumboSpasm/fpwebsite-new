@@ -22,18 +22,12 @@
 
 .fp-search-table {
 	margin: 1.25rem auto 0.5rem;
-
-	border-collapse: collapse;
 }
 .fp-search-table th,
 .fp-search-table td {
 	padding: 0.5rem 1rem;
 
 	text-align: center;
-	border: 0.15rem solid var(--fp-background-color-4);
-}
-.fp-search-table th {
-	background-color: var(--fp-background-color-2);
 }
 
 .fp-search-last-updated {

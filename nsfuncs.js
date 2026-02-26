@@ -502,11 +502,11 @@ export const namespaceFunctions = {
 				totalAnimations: searchStats.animations.toLocaleString(lang),
 				totalGameZip: searchStats.gameZip.toLocaleString(lang),
 				totalLegacy: searchStats.legacy.toLocaleString(lang),
-				platformTotals: searchStats.platforms.map(([platform, total]) => utils.buildHtml(templates['view'].table_row, {
+				platformTotals: searchStats.platforms.map(([platform, total]) => utils.buildHtml(templates['search'].content_stats_row, {
 					field: platform,
 					value: total.toLocaleString(lang),
 				})).join('\n'),
-				tagTotals: searchStats.tags.map(([tag, total]) => utils.buildHtml(templates['view'].table_row, {
+				tagTotals: searchStats.tags.map(([tag, total]) => utils.buildHtml(templates['search'].content_stats_row, {
 					field: utils.sanitizeInject(tag),
 					value: total.toLocaleString(lang),
 				})).join('\n'),

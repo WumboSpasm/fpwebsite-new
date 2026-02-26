@@ -40,7 +40,7 @@
 	},
 	"/source": {
 		"namespace": "source",
-		"styles": [],
+		"styles": ["source.css"],
 		"scripts": [],
 		"fragments": [],
 		"lenient": false
@@ -69,7 +69,8 @@
 			"navigation",
 			"navigation_page",
 			"content_result",
-			"content_stats"
+			"content_stats",
+			"content_stats_row"
 		],
 		"lenient": false
 	},

@@ -48,23 +48,14 @@
 .fp-view-table {
 	width: 100%;
 	margin: 0.5rem 0;
-
-	border-collapse: collapse;
 }
-.fp-view-table td {
-	padding: 0.5rem 0.75rem;
-
-	border: 0.15rem solid var(--fp-background-color-4);
-}
-.fp-view-table td:first-child {
+.fp-view-table th {
 	width: 28%;
 	min-width: 8rem;
 
-	font-weight: bold;
 	text-align: right;
-	background-color: var(--fp-background-color-2);
 }
-.fp-view-table td:last-child {
+.fp-view-table td {
 	white-space: pre-wrap;
 	word-break: break-word;
 }

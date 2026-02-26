@@ -576,6 +576,20 @@ code {
 	border-color: var(--fp-button-background-hover-color);
 }
 
+.fp-table {
+	border-collapse: collapse;
+}
+.fp-table th,
+.fp-table td {
+	padding: 0.5rem 0.75rem;
+
+	border: 0.15rem solid var(--fp-background-color-4);
+}
+.fp-table th {
+	font-weight: bold;
+	background-color: var(--fp-background-color-2);
+}
+
 .fp-hidden-content-container {
 	background-color: var(--fp-background-color-2);
 	border: 0.15rem solid var(--fp-background-color-4);

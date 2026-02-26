@@ -1,0 +1,21 @@
+.fp-source-table-container {
+	width: 100%;
+	overflow-x: auto;
+}
+.fp-source-table {
+	width: 100%;
+	max-width: 80rem;
+	min-width: 48rem;
+	margin: 0 auto;
+
+	table-layout: fixed;
+}
+.fp-source-table tr > :not(:nth-child(3)) {
+	text-align: center;
+}
+.fp-source-table tr > :nth-child(1) {
+	width: 16rem;
+}
+.fp-source-table tr > :nth-child(2) {
+	width: 8rem;
+}
