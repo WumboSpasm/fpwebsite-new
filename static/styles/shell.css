@@ -403,6 +403,7 @@ body {
 	bottom: 0;
 
 	color: var(--fp-text-color);
+	word-break: break-word;
 }
 .fp-content::after {
 	display: block;
