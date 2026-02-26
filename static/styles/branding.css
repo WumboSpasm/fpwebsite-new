@@ -71,6 +71,8 @@
 .fp-branding-wallpaper-ratio {
 	display: flex;
 	justify-content: center;
+
+	white-space: nowrap;
 }
 .fp-branding-wallpaper-ratio-divider {
 	margin: 0.25rem 1rem;
