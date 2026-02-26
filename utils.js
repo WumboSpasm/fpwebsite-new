@@ -23,7 +23,7 @@ export function buildRawDefs(namespace, lang) {
 // Safely fill HTML template with text definitions
 export function buildHtml(template, defs) {
 	const varSlices = [];
-	const varExp = /(?:(^|\n)(\t*))?\{(.*?)\}/gs;
+	const varExp = /(?:(^|\n)(\t*))?@\{(.*?)\}/gs;
 	for (let match; (match = varExp.exec(template)) !== null;) {
 		const value = buildStringFromParams(match[3], defs);
 		const newLine = match[1] ?? '';

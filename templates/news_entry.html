@@ -1,9 +1,9 @@
-<div class="fp-content-header">{title}</div>
+<div class="fp-content-header">@{title}</div>
 <div class="fp-news-byline">
-	{byline}
-	{tags}
+	@{byline}
+	@{tags}
 </div>
-<div class="fp-news-container fp-news-{namespace}-container">
-	{content}
+<div class="fp-news-container fp-news-@{namespace}-container">
+	@{content}
 </div>
-<a href="/news">{Entry_Back}</a>
+<a href="/news">@{Entry_Back}</a>

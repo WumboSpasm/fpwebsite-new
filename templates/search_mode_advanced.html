@@ -3,26 +3,26 @@
 	<div class="fp-search-advanced-container"></div>
 	<div class="fp-search-options">
 		<div class="fp-search-options-group">
-			<label for="sort">{Sort_By}</label>
+			<label for="sort">@{Sort_By}</label>
 			<select class="fp-dropdown fp-search-thin" name="sort" id="sort">
-				{sortFields}
+				@{sortFields}
 			</select>
 			<select class="fp-dropdown fp-search-thin" name="dir">
-				<option value="asc"{ascSelected}>{Sort_Ascending}</option>
-				<option value="desc"{descSelected}>{Sort_Descending}</option>
+				<option value="asc"@{ascSelected}>@{Sort_Ascending}</option>
+				<option value="desc"@{descSelected}>@{Sort_Descending}</option>
 			</select>
 		</div>
 		<div class="fp-search-options-group">
-			<input class="fp-checkbox" type="checkbox" name="nsfw" value="true" id="nsfwCheckbox"{nsfwChecked}>
-			<label class="fp-checkbox-label" for="nsfwCheckbox">{Toggle_NSFW}</label>
-			<input class="fp-checkbox" type="checkbox" name="any" value="true" id="anyCheckbox"{anyChecked}>
-			<label class="fp-checkbox-label" for="anyCheckbox">{Toggle_Any}</label>
+			<input class="fp-checkbox" type="checkbox" name="nsfw" value="true" id="nsfwCheckbox"@{nsfwChecked}>
+			<label class="fp-checkbox-label" for="nsfwCheckbox">@{Toggle_NSFW}</label>
+			<input class="fp-checkbox" type="checkbox" name="any" value="true" id="anyCheckbox"@{anyChecked}>
+			<label class="fp-checkbox-label" for="anyCheckbox">@{Toggle_Any}</label>
 		</div>
 		<div class="fp-search-options-group fp-search-expand">
 			<div class="fp-search-expand"></div>
-			<div class="fp-button" id="addFieldButton">{Add_Field}</div>
-			<a class="fp-button" href="/search">{Toggle_Simple}</a>
-			<button class="fp-button" type="submit">{Search}</button>
+			<div class="fp-button" id="addFieldButton">@{Add_Field}</div>
+			<a class="fp-button" href="/search">@{Toggle_Simple}</a>
+			<button class="fp-button" type="submit">@{Search}</button>
 		</div>
 	</div>
 </form>

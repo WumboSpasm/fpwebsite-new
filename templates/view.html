@@ -1,32 +1,32 @@
-<div class="fp-content-header">{Header}</div>
+<div class="fp-content-header">@{Header}</div>
 <div class="fp-view-container">
 	<div class="fp-view-images">
 		<div class="fp-view-image-container">
-			<div class="fp-content-subheader">{Logo}</div>
-			<a class="fp-view-image-frame" href="{logoUrl}" target="_blank">
-				<img class="fp-view-image" src="{logoUrl}?type=jpg">
+			<div class="fp-content-subheader">@{Logo}</div>
+			<a class="fp-view-image-frame" href="@{logoUrl}" target="_blank">
+				<img class="fp-view-image" src="@{logoUrl}?type=jpg">
 			</a>
 		</div>
 		<div class="fp-view-image-container">
-			<div class="fp-content-subheader">{Screenshot}</div>
-			<a class="fp-view-image-frame" href="{screenshotUrl}" target="_blank">
-				<img class="fp-view-image" src="{screenshotUrl}?type=jpg">
+			<div class="fp-content-subheader">@{Screenshot}</div>
+			<a class="fp-view-image-frame" href="@{screenshotUrl}" target="_blank">
+				<img class="fp-view-image" src="@{screenshotUrl}?type=jpg">
 			</a>
 		</div>
 	</div>
-	<div class="fp-content-subheader">{Entry_Info}</div>
-	{entryTable}
-	{addAppInfo}
-	{gameDataInfo}
-	{oldGameDataInfo}
+	<div class="fp-content-subheader">@{Entry_Info}</div>
+	@{entryTable}
+	@{addAppInfo}
+	@{gameDataInfo}
+	@{oldGameDataInfo}
 </div>
 <div class="fp-modal-container">
 	<div class="fp-modal">
 		<div class="fp-modal-close-button"></div>
 		<div class="fp-modal-content fp-hidden" id="launchFlashpoint">
-			<b>{Launching_Flashpoint}</b>
+			<b>@{Launching_Flashpoint}</b>
 			<div class="fp-content-spacer"></div>
-			{Install_Flashpoint,<a href="/downloads">}
+			@{Install_Flashpoint,<a href="/downloads">}
 		</div>
 	</div>
 </div>
