@@ -28,6 +28,31 @@
 		@{STYLESHEETS}
 		<script src="/scripts/shell.js" type="text/javascript"></script>
 		@{SCRIPTS}
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org/",
+			"@type": "WebPage",
+			"name": "@{SCHEMA_TITLE}",
+			"url": "@{URL}",
+			"author": "@{AUTHOR}",
+			"owner": {
+				"@type": "Organization",
+				"name": "Flashpoint Archive",
+				"alternateName": [
+					"BlueMaxima's Flashpoint",
+					"Flashpoint"
+				],
+				"url": "https://flashpointarchive.org/",
+				"image": "http://67.220.73.8:8989/images/banner.png",
+				"logo": "http://67.220.73.8:8989/images/icon.png",
+				"founder": {
+					"@type": "Person",
+					"name": "Ben Latimore",
+					"alternateName": "BlueMaxima"
+				}
+			}
+		}
+		</script>
 	</head>
 	<body>
 		<div class="fp-shell-navbar">
