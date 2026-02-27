@@ -201,6 +201,8 @@ async function initDatabase() {
 			utils.logMessage('no database found, starting database build');
 			utils.updateDatabase();
 		}
+		else if (config.updateOnLaunch)
+			utils.updateDatabase();
 
 		// Load the database
 		globalThis.fp = new FlashpointArchive();

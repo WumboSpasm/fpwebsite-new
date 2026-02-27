@@ -17,5 +17,6 @@
 	"legacyServer": "https://infinity.unstable.life/Flashpoint/Legacy/htdocs",
 	"pageSize": 100,
 	"updateFrequency": 1440,
+	"updateOnLaunch": true,
 	"defaultLang": "en-US"
 }
