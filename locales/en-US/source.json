@@ -1,7 +1,7 @@
 {
 	"Title": "Source Code",
 	"Header": "Source Code",
-	"Source_Para1": "Flashpoint is powered by free and open-source software. Below you can find a list projects developed by Flashpoint contributors; more can be found at our $1{GitHub team page}.",
+	"Source_Para1": "Flashpoint is powered by free and open-source software. Below you can find a list of projects developed by Flashpoint contributors; more can be found at our $1{GitHub team page}.",
 	"Source_Para2": "Flashpoint also utilizes the following third-party open-source projects:",
 	"CLIFp_Description": "A fully-featured command-line launcher for Flashpoint.",
 	"Rust_Library_Description": "A library for interacting with Flashpoint's database that powers the launcher and the online search tool. Bindings for Node.js can be found $1{here}.",
