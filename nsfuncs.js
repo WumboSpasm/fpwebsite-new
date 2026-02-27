@@ -588,6 +588,7 @@ export const namespaceFunctions = {
 		headers.set('Content-Type', 'application/json; charset=UTF-8');
 		return new Response(JSON.stringify(langSearchInfo), { headers: headers });
 	},
+	'datahub': url => Response.redirect('https://flashpointarchive.org' + url.pathname),
 	'discord': () => Response.redirect('https://discord.gg/kY8r2BbPQ9'),
 };
 

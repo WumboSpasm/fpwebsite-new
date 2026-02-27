@@ -3,6 +3,10 @@
 		"namespace": "search-info",
 		"lenient": false
 	},
+	"/datahub": {
+		"namespace": "datahub",
+		"lenient": true
+	},
 	"/discord": {
 		"namespace": "discord",
 		"lenient": false
