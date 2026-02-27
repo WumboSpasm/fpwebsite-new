@@ -1825,17 +1825,5 @@
 		],
 		"namespace": "video",
 		"id": 2024051900
-	},
-	{
-		"title": "VIDEO FILE TEST",
-		"author": "Test",
-		"date": "2000-01-01",
-		"source": null,
-		"link": "2000010100.webm",
-		"tags": [
-			"Test"
-		],
-		"namespace": "video",
-		"id": 2000010100
 	}
 ]
