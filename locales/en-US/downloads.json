@@ -1,7 +1,7 @@
 {
 	"Title": "Downloads",
 	"Header": "Downloads",
-	"Description": "Flashpoint is free, portable, and $1{powered by open-source software}. We work hard to keep Flashpoint safe despite the unsupported nature of many of the web technologies we preserve. If you have any questions or concerns, consult the $2{FAQ} or ask in the $3{Discord}.",
+	"Downloads_Para1": "Flashpoint is free, portable, and $1{powered by open-source software}. We work hard to keep Flashpoint safe despite the unsupported nature of many of the web technologies we preserve. If you have any questions or concerns, consult the $2{FAQ} or ask in the $3{Discord}.",
 	"Windows_Avast_Warning": "$1{Avast and AVG Users:} Read $2{this article} after installing, otherwise Flashpoint will not work correctly!",
 	"Windows_Infinity_Tagline": "Recommended for most users",
 	"Windows_Infinity_Para1": "Games are downloaded on-demand from our servers. Internet connection is required to download game files.",
