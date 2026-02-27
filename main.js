@@ -65,7 +65,7 @@ async function serverHandler(request, info) {
 	// Check if the request points to an endpoint
 	for (const path in endpoints) {
 		const endpoint = endpoints[path];
-		if (requestPath == path || (endpoints[path].lenient && requestPath.startsWith(path))) {
+		if (requestPath == path || (endpoints[path].lenient && requestPath.startsWith(path + '/'))) {
 			responseHeaders.set('Content-Type', endpoint.type);
 			return await namespaceFunctions[endpoint.namespace](requestUrl, responseHeaders, lang);
 		}
@@ -74,7 +74,7 @@ async function serverHandler(request, info) {
 	// Otherwise, check if the request points to a page
 	let page;
 	for (const path in pages) {
-		if (requestPath == path || (pages[path].lenient && requestPath.startsWith(path)))
+		if (requestPath == path || (pages[path].lenient && requestPath.startsWith(path + '/')))
 			page = pages[path];
 	}
 
