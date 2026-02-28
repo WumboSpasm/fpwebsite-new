@@ -1,7 +1,7 @@
 {
 	"Title": "News",
 	"Header": "News",
-	"Index_Welcome": "Welcome to the news section! Note that most of what you will find here was originally posted elsewhere, and has been retroactively compiled here for easy access.",
+	"News_Para1": "The news section is currently under construction! In the meantime, feel free to browse our archive of old Medium articles, Discord announcements, changelogs and more.",
 	"Index_News": "All News",
 	"Index_News_Tag": "News With Tag \"$1\"",
 	"Index_Tags": "Tags",
