@@ -9,7 +9,7 @@
 	"Articles": "Articles",
 	"Videos": "Videos",
 	"Changelogs": "Changelogs",
-	"By_Author": "by $1",
+	"By_Author": "von $1",
 	"Entry_Byline1": "Posted by $1{$2} on $3",
 	"Entry_Byline2": "Posted to $1 by $2{$3} on $4",
 	"Entry_Byline3": "$1{Posted to $2} by $3{$4} on $5",
