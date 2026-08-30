@@ -1,0 +1,11 @@
+{
+	"Title": "Old Versions",
+	"Header": "Old Versions",
+	"Old_Versions_Para1": "Below you can find links to old Flashpoint downloads. They are provided $1{as-is}, with no guarantee that they will continue to function into the future, or that technical assistence will be provided on Discord or otherwise. This especially applies to old Infinity versions due to their internet-dependent nature.",
+	"Old_Versions_Para2": "$1{Примечание:} к сожалению, значительное количество скачиваний (в основном, связанных с Infinity) за последние годы пропало по разным причинам. Вы найдете их в списке ниже, где они выделены $2{красным}, и на них нельзя нажать. Если у вас есть какая-либо из этих недостающих скачиваний, сообщите нам об этом $3{по электронной почте}, либо через канал $4 на нашем $5{сервере Discord}.",
+	"Old_Flashpoint_5_Note": "Примечание: для скачивания необходимо войти в Internet Archive",
+	"Old_Flashpoint_Zero_Note": "Примечание: не имеет отношения к другому Flashpoint Zero",
+	"Released": "выпущено $1",
+	"Download": "Скачать",
+	"Torrent": "Торрент"
+}

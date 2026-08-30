@@ -1,0 +1,11 @@
+{
+	"Title": "旧版本",
+	"Header": "旧版本",
+	"Old_Versions_Para1": "您可以在下面找到旧版 Flashpoint 的下载链接。它们以$1{原样}提供，不保证未来仍能正常使用，也不提供 Discord 或其他方式的技术支持。这主要指旧版 Infinity 版本，因为它们依赖互联网运行。",
+	"Old_Versions_Para2": "$1{注意：}不幸的是，多年来，由于各种原因，相当数量的下载文件（主要是与 Infinity 版相关的）已经丢失。您可以在下方找到它们，它们被标记为$2{红色}且无法点击。如果您拥有这些丢失的下载文件，请$3{通过电子邮件}或我们 $5{Discord 服务器}中的 $4 频道联系我们。",
+	"Old_Flashpoint_5_Note": "注意：必须登录到互联网档案馆账户以下载",
+	"Old_Flashpoint_Zero_Note": "注意：与另外一个 Flashpoint Zero 无关",
+	"Released": "发布于 $1",
+	"Download": "下载",
+	"Torrent": "种子"
+}

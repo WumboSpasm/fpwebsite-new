@@ -1,0 +1,10 @@
+{
+	"Logo": "Logo",
+	"Screenshot": "Captura de tela",
+	"Entry_Info": "Informações de entrada",
+	"Add_Apps": "Aplicativos Adicionais",
+	"Game_Data": "Dados do Jogo",
+	"Old_Game_Data": "Ver dados desatualizados do jogo",
+	"Launching_Flashpoint": "Iniciando Flashpoint...",
+	"Install_Flashpoint": "Se o Flashpoint não estiver instalado, $1{get now}."
+}

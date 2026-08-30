@@ -1,0 +1,13 @@
+{
+	"Header": "歡迎",
+	"Home_Para1": "Flashpoint Archive 致力於保存全世界的網頁遊戲、動畫及互動式體驗程式。",
+	"Home_Para2": "網際網路及人們互動的方式不斷改變；明日的網路世界很可能與今日截然不同。Adobe Flash 的消逝讓大量的網際網路歷史與文化陷入永遠消失的危險之中。Flashpoint 從 2017 年 12 月創立至今，已經保存了 $1{over 200,000 of these experiences}，橫跨上百種現代及舊型網站技術，包含 Flash、Shockwave 及 HTML5，這都要歸功於來自全球各地社群的努力與貢獻。",
+	"Home_Para3": "我們提供高度靈活的軟體套件以便您與資料庫互動，包含 $1{a fully-featured launcher}、$2{a proxy} 來讓遊戲認為它們正在現代網際網路上執行，以及 $3{a sandbox} 以安全使用基於擴充套件的內容 $4{all of which are open-source software}。",
+	"Home_Para4": "Flashpoint 是由 Open Collective Europe 經營的非營利組織，所有的收益都將用於支付伺服器的維護費用。如果您想支援我們，或希望深入了解我們的資金來源與使用情況，請您造訪 $1{our Open Collective page}。",
+	"Search_Line1": "搜尋",
+	"Search_Line2": "資料庫",
+	"Download_Line1": "下載",
+	"Download_Line2": "Flashpoint",
+	"Discord_Line1": "加入",
+	"Discord_Line2": "社群"
+}

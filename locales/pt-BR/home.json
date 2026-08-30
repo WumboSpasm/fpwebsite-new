@@ -1,0 +1,15 @@
+{
+	"Header": "Bem-vindo",
+	"Home_Para1": "Flashpoint Archive é o maior esforço do mundo para preservar jogos, animações e experiências interativas.",
+	"Home_Para2": "Desde sempre, a internet e a forma como interagimos com ela estão em constante evolução; a web de hoje pode ser completamente diferente da de amanhã. O fim do Adobe Flash colocou em risco o desaparecimento definitivo de uma grande parte da história e da cultura da internet. Desde sua criação, em dezembro de 2017, o Flashpoint já preservou $1{mais de 200,000 dessas experiências}, abrangendo mais de uma centena de tecnologias modernas e legadas da web, incluindo Flash, Shockwave e HTML5, graças ao trabalho de colaboradores da comunidade espalhados por todo o mundo.",
+	"Home_Para3": "Oferecemos um pacote de software altamente flexível para interagir com o arquivo, incluindo $1{um inicializador completo}, $2{um proxy} que faz os jogos acreditarem que estão sendo executados na internet ativa, e $3{um sandbox} que permite a execução segura de conteúdos que utilizam plugins — $4{todos eles são softwares de código aberto}.",
+	"Home_Para4": "O Flashpoint atua como uma organização sem fins lucrativos por meio da Open Collective Europe, com 100% dos recursos arrecadados sendo utilizados para cobrir nossos custos de infraestrutura. Se você deseja nos apoiar ou saber mais sobre quem financia o projeto e como exatamente esses recursos são utilizados, visite $1{nossa página na Open Collective}.",
+	"Search_Line1": "Pesquisar em",
+	"Search_Line2": "Banco de Dados",
+	"Download_Line1": "Baixar",
+	"Download_Line2": "Flashpoint",
+	"Discord_Line1": "Junte-se à",
+	"Discord_Line2": "Comunidade",
+	"Latest_News": "Últimas Notícias",
+	"Go_To_News": "Ir para Página de Notícias"
+}

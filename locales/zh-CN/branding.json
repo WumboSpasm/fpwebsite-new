@@ -1,0 +1,11 @@
+{
+	"Title": "品牌",
+	"Header": "品牌",
+	"Branding_Para1": "Flashpoint 的图标由项目贡献者 Seirade 在 2020 年设计。它以 $1{Creative Commons Attribution 4.0} 许可证发布，这意味着只要说明它们来自 Seirade 或 Flashpoint 项目，就可以自由修改和分发。",
+	"Branding_Para2": "图标是项目名称首字母“FP”的抽象，中间空白的箭头形状区域可以解释为播放按钮或下载符号。通常图标会放置在从 $1{#e81c24} 到 $2{#7c1315}、从左上至右下的渐变背景上，但这个渐变也可以附加到图标本身。文本标签使用 Tahoma 字体。",
+	"Assets": "资产",
+	"Wallpapers": "壁纸",
+	"Banners": "88x31 横幅",
+	"Download": "下载",
+	"By_Author": "作者 $1"
+}

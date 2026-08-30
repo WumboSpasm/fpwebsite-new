@@ -1,0 +1,7 @@
+{
+	"Title": "Contacto",
+	"Header": "Contacto",
+	"Contact_Para1": "Si necesitas contactar al proyecto direcamente, envíanos un correo a $1{flashpoint (at) bluemaxima (dot) org}.",
+	"Contact_Para2": "Flashpoint no ofrece servicios para que los proyectos hechos en Flash sean disponibles en el navegador después de 2020. Remítete a proyectos como $1{Ruffle} en su lugar.",
+	"Contact_Para3": "Las solicitudes de archivado no se pueden hacer por correo: $1{sigue esta guía} en su lugar. Se aceptan correos de resolución de problemas, pero antes que nada, tienes que mirar la sección de $2{FAQ}."
+}

@@ -1,0 +1,11 @@
+{
+	"Title": "Old Versions",
+	"Header": "Old Versions",
+	"Old_Versions_Para1": "Below you can find links to old Flashpoint downloads. They are provided $1{as-is}, with no guarantee that they will continue to function into the future, or that technical assistence will be provided on Discord or otherwise. This especially applies to old Infinity versions due to their internet-dependent nature.",
+	"Old_Versions_Para2": "$1{Poruka:} Nažalost, veliki broj preuzimanja (većina u vezi beskonačnoj verziji) nestali su kako vreme prolazi zbog različitih faktora. Navedene možete da ih pronađete ispod, gde su obojeni crvenom bojom $2{red} i nisu u mogućnosti da budu kliknuti. Ako ste u vlasništvu od nekih od ovih izgubljenih preuzimanja, molim vaš kontaktirate nas putem $3{email} ili putem $4 kanala na $5{Discord server}.",
+	"Old_Flashpoint_5_Note": "Pročitaj: Morate biti ulogovani vaš profil na Internet Arhivi da bi preuzeli",
+	"Old_Flashpoint_Zero_Note": "Napomena: Nema relacije sa drugim Flashpoint Nulom",
+	"Released": "izdanje $1",
+	"Download": "Preuzmi",
+	"Torrent": "Torent"
+}

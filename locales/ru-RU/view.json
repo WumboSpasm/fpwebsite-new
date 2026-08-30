@@ -1,0 +1,10 @@
+{
+	"Logo": "Логотип",
+	"Screenshot": "Скриншот",
+	"Entry_Info": "Информация о записи",
+	"Add_Apps": "Дополнения",
+	"Game_Data": "Данные игры",
+	"Old_Game_Data": "Просмотр устаревших данных игры",
+	"Launching_Flashpoint": "Запуск Flashpoint...",
+	"Install_Flashpoint": "Если Flashpoint не установлен, $1{скачайте его сейчас}."
+}

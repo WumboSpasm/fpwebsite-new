@@ -1,0 +1,15 @@
+{
+	"Header": "Bun venit!",
+	"Home_Para1": "Flashpoint Archive este rezultatul efortului celei mai mari comunități pentru păstrarea jocurilor și animațiilor interactive de pe web.",
+	"Home_Para2": "Internetul și felul în care îl folosim se schimbă fără încetare. Ceea ce numim astăzi web poate ajunge ca mâine să arate cu totul altfel. Dispariția Adobe Flash a pus în pericol o parte vastă din cultura internetului, amenințată să se piardă definitiv.\nDe la lansarea sa, în decembrie 2017, Flashpoint a reușit să arhiveze $1{peste 200.000 de astfel de experiențe digitale}, din mai bine de o sută de tehnologii web, vechi și noi, printre care Flash, Shockwave și HTML5; iar aceasta datorită contribuțiilor unei comunități răspândite din întreaga lume.",
+	"Home_Para3": "Oferim un pachet software flexibil pentru răsfoirea și redarea corectă a conținutului. La baza pachetului Flashpoint, stau $1{lansatorul bogat în funcționalități}, care prezintă o interfață pentru răsfoirea bibliotecii, $2{un proxy} care înșală jocurile că rulează pe web, și $3{un sistem de delimitare} care permite redarea corectă și în siguranță a conținutului prin plugin-uri. Toate aceste componente sunt $4{sursă liberă}.",
+	"Home_Para4": "Flashpoint Archive funcționează non-profit, prin intermediul Open Collective Europe. 100% din câștiguri sunt cheltuite pentru a ne acoperi costurile serverelor. Dacă doriți să ne sprijiniți sau să aflați mai multe despre modul în care suntem finanțați și cum sunt cheltuite aceste fonduri, vă rugăm să vizitați $1{pagina noastră Open Collective (en.)}.",
+	"Search_Line1": "Search the",
+	"Search_Line2": "Bibliotecă (en.)",
+	"Download_Line1": "Descărcați",
+	"Download_Line2": "Flashpoint",
+	"Discord_Line1": "Join the",
+	"Discord_Line2": "Community",
+	"Latest_News": "Știri",
+	"Go_To_News": "Accesați Știri"
+}
