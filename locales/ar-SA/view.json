@@ -1,10 +1,10 @@
 {
 	"Logo": "الشعار",
 	"Screenshot": "لقطة الشاشة",
-	"Entry_Info": "Entry Information",
+	"Entry_Info": "معلومات الإدخال",
 	"Add_Apps": "تطبيقات إضافية",
 	"Game_Data": "بيانات اللعبة",
-	"Old_Game_Data": "View Outdated Game Data",
+	"Old_Game_Data": "عرض بيانات اللعبة القديمة",
 	"Launching_Flashpoint": "جارٍ تشغيل Flashpoint...",
-	"Install_Flashpoint": "If Flashpoint isn't installed, $1{get it now}."
+	"Install_Flashpoint": "إذا لم يتم تثبيت نقطة الوصف، $1{get it now}."
 }
